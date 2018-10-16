@@ -14,6 +14,7 @@
 		8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */; };
 		8061AAA32175670700D5F845 /* Interstate-BoldCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8061AAA22175670600D5F845 /* Interstate-BoldCondensed.otf */; };
 		8061AAA52175683700D5F845 /* Interstate-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8061AAA42175683700D5F845 /* Interstate-Bold.otf */; };
+		8061AAA721756E1700D5F845 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AAA621756E1700D5F845 /* CurrentConditions.swift */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		8051A6FE21755BE7007290CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8061AAA22175670600D5F845 /* Interstate-BoldCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-BoldCondensed.otf"; sourceTree = "<group>"; };
 		8061AAA42175683700D5F845 /* Interstate-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Bold.otf"; sourceTree = "<group>"; };
+		8061AAA621756E1700D5F845 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				8051A6F921755BE7007290CF /* Assets.xcassets */,
 				8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */,
 				8051A6FE21755BE7007290CF /* Info.plist */,
+				8061AAA621756E1700D5F845 /* CurrentConditions.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -113,6 +116,7 @@
 				8051A6EB21755BE6007290CF /* Sources */,
 				8051A6EC21755BE6007290CF /* Frameworks */,
 				8051A6ED21755BE6007290CF /* Resources */,
+				49D5E3667D59BB05ACA12E3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +176,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		49D5E3667D59BB05ACA12E3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		80A3E7DBDD755F8130B83037 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +233,7 @@
 			files = (
 				8051A6F521755BE6007290CF /* ViewController.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
+				8061AAA721756E1700D5F845 /* CurrentConditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

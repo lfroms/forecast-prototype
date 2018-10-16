@@ -25,17 +25,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syG-Uq-MLQ">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syG-Uq-MLQ">
                                 <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
-                                        <rect key="frame" x="192" y="32.666666666666671" width="151" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
+                                        <rect key="frame" x="192" y="33" width="151" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
                                         <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ce-UAb">
-                                        <rect key="frame" x="32" y="28.666666666666671" width="30" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ce-UAb">
+                                        <rect key="frame" x="32" y="29" width="30" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="HamburgerIcon">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,29 +46,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="AfU-xF-u4V"/>
-                                    <constraint firstItem="tpE-19-1gB" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="F2Z-Kd-z8y"/>
-                                    <constraint firstItem="3uc-ce-UAb" firstAttribute="leading" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="32" id="cTi-5v-bBc"/>
-                                    <constraint firstItem="3uc-ce-UAb" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="ikA-qn-Rdn"/>
-                                    <constraint firstAttribute="trailing" secondItem="tpE-19-1gB" secondAttribute="trailing" constant="32" id="mCQ-VW-OTl"/>
+                                    <constraint firstAttribute="height" constant="80" id="0ib-MD-SDL"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
-                                <rect key="frame" x="134" y="454" width="107" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlC-fo-J4l">
-                                <rect key="frame" x="134" y="454" width="107" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
+                                <rect key="frame" x="134" y="474" width="107" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="sMS-UG-sIp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTTAWA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tr-4P7">
-                                <rect key="frame" x="160" y="152" width="55" height="18"/>
+                                <rect key="frame" x="160.66666666666666" y="167" width="54" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="EPC-uj-S4h"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,16 +70,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Veh-tr-4P7" firstAttribute="top" secondItem="syG-Uq-MLQ" secondAttribute="bottom" constant="28" id="707-im-xLc"/>
-                            <constraint firstItem="syG-Uq-MLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RZH-MX-y3d"/>
-                            <constraint firstItem="syG-Uq-MLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dG8-ji-p3K"/>
-                            <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ksC-Ti-wuj"/>
-                            <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lDA-J0-0tb"/>
+                            <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DA3-my-GsC"/>
+                            <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Diz-Fk-koW"/>
+                            <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pad-f5-qdA"/>
+                            <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="Veh-tr-4P7" secondAttribute="bottom" constant="289" id="ZTR-H0-Df8"/>
+                            <constraint firstItem="Veh-tr-4P7" firstAttribute="top" secondItem="syG-Uq-MLQ" secondAttribute="bottom" constant="43" id="ezW-wS-k9t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="currentTempLabel" destination="VlC-fo-J4l" id="ivT-tc-zp6"/>
+                        <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>
                     </connections>

@@ -17,8 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+            CurrentConditions.getCurrentConditions()
+                .done { data -> Void in
+                    self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text
+                    self.stationLabel.text = data["location"]["region"].element!.text
+                } .catch { error -> Void in
+                    print("Error!")
+        }
     }
-
-
 }
-
