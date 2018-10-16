@@ -36,6 +36,7 @@
 	<array>
 		<string>Interstate-BoldCondensed.otf</string>
 		<string>Interstate-Bold.otf</string>
+		<string>Interstate-Regular.otf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

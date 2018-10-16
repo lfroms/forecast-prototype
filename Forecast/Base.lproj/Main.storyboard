@@ -15,6 +15,9 @@
         <array key="Interstate-BoldCondensed.otf">
             <string>Interstate-BoldCondensed</string>
         </array>
+        <array key="Interstate-Regular.otf">
+            <string>Interstate-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -60,22 +63,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OTTAWA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tr-4P7">
-                                <rect key="frame" x="128" y="167" width="119" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="EPC-uj-S4h"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTTAWA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tr-4P7">
+                                <rect key="frame" x="0.0" y="167" width="375" height="18"/>
                                 <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
+                                <rect key="frame" x="0.0" y="554" width="375" height="20"/>
+                                <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" constant="8" id="7kF-c8-k9N"/>
+                            <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7mW-Xt-nDa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Veh-tr-4P7" secondAttribute="trailing" id="8wG-7M-MVD"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DA3-my-GsC"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Diz-Fk-koW"/>
+                            <constraint firstItem="PiP-LG-bw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PNa-gK-FTf"/>
                             <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pad-f5-qdA"/>
                             <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="Veh-tr-4P7" secondAttribute="bottom" constant="289" id="ZTR-H0-Df8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PiP-LG-bw4" secondAttribute="trailing" id="dDI-r1-R12"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="top" secondItem="syG-Uq-MLQ" secondAttribute="bottom" constant="43" id="ezW-wS-k9t"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lJd-eI-PXP"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x58-3E-hVN"/>
@@ -83,6 +94,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>

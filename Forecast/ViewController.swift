@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var currentConditionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
                     self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text + "º"
                     self.stationLabel.text = data["location"]["region"].element!.text.uppercased()
                     self.lastUpdatedLabel.text = date
+                    self.currentConditionLabel.text = data["currentConditions"]["condition"].element!.text
                     
                 } .catch { error -> Void in
                     print("Error!")

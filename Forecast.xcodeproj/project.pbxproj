@@ -15,6 +15,7 @@
 		8061AAA32175670700D5F845 /* Interstate-BoldCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8061AAA22175670600D5F845 /* Interstate-BoldCondensed.otf */; };
 		8061AAA52175683700D5F845 /* Interstate-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8061AAA42175683700D5F845 /* Interstate-Bold.otf */; };
 		8061AAA721756E1700D5F845 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AAA621756E1700D5F845 /* CurrentConditions.swift */; };
+		80A6081C217599C3005D2891 /* Interstate-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6081B217599C3005D2891 /* Interstate-Regular.otf */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		8061AAA22175670600D5F845 /* Interstate-BoldCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-BoldCondensed.otf"; sourceTree = "<group>"; };
 		8061AAA42175683700D5F845 /* Interstate-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Bold.otf"; sourceTree = "<group>"; };
 		8061AAA621756E1700D5F845 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
+		80A6081B217599C3005D2891 /* Interstate-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Regular.otf"; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		8061AAA1217566C400D5F845 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				80A6081B217599C3005D2891 /* Interstate-Regular.otf */,
 				8061AAA22175670600D5F845 /* Interstate-BoldCondensed.otf */,
 				8061AAA42175683700D5F845 /* Interstate-Bold.otf */,
 			);
@@ -170,6 +173,7 @@
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				8061AAA32175670700D5F845 /* Interstate-BoldCondensed.otf in Resources */,
+				80A6081C217599C3005D2891 /* Interstate-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
