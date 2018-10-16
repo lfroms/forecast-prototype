@@ -19,8 +19,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
             CurrentConditions.getCurrentConditions()
                 .done { data -> Void in
-                    self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text
+                    self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text + "º"
                     self.stationLabel.text = data["location"]["region"].element!.text.uppercased()
+                    try self.lastUpdatedLabel.text = data["currentConditions"]["dateTime"].withAttribute("zone", "EDT")["textSummary"].element?.text
                 } .catch { error -> Void in
                     print("Error!")
         }
