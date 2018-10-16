@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             CurrentConditions.getCurrentConditions()
                 .done { data -> Void in
                     self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text
-                    self.stationLabel.text = data["location"]["region"].element!.text
+                    self.stationLabel.text = data["location"]["region"].element!.text.uppercased()
                 } .catch { error -> Void in
                     print("Error!")
         }
