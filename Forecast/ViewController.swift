@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    @IBOutlet weak var stationLabel: UILabel!
+    @IBOutlet weak var currentTempLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
