@@ -9,16 +9,16 @@
 import SWXMLHash
 
 struct CurrentConditions: XMLIndexerDeserializable {
-    let station: LocationPoint
-    let dateTime: [DateTime]
-    let condition: String
-    let iconCode: String
-    let temperature: Measurement
-    let dewpoint: Measurement
-    let pressure: Pressure
-    let visibility: Measurement
-    let relativeHumidity: Measurement
-    let wind: Wind
+    let station: LocationPoint?
+    let dateTime: [DateTime]?
+    let condition: String?
+    let iconCode: String?
+    let temperature: Measurement?
+    let dewpoint: Measurement?
+    let pressure: Pressure?
+    let visibility: Measurement?
+    let relativeHumidity: Measurement?
+    let wind: Wind?
     
     
     static func deserialize(_ node: XMLIndexer) throws -> CurrentConditions {

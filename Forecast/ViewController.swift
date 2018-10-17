@@ -29,13 +29,13 @@ class ViewController: UIViewController {
                 
                 let cc = data.currentConditions;
                 
-                let timestamp = cc.dateTime[1].value.timeStamp
+                let timestamp = cc.dateTime![1].value.timeStamp
                 
                 self.lastUpdatedLabel.text = timestamp
                     .toDate("yyyymmddhhmmss")?
                     .toFormat("EEEE MMMM d yyyy | h:mm a")
                 
-                self.currentTempLabel.text = cc.temperature.value + "º"
+                self.currentTempLabel.text = cc.temperature != nil ? cc.temperature!.value + "º" : "--º"
                 self.stationLabel.text = data.location.region.uppercased()
                 self.currentConditionLabel.text = cc.condition
                 
