@@ -20,6 +20,7 @@ struct Forecast: XMLIndexerDeserializable {
             )
         }
     }
+    
     struct CloudPrecip: XMLIndexerDeserializable {
         let textSummary: String?
         

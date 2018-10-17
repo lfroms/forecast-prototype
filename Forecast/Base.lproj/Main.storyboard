@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
-                                        <rect key="frame" x="192" y="32.666666666666671" width="151" height="15"/>
+                                        <rect key="frame" x="192" y="33" width="151" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
                                         <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -90,7 +90,6 @@
                             <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" constant="8" id="7kF-c8-k9N"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7mW-Xt-nDa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Veh-tr-4P7" secondAttribute="trailing" id="8wG-7M-MVD"/>
-                            <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DA3-my-GsC"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Diz-Fk-koW"/>
                             <constraint firstItem="PiP-LG-bw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PNa-gK-FTf"/>
                             <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pad-f5-qdA"/>

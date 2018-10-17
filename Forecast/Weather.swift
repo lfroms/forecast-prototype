@@ -1,5 +1,5 @@
 //
-//  CurrentConditions.swift
+//  Weather.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-10-15.
