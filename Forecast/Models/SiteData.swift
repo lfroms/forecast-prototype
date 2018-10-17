@@ -12,7 +12,6 @@ struct SiteData: XMLIndexerDeserializable {
     let location: Location
     let currentConditions: CurrentConditions
     
-    
     static func deserialize(_ node: XMLIndexer) throws -> SiteData {
         return try SiteData(
             location: node["location"].value(),
