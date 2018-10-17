@@ -12,17 +12,17 @@ import SWXMLHash
 import PromiseKit
 
 class Weather {
-    static var currentConditions: CurrentConditions?
+    static var siteData: SiteData?
     
-    static func getCurrentConditions() -> CurrentConditions {
-        return currentConditions!
+    static func getSiteData() -> SiteData {
+        return siteData!
     }
     
-    static func setCurrentConditions(conditions: CurrentConditions) {
-        currentConditions = conditions
+    static func setSiteData(data: SiteData) {
+        siteData = data
     }
     
-    static func fetchWeather(stationCode: String) -> Promise<CurrentConditions> {
+    static func fetchWeather(stationCode: String) -> Promise<SiteData> {
         let err = NSError(
             domain: "GetAPIData",
             code: 1,
@@ -41,10 +41,10 @@ class Weather {
                         let xml = SWXMLHash.parse(data)
                         
                         do {
-                            let currentConditions: CurrentConditions = try xml["siteData"]["currentConditions"].value()
+                            let site: SiteData = try xml["siteData"].value()
                             
-                            self.setCurrentConditions(conditions: currentConditions);
-                            pr.fulfill(self.getCurrentConditions())
+                            self.setSiteData(data: site);
+                            pr.fulfill(self.getSiteData())
                             
                         } catch {
                             print(error)

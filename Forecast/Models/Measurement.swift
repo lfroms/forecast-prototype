@@ -12,12 +12,14 @@ struct Measurement: XMLIndexerDeserializable {
     let unitType: String?
     let units: String?
     let value: String
+    let uClass: String?
     
     static func deserialize(_ node: XMLIndexer) throws -> Measurement {
         return try Measurement(
             unitType: node.value(ofAttribute: "unitType"),
             units: node.value(ofAttribute: "units"),
-            value: node.value()
+            value: node.value(),
+            uClass: node.value(ofAttribute: "class")
         )
     }
 }

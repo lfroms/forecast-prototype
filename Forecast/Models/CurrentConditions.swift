@@ -9,7 +9,7 @@
 import SWXMLHash
 
 struct CurrentConditions: XMLIndexerDeserializable {
-    let station: Station
+    let station: LocationPoint
     let dateTime: [DateTime]
     let condition: String
     let iconCode: String

@@ -27,15 +27,17 @@ class ViewController: UIViewController {
         Weather.fetchWeather(stationCode: "25")
             .done { data -> Void in
                 
-                let timestamp = data.dateTime[0].value.timeStamp
+                let cc = data.currentConditions;
+                
+                let timestamp = cc.dateTime[1].value.timeStamp
                 
                 self.lastUpdatedLabel.text = timestamp
                     .toDate("yyyymmddhhmmss")?
                     .toFormat("EEEE MMMM d yyyy | h:mm a")
                 
-                self.currentTempLabel.text = data.temperature.value + "º"
-                self.stationLabel.text = data.station.value.uppercased()
-                self.currentConditionLabel.text = data.condition
+                self.currentTempLabel.text = cc.temperature.value + "º"
+                self.stationLabel.text = data.location.region.uppercased()
+                self.currentConditionLabel.text = cc.condition
                 
                 self.loadingIndicator.stopAnimating()
                 

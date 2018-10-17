@@ -16,12 +16,13 @@
 		8061AAA52175683700D5F845 /* Interstate-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8061AAA42175683700D5F845 /* Interstate-Bold.otf */; };
 		8061AAA721756E1700D5F845 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AAA621756E1700D5F845 /* Weather.swift */; };
 		80A6081C217599C3005D2891 /* Interstate-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6081B217599C3005D2891 /* Interstate-Regular.otf */; };
-		80A608222176C15F005D2891 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608212176C15F005D2891 /* Station.swift */; };
 		80A608242176C180005D2891 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608232176C180005D2891 /* DateTime.swift */; };
 		80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608292176C1E7005D2891 /* CurrentConditions.swift */; };
 		80A6082C2176C35C005D2891 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6082B2176C35C005D2891 /* Pressure.swift */; };
 		80A608302176C3FF005D2891 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6082F2176C3FF005D2891 /* Measurement.swift */; };
 		80A608322176C5AD005D2891 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608312176C5AC005D2891 /* Wind.swift */; };
+		80A608372176C7DB005D2891 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608362176C7DB005D2891 /* Location.swift */; };
+		80A608392176C8BC005D2891 /* SiteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608382176C8BC005D2891 /* SiteData.swift */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +40,13 @@
 		8061AAA42175683700D5F845 /* Interstate-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Bold.otf"; sourceTree = "<group>"; };
 		8061AAA621756E1700D5F845 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		80A6081B217599C3005D2891 /* Interstate-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Regular.otf"; sourceTree = "<group>"; };
-		80A608212176C15F005D2891 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		80A608232176C180005D2891 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		80A608292176C1E7005D2891 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
 		80A6082B2176C35C005D2891 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
 		80A6082F2176C3FF005D2891 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		80A608312176C5AC005D2891 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		80A608362176C7DB005D2891 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		80A608382176C8BC005D2891 /* SiteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteData.swift; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,12 +117,13 @@
 		80A6081F2176C10C005D2891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				80A608212176C15F005D2891 /* Station.swift */,
 				80A608232176C180005D2891 /* DateTime.swift */,
 				80A608292176C1E7005D2891 /* CurrentConditions.swift */,
 				80A6082B2176C35C005D2891 /* Pressure.swift */,
 				80A6082F2176C3FF005D2891 /* Measurement.swift */,
 				80A608312176C5AC005D2891 /* Wind.swift */,
+				80A608362176C7DB005D2891 /* Location.swift */,
+				80A608382176C8BC005D2891 /* SiteData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,13 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8051A6F521755BE6007290CF /* ViewController.swift in Sources */,
-				80A608222176C15F005D2891 /* Station.swift in Sources */,
 				80A608322176C5AD005D2891 /* Wind.swift in Sources */,
 				80A608302176C3FF005D2891 /* Measurement.swift in Sources */,
 				80A6082C2176C35C005D2891 /* Pressure.swift in Sources */,
+				80A608372176C7DB005D2891 /* Location.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				8061AAA721756E1700D5F845 /* Weather.swift in Sources */,
+				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
