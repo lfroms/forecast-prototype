@@ -39,11 +39,13 @@ class ViewController: UIViewController {
                 self.stationLabel.text = data.location.region.uppercased()
                 self.currentConditionLabel.text = cc.condition
                 
-                self.loadingIndicator.stopAnimating()
-                
             } .catch { error -> Void in
                 print(error)
-            }
+            } .finally {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.loadingIndicator.stopAnimating()
+                }
+        }
     }
     
     override func viewDidLoad() {
