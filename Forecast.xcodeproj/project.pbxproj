@@ -23,6 +23,7 @@
 		80A608322176C5AD005D2891 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608312176C5AC005D2891 /* Wind.swift */; };
 		80A608372176C7DB005D2891 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608362176C7DB005D2891 /* Location.swift */; };
 		80A608392176C8BC005D2891 /* SiteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608382176C8BC005D2891 /* SiteData.swift */; };
+		80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083A2176CC4F005D2891 /* ForecastGroup.swift */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		80A608312176C5AC005D2891 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		80A608362176C7DB005D2891 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		80A608382176C8BC005D2891 /* SiteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteData.swift; sourceTree = "<group>"; };
+		80A6083A2176CC4F005D2891 /* ForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastGroup.swift; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				80A608312176C5AC005D2891 /* Wind.swift */,
 				80A608362176C7DB005D2891 /* Location.swift */,
 				80A608382176C8BC005D2891 /* SiteData.swift */,
+				80A6083A2176CC4F005D2891 /* ForecastGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				8061AAA721756E1700D5F845 /* Weather.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
+				80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
