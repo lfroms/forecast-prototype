@@ -8,4 +8,5 @@ target 'Forecast' do
   pod 'SWXMLHash', '~> 4.0.0'
   pod 'PromiseKit', '~> 6.0'
   pod 'SwiftDate', '~> 5.0'
+  pod 'Cache'
 end

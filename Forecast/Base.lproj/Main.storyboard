@@ -43,13 +43,21 @@
                                         <state key="normal" image="HamburgerIcon">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressHamburger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IFh-60-udn"/>
+                                        </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-wM-FbI">
+                                        <rect key="frame" x="164" y="30" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="0ib-MD-SDL"/>
+                                    <constraint firstItem="tpE-19-1gB" firstAttribute="leading" secondItem="EeW-wM-FbI" secondAttribute="trailing" constant="8" id="4kY-7M-u62"/>
                                     <constraint firstAttribute="trailing" secondItem="tpE-19-1gB" secondAttribute="trailing" constant="32" id="8t6-sV-iqN"/>
                                     <constraint firstItem="3uc-ce-UAb" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="KPT-j4-aLZ"/>
+                                    <constraint firstItem="EeW-wM-FbI" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="Yto-Ge-q5w"/>
                                     <constraint firstItem="3uc-ce-UAb" firstAttribute="leading" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="32" id="j2c-DX-Nyn"/>
                                     <constraint firstItem="tpE-19-1gB" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="qMo-3E-maT"/>
                                 </constraints>
@@ -77,6 +85,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" constant="8" id="7kF-c8-k9N"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7mW-Xt-nDa"/>
@@ -97,6 +106,7 @@
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
+                        <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="Wrc-7m-Cr2"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>
                     </connections>
                 </viewController>

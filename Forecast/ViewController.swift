@@ -15,23 +15,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
     @IBOutlet weak var currentConditionLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    @IBAction func didPressHamburger(_ sender: Any) {
+        getData()
+    }
+    
+    func getData() {
+        self.loadingIndicator.startAnimating()
+        
+        Weather.fetchWeather(stationCode: "25")
+            .done { data -> Void in
+                
+                let timestamp = data.dateTime[0].value.timeStamp
+                
+                self.lastUpdatedLabel.text = timestamp
+                    .toDate("yyyymmddhhmmss")?
+                    .toFormat("EEEE MMMM d yyyy | h:mm a")
+                
+                self.currentTempLabel.text = data.temperature.value + "º"
+                self.stationLabel.text = data.station.value.uppercased()
+                self.currentConditionLabel.text = data.condition
+                
+                self.loadingIndicator.stopAnimating()
+                
+            } .catch { error -> Void in
+                print(error)
+            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            CurrentConditions.getCurrentConditions()
-                .done { data -> Void in
-                    
-                    let timestamp = try data["currentConditions"]["dateTime"].withAttribute("zone", "EDT")["timeStamp"].element!.text
-                    let date = timestamp.toDate("yyyymmddhhmmss")?.toFormat("EEEE MMMM d yyyy | h:mm a")
-                    
-                    self.currentTempLabel.text = data["currentConditions"]["temperature"].element!.text + "º"
-                    self.stationLabel.text = data["location"]["region"].element!.text.uppercased()
-                    self.lastUpdatedLabel.text = date
-                    self.currentConditionLabel.text = data["currentConditions"]["condition"].element!.text
-                    
-                } .catch { error -> Void in
-                    print("Error!")
-        }
+        getData()
     }
 }

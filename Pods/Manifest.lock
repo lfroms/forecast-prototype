@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - Cache (5.2.0)
   - PromiseKit (6.5.2):
     - PromiseKit/CorePromise (= 6.5.2)
     - PromiseKit/Foundation (= 6.5.2)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Cache
   - PromiseKit (~> 6.0)
   - SwiftDate (~> 5.0)
   - SWXMLHash (~> 4.0.0)
@@ -21,16 +23,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Cache
     - PromiseKit
     - SwiftDate
     - SWXMLHash
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
   SwiftDate: fcdaa7ca22a903faf6d7ed231239a88d174dcae3
   SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
 
-PODFILE CHECKSUM: 226d9c9e09ad59938cbafa5e9bdd6e74c531e4a9
+PODFILE CHECKSUM: 6678357518e5d35942e889a0db4fd69d524231db
 
 COCOAPODS: 1.5.3
