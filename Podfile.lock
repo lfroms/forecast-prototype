@@ -1,13 +1,4 @@
 PODS:
-  - PromiseKit (6.5.2):
-    - PromiseKit/CorePromise (= 6.5.2)
-    - PromiseKit/Foundation (= 6.5.2)
-    - PromiseKit/UIKit (= 6.5.2)
-  - PromiseKit/CorePromise (6.5.2)
-  - PromiseKit/Foundation (6.5.2):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.5.2):
-    - PromiseKit/CorePromise
   - Siesta (1.4.2):
     - Siesta/Core (= 1.4.2)
   - Siesta/Core (1.4.2)
@@ -15,24 +6,21 @@ PODS:
   - SWXMLHash (4.0.0)
 
 DEPENDENCIES:
-  - PromiseKit (~> 6.0)
   - Siesta (~> 1.0)
   - SwiftDate (~> 5.0)
   - SWXMLHash (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - PromiseKit
     - Siesta
     - SwiftDate
     - SWXMLHash
 
 SPEC CHECKSUMS:
-  PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
   Siesta: 337a9c39c9b78bba904286310c86562a886efdab
   SwiftDate: fcdaa7ca22a903faf6d7ed231239a88d174dcae3
   SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
 
-PODFILE CHECKSUM: 7169c7df7cf1ac860a178fa6833b561e1cad5e6b
+PODFILE CHECKSUM: 254e331b27f2c3fd86b4302bd31757abb0606db8
 
 COCOAPODS: 1.5.3
