@@ -30,6 +30,14 @@ struct Site: XMLIndexerDeserializable {
         self.provinceCode = provinceCode
     }
     
+    // TESTING PURPOSES
+    init() {
+        self.code = "s0000430"
+        self.nameEn = "Ottawa (Kanata - Orléans)"
+        self.nameFr = "Ottawa (Kanata - Orléans)"
+        self.provinceCode = "ON"
+    }
+    
     public func saveAsDefault() {
         UserDefaults.standard.set(self.code, forKey: "defaultSiteCode")
         UserDefaults.standard.set(self.nameEn, forKey: "defaultSiteNameEn")

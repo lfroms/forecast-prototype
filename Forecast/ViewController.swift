@@ -21,36 +21,45 @@ class ViewController: UIViewController {
     let api = WeatherService()
     
     @IBAction func didPressHamburger(_ sender: Any) {
-        // getData()
-    }
-    
-    func render(data: SiteData) {
-        let cc = data.currentConditions
-        
-        let timestamp = cc.dateTime![1].value.timeStamp
-        
-        self.lastUpdatedLabel.text = timestamp
-            .toDate("yyyymmddhhmmss")?
-            .toFormat("EEEE MMMM d yyyy | h:mm a")
-        
-        self.currentTempLabel.text = (cc.temperature != nil) ? cc.temperature!.value + "º" : "--º"
-        self.stationLabel.text = data.location.region.uppercased()
-        self.currentConditionLabel.text = cc.condition
+        self.fetchNewData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.api.siteData(in: .English).addObserver(self)
+        self.fetchNewData()
+    }
+    
+    func render() {
+        let resource = self.api.siteData(in: .English)
         
-        self.api.siteList.loadIfNeeded()
-        
-        let site = Site(code: "s0000430", nameEn: "", nameFr: "", provinceCode: "ON")
-        
-        self.api.siteData(site: site, lang: LanguageCode.english).loadIfNeeded()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.loadingIndicator.startAnimating()
-            print(self.api.siteData(site: site, lang: LanguageCode.english).latestData!)
-            self.loadingIndicator.stopAnimating()
+        if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.loadingIndicator.stopAnimating()
+            }
+            
+            let cc = data.currentConditions
+            
+            let timestamp = cc.dateTime![1].value.timeStamp
+            
+            self.lastUpdatedLabel.text = timestamp
+                .toDate("yyyymmddhhmmss")?
+                .toFormat("EEEE MMMM d yyyy | h:mm a")
+            
+            self.currentTempLabel.text = (cc.temperature != nil) ? cc.temperature!.value + "º" : "--º"
+            self.stationLabel.text = data.location.region.uppercased()
+            self.currentConditionLabel.text = cc.condition
         }
+    }
+    
+    func fetchNewData() {
+        self.loadingIndicator.startAnimating()
+        self.api.siteData(in: .English).load()
+    }
+}
+
+extension ViewController: ResourceObserver {
+    func resourceChanged(_ resource: Resource, event: ResourceEvent) {
+        self.render()
     }
 }

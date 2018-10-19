@@ -10,8 +10,8 @@ import Siesta
 import SWXMLHash
 
 enum LanguageCode: String {
-    case english = "e"
-    case french = "f"
+    case English = "e"
+    case French = "f"
 }
 
 class WeatherService: Service {
@@ -44,7 +44,9 @@ class WeatherService: Service {
         return resource("/siteList.xml")
     }
 
-    func siteData(site: Site, lang: LanguageCode) -> Resource {
+    func siteData(in lang: LanguageCode) -> Resource {
+        let site = Site().loadDefault()
+
         let name = site.code + "_" + lang.rawValue + ".xml"
         return resource("/").child(site.provinceCode).child(name)
     }
