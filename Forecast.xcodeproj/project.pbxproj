@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802443FB217A7FF60066F905 /* UIChevronGrip.swift */; };
+		802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802443FD217A822C0066F905 /* UIChevronGrip.xib */; };
 		8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5AE2177FDDC0021AF6C /* WeatherService.swift */; };
 		8040B5B12178047B0021AF6C /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5B02178047B0021AF6C /* Site.swift */; };
 		8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F221755BE6007290CF /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
+		802443FB217A7FF60066F905 /* UIChevronGrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChevronGrip.swift; sourceTree = "<group>"; };
+		802443FD217A822C0066F905 /* UIChevronGrip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIChevronGrip.xib; sourceTree = "<group>"; };
 		8040B5AE2177FDDC0021AF6C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8040B5B02178047B0021AF6C /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		8051A6EF21755BE6007290CF /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		802443F4217A79EE0066F905 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				802443FB217A7FF60066F905 /* UIChevronGrip.swift */,
+				802443FD217A822C0066F905 /* UIChevronGrip.xib */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		8051A6E621755BE6007290CF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				802443F4217A79EE0066F905 /* Controls */,
 				80EEB23D217A74A500AD4448 /* Fonts */,
 				80EEB23A217A745600AD4448 /* Controllers */,
 				80EEB239217A744500AD4448 /* Views */,
@@ -243,6 +257,7 @@
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
+				802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */,
 				80EEB241217A74B000AD4448 /* Interstate-Regular.otf in Resources */,
 				80EEB243217A74B000AD4448 /* Interstate-BoldCondensed.otf in Resources */,
 			);
@@ -313,6 +328,7 @@
 				80A6082C2176C35C005D2891 /* Pressure.swift in Sources */,
 				80A608372176C7DB005D2891 /* Location.swift in Sources */,
 				80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */,
+				802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
