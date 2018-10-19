@@ -30,14 +30,14 @@ struct Site: XMLIndexerDeserializable {
         self.provinceCode = provinceCode
     }
     
-    public func save() {
+    public func saveAsDefault() {
         UserDefaults.standard.set(self.code, forKey: "defaultSiteCode")
         UserDefaults.standard.set(self.nameEn, forKey: "defaultSiteNameEn")
         UserDefaults.standard.set(self.nameFr, forKey: "defaultSiteNameFr")
         UserDefaults.standard.set(self.provinceCode, forKey: "defaultSiteProvinceCode")
     }
     
-    public func load() -> Site {
+    public func loadDefault() -> Site {
         return Site(
             code: UserDefaults.standard.string(forKey: "defaultSiteCode")!,
             nameEn: UserDefaults.standard.string(forKey: "defaultSiteNameEn")!,

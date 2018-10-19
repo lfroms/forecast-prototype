@@ -27,8 +27,8 @@
 		80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083A2176CC4F005D2891 /* ForecastGroup.swift */; };
 		80A6083D2176D433005D2891 /* RiseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083C2176D433005D2891 /* RiseSet.swift */; };
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
-		80CBA1DE21795AC600D7B605 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBA1DD21795AC600D7B605 /* Resource.swift */; };
-		80CBA1E021795AE800D7B605 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBA1DF21795AE800D7B605 /* Bucket.swift */; };
+		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
+		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,8 @@
 		80A6083A2176CC4F005D2891 /* ForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastGroup.swift; sourceTree = "<group>"; };
 		80A6083C2176D433005D2891 /* RiseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseSet.swift; sourceTree = "<group>"; };
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		80CBA1DD21795AC600D7B605 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		80CBA1DF21795AE800D7B605 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
+		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,6 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				80CBA1DC21795A5100D7B605 /* Bucket */,
 				80A6081F2176C10C005D2891 /* Models */,
 				8061AAA1217566C400D5F845 /* fonts */,
 				8051A6F221755BE6007290CF /* AppDelegate.swift */,
@@ -141,17 +140,10 @@
 				80A6083C2176D433005D2891 /* RiseSet.swift */,
 				80A6083E2176D4E6005D2891 /* Forecast.swift */,
 				8040B5B02178047B0021AF6C /* Site.swift */,
+				80EEB234217A697A00AD4448 /* RegionalNormals.swift */,
+				80EEB236217A69D500AD4448 /* ExactLocation.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		80CBA1DC21795A5100D7B605 /* Bucket */ = {
-			isa = PBXGroup;
-			children = (
-				80CBA1DD21795AC600D7B605 /* Resource.swift */,
-				80CBA1DF21795AE800D7B605 /* Bucket.swift */,
-			);
-			path = Bucket;
 			sourceTree = "<group>";
 		};
 		CF1CB507A484B3314AA41664 /* Pods */ = {
@@ -244,20 +236,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/Siesta/Siesta.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siesta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,16 +290,16 @@
 				80A608302176C3FF005D2891 /* Measurement.swift in Sources */,
 				80A6082C2176C35C005D2891 /* Pressure.swift in Sources */,
 				80A608372176C7DB005D2891 /* Location.swift in Sources */,
+				80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
+				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
-				80CBA1E021795AE800D7B605 /* Bucket.swift in Sources */,
 				80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */,
-				80CBA1DE21795AC600D7B605 /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

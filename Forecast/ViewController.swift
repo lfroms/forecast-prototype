@@ -6,6 +6,7 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
+import Siesta
 import SwiftDate
 import SWXMLHash
 import UIKit
@@ -40,22 +41,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let site = Site(
-            code: "s0000430",
-            nameEn: "Ottawa (Kanata - Orléans)",
-            nameFr: "Ottawa (Kanata - Orléans)",
-            provinceCode: "ON"
-        )
+        self.api.siteList.loadIfNeeded()
         
-        site.save()
+        let site = Site(code: "s0000430", nameEn: "", nameFr: "", provinceCode: "ON")
         
-        let newSite = site.load()
-        
-        self.api.siteData(site: newSite, lang: LanguageCode.english).load()
+        self.api.siteData(site: site, lang: LanguageCode.english).loadIfNeeded()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.loadingIndicator.startAnimating()
-            self.render(data: self.api.siteData(site: newSite, lang: LanguageCode.english).latestData as! SiteData)
+            print(self.api.siteData(site: site, lang: LanguageCode.english).latestData!)
             self.loadingIndicator.stopAnimating()
         }
     }

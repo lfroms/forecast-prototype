@@ -8,29 +8,13 @@
 
 import SWXMLHash
 
-struct LocationPoint: XMLIndexerDeserializable {
-    let code: String
-    let lat: String?
-    let lon: String?
-    let value: String
-    
-    static func deserialize(_ node: XMLIndexer) throws -> LocationPoint {
-        return try LocationPoint(
-            code: node.value(ofAttribute: "code"),
-            lat: node.value(ofAttribute: "lat"),
-            lon: node.value(ofAttribute: "lon"),
-            value: node.value()
-        )
-    }
-}
-
 struct Location: XMLIndexerDeserializable {
     let continent: String
-    let country: LocationPoint
-    let province: LocationPoint
-    let name: LocationPoint
+    let country: ExactLocation
+    let province: ExactLocation
+    let name: ExactLocation
     let region: String
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> Location {
         return try Location(
             continent: node["continent"].value(),
@@ -41,4 +25,3 @@ struct Location: XMLIndexerDeserializable {
         )
     }
 }
-

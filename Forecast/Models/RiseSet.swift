@@ -10,7 +10,7 @@ import SWXMLHash
 
 struct RiseSet: XMLIndexerDeserializable {
     let dateTime: [DateTime]?
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> RiseSet {
         return try RiseSet(
             dateTime: node["dateTime"].value()

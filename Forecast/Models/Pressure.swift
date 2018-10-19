@@ -14,7 +14,7 @@ struct Pressure: XMLIndexerDeserializable {
     let change: String
     let tendency: String
     let value: String
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> Pressure {
         return try Pressure(
             unitType: node.value(ofAttribute: "unitType"),

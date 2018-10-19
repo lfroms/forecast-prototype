@@ -14,7 +14,7 @@ struct Wind: XMLIndexerDeserializable {
     let direction: Measurement
     let bearing: Measurement
     let index: String?
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> Wind {
         return try Wind(
             speed: node["speed"].value(),
