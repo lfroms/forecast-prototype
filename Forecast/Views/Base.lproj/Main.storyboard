@@ -102,6 +102,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="releasedChevronGrip:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="VPs-UO-kJE"/>
                                     <action selector="releasedChevronGrip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8w-G1-TjL"/>
                                     <action selector="touchedChevronGrip:" destination="BYZ-38-t0r" eventType="touchDown" id="CWq-iU-qsc"/>
                                 </connections>
