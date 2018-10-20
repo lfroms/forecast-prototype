@@ -17,11 +17,24 @@ class ViewController: UIViewController {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var chevronGrip: UIChevronGrip!
     
     let api = WeatherService()
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
+    }
+    
+    @IBAction func touchedChevronGrip(_ sender: Any) {
+        self.chevronGrip.flipMiddle()
+    }
+    
+    @IBAction func releasedChevronGrip(_ sender: Any) {
+        // if current conditions
+        self.chevronGrip.flipUp()
+        
+        // if forecast
+        // self.chevronGrip.flipDown()
     }
     
     override func viewDidLoad() {

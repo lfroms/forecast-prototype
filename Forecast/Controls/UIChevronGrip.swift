@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import TweenKit
 import UIKit
 
 @IBDesignable
 class UIChevronGrip: UIControl {
-    @IBInspectable var chevronState: Int = 1
+    @IBInspectable private var defaultState: Int = 0{
+        didSet {
+            config()
+        }
+    }
+    
     @IBInspectable var weight: CGFloat = 3
+    @IBInspectable var verticalOffset: CGFloat = 0
     @IBInspectable var color: UIColor =
         UIColor(
             red: 0.620,
@@ -20,27 +27,43 @@ class UIChevronGrip: UIControl {
             blue: 0.620,
             alpha: 1.000
         )
-    @IBInspectable var verticalOffset: CGFloat = 0
     
-    override func draw(_ rect: CGRect) {
+    private let defaultHeight: CGFloat = 6.68
+    private let defaultWidth: CGFloat = 17.6
+    
+    private var deltaY: CGFloat = 0
+    private var shapeLayer = CAShapeLayer()
+    
+    private let scheduler = ActionScheduler()
+    
+    public override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        self.config()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.config()
+    }
+    
+    private func config() {
+        switch self.defaultState {
+        case -1:
+            self.deltaY = self.defaultHeight
+        case 0:
+            self.deltaY = 0
+        case 1:
+            self.deltaY = -self.defaultHeight
+        default:
+            self.deltaY = self.defaultHeight
+        }
+    }
+    
+    func drawControl() {
         let centerPoint = CGPoint(
             x: self.frame.width / 2,
             y: self.frame.height / 2
         )
-        
-        let deltaX: CGFloat = 17.6
-        var deltaY: CGFloat
-        
-        switch self.chevronState {
-        case -1:
-            deltaY = 6.68
-        case 0:
-            deltaY = 0
-        case 1:
-            deltaY = -6.68
-        default:
-            deltaY = 6.68
-        }
         
         let startPoint = CGPoint(
             x: centerPoint.x,
@@ -52,16 +75,16 @@ class UIChevronGrip: UIControl {
         path.move(to: startPoint)
         path.addLine(
             to: CGPoint(
-                x: startPoint.x - deltaX,
-                y: startPoint.y - deltaY
+                x: startPoint.x - self.defaultWidth,
+                y: startPoint.y - self.deltaY
             )
         )
         
         path.move(to: startPoint)
         path.addLine(
             to: CGPoint(
-                x: startPoint.x + deltaX,
-                y: startPoint.y - deltaY
+                x: startPoint.x + self.defaultWidth,
+                y: startPoint.y - self.deltaY
             )
         )
         
@@ -70,5 +93,56 @@ class UIChevronGrip: UIControl {
         path.miterLimit = 4
         path.lineCapStyle = .round
         path.stroke()
+        
+        self.shapeLayer.path = path.cgPath
+    }
+    
+    public func flipDown() {
+        let action = InterpolationAction(
+            from: self.deltaY,
+            to: self.defaultHeight,
+            duration: 0.2,
+            easing: .exponentialInOut
+        ) {
+            data in
+            self.setNeedsDisplay()
+            self.deltaY = data
+        }
+        
+        self.scheduler.run(action: action)
+    }
+    
+    public func flipMiddle() {
+        let action = InterpolationAction(
+            from: self.deltaY,
+            to: 0,
+            duration: 0.2,
+            easing: .exponentialInOut
+        ) {
+            data in
+            self.setNeedsDisplay()
+            self.deltaY = data
+        }
+        
+        self.scheduler.run(action: action)
+    }
+    
+    public func flipUp() {
+        let action = InterpolationAction(
+            from: self.deltaY,
+            to: -self.defaultHeight,
+            duration: 0.2,
+            easing: .exponentialInOut
+        ) {
+            data in
+            self.setNeedsDisplay()
+            self.deltaY = data
+        }
+        
+        self.scheduler.run(action: action)
+    }
+    
+    override func draw(_ rect: CGRect) {
+        self.drawControl()
     }
 }

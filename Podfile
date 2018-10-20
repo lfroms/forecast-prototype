@@ -7,4 +7,5 @@ target 'Forecast' do
   pod 'SWXMLHash', '~> 4.0.0'
   pod 'SwiftDate', '~> 5.0'
   pod 'Siesta', '~> 1.0'
+  pod 'TweenKit', :git => 'https://github.com/lfroms/TweenKit.git'
 end
