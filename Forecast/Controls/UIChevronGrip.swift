@@ -12,9 +12,9 @@ import UIKit
 
 @IBDesignable
 class UIChevronGrip: UIControl {
-    @IBInspectable private var defaultState: Int = 0{
+    @IBInspectable private var defaultState: Int = 0 {
         didSet {
-            config()
+            self.config()
         }
     }
     
@@ -98,6 +98,7 @@ class UIChevronGrip: UIControl {
     }
     
     public func flipDown() {
+        self.scheduler.removeAll()
         let action = InterpolationAction(
             from: self.deltaY,
             to: self.defaultHeight,
@@ -113,6 +114,7 @@ class UIChevronGrip: UIControl {
     }
     
     public func flipMiddle() {
+        self.scheduler.removeAll()
         let action = InterpolationAction(
             from: self.deltaY,
             to: 0,
@@ -128,6 +130,7 @@ class UIChevronGrip: UIControl {
     }
     
     public func flipUp() {
+        self.scheduler.removeAll()
         let action = InterpolationAction(
             from: self.deltaY,
             to: -self.defaultHeight,
