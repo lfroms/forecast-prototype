@@ -6,12 +6,13 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
+import Hero
 import Siesta
 import SwiftDate
 import SWXMLHash
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     @IBOutlet var lastUpdatedLabel: UILabel!
     @IBOutlet var stationLabel: UILabel!
     @IBOutlet var currentTempLabel: UILabel!
@@ -27,6 +28,36 @@ class ViewController: UIViewController {
     
     @IBAction func touchedChevronGrip(_ sender: Any) {
         self.chevronGrip.flipMiddle()
+    }
+    
+    @IBAction func didPerformPanGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: nil)
+        let progress = -translation.y / 2 / (view.bounds.height / 3)
+        
+        switch sender.state {
+        case .began:
+            present(
+                self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
+                animated: true,
+                completion: nil
+            )
+            
+        case .changed:
+            Hero.shared.update(progress)
+        default:
+            
+            if progress > 0.5 {
+                Hero.shared.finish()
+                break
+            }
+            
+            if sender.velocity(in: nil).y < -1000 {
+                Hero.shared.finish()
+                break
+            }
+            
+            Hero.shared.cancel()
+        }
     }
     
     @IBAction func releasedChevronGrip(_ sender: Any) {
@@ -71,7 +102,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ResourceObserver {
+extension MainViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
         self.render()
     }

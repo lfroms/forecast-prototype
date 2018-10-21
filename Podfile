@@ -8,4 +8,5 @@ target 'Forecast' do
   pod 'SwiftDate', '~> 5.0'
   pod 'Siesta', '~> 1.0'
   pod 'TweenKit', :git => 'https://github.com/lfroms/TweenKit.git'
+  pod 'Hero'
 end
