@@ -12,7 +12,11 @@ import UIKit
 
 @IBDesignable
 class UIChevronGrip: UIControl {
-    @IBInspectable var defaultState: Int = 0
+    @IBInspectable var defaultState: Int = 0 {
+        didSet {
+            config()
+        }
+    }
     @IBInspectable var weight: CGFloat = 3
     @IBInspectable var verticalOffset: CGFloat = 0
     @IBInspectable var color: UIColor =
@@ -53,7 +57,7 @@ class UIChevronGrip: UIControl {
             self.deltaY = self.defaultHeight
         }
         
-        self.drawControl()
+        self.setNeedsDisplay()
     }
     
     func drawControl() {

@@ -26,16 +26,13 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
-    @IBAction func touchedChevronGrip(_ sender: Any) {
-        self.chevronGrip.flipMiddle()
-    }
-    
     @IBAction func didPerformPanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: nil)
-        let progress = -translation.y / 2 / (view.bounds.height / 3)
+        let progress = -translation.y / 2 / (chevronGrip.frame.minY - stationLabel.frame.maxY)
         
         switch sender.state {
         case .began:
+            
             present(
                 self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
                 animated: true,
@@ -51,7 +48,7 @@ class MainViewController: UIViewController {
                 break
             }
             
-            if sender.velocity(in: nil).y < -1000 {
+            if sender.velocity(in: nil).y < -500 {
                 Hero.shared.finish()
                 break
             }

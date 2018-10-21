@@ -14,4 +14,10 @@ class ForecastViewController: UIViewController {
     @IBAction func handleTempHamburgerPress(_ sender: Any) {
         hero.unwindToRootViewController()
     }
+
+    @IBOutlet var chevronGrip: UIChevronGrip!
+
+    override func viewDidAppear(_ animated: Bool) {
+        self.chevronGrip.flipDown()
+    }
 }
