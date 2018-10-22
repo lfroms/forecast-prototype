@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet var chevronGrip: UIChevronGrip!
+    @IBOutlet public var chevronGrip: UIChevronGrip!
     
     let api = WeatherService()
     
@@ -32,11 +32,11 @@ class MainViewController: UIViewController {
         
         switch sender.state {
         case .began:
-            
+            let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "Forecast") as! ForecastViewController
+            nextVC.api = self.api
             present(
-                self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
-                animated: true,
-                completion: nil
+                nextVC,
+                animated: true
             )
             
         case .changed:
@@ -55,14 +55,6 @@ class MainViewController: UIViewController {
             
             Hero.shared.cancel()
         }
-    }
-    
-    @IBAction func releasedChevronGrip(_ sender: Any) {
-        // if current conditions
-        self.chevronGrip.flipUp()
-        
-        // if forecast
-        // self.chevronGrip.flipDown()
     }
     
     override func viewDidLoad() {
@@ -84,8 +76,8 @@ class MainViewController: UIViewController {
             let timestamp = cc.dateTime![1].value.timeStamp
             
             self.lastUpdatedLabel.text = timestamp
-                .toDate("yyyymmddhhmmss")?
-                .toFormat("EEEE MMMM d yyyy | h:mm a")
+                .toDate("yyyyMMddhhmmss")?
+                .toFormat("EEEE MMMM d | h:mm a")
             
             self.currentTempLabel.text = (cc.temperature != nil) ? cc.temperature!.value + "º" : "--º"
             self.stationLabel.text = data.location.region.uppercased()

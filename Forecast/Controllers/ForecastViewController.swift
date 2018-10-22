@@ -16,8 +16,15 @@ class ForecastViewController: UIViewController {
     }
 
     @IBOutlet var chevronGrip: UIChevronGrip!
+    @IBOutlet var stationLabel: UILabel!
+    
+    var api: WeatherService?
 
     override func viewDidAppear(_ animated: Bool) {
         self.chevronGrip.flipDown()
+    }
+    
+    override func viewDidLoad() {
+        self.stationLabel.text = (api!.siteData(in: .English).latestData?.content as! SiteData).currentConditions.station?.value.uppercased()
     }
 }
