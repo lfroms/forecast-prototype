@@ -17,12 +17,22 @@ class ForecastViewController: UIViewController {
 
     @IBOutlet var chevronGrip: UIChevronGrip!
     @IBOutlet var stationLabel: UILabel!
-
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidAppear(_ animated: Bool) {
-        self.chevronGrip.flipDown()
+        self.chevronGrip.flip(direction: .down)
     }
 
     override func viewDidLoad() {
-        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).currentConditions.station?.value.uppercased()
+        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).location.region.uppercased()
+        
+        let timestamp = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).currentConditions.dateTime![1].value.timeStamp
+        
+        self.lastUpdatedLabel.text = timestamp
+            .toDate("yyyyMMddhhmmss")?
+            .toFormat("EEEE MMMM d | h:mm a")
+        
+        EnvCanada.shared.siteData(in: .English).isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
     }
 }

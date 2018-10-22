@@ -12,11 +12,12 @@ import UIKit
 
 @IBDesignable
 class UIChevronGrip: UIControl {
-    @IBInspectable var defaultState: Int = 0 {
+    @IBInspectable private var defaultState: Int = 0 {
         didSet {
-            config()
+            self.config()
         }
     }
+    
     @IBInspectable var weight: CGFloat = 3
     @IBInspectable var verticalOffset: CGFloat = 0
     @IBInspectable var color: UIColor =
@@ -34,6 +35,17 @@ class UIChevronGrip: UIControl {
     private var shapeLayer = CAShapeLayer()
     
     private let scheduler = ActionScheduler()
+    
+    enum FlipDirection {
+        case up
+        case neutral
+        case down
+    }
+    
+    enum FlipSpeed {
+        case immediate
+        case animated
+    }
     
     public override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -98,12 +110,24 @@ class UIChevronGrip: UIControl {
         self.shapeLayer.path = path.cgPath
     }
     
-    public func flipDown() {
+    public func flip(direction: FlipDirection, rate: FlipSpeed = .animated, completion: (() -> Void)? = nil) {
         self.scheduler.removeAll()
+        
+        var toHeight: CGFloat = 0
+        
+        switch direction {
+        case .up:
+            toHeight = -self.defaultHeight
+        case .neutral:
+            toHeight = 0
+        case .down:
+            toHeight = self.defaultHeight
+        }
+        
         let action = InterpolationAction(
             from: self.deltaY,
-            to: self.defaultHeight,
-            duration: 0.2,
+            to: toHeight,
+            duration: rate == .animated ? 0.2 : 0,
             easing: .exponentialInOut
         ) {
             data in
@@ -111,39 +135,13 @@ class UIChevronGrip: UIControl {
             self.deltaY = data
         }
         
-        self.scheduler.run(action: action)
-    }
-    
-    public func flipMiddle() {
-        self.scheduler.removeAll()
-        let action = InterpolationAction(
-            from: self.deltaY,
-            to: 0,
-            duration: 0.2,
-            easing: .exponentialInOut
-        ) {
-            data in
-            self.setNeedsDisplay()
-            self.deltaY = data
+        let test = {
+            if completion != nil {
+                completion!()
+            }
         }
         
-        self.scheduler.run(action: action)
-    }
-    
-    public func flipUp() {
-        self.scheduler.removeAll()
-        let action = InterpolationAction(
-            from: self.deltaY,
-            to: -self.defaultHeight,
-            duration: 0.2,
-            easing: .exponentialInOut
-        ) {
-            data in
-            self.setNeedsDisplay()
-            self.deltaY = data
-        }
-        
-        self.scheduler.run(action: action)
+        self.scheduler.run(action: action).onDidUpdate = test
     }
     
     override func draw(_ rect: CGRect) {

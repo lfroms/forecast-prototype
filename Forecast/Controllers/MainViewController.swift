@@ -17,15 +17,26 @@ class MainViewController: UIViewController {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet public var chevronGrip: UIChevronGrip!
+    @IBOutlet var chevronGrip: UIChevronGrip!
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
     }
     
+    @IBAction func didPerformTouchGesture(_ sender: UILongPressGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            self.chevronGrip.flip(direction: .neutral, rate: .immediate)
+        case .ended:
+            self.chevronGrip.flip(direction: .up)
+        default:
+            break
+        }
+    }
+    
     @IBAction func didPerformPanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: nil)
-        let progress = -translation.y / 2 / (chevronGrip.frame.minY - stationLabel.frame.maxY)
+        let progress = -translation.y / view.bounds.height
         
         switch sender.state {
         case .began:
@@ -37,13 +48,12 @@ class MainViewController: UIViewController {
         case .changed:
             Hero.shared.update(progress)
         default:
-            
-            if progress > 0.5 {
+            if progress > 0.3 {
                 Hero.shared.finish()
                 break
             }
             
-            if sender.velocity(in: nil).y < -500 {
+            if sender.velocity(in: nil).y < -1000 {
                 Hero.shared.finish()
                 break
             }
