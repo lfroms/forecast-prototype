@@ -16,6 +16,7 @@
 		8051A6F821755BE6007290CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F621755BE6007290CF /* Main.storyboard */; };
 		8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
 		8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */; };
+		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
 		80A608242176C180005D2891 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608232176C180005D2891 /* DateTime.swift */; };
 		80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608292176C1E7005D2891 /* CurrentConditions.swift */; };
 		80A6082C2176C35C005D2891 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6082B2176C35C005D2891 /* Pressure.swift */; };
@@ -49,6 +50,7 @@
 		8051A6F921755BE7007290CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8051A6FC21755BE7007290CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8051A6FE21755BE7007290CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
 		80A608232176C180005D2891 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		80A608292176C1E7005D2891 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
 		80A6082B2176C35C005D2891 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				807B728F217E4EBF002EE814 /* DataSources */,
 				802443F4217A79EE0066F905 /* Controls */,
 				80EEB23D217A74A500AD4448 /* Fonts */,
 				80EEB23A217A745600AD4448 /* Controllers */,
@@ -129,6 +132,14 @@
 				8051A6FE21755BE7007290CF /* Info.plist */,
 			);
 			path = Forecast;
+			sourceTree = "<group>";
+		};
+		807B728F217E4EBF002EE814 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				807B7290217E4F36002EE814 /* EnvCanada.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		80A6081F2176C10C005D2891 /* Models */ = {
@@ -336,6 +347,7 @@
 				80A608372176C7DB005D2891 /* Location.swift in Sources */,
 				80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */,
 				802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */,
+				807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,

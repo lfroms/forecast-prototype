@@ -9,7 +9,6 @@
 import Hero
 import Siesta
 import SwiftDate
-import SWXMLHash
 import UIKit
 
 class MainViewController: UIViewController {
@@ -19,8 +18,6 @@ class MainViewController: UIViewController {
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet public var chevronGrip: UIChevronGrip!
-    
-    let api = WeatherService()
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
@@ -32,10 +29,8 @@ class MainViewController: UIViewController {
         
         switch sender.state {
         case .began:
-            let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "Forecast") as! ForecastViewController
-            nextVC.api = self.api
             present(
-                nextVC,
+                self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
                 animated: true
             )
             
@@ -59,12 +54,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.api.siteData(in: .English).addObserver(self)
+        EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
     }
     
     func render() {
-        let resource = self.api.siteData(in: .English)
+        let resource = EnvCanada.shared.siteData(in: .English)
         
         if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -87,7 +82,7 @@ class MainViewController: UIViewController {
     
     func fetchNewData() {
         self.loadingIndicator.startAnimating()
-        self.api.siteData(in: .English).load()
+        EnvCanada.shared.siteData(in: .English).load()
     }
 }
 
