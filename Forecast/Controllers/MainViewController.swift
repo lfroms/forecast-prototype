@@ -8,6 +8,7 @@
 
 import Hero
 import Siesta
+import SnapKit
 import SwiftDate
 import UIKit
 
@@ -89,16 +90,15 @@ class MainViewController: UIViewController {
             self.stationLabel.text = data.location.region.uppercased()
             self.currentConditionLabel.text = cc.condition
             
-            let test2 = ConditionView()
-            test2.set(
-                value: "80", units: "%", type: "HUMIDITY", icon: "tint", color: UIColor(
-                    red: 0.620,
-                    green: 0.620,
-                    blue: 0.620,
-                    alpha: 1.000
-                )
+            let humidity = ConditionView().with(
+                value: (data.currentConditions.relativeHumidity?.value)!, units: (data.currentConditions.relativeHumidity?.units)!, type: "HUMIDITY", icon: "tint", color: UIColor(red: 0.13, green: 0.47, blue: 1.00, alpha: 1.0)
             )
-            detailsScrollView.addSubview(test2)
+            
+            detailsScrollView.addSubview(humidity)
+            humidity.snp.makeConstraints { (make) -> Void in
+                make.top.bottom.equalTo(detailsScrollView)
+                make.left.equalTo(detailsScrollView.snp.leftMargin)
+            }
         }
     }
     

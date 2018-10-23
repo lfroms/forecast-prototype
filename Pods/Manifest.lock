@@ -3,6 +3,7 @@ PODS:
   - Siesta (1.4.2):
     - Siesta/Core (= 1.4.2)
   - Siesta/Core (1.4.2)
+  - SnapKit (4.0.1)
   - SwiftDate (5.0.10)
   - SWXMLHash (4.0.0)
   - TweenKit (0.3.1)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - Hero
   - Siesta (~> 1.0)
+  - SnapKit (~> 4.0.0)
   - SwiftDate (~> 5.0)
   - SWXMLHash (~> 4.0.0)
   - TweenKit (from `https://github.com/lfroms/TweenKit.git`)
@@ -18,6 +20,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Hero
     - Siesta
+    - SnapKit
     - SwiftDate
     - SWXMLHash
 
@@ -33,10 +36,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Siesta: 337a9c39c9b78bba904286310c86562a886efdab
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftDate: fcdaa7ca22a903faf6d7ed231239a88d174dcae3
   SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
   TweenKit: 378029468de85d96befbd8cfb4c3df1f82a82049
 
-PODFILE CHECKSUM: 0d303cb92e155188e83a7a18faee4cdeb850b070
+PODFILE CHECKSUM: 0c6078fdfc395b01ce52a9253d68496b5bd63dbe
 
 COCOAPODS: 1.5.3
