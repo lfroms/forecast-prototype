@@ -34,22 +34,22 @@
             <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpY-aM-7YF">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IpY-aM-7YF">
                     <rect key="frame" x="14.5" y="16.5" width="89" height="87"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xla-3x-CAE">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="tint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xla-3x-CAE">
                             <rect key="frame" x="35.5" y="0.0" width="18" height="25"/>
                             <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUMIDITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-H0-dTN">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HUMIDITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-H0-dTN">
                             <rect key="frame" x="21.5" y="75" width="46" height="12"/>
                             <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="12"/>
                             <color key="textColor" red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NC6-HC-csu">
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NC6-HC-csu">
                             <rect key="frame" x="25" y="42" width="39" height="26"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-NB-kmx">
@@ -84,7 +84,6 @@
                         <constraint firstItem="xla-3x-CAE" firstAttribute="centerX" secondItem="IpY-aM-7YF" secondAttribute="centerX" id="VxZ-sl-s1J"/>
                         <constraint firstItem="W8D-H0-dTN" firstAttribute="top" secondItem="NC6-HC-csu" secondAttribute="bottom" constant="7" id="gck-aK-8Hs"/>
                         <constraint firstItem="W8D-H0-dTN" firstAttribute="centerX" secondItem="IpY-aM-7YF" secondAttribute="centerX" id="ged-R7-wLR"/>
-                        <constraint firstAttribute="width" constant="89" id="t4H-TC-jzv"/>
                         <constraint firstItem="NC6-HC-csu" firstAttribute="centerX" secondItem="IpY-aM-7YF" secondAttribute="centerX" id="y82-mL-Ub3"/>
                     </constraints>
                 </view>

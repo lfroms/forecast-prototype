@@ -90,14 +90,14 @@ class MainViewController: UIViewController {
             self.currentConditionLabel.text = cc.condition
             
             let test2 = ConditionView()
-            test2.set(value: "80", units: "%", type: "HUMIDITY", icon: "tint", color: UIColor(
-                red: 0.620,
-                green: 0.620,
-                blue: 0.620,
-                alpha: 1.000
-            ))
-            detailsScrollView.addSubview(test2)
-            detailsScrollView.addSubview(test2)
+            test2.set(
+                value: "80", units: "%", type: "HUMIDITY", icon: "tint", color: UIColor(
+                    red: 0.620,
+                    green: 0.620,
+                    blue: 0.620,
+                    alpha: 1.000
+                )
+            )
             detailsScrollView.addSubview(test2)
         }
     }
