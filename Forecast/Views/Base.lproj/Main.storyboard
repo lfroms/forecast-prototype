@@ -150,15 +150,26 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
+                                <rect key="frame" x="0.0" y="633" width="375" height="145"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(-100,0)"/>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5H6-2s-vja"/>
+                            <constraint firstItem="KM1-ny-Thi" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="bottom" constant="8" id="6zD-21-JdW"/>
                             <constraint firstItem="d8W-do-e9f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Mz-NE-q7f"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Bz-tB-vY1"/>
+                            <constraint firstItem="KM1-ny-Thi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9YJ-Ra-YMJ"/>
+                            <constraint firstItem="KM1-ny-Thi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Oe9-Ld-70J"/>
                             <constraint firstItem="d8W-do-e9f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q0Q-Pg-Bag"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RW2-61-0NK"/>
+                            <constraint firstItem="KM1-ny-Thi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="csF-EM-ZlH"/>
                             <constraint firstItem="d8W-do-e9f" firstAttribute="top" secondItem="Veh-tr-4P7" secondAttribute="bottom" id="dNg-Pm-aQc"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eZG-rt-yip"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="top" secondItem="syG-Uq-MLQ" secondAttribute="bottom" constant="43" id="t8X-hR-lsM"/>
@@ -176,6 +187,7 @@
                         <outlet property="chevronGrip" destination="L7Y-nN-JzP" id="e4J-4S-G9x"/>
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
+                        <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="hbE-gv-LpT"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="Wrc-7m-Cr2"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>

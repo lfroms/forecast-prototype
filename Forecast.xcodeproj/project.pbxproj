@@ -16,7 +16,11 @@
 		8051A6F821755BE6007290CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F621755BE6007290CF /* Main.storyboard */; };
 		8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
 		8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */; };
+		8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8052A6A9217E8B46004FB527 /* ConditionView.xib */; };
 		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
+		807B7295217E7872002EE814 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ConditionView.swift */; };
+		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
+		807B7299217E7B0A002EE814 /* Interstate-LightCondItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */; };
 		80A608242176C180005D2891 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608232176C180005D2891 /* DateTime.swift */; };
 		80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608292176C1E7005D2891 /* CurrentConditions.swift */; };
 		80A6082C2176C35C005D2891 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6082B2176C35C005D2891 /* Pressure.swift */; };
@@ -50,7 +54,11 @@
 		8051A6F921755BE7007290CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8051A6FC21755BE7007290CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8051A6FE21755BE7007290CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8052A6A9217E8B46004FB527 /* ConditionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionView.xib; sourceTree = "<group>"; };
 		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
+		807B7294217E7872002EE814 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionView.swift; sourceTree = "<group>"; };
+		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-LightCondItalic.otf"; sourceTree = "<group>"; };
 		80A608232176C180005D2891 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		80A608292176C1E7005D2891 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
 		80A6082B2176C35C005D2891 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
@@ -95,6 +103,8 @@
 			children = (
 				802443FB217A7FF60066F905 /* UIChevronGrip.swift */,
 				802443FD217A822C0066F905 /* UIChevronGrip.xib */,
+				807B7294217E7872002EE814 /* ConditionView.swift */,
+				8052A6A9217E8B46004FB527 /* ConditionView.xib */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -191,9 +201,11 @@
 		80EEB23D217A74A500AD4448 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */,
 				80EEB23F217A74B000AD4448 /* Interstate-Bold.otf */,
 				80EEB240217A74B000AD4448 /* Interstate-BoldCondensed.otf */,
 				80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */,
+				807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -267,6 +279,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */,
+				807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				807B7299217E7B0A002EE814 /* Interstate-LightCondItalic.otf in Resources */,
 				80EEB242217A74B000AD4448 /* Interstate-Bold.otf in Resources */,
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
@@ -351,6 +366,7 @@
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
+				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
 				80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,

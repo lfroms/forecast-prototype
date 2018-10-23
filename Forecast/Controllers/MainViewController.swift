@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var chevronGrip: UIChevronGrip!
+    @IBOutlet var detailsScrollView: UIScrollView!
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
@@ -87,6 +88,17 @@ class MainViewController: UIViewController {
             self.currentTempLabel.text = (cc.temperature != nil) ? cc.temperature!.value + "º" : "--º"
             self.stationLabel.text = data.location.region.uppercased()
             self.currentConditionLabel.text = cc.condition
+            
+            let test2 = ConditionView()
+            test2.set(value: "80", units: "%", type: "HUMIDITY", icon: "tint", color: UIColor(
+                red: 0.620,
+                green: 0.620,
+                blue: 0.620,
+                alpha: 1.000
+            ))
+            detailsScrollView.addSubview(test2)
+            detailsScrollView.addSubview(test2)
+            detailsScrollView.addSubview(test2)
         }
     }
     
