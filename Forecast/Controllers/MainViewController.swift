@@ -25,17 +25,6 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
-    @IBAction func didPerformTouchGesture(_ sender: UILongPressGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            self.chevronGrip.flip(direction: .neutral, rate: .immediate)
-        case .ended:
-            self.chevronGrip.flip(direction: .up)
-        default:
-            break
-        }
-    }
-    
     @IBAction func didPerformPanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: nil)
         let progress = -translation.y / view.bounds.height
@@ -90,25 +79,7 @@ class MainViewController: UIViewController {
             self.stationLabel.text = data.location.name.value.uppercased()
             self.currentConditionLabel.text = cc.condition
             
-            let humidity = ConditionView().with(
-                value: data.currentConditions.relativeHumidity?.value, units: data.currentConditions.relativeHumidity?.units, type: "HUMIDITY", icon: "tint", color: UIColor(red: 0.13, green: 0.47, blue: 1.00, alpha: 1.0)
-            )
-            
-            detailsScrollView.addSubview(humidity)
-            humidity.snp.makeConstraints { (make) -> Void in
-                make.top.bottom.equalTo(detailsScrollView)
-                make.left.equalTo(detailsScrollView.snp.leftMargin)
-            }
-            
-            let pressure = ConditionView().with(
-                value: data.currentConditions.pressure?.value, units: data.currentConditions.pressure?.units, type: "PRESSURE", icon: "tachometer-alt", color: UIColor(red: 0.26, green: 0.79, blue: 0.14, alpha: 1.0)
-            )
-            
-            detailsScrollView.addSubview(pressure)
-            pressure.snp.makeConstraints { (make) -> Void in
-                make.top.bottom.equalTo(detailsScrollView)
-                make.left.equalTo(humidity.snp.right).offset(48)
-            }
+            self.addDetailSubviews(cc)
         }
     }
     

@@ -50,10 +50,10 @@
                     <rect key="frame" x="0.0" y="42" width="118" height="27"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NC6-HC-csu">
-                            <rect key="frame" x="39.5" y="0.0" width="39" height="27"/>
+                            <rect key="frame" x="38.5" y="0.0" width="41" height="27"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-NB-kmx">
-                                    <rect key="frame" x="27" y="9" width="12" height="15"/>
+                                    <rect key="frame" x="29" y="9" width="12" height="15"/>
                                     <fontDescription key="fontDescription" name="Interstate-LightCondItalic" family="Interstate" pointSize="15"/>
                                     <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="oXg-ie-TNN" firstAttribute="leading" secondItem="NC6-HC-csu" secondAttribute="leading" id="2v6-Fn-3MM"/>
-                                <constraint firstItem="hMx-NB-kmx" firstAttribute="leading" secondItem="oXg-ie-TNN" secondAttribute="trailing" id="8X5-bG-24u"/>
+                                <constraint firstItem="hMx-NB-kmx" firstAttribute="leading" secondItem="oXg-ie-TNN" secondAttribute="trailing" constant="2" id="8X5-bG-24u"/>
                                 <constraint firstAttribute="trailing" secondItem="hMx-NB-kmx" secondAttribute="trailing" id="GpY-ae-mcT"/>
                                 <constraint firstAttribute="bottom" secondItem="oXg-ie-TNN" secondAttribute="bottom" constant="1" id="KPA-S2-stg"/>
                                 <constraint firstItem="hMx-NB-kmx" firstAttribute="firstBaseline" secondItem="oXg-ie-TNN" secondAttribute="firstBaseline" id="TsM-OL-J3j"/>

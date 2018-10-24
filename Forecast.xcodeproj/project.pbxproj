@@ -32,6 +32,7 @@
 		80A6083D2176D433005D2891 /* RiseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083C2176D433005D2891 /* RiseSet.swift */; };
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
 		80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */; };
+		80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E5D6962180056100121084 /* MainVCExtension-Details.swift */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
 		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
 		80EEB241217A74B000AD4448 /* Interstate-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */; };
@@ -70,6 +71,7 @@
 		80A6083C2176D433005D2891 /* RiseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseSet.swift; sourceTree = "<group>"; };
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		80E5D6962180056100121084 /* MainVCExtension-Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVCExtension-Details.swift"; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
 		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
 		80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Regular.otf"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				8051A6F421755BE6007290CF /* MainViewController.swift */,
 				80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */,
+				80E5D6962180056100121084 /* MainVCExtension-Details.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
+				80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */,
 				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,

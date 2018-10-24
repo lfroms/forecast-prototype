@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
-                                        <rect key="frame" x="192" y="32.666666666666671" width="151" height="15"/>
+                                        <rect key="frame" x="161.66666666666663" y="32" width="181.33333333333337" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
                                         <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-wM-FbI">
-                                        <rect key="frame" x="164" y="30" width="20" height="20"/>
+                                        <rect key="frame" x="133.66666666666666" y="30" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +83,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tr-4P7">
-                                <rect key="frame" x="171.66666666666666" y="140" width="32" height="18"/>
+                                <rect key="frame" x="167.66666666666666" y="140" width="39.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
-                                <rect key="frame" x="0.0" y="640" width="375" height="138"/>
+                                <rect key="frame" x="0.0" y="643" width="375" height="135"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -101,13 +101,13 @@
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8W-do-e9f">
-                                <rect key="frame" x="0.0" y="158" width="375" height="440"/>
+                                <rect key="frame" x="0.0" y="161" width="375" height="440"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-CM-nhb">
                                         <rect key="frame" x="82.666666666666686" y="67" width="210" height="127"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
-                                        <rect key="frame" x="100" y="349" width="175" height="20"/>
+                                        <rect key="frame" x="103" y="361" width="169" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
-                                        <rect key="frame" x="140.66666666666666" y="269" width="94" height="72"/>
+                                        <rect key="frame" x="145.66666666666666" y="269" width="83.666666666666657" height="84"/>
                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
