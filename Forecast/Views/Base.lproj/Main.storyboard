@@ -158,7 +158,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,-100)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,1000) opacity(-10)"/>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>

@@ -34,9 +34,9 @@ class ConditionView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
-    func with(value: String, units: String, type: String, icon: String, color: UIColor) -> ConditionView{
-        valueLabel.text = value
-        unitLabel.text = units
+    func with(value: String?, units: String?, type: String, icon: String, color: UIColor) -> ConditionView{
+        valueLabel.text = value ?? ""
+        unitLabel.text = units ?? ""
         typeLabel.text = type
         iconLabel.text = icon
         iconLabel.textColor = color

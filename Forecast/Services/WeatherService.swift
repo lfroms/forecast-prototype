@@ -20,15 +20,11 @@ class WeatherService: Service {
         self.wipeResources()
 
         self.configure {
-            $0.pipeline.order = [.rawData, .decoding, .parsing, .model]
+            $0.pipeline.order = [.rawData, .decoding, .model]
         }
 
         self.configureTransformer("**", atStage: .decoding) {
-            String(data: $0.content, encoding: .ascii)
-        }
-
-        self.configureTransformer("**", atStage: .parsing) {
-            SWXMLHash.parse($0.content as String)
+            SWXMLHash.parse($0.content as Data)
         }
 
         self.configureTransformer("/*/*", atStage: .model) {
@@ -46,7 +42,7 @@ class WeatherService: Service {
 
     func siteData(in lang: LanguageCode) -> Resource {
         let site = Site()
-        
+
         let name = site.code + "_" + lang.rawValue + ".xml"
         return resource("/").child(site.provinceCode).child(name)
     }
