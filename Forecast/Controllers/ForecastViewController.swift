@@ -25,7 +25,7 @@ class ForecastViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).location.region.uppercased()
+        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).location.name.value.uppercased()
         
         let timestamp = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).currentConditions.dateTime![1].value.timeStamp
         
