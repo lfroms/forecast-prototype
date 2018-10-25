@@ -10,6 +10,8 @@ import UIKit
 
 extension MainViewController {
     func addDetailSubviews(_ currCond: CurrentConditions) {
+        detailsStack.subviews.forEach({ $0.removeFromSuperview() })
+        
         let humidity = ConditionView().with(
             value: currCond.relativeHumidity?.value,
             units: currCond.relativeHumidity?.units,
