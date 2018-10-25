@@ -36,7 +36,7 @@ extension MainViewController {
         detailsScrollView.addSubview(pressure)
         pressure.snp.makeConstraints { (make) -> Void in
             make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(humidity.snp.right).offset(62)
+            make.left.equalTo(humidity.snp.right).offset(32)
         }
         
         let wind = ConditionView().with(
@@ -50,7 +50,7 @@ extension MainViewController {
         detailsScrollView.addSubview(wind)
         wind.snp.makeConstraints { (make) -> Void in
             make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(pressure.snp.right).offset(62)
+            make.left.equalTo(pressure.snp.right).offset(32)
         }
         
         let visibility = ConditionView().with(
@@ -64,7 +64,7 @@ extension MainViewController {
         detailsScrollView.addSubview(visibility)
         visibility.snp.makeConstraints { (make) -> Void in
             make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(wind.snp.right).offset(62)
+            make.left.equalTo(wind.snp.right).offset(32)
         }
     }
 }
