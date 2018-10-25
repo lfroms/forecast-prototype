@@ -44,7 +44,7 @@ extension MainViewController {
             units: currCond.wind?.speed.units,
             type: "WIND",
             icon: "wind",
-            color: UIColor(red:0.86, green:0.02, blue:0.38, alpha:1.0)
+            color: UIColor(red: 0.86, green: 0.02, blue: 0.38, alpha: 1.0)
         )
         
         detailsScrollView.addSubview(wind)
@@ -58,7 +58,7 @@ extension MainViewController {
             units: currCond.visibility?.units,
             type: "VISIBILITY",
             icon: "ruler",
-            color: UIColor(red:0.22, green:0.02, blue:0.86, alpha:1.0)
+            color: UIColor(red: 0.22, green: 0.02, blue: 0.86, alpha: 1.0)
         )
         
         detailsScrollView.addSubview(visibility)
