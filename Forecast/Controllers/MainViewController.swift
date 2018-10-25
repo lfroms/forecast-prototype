@@ -75,7 +75,10 @@ class MainViewController: UIViewController {
                 .toDate("yyyyMMddhhmmss")?
                 .toFormat("EEEE MMMM d | h:mm a")
             
-            self.currentTempLabel.text = (cc.temperature != nil) ? cc.temperature!.value + "º" : "--º"
+            if let tempAsFloat = Float(cc.temperature!.value) {
+                self.currentTempLabel.text = tempAsFloat.asRoundedString() + "°"
+            }
+            
             self.stationLabel.text = data.location.name.value.uppercased()
             self.currentConditionLabel.text = cc.condition
             
@@ -92,5 +95,11 @@ class MainViewController: UIViewController {
 extension MainViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
         self.render()
+    }
+}
+
+extension Float {
+    func asRoundedString() -> String {
+        return String(format: "%.0f", self.rounded())
     }
 }
