@@ -38,19 +38,26 @@ class ConditionView: UIView {
         return contentView.frame.size
     }
     
-    func with(value: String?, units: String?, type: String, icon: String, color: UIColor) -> ConditionView {
-        valueLabel.text = value ?? ""
-        valueLabel.textColor = color
-        
-        unitLabel.text = units ?? ""
-        unitLabel.textColor = color
-        
-        typeLabel.text = type
-        
-        iconLabel.text = icon
-        iconLabel.textColor = color
-        
+    func with(value: String?, units: String?, type: String, icon: String, color: UIColor, isOutlined: Bool = false) -> ConditionView {
+        // Color Box
         colorBox.borderColor = color
+        colorBox.backgroundColor = isOutlined ? .clear : color
+        colorBox.shadowColor = isOutlined ? .clear : color
+        
+        // Icon
+        iconLabel.text = icon
+        iconLabel.textColor = isOutlined ? color : .white
+        
+        // Value Label
+        valueLabel.text = value ?? ""
+        valueLabel.textColor = isOutlined ? color : .white
+        
+        // Units Label
+        unitLabel.text = units ?? ""
+        unitLabel.textColor = isOutlined ? color : .white
+        
+        // Type of Detail Label
+        typeLabel.text = type
         
         invalidateIntrinsicContentSize()
         

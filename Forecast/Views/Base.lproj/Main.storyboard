@@ -92,27 +92,41 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
-                                <rect key="frame" x="0.0" y="640" width="375" height="138"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-27-UrQ" userLabel="Shaded Area">
+                                <rect key="frame" x="0.0" y="616" width="375" height="196"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gji-5S-cXa">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="138"/>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
-                                    </stackView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gji-5S-cXa">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="162"/>
+                                                <edgeInsets key="layoutMargins" top="5" left="20" bottom="0.0" right="20"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gji-5S-cXa" firstAttribute="top" secondItem="KM1-ny-Thi" secondAttribute="top" id="XWZ-Xp-gzR"/>
+                                            <constraint firstAttribute="trailing" secondItem="gji-5S-cXa" secondAttribute="trailing" id="cnr-RC-1Ub"/>
+                                            <constraint firstItem="gji-5S-cXa" firstAttribute="height" secondItem="KM1-ny-Thi" secondAttribute="height" id="mMq-ei-D0Y"/>
+                                            <constraint firstAttribute="bottom" secondItem="gji-5S-cXa" secondAttribute="bottom" id="nM1-r4-AAu"/>
+                                            <constraint firstItem="gji-5S-cXa" firstAttribute="leading" secondItem="KM1-ny-Thi" secondAttribute="leading" id="qoV-vN-LiP"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,1000)"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </scrollView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.972636421319797" green="0.972636421319797" blue="0.972636421319797" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="gji-5S-cXa" firstAttribute="top" secondItem="KM1-ny-Thi" secondAttribute="top" id="XWZ-Xp-gzR"/>
-                                    <constraint firstAttribute="trailing" secondItem="gji-5S-cXa" secondAttribute="trailing" id="cnr-RC-1Ub"/>
-                                    <constraint firstItem="gji-5S-cXa" firstAttribute="height" secondItem="KM1-ny-Thi" secondAttribute="height" id="mMq-ei-D0Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="gji-5S-cXa" secondAttribute="bottom" id="nM1-r4-AAu"/>
-                                    <constraint firstItem="gji-5S-cXa" firstAttribute="leading" secondItem="KM1-ny-Thi" secondAttribute="leading" id="qoV-vN-LiP"/>
+                                    <constraint firstItem="KM1-ny-Thi" firstAttribute="leading" secondItem="0YT-27-UrQ" secondAttribute="leading" id="5KB-gc-1AO"/>
+                                    <constraint firstAttribute="trailing" secondItem="KM1-ny-Thi" secondAttribute="trailing" id="Flc-Cr-iY1"/>
+                                    <constraint firstItem="KM1-ny-Thi" firstAttribute="top" secondItem="0YT-27-UrQ" secondAttribute="top" id="hiM-cn-esZ"/>
                                 </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,1000) opacity(-10)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="opacity(-5)"/>
                                 </userDefinedRuntimeAttributes>
-                            </scrollView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8W-do-e9f">
                                 <rect key="frame" x="0.0" y="158" width="375" height="440"/>
                                 <subviews>
@@ -179,12 +193,13 @@
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5H6-2s-vja"/>
                             <constraint firstItem="d8W-do-e9f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Mz-NE-q7f"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Bz-tB-vY1"/>
-                            <constraint firstItem="KM1-ny-Thi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9YJ-Ra-YMJ"/>
-                            <constraint firstItem="KM1-ny-Thi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Oe9-Ld-70J"/>
+                            <constraint firstAttribute="bottom" secondItem="0YT-27-UrQ" secondAttribute="bottom" id="GJo-Uy-i5A"/>
                             <constraint firstItem="d8W-do-e9f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q0Q-Pg-Bag"/>
-                            <constraint firstItem="KM1-ny-Thi" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="bottom" constant="42" id="QcD-ft-NaK"/>
+                            <constraint firstItem="0YT-27-UrQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QDZ-Xx-AdA"/>
                             <constraint firstItem="syG-Uq-MLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RW2-61-0NK"/>
-                            <constraint firstItem="KM1-ny-Thi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="csF-EM-ZlH"/>
+                            <constraint firstItem="0YT-27-UrQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vht-NG-v3h"/>
+                            <constraint firstItem="0YT-27-UrQ" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="bottom" constant="18" id="X46-ni-cM1"/>
+                            <constraint firstItem="KM1-ny-Thi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bsa-oF-VkJ"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eZG-rt-yip"/>
                             <constraint firstItem="Veh-tr-4P7" firstAttribute="top" secondItem="syG-Uq-MLQ" secondAttribute="bottom" constant="16" id="t8X-hR-lsM"/>
                         </constraints>
