@@ -15,6 +15,8 @@ struct CurrentConditions: XMLIndexerDeserializable {
     let iconCode: String?
     let temperature: Measurement?
     let dewpoint: Measurement?
+    let windChill: Measurement?
+    let humidex: Measurement?
     let pressure: Pressure?
     let visibility: Measurement?
     let relativeHumidity: Measurement?
@@ -28,6 +30,8 @@ struct CurrentConditions: XMLIndexerDeserializable {
             iconCode: node["iconCode"].value(),
             temperature: node["temperature"].value(),
             dewpoint: node["dewpoint"].value(),
+            windChill: node["windChill"].value(),
+            humidex: node["humidex"].value(),
             pressure: node["pressure"].value(),
             visibility: node["visibility"].value(),
             relativeHumidity: node["relativeHumidity"].value(),
