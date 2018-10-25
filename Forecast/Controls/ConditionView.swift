@@ -16,6 +16,7 @@ class ConditionView: UIView {
     @IBOutlet private var unitLabel: UILabel!
     @IBOutlet private var typeLabel: UILabel!
     @IBOutlet private var iconLabel: UILabel!
+    @IBOutlet private var colorBox: UIStyledView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,16 +31,28 @@ class ConditionView: UIView {
     private func commonInit() {
         Bundle.main.loadNibNamed("ConditionView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func with(value: String?, units: String?, type: String, icon: String, color: UIColor) -> ConditionView{
+    override var intrinsicContentSize: CGSize {
+        return contentView.frame.size
+    }
+    
+    func with(value: String?, units: String?, type: String, icon: String, color: UIColor) -> ConditionView {
         valueLabel.text = value ?? ""
+        valueLabel.textColor = color
+        
         unitLabel.text = units ?? ""
+        unitLabel.textColor = color
+        
         typeLabel.text = type
+        
         iconLabel.text = icon
         iconLabel.textColor = color
+        
+        colorBox.borderColor = color
+        
+        invalidateIntrinsicContentSize()
         
         return self
     }

@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var chevronGrip: UIChevronGrip!
-    @IBOutlet var detailsScrollView: UIScrollView!
+    @IBOutlet var detailsStack: UIStackView!
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()

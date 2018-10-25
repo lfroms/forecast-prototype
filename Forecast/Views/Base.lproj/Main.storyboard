@@ -67,7 +67,7 @@
                                             <action selector="didPressHamburger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8V-FR-vaj"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-wM-FbI">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-wM-FbI">
                                         <rect key="frame" x="164" y="30" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -92,8 +92,21 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
                                 <rect key="frame" x="0.0" y="640" width="375" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gji-5S-cXa">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="138"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gji-5S-cXa" firstAttribute="top" secondItem="KM1-ny-Thi" secondAttribute="top" id="XWZ-Xp-gzR"/>
+                                    <constraint firstAttribute="trailing" secondItem="gji-5S-cXa" secondAttribute="trailing" id="cnr-RC-1Ub"/>
+                                    <constraint firstItem="gji-5S-cXa" firstAttribute="height" secondItem="KM1-ny-Thi" secondAttribute="height" id="mMq-ei-D0Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="gji-5S-cXa" secondAttribute="bottom" id="nM1-r4-AAu"/>
+                                    <constraint firstItem="gji-5S-cXa" firstAttribute="leading" secondItem="KM1-ny-Thi" secondAttribute="leading" id="qoV-vN-LiP"/>
+                                </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -188,7 +201,7 @@
                         <outlet property="chevronGrip" destination="L7Y-nN-JzP" id="e4J-4S-G9x"/>
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
-                        <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="FLH-IE-Vbn"/>
+                        <outlet property="detailsStack" destination="gji-5S-cXa" id="DX8-YQ-yHd"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="Wrc-7m-Cr2"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>
@@ -240,7 +253,7 @@
                                             <action selector="handleTempHamburgerPress:" destination="jPI-Lr-21Q" eventType="touchDown" id="gJ8-Kk-ocG"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="L2W-SQ-LgB">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="L2W-SQ-LgB">
                                         <rect key="frame" x="164" y="30" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>

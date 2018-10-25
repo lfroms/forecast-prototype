@@ -6,7 +6,6 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import SWXMLHash
 import UIKit
 
 extension MainViewController {
@@ -19,11 +18,7 @@ extension MainViewController {
             color: UIColor(red: 0.13, green: 0.47, blue: 1.00, alpha: 1.0)
         )
         
-        detailsScrollView.addSubview(humidity)
-        humidity.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(detailsScrollView.snp.leftMargin)
-        }
+        detailsStack.addArrangedSubview(humidity)
         
         let pressure = ConditionView().with(
             value: currCond.pressure?.value,
@@ -33,11 +28,7 @@ extension MainViewController {
             color: UIColor(red: 0.26, green: 0.79, blue: 0.14, alpha: 1.0)
         )
         
-        detailsScrollView.addSubview(pressure)
-        pressure.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(humidity.snp.right).offset(32)
-        }
+        detailsStack.addArrangedSubview(pressure)
         
         let wind = ConditionView().with(
             value: currCond.wind?.speed.value,
@@ -47,11 +38,7 @@ extension MainViewController {
             color: UIColor(red: 0.86, green: 0.02, blue: 0.38, alpha: 1.0)
         )
         
-        detailsScrollView.addSubview(wind)
-        wind.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(pressure.snp.right).offset(32)
-        }
+        detailsStack.addArrangedSubview(wind)
         
         let visibility = ConditionView().with(
             value: currCond.visibility?.value,
@@ -61,10 +48,6 @@ extension MainViewController {
             color: UIColor(red: 0.22, green: 0.02, blue: 0.86, alpha: 1.0)
         )
         
-        detailsScrollView.addSubview(visibility)
-        visibility.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(detailsScrollView)
-            make.left.equalTo(wind.snp.right).offset(32)
-        }
+        detailsStack.addArrangedSubview(visibility)
     }
 }

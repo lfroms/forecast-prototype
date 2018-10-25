@@ -31,6 +31,7 @@
 		80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083A2176CC4F005D2891 /* ForecastGroup.swift */; };
 		80A6083D2176D433005D2891 /* RiseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083C2176D433005D2891 /* RiseSet.swift */; };
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
+		80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B71C8021824E3500DAFA65 /* UIStyledView.swift */; };
 		80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */; };
 		80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E5D6962180056100121084 /* MainVCExtension-Details.swift */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
@@ -70,6 +71,7 @@
 		80A6083A2176CC4F005D2891 /* ForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastGroup.swift; sourceTree = "<group>"; };
 		80A6083C2176D433005D2891 /* RiseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseSet.swift; sourceTree = "<group>"; };
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
 		80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		80E5D6962180056100121084 /* MainVCExtension-Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVCExtension-Details.swift"; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				802443FD217A822C0066F905 /* UIChevronGrip.xib */,
 				807B7294217E7872002EE814 /* ConditionView.swift */,
 				8052A6A9217E8B46004FB527 /* ConditionView.xib */,
+				80B71C8021824E3500DAFA65 /* UIStyledView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
 				80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */,
 				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
+				80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
 				80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */,
