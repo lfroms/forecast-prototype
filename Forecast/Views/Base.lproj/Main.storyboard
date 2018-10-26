@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Font Awesome 5 Free-Solid-900.otf">
-            <string>FontAwesome5FreeSolid</string>
-        </array>
         <array key="Interstate-Bold.otf">
             <string>Interstate-Bold</string>
         </array>
@@ -86,11 +83,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tr-4P7">
-                                <rect key="frame" x="171.66666666666666" y="140" width="31.666666666666657" height="26"/>
+                                <rect key="frame" x="173.66666666666666" y="140" width="28" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="ZMc-6b-PTd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -99,10 +96,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-27-UrQ" userLabel="Shaded Area">
-                                <rect key="frame" x="0.0" y="611" width="375" height="201"/>
+                                <rect key="frame" x="0.0" y="601" width="375" height="211"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="127"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="127"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gji-5S-cXa">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="127"/>
@@ -124,31 +121,70 @@
                                         </userDefinedRuntimeAttributes>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY2-se-Ltj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="HUMIDEX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JP-56-fn6">
-                                                <rect key="frame" x="20" y="17" width="60" height="12"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="msd-FV-p4G">
+                                                <rect key="frame" x="20.000000000000007" y="18" width="111.66666666666669" height="20"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
+                                                                <rect key="frame" x="32" y="1.6666666666666288" width="19.666666666666671" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="LO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666288" width="27" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="pfV-1S-MbN" firstAttribute="leading" secondItem="8o6-WK-hnm" secondAttribute="leading" id="EZm-UN-XGi"/>
+                                                            <constraint firstItem="vd1-L8-Gy7" firstAttribute="leading" secondItem="pfV-1S-MbN" secondAttribute="trailing" constant="5" id="cQo-Kt-OFh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="vd1-L8-Gy7" secondAttribute="trailing" id="hj3-VM-BdK"/>
+                                                            <constraint firstItem="pfV-1S-MbN" firstAttribute="centerY" secondItem="8o6-WK-hnm" secondAttribute="centerY" id="vh2-ZH-7G2"/>
+                                                            <constraint firstItem="vd1-L8-Gy7" firstAttribute="firstBaseline" secondItem="pfV-1S-MbN" secondAttribute="firstBaseline" id="vhh-I9-mcI"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uEk-5L-gmn">
+                                                        <rect key="frame" x="63.666666666666671" y="0.0" width="48" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="HI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666288" width="23.333333333333332" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjo-a3-FXi">
+                                                                <rect key="frame" x="28.333333333333329" y="1.6666666666666288" width="19.666666666666671" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="eAU-h0-lzs" firstAttribute="leading" secondItem="uEk-5L-gmn" secondAttribute="leading" id="CDK-Fd-oPO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Sjo-a3-FXi" secondAttribute="trailing" id="GPF-rB-WRw"/>
+                                                            <constraint firstItem="Sjo-a3-FXi" firstAttribute="firstBaseline" secondItem="eAU-h0-lzs" secondAttribute="firstBaseline" id="QOL-OS-vkz"/>
+                                                            <constraint firstItem="eAU-h0-lzs" firstAttribute="centerY" secondItem="uEk-5L-gmn" secondAttribute="centerY" id="TTq-eV-LVj"/>
+                                                            <constraint firstItem="Sjo-a3-FXi" firstAttribute="leading" secondItem="eAU-h0-lzs" secondAttribute="trailing" constant="5" id="YOR-zh-aiZ"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="12" id="bol-Tl-9X1"/>
+                                                    <constraint firstAttribute="height" constant="20" id="uhs-30-opl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
-                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="30°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-dK-xvK">
-                                                <rect key="frame" x="85" y="17" width="22" height="12"/>
-                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="5Y9-dK-xvK" secondAttribute="trailing" priority="250" constant="20" id="EUy-i4-LUp"/>
-                                            <constraint firstItem="2JP-56-fn6" firstAttribute="leading" secondItem="TY2-se-Ltj" secondAttribute="leading" constant="20" id="Fh4-Ft-Rcz"/>
-                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="leading" secondItem="2JP-56-fn6" secondAttribute="trailing" constant="5" id="HAD-gX-8yK"/>
-                                            <constraint firstItem="2JP-56-fn6" firstAttribute="centerY" secondItem="TY2-se-Ltj" secondAttribute="centerY" constant="3" id="OaK-Kc-gC8"/>
-                                            <constraint firstAttribute="height" constant="40" id="Sf3-Ab-gPh"/>
-                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="firstBaseline" secondItem="2JP-56-fn6" secondAttribute="firstBaseline" id="dWZ-cZ-jve"/>
+                                            <constraint firstAttribute="height" constant="50" id="Sf3-Ab-gPh"/>
+                                            <constraint firstItem="msd-FV-p4G" firstAttribute="centerY" secondItem="TY2-se-Ltj" secondAttribute="centerY" constant="3" id="ehB-pB-lNa"/>
+                                            <constraint firstItem="msd-FV-p4G" firstAttribute="leading" secondItem="TY2-se-Ltj" secondAttribute="leading" constant="20" id="iRj-Cs-DOA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -166,94 +202,63 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8W-do-e9f">
-                                <rect key="frame" x="0.0" y="166" width="375" height="389"/>
+                                <rect key="frame" x="0.0" y="166" width="375" height="379"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-CM-nhb">
-                                        <rect key="frame" x="82.666666666666686" y="55" width="210" height="127"/>
+                                        <rect key="frame" x="82.666666666666686" y="40" width="210" height="127"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="127" id="3G7-2x-bYn"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
-                                        <rect key="frame" x="124.66666666666666" y="309" width="125.66666666666666" height="20"/>
+                                        <rect key="frame" x="124.66666666666666" y="289" width="125.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
-                                        <rect key="frame" x="146" y="232" width="83.333333333333314" height="72"/>
+                                        <rect key="frame" x="146" y="212" width="83.333333333333314" height="72"/>
                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="msd-FV-p4G">
-                                        <rect key="frame" x="148.33333333333334" y="341" width="78.666666666666657" height="20"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="es7-ZK-BCB">
+                                        <rect key="frame" x="144" y="317" width="87" height="22"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
-                                                <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="20"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
-                                                        <rect key="frame" x="17" y="4.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="arrow-alt-circle-down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
-                                                        <rect key="frame" x="0.0" y="3" width="14" height="14"/>
-                                                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="14"/>
-                                                        <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="leading" secondItem="8o6-WK-hnm" secondAttribute="leading" id="EZm-UN-XGi"/>
-                                                    <constraint firstItem="vd1-L8-Gy7" firstAttribute="leading" secondItem="pfV-1S-MbN" secondAttribute="trailing" constant="3" id="cQo-Kt-OFh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vd1-L8-Gy7" secondAttribute="trailing" id="hj3-VM-BdK"/>
-                                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="centerY" secondItem="8o6-WK-hnm" secondAttribute="centerY" id="vh2-ZH-7G2"/>
-                                                    <constraint firstItem="vd1-L8-Gy7" firstAttribute="firstBaseline" secondItem="pfV-1S-MbN" secondAttribute="firstBaseline" id="vhh-I9-mcI"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uEk-5L-gmn">
-                                                <rect key="frame" x="45.333333333333314" y="0.0" width="33.333333333333343" height="20"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="arrow-alt-circle-up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
-                                                        <rect key="frame" x="0.0" y="3" width="14" height="14"/>
-                                                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="14"/>
-                                                        <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjo-a3-FXi">
-                                                        <rect key="frame" x="17" y="4.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="eAU-h0-lzs" firstAttribute="leading" secondItem="uEk-5L-gmn" secondAttribute="leading" id="CDK-Fd-oPO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Sjo-a3-FXi" secondAttribute="trailing" id="GPF-rB-WRw"/>
-                                                    <constraint firstItem="Sjo-a3-FXi" firstAttribute="firstBaseline" secondItem="eAU-h0-lzs" secondAttribute="firstBaseline" id="QOL-OS-vkz"/>
-                                                    <constraint firstItem="eAU-h0-lzs" firstAttribute="centerY" secondItem="uEk-5L-gmn" secondAttribute="centerY" id="TTq-eV-LVj"/>
-                                                    <constraint firstItem="Sjo-a3-FXi" firstAttribute="leading" secondItem="eAU-h0-lzs" secondAttribute="trailing" constant="3" id="YOR-zh-aiZ"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="30°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-dK-xvK">
+                                                <rect key="frame" x="65" y="5" width="22" height="12"/>
+                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="HUMIDEX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JP-56-fn6">
+                                                <rect key="frame" x="0.0" y="5" width="60" height="12"/>
+                                                <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
+                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="uhs-30-opl"/>
+                                            <constraint firstAttribute="height" constant="22" id="5HZ-Xn-l2g"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Y9-dK-xvK" secondAttribute="trailing" id="QKZ-yd-Qgd"/>
+                                            <constraint firstItem="2JP-56-fn6" firstAttribute="centerY" secondItem="es7-ZK-BCB" secondAttribute="centerY" id="Qd9-z0-XwV"/>
+                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="leading" secondItem="2JP-56-fn6" secondAttribute="trailing" constant="5" id="R5D-JV-FaF"/>
+                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="firstBaseline" secondItem="2JP-56-fn6" secondAttribute="firstBaseline" id="Trz-dP-XiL"/>
+                                            <constraint firstItem="2JP-56-fn6" firstAttribute="leading" secondItem="es7-ZK-BCB" secondAttribute="leading" id="k5p-Cg-pBI"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="0JG-zR-9Oc"/>
-                                    <constraint firstItem="msd-FV-p4G" firstAttribute="top" secondItem="PiP-LG-bw4" secondAttribute="bottom" constant="12" id="4Cf-q4-xep"/>
+                                    <constraint firstItem="es7-ZK-BCB" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="2iP-EE-IMp"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="Jip-aD-Bt6"/>
-                                    <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="50" id="Kyp-eG-oSL"/>
-                                    <constraint firstItem="wPH-CM-nhb" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="top" constant="55" id="MHs-xc-geX"/>
+                                    <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="45" id="Kyp-eG-oSL"/>
+                                    <constraint firstItem="wPH-CM-nhb" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="top" constant="40" id="MHs-xc-geX"/>
+                                    <constraint firstItem="es7-ZK-BCB" firstAttribute="top" secondItem="PiP-LG-bw4" secondAttribute="bottom" constant="8" id="RZx-sP-Ew4"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" constant="5" id="fFU-sc-hcV"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="ff2-IC-nW1"/>
-                                    <constraint firstItem="msd-FV-p4G" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="pe6-Fx-oKh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,-400) opacity(-0.5)"/>
@@ -261,7 +266,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-nN-JzP" customClass="UIChevronGrip" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="555" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="545" width="375" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dYE-92-Nyd"/>
@@ -322,6 +327,9 @@
                         <outlet property="lowTempValue" destination="vd1-L8-Gy7" id="bmv-1S-vGY"/>
                         <outlet property="lowTempView" destination="8o6-WK-hnm" id="Ku2-8v-h67"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>
+                        <outlet property="tempModifierLabel" destination="2JP-56-fn6" id="OGw-dB-6XB"/>
+                        <outlet property="tempModifierValue" destination="5Y9-dK-xvK" id="Ffd-fe-TRg"/>
+                        <outlet property="tempModifierView" destination="es7-ZK-BCB" id="rxD-qN-Cxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -342,11 +350,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-xO-yVl">
-                                <rect key="frame" x="32" y="140" width="31.666666666666671" height="26"/>
+                                <rect key="frame" x="32" y="140" width="28" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="B28-Pg-dgN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>

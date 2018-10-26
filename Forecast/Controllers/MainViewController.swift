@@ -26,6 +26,10 @@ class MainViewController: UIViewController {
     @IBOutlet var highTempView: UIView!
     @IBOutlet var highTempValue: UILabel!
     
+    @IBOutlet weak var tempModifierView: UIView!
+    @IBOutlet weak var tempModifierLabel: UILabel!
+    @IBOutlet weak var tempModifierValue: UILabel!
+    
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
     }
@@ -103,6 +107,18 @@ class MainViewController: UIViewController {
                 self.highTempValue.text = temp + "°"
             } else {
                 self.highTempView.isHidden = true
+            }
+            
+            if let windChill = cc.windChill?.value {
+                self.tempModifierView.isHidden = false
+                self.tempModifierLabel.text = "WIND CHILL:"
+                self.tempModifierValue.text = windChill + "°"
+            } else if let humidex = cc.humidex?.value {
+                self.tempModifierView.isHidden = false
+                self.tempModifierLabel.text = "HUMIDEX:"
+                self.tempModifierValue.text = humidex + "°"
+            } else {
+                self.tempModifierView.isHidden = true
             }
         }
     }
