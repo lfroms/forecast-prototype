@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
             if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
                 let temp = forecast.temperatures.first?.value {
                 self.lowTempView.isHidden = false
-                self.lowTempValue.text = temp
+                self.lowTempValue.text = temp + "°"
             } else {
                 self.lowTempView.isHidden = true
             }
@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
             if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
                 let temp = forecast.temperatures.first?.value {
                 self.highTempView.isHidden = false
-                self.highTempValue.text = temp
+                self.highTempValue.text = temp + "°"
             } else {
                 self.highTempView.isHidden = true
             }
