@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Font Awesome 5 Free-Solid-900.otf">
+            <string>FontAwesome5FreeSolid</string>
+        </array>
         <array key="Interstate-Bold.otf">
             <string>Interstate-Bold</string>
         </array>
@@ -172,7 +175,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
-                                        <rect key="frame" x="124.66666666666666" y="304" width="125.66666666666666" height="20"/>
+                                        <rect key="frame" x="124.66666666666666" y="309" width="125.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -184,19 +187,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="msd-FV-p4G">
-                                        <rect key="frame" x="141.33333333333334" y="336" width="92.333333333333343" height="20"/>
+                                        <rect key="frame" x="148.33333333333334" y="341" width="78.666666666666657" height="20"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
-                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
-                                                        <rect key="frame" x="25.333333333333314" y="3.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
+                                                        <rect key="frame" x="17" y="4.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="LO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
-                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="22.333333333333332" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="arrow-alt-circle-down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
+                                                        <rect key="frame" x="0.0" y="3" width="14" height="14"/>
+                                                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="14"/>
                                                         <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -211,16 +214,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uEk-5L-gmn">
-                                                <rect key="frame" x="53.666666666666657" y="0.0" width="38.666666666666657" height="20"/>
+                                                <rect key="frame" x="45.333333333333314" y="0.0" width="33.333333333333343" height="20"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="HI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
-                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="19.333333333333332" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="arrow-alt-circle-up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
+                                                        <rect key="frame" x="0.0" y="3" width="14" height="14"/>
+                                                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="14"/>
                                                         <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjo-a3-FXi">
-                                                        <rect key="frame" x="22.333333333333343" y="3.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
+                                                        <rect key="frame" x="17" y="4.0000000000000009" width="16.333333333333329" height="14.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="14"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -248,7 +251,7 @@
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="Jip-aD-Bt6"/>
                                     <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="50" id="Kyp-eG-oSL"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="top" constant="55" id="MHs-xc-geX"/>
-                                    <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" id="fFU-sc-hcV"/>
+                                    <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" constant="5" id="fFU-sc-hcV"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="ff2-IC-nW1"/>
                                     <constraint firstItem="msd-FV-p4G" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="pe6-Fx-oKh"/>
                                 </constraints>
