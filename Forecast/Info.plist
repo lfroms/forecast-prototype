@@ -34,6 +34,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Interstate-RegularCondensed.otf</string>
 		<string>Interstate-LightCondItalic.otf</string>
 		<string>Font Awesome 5 Free-Solid-900.otf</string>
 		<string>Interstate-BoldCondensed.otf</string>
