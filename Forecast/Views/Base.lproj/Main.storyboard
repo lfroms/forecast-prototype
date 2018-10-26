@@ -126,7 +126,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY2-se-Ltj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="HUMIDEX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JP-56-fn6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="HUMIDEX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JP-56-fn6">
                                                 <rect key="frame" x="20" y="17" width="60" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="bol-Tl-9X1"/>
@@ -135,7 +135,7 @@
                                                 <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="30º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-dK-xvK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="30º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y9-dK-xvK">
                                                 <rect key="frame" x="85" y="17" width="22" height="12"/>
                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
                                                 <nil key="highlightedColor"/>
@@ -143,8 +143,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5Y9-dK-xvK" secondAttribute="trailing" priority="250" constant="20" id="EUy-i4-LUp"/>
                                             <constraint firstItem="2JP-56-fn6" firstAttribute="leading" secondItem="TY2-se-Ltj" secondAttribute="leading" constant="20" id="Fh4-Ft-Rcz"/>
-                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="leading" secondItem="2JP-56-fn6" secondAttribute="trailing" constant="5" id="Fnr-hF-3yW"/>
+                                            <constraint firstItem="5Y9-dK-xvK" firstAttribute="leading" secondItem="2JP-56-fn6" secondAttribute="trailing" constant="5" id="HAD-gX-8yK"/>
                                             <constraint firstItem="2JP-56-fn6" firstAttribute="centerY" secondItem="TY2-se-Ltj" secondAttribute="centerY" constant="3" id="OaK-Kc-gC8"/>
                                             <constraint firstAttribute="height" constant="40" id="Sf3-Ab-gPh"/>
                                             <constraint firstItem="5Y9-dK-xvK" firstAttribute="firstBaseline" secondItem="2JP-56-fn6" secondAttribute="firstBaseline" id="dWZ-cZ-jve"/>
@@ -174,19 +175,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
-                                        <rect key="frame" x="124.66666666666666" y="314" width="125.66666666666666" height="20"/>
+                                        <rect key="frame" x="124.66666666666666" y="304" width="125.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
-                                        <rect key="frame" x="146.33333333333334" y="242" width="82.666666666666657" height="72"/>
+                                        <rect key="frame" x="146.33333333333334" y="232" width="82.666666666666657" height="72"/>
                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="msd-FV-p4G">
-                                        <rect key="frame" x="150.33333333333334" y="346" width="74.666666666666657" height="20"/>
+                                        <rect key="frame" x="150.33333333333334" y="336" width="74.666666666666657" height="20"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
                                                 <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="20"/>
@@ -250,7 +251,7 @@
                                     <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="0JG-zR-9Oc"/>
                                     <constraint firstItem="msd-FV-p4G" firstAttribute="top" secondItem="PiP-LG-bw4" secondAttribute="bottom" constant="12" id="4Cf-q4-xep"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="Jip-aD-Bt6"/>
-                                    <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="60" id="Kyp-eG-oSL"/>
+                                    <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="50" id="Kyp-eG-oSL"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="top" constant="55" id="MHs-xc-geX"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" id="fFU-sc-hcV"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="ff2-IC-nW1"/>
@@ -316,8 +317,12 @@
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
                         <outlet property="detailsStack" destination="gji-5S-cXa" id="DX8-YQ-yHd"/>
+                        <outlet property="highTempValue" destination="Sjo-a3-FXi" id="22l-bq-AY0"/>
+                        <outlet property="highTempView" destination="uEk-5L-gmn" id="94D-mc-fLT"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="Wrc-7m-Cr2"/>
+                        <outlet property="lowTempValue" destination="vd1-L8-Gy7" id="bmv-1S-vGY"/>
+                        <outlet property="lowTempView" destination="8o6-WK-hnm" id="Ku2-8v-h67"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="ctN-og-OAC"/>
                     </connections>
                 </viewController>

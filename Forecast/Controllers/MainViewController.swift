@@ -21,6 +21,11 @@ class MainViewController: UIViewController {
     @IBOutlet var chevronGrip: UIChevronGrip!
     @IBOutlet var detailsStack: UIStackView!
     
+    @IBOutlet var lowTempView: UIView!
+    @IBOutlet var lowTempValue: UILabel!
+    @IBOutlet var highTempView: UIView!
+    @IBOutlet var highTempValue: UILabel!
+    
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
     }
@@ -33,8 +38,7 @@ class MainViewController: UIViewController {
         case .began:
             present(
                 self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
-                animated: true
-            )
+                animated: true)
             
         case .changed:
             Hero.shared.update(progress)
@@ -68,6 +72,7 @@ class MainViewController: UIViewController {
             }
             
             let cc = data.currentConditions
+            let fc = data.forecastGroup.forecast
             
             let timestamp = cc.dateTime![1].value.timeStamp
             
@@ -83,6 +88,22 @@ class MainViewController: UIViewController {
             self.currentConditionLabel.text = cc.condition
             
             self.addDetailSubviews(cc)
+            
+            if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
+                let temp = forecast.temperatures.first?.value {
+                self.lowTempView.isHidden = false
+                self.lowTempValue.text = temp
+            } else {
+                self.lowTempView.isHidden = true
+            }
+            
+            if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
+                let temp = forecast.temperatures.first?.value {
+                self.highTempView.isHidden = false
+                self.highTempValue.text = temp
+            } else {
+                self.highTempView.isHidden = true
+            }
         }
     }
     
