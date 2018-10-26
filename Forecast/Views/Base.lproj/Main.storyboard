@@ -55,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
-                                        <rect key="frame" x="192" y="33" width="151" height="14"/>
+                                        <rect key="frame" x="192" y="33" width="151" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
                                         <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -174,35 +174,87 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
-                                        <rect key="frame" x="124.66666666666669" y="314" width="126" height="20"/>
+                                        <rect key="frame" x="124.66666666666666" y="314" width="125.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-aB-nKr">
-                                        <rect key="frame" x="146" y="242" width="83" height="72"/>
+                                        <rect key="frame" x="146.33333333333334" y="242" width="82.666666666666657" height="72"/>
                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LO: 2°  HI: 9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
-                                        <rect key="frame" x="154" y="350" width="67" height="15"/>
-                                        <fontDescription key="fontDescription" name="Interstate-RegularCondensed" family="Interstate" pointSize="14"/>
-                                        <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="msd-FV-p4G">
+                                        <rect key="frame" x="150.33333333333334" y="346" width="74.666666666666657" height="20"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
+                                                <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
+                                                        <rect key="frame" x="19.333333333333314" y="3.0000000000000009" width="13" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
+                                                        <color key="textColor" white="0.33000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="LO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
+                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="16.333333333333332" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Interstate-RegularCondensed" family="Interstate" pointSize="14"/>
+                                                        <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="leading" secondItem="8o6-WK-hnm" secondAttribute="leading" id="EZm-UN-XGi"/>
+                                                    <constraint firstItem="vd1-L8-Gy7" firstAttribute="centerY" secondItem="8o6-WK-hnm" secondAttribute="centerY" id="S91-gS-iiq"/>
+                                                    <constraint firstItem="vd1-L8-Gy7" firstAttribute="leading" secondItem="pfV-1S-MbN" secondAttribute="trailing" constant="3" id="cQo-Kt-OFh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vd1-L8-Gy7" secondAttribute="trailing" id="hj3-VM-BdK"/>
+                                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="centerY" secondItem="8o6-WK-hnm" secondAttribute="centerY" id="vh2-ZH-7G2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uEk-5L-gmn">
+                                                <rect key="frame" x="44.333333333333314" y="0.0" width="30.333333333333329" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="HI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
+                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="14.333333333333334" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Interstate-RegularCondensed" family="Interstate" pointSize="14"/>
+                                                        <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="9º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjo-a3-FXi">
+                                                        <rect key="frame" x="17.333333333333343" y="3.0000000000000009" width="13" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
+                                                        <color key="textColor" white="0.33000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="eAU-h0-lzs" firstAttribute="leading" secondItem="uEk-5L-gmn" secondAttribute="leading" id="CDK-Fd-oPO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Sjo-a3-FXi" secondAttribute="trailing" id="GPF-rB-WRw"/>
+                                                    <constraint firstItem="eAU-h0-lzs" firstAttribute="centerY" secondItem="uEk-5L-gmn" secondAttribute="centerY" id="TTq-eV-LVj"/>
+                                                    <constraint firstItem="Sjo-a3-FXi" firstAttribute="leading" secondItem="eAU-h0-lzs" secondAttribute="trailing" constant="3" id="YOR-zh-aiZ"/>
+                                                    <constraint firstItem="Sjo-a3-FXi" firstAttribute="centerY" secondItem="uEk-5L-gmn" secondAttribute="centerY" id="nfa-SF-Ibb"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="uhs-30-opl"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="B6P-aB-nKr" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="0JG-zR-9Oc"/>
-                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="top" secondItem="PiP-LG-bw4" secondAttribute="bottom" constant="16" id="JOF-Ec-6Mm"/>
+                                    <constraint firstItem="msd-FV-p4G" firstAttribute="top" secondItem="PiP-LG-bw4" secondAttribute="bottom" constant="12" id="4Cf-q4-xep"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="Jip-aD-Bt6"/>
                                     <constraint firstItem="B6P-aB-nKr" firstAttribute="top" secondItem="wPH-CM-nhb" secondAttribute="bottom" constant="60" id="Kyp-eG-oSL"/>
-                                    <constraint firstItem="pfV-1S-MbN" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="LMB-Nn-uCt"/>
                                     <constraint firstItem="wPH-CM-nhb" firstAttribute="top" secondItem="d8W-do-e9f" secondAttribute="top" constant="55" id="MHs-xc-geX"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="top" secondItem="B6P-aB-nKr" secondAttribute="bottom" id="fFU-sc-hcV"/>
                                     <constraint firstItem="PiP-LG-bw4" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="ff2-IC-nW1"/>
+                                    <constraint firstItem="msd-FV-p4G" firstAttribute="centerX" secondItem="d8W-do-e9f" secondAttribute="centerX" id="pe6-Fx-oKh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,-400) opacity(-0.5)"/>
