@@ -63,6 +63,14 @@ class MainViewController: UIViewController {
         }
     }
     
+    var useNightMode = false {
+        didSet {
+            if useNightMode != oldValue {
+                render()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
@@ -125,8 +133,26 @@ class MainViewController: UIViewController {
             
             if cc.iconCode != nil {
                 self.iconImageView.image = UIImage(named: cc.iconCode!) ?? UIImage(named: "3")
+                
+                let codeAsInt = Int(cc.iconCode!) ?? 0
+                
+                if codeAsInt > 29 && codeAsInt < 40 {
+                    self.useNightMode = true
+                } else {
+                    self.useNightMode = false
+                }
+            }
+            
+            if self.useNightMode {
+                self.view.backgroundColor = UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1.0)
+                self.view.tintColor = .white
+                self.setNeedsStatusBarAppearanceUpdate()
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.useNightMode ? .lightContent : .default
     }
     
     func fetchNewData() {
