@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802443FB217A7FF60066F905 /* UIChevronGrip.swift */; };
 		802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802443FD217A822C0066F905 /* UIChevronGrip.xib */; };
+		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5AE2177FDDC0021AF6C /* WeatherService.swift */; };
 		8040B5B12178047B0021AF6C /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5B02178047B0021AF6C /* Site.swift */; };
 		8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F221755BE6007290CF /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
 		802443FB217A7FF60066F905 /* UIChevronGrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChevronGrip.swift; sourceTree = "<group>"; };
 		802443FD217A822C0066F905 /* UIChevronGrip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIChevronGrip.xib; sourceTree = "<group>"; };
+		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		8040B5AE2177FDDC0021AF6C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8040B5B02178047B0021AF6C /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		8051A6EF21755BE6007290CF /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				8025484A2186774B00118465 /* Theme.xcassets */,
 				807B728F217E4EBF002EE814 /* DataSources */,
 				802443F4217A79EE0066F905 /* Controls */,
 				80EEB23D217A74A500AD4448 /* Fonts */,
@@ -297,6 +300,7 @@
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */,
+				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
 				80EEB241217A74B000AD4448 /* Interstate-Regular.otf in Resources */,
 				80EEB243217A74B000AD4448 /* Interstate-BoldCondensed.otf in Resources */,
 			);

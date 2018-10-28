@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,14 +55,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
                                         <rect key="frame" x="192" y="33" width="151" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
-                                        <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="Subdued"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ce-UAb">
                                         <rect key="frame" x="32" y="28.666666666666671" width="30" height="23"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Black"/>
                                         <state key="normal" image="HamburgerIcon">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" name="Black"/>
                                         </state>
                                         <connections>
                                             <action selector="didPressHamburger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8V-FR-vaj"/>
@@ -88,7 +89,7 @@
                                     <constraint firstAttribute="height" constant="26" id="ZMc-6b-PTd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="StationLabel"/>
@@ -132,12 +133,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
                                                                 <rect key="frame" x="32" y="1.6666666666666288" width="19.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <color key="textColor" name="Black"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="LO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-1S-MbN">
                                                                 <rect key="frame" x="0.0" y="1.6666666666666288" width="27" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
-                                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" name="Light"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -156,12 +158,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="HI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-h0-lzs">
                                                                 <rect key="frame" x="0.0" y="1.6666666666666288" width="23.333333333333332" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
-                                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" name="Light"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="9°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjo-a3-FXi">
                                                                 <rect key="frame" x="28.333333333333329" y="1.6666666666666288" width="19.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="17"/>
+                                                                <color key="textColor" name="Black"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -237,7 +240,7 @@
                                                 <rect key="frame" x="146" y="0.0" width="83.333333333333314" height="72"/>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                                 <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="72"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=compact-widthClass=compact">
                                                     <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="56"/>
@@ -246,7 +249,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-LG-bw4">
                                                 <rect key="frame" x="124.66666666666666" y="80" width="125.66666666666666" height="20"/>
                                                 <fontDescription key="fontDescription" name="Interstate-Regular" family="Interstate" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="es7-ZK-BCB">
@@ -260,7 +263,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="HUMIDEX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JP-56-fn6">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="12"/>
                                                         <fontDescription key="fontDescription" name="Interstate-Bold" family="Interstate" pointSize="12"/>
-                                                        <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="Light Text"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -333,6 +336,7 @@
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="EAL-Sm-hbW"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="HmX-cf-IUs"/>
                         <outlet property="detailsStack" destination="gji-5S-cXa" id="DX8-YQ-yHd"/>
+                        <outlet property="hamburgerIcon" destination="3uc-ce-UAb" id="mmv-03-CrF"/>
                         <outlet property="highTempValue" destination="Sjo-a3-FXi" id="22l-bq-AY0"/>
                         <outlet property="highTempView" destination="uEk-5L-gmn" id="94D-mc-fLT"/>
                         <outlet property="iconImageView" destination="wPH-CM-nhb" id="a2H-32-56E"/>
@@ -482,5 +486,17 @@
     <resources>
         <image name="HamburgerIcon" width="30" height="23"/>
         <image name="TestIcon" width="210" height="127"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Light">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Light Text">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Subdued">
+            <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

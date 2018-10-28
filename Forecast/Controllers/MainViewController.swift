@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var iconImageView: UIImageView!
     
+    @IBOutlet var hamburgerIcon: UIButton!
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
     }
@@ -145,7 +146,19 @@ class MainViewController: UIViewController {
             
             if self.useNightMode {
                 self.view.backgroundColor = UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1.0)
-                self.view.tintColor = .white
+                self.lastUpdatedLabel.textColor = UIColor(named: "SubduedInverted")
+                self.stationLabel.textColor = UIColor(named: "White")
+                self.currentTempLabel.textColor = UIColor(named: "White")
+                self.currentConditionLabel.textColor = UIColor(named: "White")
+                self.loadingIndicator.color = UIColor(named: "White")
+                
+                self.lowTempValue.textColor = UIColor(named: "White")
+                self.highTempValue.textColor = UIColor(named: "White")
+                
+                self.tempModifierLabel.textColor = UIColor(named: "LightInverted")
+                self.tempModifierValue.textColor = UIColor(named: "White")
+                
+                self.hamburgerIcon.tintColor = UIColor(named: "White")
                 self.setNeedsStatusBarAppearanceUpdate()
             }
         }
