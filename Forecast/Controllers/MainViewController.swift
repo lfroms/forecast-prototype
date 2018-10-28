@@ -124,7 +124,7 @@ class MainViewController: UIViewController {
             }
             
             if cc.iconCode != nil {
-                self.iconImageView.image = UIImage(named: cc.iconCode!)
+                self.iconImageView.image = UIImage(named: cc.iconCode!) ?? UIImage(named: "3")
             }
         }
     }
