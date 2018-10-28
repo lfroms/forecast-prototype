@@ -26,9 +26,11 @@ class MainViewController: UIViewController {
     @IBOutlet var highTempView: UIView!
     @IBOutlet var highTempValue: UILabel!
     
-    @IBOutlet weak var tempModifierView: UIView!
-    @IBOutlet weak var tempModifierLabel: UILabel!
-    @IBOutlet weak var tempModifierValue: UILabel!
+    @IBOutlet var tempModifierView: UIView!
+    @IBOutlet var tempModifierLabel: UILabel!
+    @IBOutlet var tempModifierValue: UILabel!
+    
+    @IBOutlet var iconImageView: UIImageView!
     
     @IBAction func didPressHamburger(_ sender: Any) {
         self.fetchNewData()
@@ -119,6 +121,10 @@ class MainViewController: UIViewController {
                 self.tempModifierValue.text = humidex + "°"
             } else {
                 self.tempModifierView.isHidden = true
+            }
+            
+            if cc.iconCode != nil {
+                self.iconImageView.image = UIImage(named: cc.iconCode!)
             }
         }
     }

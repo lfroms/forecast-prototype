@@ -322,6 +322,7 @@
                         <outlet property="detailsStack" destination="gji-5S-cXa" id="DX8-YQ-yHd"/>
                         <outlet property="highTempValue" destination="Sjo-a3-FXi" id="22l-bq-AY0"/>
                         <outlet property="highTempView" destination="uEk-5L-gmn" id="94D-mc-fLT"/>
+                        <outlet property="iconImageView" destination="wPH-CM-nhb" id="a2H-32-56E"/>
                         <outlet property="lastUpdatedLabel" destination="tpE-19-1gB" id="Zzh-pi-v8f"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="Wrc-7m-Cr2"/>
                         <outlet property="lowTempValue" destination="vd1-L8-Gy7" id="bmv-1S-vGY"/>
