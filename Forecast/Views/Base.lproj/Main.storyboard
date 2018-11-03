@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ss2-xo-sVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ss2-xo-sVX">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -227,10 +227,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-JA-clG">
                                 <rect key="frame" x="0.0" y="166" width="375" height="379"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="TestIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-CM-nhb">
-                                        <rect key="frame" x="82.666666666666686" y="36" width="210" height="127"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="03" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-CM-nhb">
+                                        <rect key="frame" x="0.0" y="36" width="375" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="140" id="7BN-gJ-OQg"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="7BN-gJ-OQg"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zD4-Db-ZCv">
@@ -484,8 +484,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="03" width="840" height="644"/>
         <image name="HamburgerIcon" width="30" height="23"/>
-        <image name="TestIcon" width="210" height="127"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
