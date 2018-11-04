@@ -19,7 +19,6 @@
         <!--Navigation Controller-->
         <scene sceneID="IMc-H2-uQl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SGs-DZ-ECE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="Ss2-xo-sVX" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -33,6 +32,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UDW-m7-EjR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGs-DZ-ECE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1812" y="134"/>
         </scene>
@@ -322,7 +322,7 @@
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(-300,0) opacity(0) timingFunction(easeOut)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(-300,0) opacity(0) timingFunction(easeInOut)"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
@@ -344,7 +344,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) opacity(-0.2) timingFunction(easeOut)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) opacity(-0.2) timingFunction(easeInOut)"/>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
@@ -602,9 +602,6 @@
         </namedColor>
         <namedColor name="Light Text">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Subdued">
-            <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Subdued">
             <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
