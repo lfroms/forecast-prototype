@@ -14,9 +14,6 @@
         <array key="Interstate-Bold.otf">
             <string>Interstate-Bold</string>
         </array>
-        <array key="Interstate-BoldCondensed.otf">
-            <string>Interstate-BoldCondensed</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -128,7 +125,12 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="forecastButton"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didPressForecastButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="itF-Kn-KM7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-57-Yff" customClass="UIStyledButton" customModule="Forecast" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="37"/>
@@ -157,6 +159,8 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="nowButton"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -318,7 +322,7 @@
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,-400) opacity(-0.5)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(-300,0) opacity(0) timingFunction(easeOut)"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
@@ -340,7 +344,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="28" bottom="0.0" right="28"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,400)"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) opacity(-0.2) timingFunction(easeOut)"/>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
@@ -405,75 +409,147 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-xO-yVl">
-                                <rect key="frame" x="32" y="140" width="28" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="B28-Pg-dgN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="StationLabel"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vh-jP-FcH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-PO-3gv">
                                 <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB6-7Q-3Oa">
-                                        <rect key="frame" x="192" y="33" width="151" height="14"/>
-                                        <fontDescription key="fontDescription" name="Interstate-BoldCondensed" family="Interstate" pointSize="14"/>
-                                        <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e1-AQ-Ywq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWt-6F-XOw">
                                         <rect key="frame" x="32" y="28.666666666666671" width="30" height="23"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Black"/>
                                         <state key="normal" image="HamburgerIcon">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" name="Black"/>
                                         </state>
                                         <connections>
-                                            <action selector="handleTempHamburgerPress:" destination="jPI-Lr-21Q" eventType="touchDown" id="gJ8-Kk-ocG"/>
+                                            <action selector="didPressHamburger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mOD-fx-8nh"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="L2W-SQ-LgB">
-                                        <rect key="frame" x="164" y="30" width="20" height="20"/>
-                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottawa (Kanata - Orléans)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-Az-rN0">
+                                        <rect key="frame" x="92" y="28" width="247" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" name="Black"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="StationLabel"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-zc-knp">
+                                        <rect key="frame" x="199.66666666666663" y="57" width="139.33333333333337" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" name="Subdued"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="SB6-7Q-3Oa" firstAttribute="leading" secondItem="L2W-SQ-LgB" secondAttribute="trailing" constant="8" id="gJR-Je-1fG"/>
-                                    <constraint firstItem="L2W-SQ-LgB" firstAttribute="centerY" secondItem="5vh-jP-FcH" secondAttribute="centerY" id="kXR-bL-JnR"/>
-                                    <constraint firstAttribute="trailing" secondItem="SB6-7Q-3Oa" secondAttribute="trailing" constant="32" id="raj-wR-McJ"/>
-                                    <constraint firstItem="SB6-7Q-3Oa" firstAttribute="centerY" secondItem="5vh-jP-FcH" secondAttribute="centerY" id="rd3-Et-wVi"/>
-                                    <constraint firstAttribute="height" constant="80" id="vE3-pI-HeD"/>
-                                    <constraint firstItem="2e1-AQ-Ywq" firstAttribute="leading" secondItem="5vh-jP-FcH" secondAttribute="leading" constant="32" id="vK1-e4-qWV"/>
-                                    <constraint firstItem="2e1-AQ-Ywq" firstAttribute="centerY" secondItem="5vh-jP-FcH" secondAttribute="centerY" id="yNV-g4-xWS"/>
+                                    <constraint firstItem="dcn-zc-knp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6jv-PO-3gv" secondAttribute="leading" constant="20" symbolic="YES" id="7QW-4g-iYx"/>
+                                    <constraint firstItem="dcn-zc-knp" firstAttribute="trailing" secondItem="K3G-Az-rN0" secondAttribute="trailing" id="Bv2-iY-IKk"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K3G-Az-rN0" secondAttribute="trailing" constant="20" symbolic="YES" id="RTa-ct-d4O"/>
+                                    <constraint firstItem="KWt-6F-XOw" firstAttribute="leading" secondItem="6jv-PO-3gv" secondAttribute="leading" constant="32" id="Uam-he-QGA"/>
+                                    <constraint firstItem="KWt-6F-XOw" firstAttribute="centerY" secondItem="6jv-PO-3gv" secondAttribute="centerY" id="VFS-j1-Vv6"/>
+                                    <constraint firstAttribute="height" constant="80" id="aeV-CV-2q0"/>
+                                    <constraint firstItem="dcn-zc-knp" firstAttribute="top" secondItem="K3G-Az-rN0" secondAttribute="bottom" constant="5" id="hRQ-17-7RQ"/>
+                                    <constraint firstItem="K3G-Az-rN0" firstAttribute="centerY" secondItem="6jv-PO-3gv" secondAttribute="centerY" id="ln2-vV-sbq"/>
+                                    <constraint firstItem="K3G-Az-rN0" firstAttribute="leading" secondItem="KWt-6F-XOw" secondAttribute="trailing" constant="30" id="vTH-Pj-xBr"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="0wC-bC-sXQ"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="dcn-zc-knp"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o23-to-EPU" customClass="UIChevronGrip" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="134" width="375" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sck-AX-UNS">
+                                <rect key="frame" x="0.0" y="124" width="375" height="72"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-v4-28y">
+                                        <rect key="frame" x="54" y="17.666666666666657" width="267" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7r-vx-HWD" customClass="UIStyledButton" customModule="Forecast" customModuleProvider="target">
+                                                <rect key="frame" x="143" y="0.0" width="124" height="37"/>
+                                                <color key="backgroundColor" red="0.0" green="0.63921568630000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="124" id="CBt-gY-Nim"/>
+                                                    <constraint firstAttribute="height" constant="37" id="WBt-gO-xKQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                <state key="normal" title="Forecast">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.10000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="forecastButton"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR2-Oc-1hx" customClass="UIStyledButton" customModule="Forecast" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="37"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="3XN-ne-0dV"/>
+                                                    <constraint firstAttribute="width" constant="124" id="ray-bJ-pbs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                <state key="normal" title="Now">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.10000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="nowButton"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didPressNowButton:" destination="jPI-Lr-21Q" eventType="touchUpInside" id="Gjz-9e-Wy0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Z7r-vx-HWD" secondAttribute="bottom" id="CiK-S5-3IG"/>
+                                            <constraint firstItem="IR2-Oc-1hx" firstAttribute="leading" secondItem="Pz8-v4-28y" secondAttribute="leading" id="Tkp-S0-cwm"/>
+                                            <constraint firstItem="Z7r-vx-HWD" firstAttribute="leading" secondItem="IR2-Oc-1hx" secondAttribute="trailing" constant="19" id="aHP-u7-IUW"/>
+                                            <constraint firstItem="IR2-Oc-1hx" firstAttribute="top" secondItem="Pz8-v4-28y" secondAttribute="top" id="cZO-dT-MA8"/>
+                                            <constraint firstAttribute="bottom" secondItem="IR2-Oc-1hx" secondAttribute="bottom" id="it5-oX-i54"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z7r-vx-HWD" secondAttribute="trailing" id="oT3-uu-xmA"/>
+                                            <constraint firstItem="Z7r-vx-HWD" firstAttribute="top" secondItem="Pz8-v4-28y" secondAttribute="top" id="x0k-lJ-bE4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8N1-Ro-znq"/>
+                                    <constraint firstItem="Pz8-v4-28y" firstAttribute="centerY" secondItem="Sck-AX-UNS" secondAttribute="centerY" id="63d-Xb-evR"/>
+                                    <constraint firstAttribute="height" constant="72" id="NCC-fM-IrL"/>
+                                    <constraint firstItem="Pz8-v4-28y" firstAttribute="centerX" secondItem="Sck-AX-UNS" secondAttribute="centerX" id="k74-nn-mXc"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="ChevronGrip"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="defaultState">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="weight">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalOffset">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-0M-cpS">
-                                <rect key="frame" x="0.0" y="172" width="375" height="640"/>
+                                <rect key="frame" x="0.0" y="204" width="375" height="608"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forecast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhh-K6-BtQ">
                                         <rect key="frame" x="154" y="46" width="67" height="21"/>
@@ -484,25 +560,22 @@
                                     </label>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,500) fade()"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(500,0) fade()"/>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yZT-YY-PIw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLc-xO-yVl" secondAttribute="trailing" symbolic="YES" id="7E4-7V-oKs"/>
-                            <constraint firstItem="qfp-0M-cpS" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="9Mr-46-hIf"/>
-                            <constraint firstItem="qfp-0M-cpS" firstAttribute="top" secondItem="o23-to-EPU" secondAttribute="bottom" constant="8" id="N8f-rV-3do"/>
-                            <constraint firstItem="o23-to-EPU" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="QFj-97-uJD"/>
-                            <constraint firstItem="o23-to-EPU" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="avT-RY-u2B"/>
-                            <constraint firstItem="zLc-xO-yVl" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" constant="32" id="cAp-Ik-sJI"/>
-                            <constraint firstItem="o23-to-EPU" firstAttribute="top" secondItem="5vh-jP-FcH" secondAttribute="bottom" constant="10" id="iUO-dO-XxA"/>
-                            <constraint firstItem="5vh-jP-FcH" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="jRr-vr-wIQ"/>
-                            <constraint firstItem="5vh-jP-FcH" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="jae-FM-Za5"/>
-                            <constraint firstItem="5vh-jP-FcH" firstAttribute="top" secondItem="yZT-YY-PIw" secondAttribute="top" id="mBd-gA-OsF"/>
-                            <constraint firstItem="qfp-0M-cpS" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="tUE-2x-M4H"/>
-                            <constraint firstItem="zLc-xO-yVl" firstAttribute="top" secondItem="5vh-jP-FcH" secondAttribute="bottom" constant="16" id="urw-E6-hSx"/>
-                            <constraint firstAttribute="bottom" secondItem="qfp-0M-cpS" secondAttribute="bottom" id="ym1-Oi-Tf6"/>
+                            <constraint firstItem="Sck-AX-UNS" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="50B-g0-NnC"/>
+                            <constraint firstItem="Sck-AX-UNS" firstAttribute="top" secondItem="6jv-PO-3gv" secondAttribute="bottom" id="50m-IX-kkf"/>
+                            <constraint firstItem="qfp-0M-cpS" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="CXk-nk-Zt1"/>
+                            <constraint firstItem="6jv-PO-3gv" firstAttribute="top" secondItem="yZT-YY-PIw" secondAttribute="top" id="Ng0-pX-kJK"/>
+                            <constraint firstItem="6jv-PO-3gv" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="TeW-Xb-JpW"/>
+                            <constraint firstItem="qfp-0M-cpS" firstAttribute="top" secondItem="Sck-AX-UNS" secondAttribute="bottom" id="UMS-mZ-289"/>
+                            <constraint firstAttribute="bottom" secondItem="qfp-0M-cpS" secondAttribute="bottom" id="bxb-aN-yfS"/>
+                            <constraint firstItem="Sck-AX-UNS" firstAttribute="leading" secondItem="yZT-YY-PIw" secondAttribute="leading" id="gYj-hf-AMX"/>
+                            <constraint firstItem="qfp-0M-cpS" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="xiF-UG-lja"/>
+                            <constraint firstItem="6jv-PO-3gv" firstAttribute="trailing" secondItem="yZT-YY-PIw" secondAttribute="trailing" id="yGd-d7-tAn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yZT-YY-PIw"/>
                     </view>
@@ -510,10 +583,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="chevronGrip" destination="o23-to-EPU" id="5Kl-ZD-HHx"/>
-                        <outlet property="lastUpdatedLabel" destination="SB6-7Q-3Oa" id="VB9-Ry-mic"/>
-                        <outlet property="loadingIndicator" destination="L2W-SQ-LgB" id="IxW-wg-9wj"/>
-                        <outlet property="stationLabel" destination="zLc-xO-yVl" id="mX4-aD-lFE"/>
+                        <outlet property="stationLabel" destination="K3G-Az-rN0" id="Y1D-AK-Yg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijx-f8-GCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,6 +602,9 @@
         </namedColor>
         <namedColor name="Light Text">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Subdued">
+            <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Subdued">
             <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet var chevronGrip: UIChevronGrip!
+
     @IBOutlet var detailsStack: UIStackView!
     
     @IBOutlet var lowTempView: UIView!
@@ -37,9 +37,15 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
+    @IBAction func didPressForecastButton(_ sender: UIButton) {
+        present(
+            self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
+            animated: true)
+    }
+    
     @IBAction func didPerformPanGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: nil)
-        let progress = -translation.y / view.bounds.height
+        let progress = -translation.x / view.bounds.width
         
         switch sender.state {
         case .began:

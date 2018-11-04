@@ -11,28 +11,18 @@ import Hero
 import UIKit
 
 class ForecastViewController: UIViewController {
-    @IBAction func handleTempHamburgerPress(_ sender: Any) {
-        hero.unwindToRootViewController()
-    }
-
-    @IBOutlet var chevronGrip: UIChevronGrip!
     @IBOutlet var stationLabel: UILabel!
-    @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.chevronGrip.flip(direction: .down)
+    @IBAction func didPressNowButton(_ sender: UIButton) {
+        hero.unwindToRootViewController()
     }
-
+    
     override func viewDidLoad() {
-        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).location.name.value.uppercased()
+        self.stationLabel.text = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).location.name.value
         
         let timestamp = (EnvCanada.shared.siteData(in: .English).latestData?.content as! SiteData).currentConditions.dateTime![1].value.timeStamp
         
-        self.lastUpdatedLabel.text = timestamp
-            .toDate("yyyyMMddhhmmss")?
-            .toFormat("EEEE MMMM d | h:mm a")
-        
-        EnvCanada.shared.siteData(in: .English).isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
+//        EnvCanada.shared.siteData(in: .English).isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
     }
 }
