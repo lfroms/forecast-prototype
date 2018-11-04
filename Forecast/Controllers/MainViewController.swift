@@ -93,13 +93,13 @@ class MainViewController: UIViewController {
             
             self.lastUpdatedLabel.text = timestamp
                 .toDate("yyyyMMddhhmmss")?
-                .toFormat("EEEE MMMM d | h:mm a")
-            
+                .toFormat("EEEE MMM d | h:mm a")
+                        
             if let tempAsFloat = Float(cc.temperature!.value) {
                 self.currentTempLabel.text = tempAsFloat.asRoundedString() + "°"
             }
             
-            self.stationLabel.text = data.location.name.value.uppercased()
+            self.stationLabel.text = data.location.name.value
             self.currentConditionLabel.text = cc.condition
             
             self.addDetailSubviews(cc)

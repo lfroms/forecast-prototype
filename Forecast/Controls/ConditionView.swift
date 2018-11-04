@@ -42,7 +42,7 @@ class ConditionView: UIView {
         // Color Box
         colorBox.borderColor = color
         colorBox.backgroundColor = isOutlined ? .clear : color
-        colorBox.shadowColor = isOutlined ? .clear : color
+        colorBox.shadowColor = isOutlined ? .clear : .black
         
         // Icon
         iconLabel.text = icon

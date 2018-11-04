@@ -18,6 +18,7 @@
 		8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
 		8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */; };
 		8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8052A6A9217E8B46004FB527 /* ConditionView.xib */; };
+		8053C65F218E81820041F29E /* UIStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053C65E218E81820041F29E /* UIStyledButton.swift */; };
 		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
 		807B7295217E7872002EE814 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ConditionView.swift */; };
 		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
@@ -60,6 +61,7 @@
 		8051A6FC21755BE7007290CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8051A6FE21755BE7007290CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8052A6A9217E8B46004FB527 /* ConditionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionView.xib; sourceTree = "<group>"; };
+		8053C65E218E81820041F29E /* UIStyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyledButton.swift; sourceTree = "<group>"; };
 		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
 		807B7294217E7872002EE814 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				807B7294217E7872002EE814 /* ConditionView.swift */,
 				8052A6A9217E8B46004FB527 /* ConditionView.xib */,
 				80B71C8021824E3500DAFA65 /* UIStyledView.swift */,
+				8053C65E218E81820041F29E /* UIStyledButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				8040B5B12178047B0021AF6C /* Site.swift in Sources */,
 				80A608322176C5AD005D2891 /* Wind.swift in Sources */,
 				80A608302176C3FF005D2891 /* Measurement.swift in Sources */,
+				8053C65F218E81820041F29E /* UIStyledButton.swift in Sources */,
 				80A6082C2176C35C005D2891 /* Pressure.swift in Sources */,
 				80A608372176C7DB005D2891 /* Location.swift in Sources */,
 				80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */,
