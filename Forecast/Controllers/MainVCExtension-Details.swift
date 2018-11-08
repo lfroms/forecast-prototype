@@ -18,7 +18,7 @@ extension MainViewController {
                 units: currCond.relativeHumidity?.units,
                 type: "HUMIDITY",
                 icon: "tint",
-                color: UIColor(red: 0.13, green: 0.47, blue: 1.00, alpha: 1.0)
+                color: UIColor(red: 0.00, green: 0.64, blue: 1.00, alpha: 1.0)
             )
             
             detailsStack.addArrangedSubview(humidity)
