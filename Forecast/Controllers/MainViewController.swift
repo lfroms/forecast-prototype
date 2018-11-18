@@ -6,7 +6,6 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import Hero
 import Siesta
 import SnapKit
 import SwiftDate

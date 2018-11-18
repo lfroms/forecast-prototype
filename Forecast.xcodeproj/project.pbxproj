@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802443FB217A7FF60066F905 /* UIChevronGrip.swift */; };
-		802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802443FD217A822C0066F905 /* UIChevronGrip.xib */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5AE2177FDDC0021AF6C /* WeatherService.swift */; };
 		8040B5B12178047B0021AF6C /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5B02178047B0021AF6C /* Site.swift */; };
@@ -45,8 +43,6 @@
 /* Begin PBXFileReference section */
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
-		802443FB217A7FF60066F905 /* UIChevronGrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChevronGrip.swift; sourceTree = "<group>"; };
-		802443FD217A822C0066F905 /* UIChevronGrip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIChevronGrip.xib; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		8040B5AE2177FDDC0021AF6C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8040B5B02178047B0021AF6C /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
@@ -105,8 +101,6 @@
 		802443F4217A79EE0066F905 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				802443FB217A7FF60066F905 /* UIChevronGrip.swift */,
-				802443FD217A822C0066F905 /* UIChevronGrip.xib */,
 				807B7294217E7872002EE814 /* ConditionView.swift */,
 				8052A6A9217E8B46004FB527 /* ConditionView.xib */,
 				80B71C8021824E3500DAFA65 /* UIStyledView.swift */,
@@ -290,7 +284,6 @@
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
-				802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,23 +300,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Siesta/Siesta.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
-				"${BUILT_PRODUCTS_DIR}/TweenKit/TweenKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siesta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweenKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,7 +356,6 @@
 				80A6082C2176C35C005D2891 /* Pressure.swift in Sources */,
 				80A608372176C7DB005D2891 /* Location.swift in Sources */,
 				80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */,
-				802443FC217A7FF60066F905 /* UIChevronGrip.swift in Sources */,
 				807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,

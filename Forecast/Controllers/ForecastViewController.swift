@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Hero
 import UIKit
 
 class ForecastViewController: UIViewController {
