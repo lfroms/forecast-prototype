@@ -57,10 +57,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
-                                        <rect key="frame" x="36" y="30" width="20" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
+                                        <rect key="frame" x="36" y="30" width="30" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="wW3-6n-eRB"/>
                                             <constraint firstAttribute="height" constant="20" id="whP-4k-z2f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
@@ -71,10 +70,9 @@
                                             <action selector="didPressCog:" destination="vfY-E5-8UY" eventType="touchUpInside" id="GgZ-lU-pAo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8Q-yu-1UU">
-                                        <rect key="frame" x="319" y="30" width="20" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8Q-yu-1UU">
+                                        <rect key="frame" x="309" y="30" width="30" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="9vI-O3-Jm1"/>
                                             <constraint firstAttribute="height" constant="20" id="jQR-5n-Tec"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
@@ -103,9 +101,11 @@
                                     <constraint firstItem="Veh-tr-4P7" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="EjV-sF-9gv"/>
                                     <constraint firstItem="Win-PH-iit" firstAttribute="centerX" secondItem="syG-Uq-MLQ" secondAttribute="centerX" id="NVD-8T-ZF1"/>
                                     <constraint firstItem="tpE-19-1gB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="20" symbolic="YES" id="VcG-lZ-Vhp"/>
+                                    <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0O-7V-xDh" secondAttribute="trailing" constant="8" symbolic="YES" id="VmV-5w-bUb"/>
                                     <constraint firstItem="Win-PH-iit" firstAttribute="top" secondItem="Veh-tr-4P7" secondAttribute="bottom" constant="9" id="gxf-rA-B1h"/>
                                     <constraint firstAttribute="height" constant="80" id="lIt-tw-zuN"/>
                                     <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="36" id="lxK-3K-KXY"/>
+                                    <constraint firstItem="a8Q-yu-1UU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Veh-tr-4P7" secondAttribute="trailing" constant="8" symbolic="YES" id="mMS-dO-wo2"/>
                                     <constraint firstItem="a8Q-yu-1UU" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="zXa-wn-CBr"/>
                                 </constraints>
                                 <variation key="default">
