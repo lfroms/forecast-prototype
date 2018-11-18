@@ -53,8 +53,8 @@
                                         <color key="textColor" name="Black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
-                                        <rect key="frame" x="36" y="30" width="30" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
+                                        <rect key="frame" x="4" y="30" width="82.333333333333329" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="whP-4k-z2f"/>
                                         </constraints>
@@ -66,8 +66,8 @@
                                             <action selector="didPressCog:" destination="vfY-E5-8UY" eventType="touchUpInside" id="GgZ-lU-pAo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8Q-yu-1UU">
-                                        <rect key="frame" x="309" y="30" width="30" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8Q-yu-1UU">
+                                        <rect key="frame" x="288.66666666666669" y="30" width="82.333333333333314" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="jQR-5n-Tec"/>
                                         </constraints>
@@ -76,12 +76,6 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday October 14 | 8:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpE-19-1gB">
-                                        <rect key="frame" x="199.66666666666663" y="57" width="139.33333333333337" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" name="Subdued"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today 8:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Win-PH-iit">
                                         <rect key="frame" x="140.66666666666666" y="58.666666666666671" width="94" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -93,22 +87,16 @@
                                 <constraints>
                                     <constraint firstItem="Veh-tr-4P7" firstAttribute="centerX" secondItem="syG-Uq-MLQ" secondAttribute="centerX" id="4Aq-IB-Tb8"/>
                                     <constraint firstItem="P0O-7V-xDh" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="5HN-eZ-PoY"/>
-                                    <constraint firstAttribute="trailing" secondItem="a8Q-yu-1UU" secondAttribute="trailing" constant="36" id="Db1-MA-3ac"/>
+                                    <constraint firstAttribute="trailing" secondItem="a8Q-yu-1UU" secondAttribute="trailing" constant="4" id="Db1-MA-3ac"/>
                                     <constraint firstItem="Veh-tr-4P7" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="EjV-sF-9gv"/>
                                     <constraint firstItem="Win-PH-iit" firstAttribute="centerX" secondItem="syG-Uq-MLQ" secondAttribute="centerX" id="NVD-8T-ZF1"/>
-                                    <constraint firstItem="tpE-19-1gB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="20" symbolic="YES" id="VcG-lZ-Vhp"/>
-                                    <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0O-7V-xDh" secondAttribute="trailing" constant="8" symbolic="YES" id="VmV-5w-bUb"/>
+                                    <constraint firstItem="Veh-tr-4P7" firstAttribute="leading" secondItem="P0O-7V-xDh" secondAttribute="trailing" priority="750" id="auU-fI-2NF"/>
                                     <constraint firstItem="Win-PH-iit" firstAttribute="top" secondItem="Veh-tr-4P7" secondAttribute="bottom" constant="9" id="gxf-rA-B1h"/>
                                     <constraint firstAttribute="height" constant="80" id="lIt-tw-zuN"/>
-                                    <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="36" id="lxK-3K-KXY"/>
-                                    <constraint firstItem="a8Q-yu-1UU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Veh-tr-4P7" secondAttribute="trailing" constant="8" symbolic="YES" id="mMS-dO-wo2"/>
+                                    <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="syG-Uq-MLQ" secondAttribute="leading" constant="4" id="lxK-3K-KXY"/>
+                                    <constraint firstItem="a8Q-yu-1UU" firstAttribute="leading" secondItem="Veh-tr-4P7" secondAttribute="trailing" priority="750" id="mMS-dO-wo2"/>
                                     <constraint firstItem="a8Q-yu-1UU" firstAttribute="centerY" secondItem="syG-Uq-MLQ" secondAttribute="centerY" id="zXa-wn-CBr"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="tpE-19-1gB"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
                                 <rect key="frame" x="0.0" y="621" width="375" height="129"/>
@@ -399,9 +387,6 @@
         <image name="03" width="840" height="644"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Subdued">
-            <color red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
