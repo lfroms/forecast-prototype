@@ -52,10 +52,6 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" name="Black"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="StationLabel"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
                                         <rect key="frame" x="36" y="30" width="30" height="20"/>
@@ -154,10 +150,6 @@
                                     <constraint firstItem="VrQ-S5-9Ey" firstAttribute="leading" secondItem="KM1-ny-Thi" secondAttribute="leading" id="cci-Ky-xV2"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="23" bottom="0.0" right="23"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) opacity(-0.2) timingFunction(easeInOut)"/>
-                                </userDefinedRuntimeAttributes>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVl-9W-C2G">
                                 <rect key="frame" x="0.0" y="140" width="375" height="463"/>
@@ -329,10 +321,6 @@
                                         <edgeInsets key="layoutMargins" top="0.0" left="32" bottom="22" right="32"/>
                                     </stackView>
                                 </subviews>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(-300,0) opacity(0) timingFunction(easeInOut)"/>
-                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -350,9 +338,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="lcU-sc-vMu"/>
                     <size key="freeformSize" width="375" height="500"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="SiX-NZ-bZz"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="kSC-ZY-OB8"/>
@@ -404,9 +389,6 @@
                         <viewLayoutGuide key="safeArea" id="yZT-YY-PIw"/>
                     </view>
                     <size key="freeformSize" width="375" height="500"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijx-f8-GCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
