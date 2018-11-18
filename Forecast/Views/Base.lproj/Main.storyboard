@@ -102,16 +102,16 @@
                                 <rect key="frame" x="0.0" y="621" width="375" height="129"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="VrQ-S5-9Ey">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="129"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="129"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" distribution="fillProportionally" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="gBJ-yX-H0h">
-                                                <rect key="frame" x="24" y="69" width="50" height="60"/>
+                                                <rect key="frame" x="22" y="69" width="50" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="LgW-G7-Mwt"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" distribution="equalCentering" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="CnB-4p-AxR">
-                                                <rect key="frame" x="24" y="0.0" width="50" height="60"/>
+                                                <rect key="frame" x="22" y="0.0" width="50" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="fYZ-UD-kTQ"/>
                                                 </constraints>
@@ -126,7 +126,7 @@
                                             <constraint firstItem="CnB-4p-AxR" firstAttribute="leading" secondItem="VrQ-S5-9Ey" secondAttribute="leadingMargin" id="mad-ah-qPI"/>
                                             <constraint firstAttribute="bottom" secondItem="gBJ-yX-H0h" secondAttribute="bottom" id="obG-oE-vof"/>
                                         </constraints>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="24"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="22" bottom="0.0" right="22"/>
                                     </view>
                                 </subviews>
                                 <constraints>
