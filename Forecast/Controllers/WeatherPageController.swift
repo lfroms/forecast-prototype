@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WeatherPageController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class WeatherPageController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     var pages = [UIViewController]()
     var pageControl = UIPageControl()
     
@@ -18,8 +18,8 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         delegate = self
         dataSource = self
         
-        let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "CurrentConditions")
-        let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "Forecast")
+        let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "CurrentConditions") as! CurrentConditionsViewController
+        let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "Forecast") as! ForecastViewController
         
         pages.append(p1)
         pages.append(p2)
@@ -27,6 +27,12 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         setViewControllers([p1], direction: UIPageViewController.NavigationDirection.forward, animated: false, completion: nil)
         
         configurePageControl()
+        
+        for subview in view.subviews {
+            if let scrollView = subview as? UIScrollView {
+                scrollView.delegate = self
+            }
+        }
     }
     
     func configurePageControl() {
@@ -64,10 +70,15 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         return self.pages.count
     }
     
-    // MARK: Delegate functions
-    
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let point = scrollView.contentOffset
+        var percentComplete: CGFloat
+        percentComplete = abs(point.x - view.frame.size.width) / view.frame.size.width
+        NSLog("percentComplete: %f", percentComplete)
     }
 }
