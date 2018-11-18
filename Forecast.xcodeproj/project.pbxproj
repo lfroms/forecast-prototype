@@ -22,7 +22,6 @@
 		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
 		807B7295217E7872002EE814 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ConditionView.swift */; };
 		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
-		807B7299217E7B0A002EE814 /* Interstate-LightCondItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */; };
 		80A608242176C180005D2891 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608232176C180005D2891 /* DateTime.swift */; };
 		80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608292176C1E7005D2891 /* CurrentConditions.swift */; };
 		80A6082C2176C35C005D2891 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6082B2176C35C005D2891 /* Pressure.swift */; };
@@ -33,15 +32,13 @@
 		80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083A2176CC4F005D2891 /* ForecastGroup.swift */; };
 		80A6083D2176D433005D2891 /* RiseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083C2176D433005D2891 /* RiseSet.swift */; };
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
+		80B1D3FF2193D41D006DD630 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D3FE2193D41D006DD630 /* PageViewController.swift */; };
+		80B1D4012193D951006DD630 /* CurrentConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */; };
 		80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B71C8021824E3500DAFA65 /* UIStyledView.swift */; };
-		80B71C832182959600DAFA65 /* Interstate-RegularCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80B71C822182959600DAFA65 /* Interstate-RegularCondensed.otf */; };
 		80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */; };
 		80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E5D6962180056100121084 /* MainVCExtension-Details.swift */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
 		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
-		80EEB241217A74B000AD4448 /* Interstate-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */; };
-		80EEB242217A74B000AD4448 /* Interstate-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80EEB23F217A74B000AD4448 /* Interstate-Bold.otf */; };
-		80EEB243217A74B000AD4448 /* Interstate-BoldCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80EEB240217A74B000AD4448 /* Interstate-BoldCondensed.otf */; };
 		F05D4B452A60266AD4A9381D /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +62,6 @@
 		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
 		807B7294217E7872002EE814 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-LightCondItalic.otf"; sourceTree = "<group>"; };
 		80A608232176C180005D2891 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		80A608292176C1E7005D2891 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
 		80A6082B2176C35C005D2891 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
@@ -76,15 +72,13 @@
 		80A6083A2176CC4F005D2891 /* ForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastGroup.swift; sourceTree = "<group>"; };
 		80A6083C2176D433005D2891 /* RiseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseSet.swift; sourceTree = "<group>"; };
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		80B1D3FE2193D41D006DD630 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsViewController.swift; sourceTree = "<group>"; };
 		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
-		80B71C822182959600DAFA65 /* Interstate-RegularCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-RegularCondensed.otf"; sourceTree = "<group>"; };
 		80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		80E5D6962180056100121084 /* MainVCExtension-Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVCExtension-Details.swift"; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
 		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
-		80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Regular.otf"; sourceTree = "<group>"; };
-		80EEB23F217A74B000AD4448 /* Interstate-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Bold.otf"; sourceTree = "<group>"; };
-		80EEB240217A74B000AD4448 /* Interstate-BoldCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-BoldCondensed.otf"; sourceTree = "<group>"; };
 		A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +202,8 @@
 				8051A6F421755BE6007290CF /* MainViewController.swift */,
 				80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */,
 				80E5D6962180056100121084 /* MainVCExtension-Details.swift */,
+				80B1D3FE2193D41D006DD630 /* PageViewController.swift */,
+				80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,12 +211,7 @@
 		80EEB23D217A74A500AD4448 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				80B71C822182959600DAFA65 /* Interstate-RegularCondensed.otf */,
 				807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */,
-				80EEB23F217A74B000AD4448 /* Interstate-Bold.otf */,
-				80EEB240217A74B000AD4448 /* Interstate-BoldCondensed.otf */,
-				80EEB23E217A74B000AD4448 /* Interstate-Regular.otf */,
-				807B7298217E7B0A002EE814 /* Interstate-LightCondItalic.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -296,16 +287,11 @@
 			files = (
 				8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */,
 				807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
-				807B7299217E7B0A002EE814 /* Interstate-LightCondItalic.otf in Resources */,
-				80B71C832182959600DAFA65 /* Interstate-RegularCondensed.otf in Resources */,
-				80EEB242217A74B000AD4448 /* Interstate-Bold.otf in Resources */,
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				802443FE217A822C0066F905 /* UIChevronGrip.xib in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
-				80EEB241217A74B000AD4448 /* Interstate-Regular.otf in Resources */,
-				80EEB243217A74B000AD4448 /* Interstate-BoldCondensed.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,9 +371,11 @@
 				807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
+				80B1D4012193D951006DD630 /* CurrentConditionsViewController.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
 				80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */,
+				80B1D3FF2193D41D006DD630 /* PageViewController.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
 				80E5D6972180056100121084 /* MainVCExtension-Details.swift in Sources */,
