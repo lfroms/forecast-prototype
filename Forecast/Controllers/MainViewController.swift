@@ -6,6 +6,7 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
+import NightNight
 import Siesta
 import SnapKit
 import SwiftDate
@@ -22,8 +23,14 @@ class MainViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     
     @IBOutlet var cogIcon: UIButton!
+    @IBOutlet var searchIcon: UIButton!
     @IBAction func didPressCog(_ sender: Any) {
         self.fetchNewData()
+    }
+    
+    @IBAction func didPressSearch(_ sender: Any) {
+        NightNight.toggleNightTheme()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     var initialScrollViewPosition: CGPoint!
@@ -32,6 +39,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
+        self.configureThemeColors()
     }
     
     func render() {
@@ -48,10 +56,21 @@ class MainViewController: UIViewController {
                 .toDate("yyyyMMddhhmmss")?
                 .toFormat("MMM d h:mm a")
             
-            if self.initialScrollViewPosition != nil {
+            if self.initialScrollViewPosition == nil {
                 self.initialScrollViewPosition = self.detailsScrollView.frame.origin
             }
         }
+    }
+    
+    private func configureThemeColors() {
+        let scheme = MixedColor(normal: .black, night: .white)
+        
+        cogIcon.setMixedTitleColor(scheme, forState: UIControl.State())
+        searchIcon.setMixedTitleColor(scheme, forState: UIControl.State())
+        stationLabel.mixedTextColor = scheme
+        lastUpdatedLabel.mixedTextColor = scheme
+        
+        view.mixedBackgroundColor = MixedColor(normal: .white, night: .black)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,6 +90,10 @@ class MainViewController: UIViewController {
     
     func fetchNewData() {
         EnvCanada.shared.siteData(in: .English).load()
+    }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return MixedStatusBarStyle(normal: .default, night: .lightContent).unfold()
     }
 }
 

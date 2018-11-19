@@ -6,6 +6,7 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
+import NightNight
 import Siesta
 import SnapKit
 import SwiftDate
@@ -26,6 +27,7 @@ class CurrentConditionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
+        self.configureThemeColors()
     }
     
     func render() {
@@ -65,6 +67,17 @@ class CurrentConditionsViewController: UIViewController {
                 self.iconImageView.image = UIImage(named: cc.iconCode!) ?? UIImage(named: "03")
             }
         }
+    }
+    
+    private func configureThemeColors() {
+        let scheme = MixedColor(normal: .black, night: .white)
+        
+        currentTempLabel.mixedTextColor = scheme
+        currentConditionLabel.mixedTextColor = scheme
+        loadingIndicator.mixedTintColor = scheme
+        
+        lowTempValue.mixedTextColor = scheme
+        highTempValue.mixedTextColor = scheme
     }
 }
 

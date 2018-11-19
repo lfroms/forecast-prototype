@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConditionView" customModule="Forecast" customModuleProvider="target">
             <connections>
+                <outlet property="backdropView" destination="ncl-e7-CM9" id="jyV-IS-bhh"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="zwJ-iR-Vvk"/>
                 <outlet property="iconLabel" destination="xla-3x-CAE" id="b5m-dL-e9D"/>
                 <outlet property="typeLabel" destination="W8D-H0-dTN" id="Wyj-OF-CLG"/>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NightNight
 import UIKit
 
 class WeatherPageController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
@@ -46,9 +47,9 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         self.pageControl.numberOfPages = self.pages.count
         self.pageControl.currentPage = currentPageIndex
         self.pageControl.alpha = 1
-        self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.lightGray
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.pageControl.mixedTintColor = MixedColor(normal: .black, night: .white)
+        self.pageControl.mixedPageIndicatorTintColor = MixedColor(normal: .lightGray, night: .darkGray)
+        self.pageControl.mixedCurrentPageIndicatorTintColor = MixedColor(normal: .black, night: .white)
         self.view.addSubview(self.pageControl)
     }
     

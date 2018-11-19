@@ -75,6 +75,9 @@
                                         <state key="normal" title="search">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressSearch:" destination="vfY-E5-8UY" eventType="touchUpInside" id="IsO-dA-KXs"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today 8:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Win-PH-iit">
                                         <rect key="frame" x="140.66666666666666" y="58.666666666666664" width="93.666666666666657" height="15.666666666666664"/>
@@ -158,6 +161,7 @@
                         <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="JQ6-Aj-vZq"/>
                         <outlet property="detailsTopRow" destination="CnB-4p-AxR" id="Q1k-f6-wgY"/>
                         <outlet property="lastUpdatedLabel" destination="Win-PH-iit" id="Lwu-p9-wvK"/>
+                        <outlet property="searchIcon" destination="a8Q-yu-1UU" id="BX2-CG-gPf"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
                     </connections>
                 </viewController>
