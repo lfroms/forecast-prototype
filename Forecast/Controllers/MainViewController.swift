@@ -59,6 +59,13 @@ class MainViewController: UIViewController {
             if self.initialScrollViewPosition == nil {
                 self.initialScrollViewPosition = self.detailsScrollView.frame.origin
             }
+            
+            let codeAsInt = Int(cc.iconCode!) ?? 0
+            
+            if codeAsInt > 29 && codeAsInt < 40 {
+                NightNight.theme = .night
+                setNeedsStatusBarAppearanceUpdate()
+            }
         }
     }
     
@@ -92,7 +99,7 @@ class MainViewController: UIViewController {
         EnvCanada.shared.siteData(in: .English).load()
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return MixedStatusBarStyle(normal: .default, night: .lightContent).unfold()
     }
 }
