@@ -23,12 +23,6 @@ class CurrentConditionsViewController: UIViewController {
     
     @IBOutlet var iconImageView: UIImageView!
     
-    @IBAction func didPressForecastButton(_ sender: UIButton) {
-        present(
-            self.storyboard!.instantiateViewController(withIdentifier: "Forecast"),
-            animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
@@ -109,11 +103,5 @@ extension CurrentConditionsViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
         self.loadingIndicator.startAnimating()
         self.render()
-    }
-}
-
-extension Float {
-    func asRoundedString() -> String {
-        return String(format: "%.0f", self.rounded())
     }
 }

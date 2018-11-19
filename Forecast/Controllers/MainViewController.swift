@@ -26,8 +26,6 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
-    @IBOutlet var bottomConstraint: NSLayoutConstraint!
-    
     var useNightMode = false
     var initialScrollViewPosition: CGPoint!
     
