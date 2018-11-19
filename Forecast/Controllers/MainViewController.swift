@@ -35,8 +35,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
-        
-        self.initialScrollViewPosition = self.detailsScrollView.frame.origin
     }
     
     func render() {
@@ -62,6 +60,8 @@ class MainViewController: UIViewController {
 //                self.stationLabel.textColor = UIColor(named: "White")
 //                self.setNeedsStatusBarAppearanceUpdate()
 //            }
+            
+            self.initialScrollViewPosition = self.detailsScrollView.frame.origin
         }
     }
     
