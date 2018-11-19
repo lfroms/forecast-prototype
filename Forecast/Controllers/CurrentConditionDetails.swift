@@ -89,7 +89,7 @@ extension MainViewController {
                 units: "°",
                 type: "HUMIDEX",
                 icon: "sun",
-                color: UIColor(red: 0.00, green: 0.64, blue: 1.00, alpha: 1.0)
+                color: UIColor(red: 1.00, green: 0.60, blue: 0.00, alpha: 1.0)
             )
             detailsBottomRow.addArrangedSubview(humidexView)
         }
