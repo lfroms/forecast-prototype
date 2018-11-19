@@ -12,6 +12,12 @@ import UIKit
 class WeatherPageController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     var pages = [UIViewController]()
     var pageControl = UIPageControl()
+    var mainVC: MainViewController?
+    var currentPageIndex: Int = 0 {
+        didSet(oldVal) {
+            pageControl.currentPage = currentPageIndex
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +44,7 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
     func configurePageControl() {
         self.pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = self.pages.count
-        self.pageControl.currentPage = 0
+        self.pageControl.currentPage = currentPageIndex
         self.pageControl.alpha = 1
         self.pageControl.tintColor = UIColor.black
         self.pageControl.pageIndicatorTintColor = UIColor.lightGray
@@ -72,13 +78,18 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        self.pageControl.currentPage = pages.index(of: pageContentViewController)!
+        if completed {
+            self.currentPageIndex = self.pages.index(of: pageContentViewController)!
+        }
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let point = scrollView.contentOffset
         var percentComplete: CGFloat
-        percentComplete = abs(point.x - view.frame.size.width) / view.frame.size.width
-        NSLog("percentComplete: %f", percentComplete)
+        percentComplete = abs(CGFloat(currentPageIndex) + (point.x - view.frame.size.width) / view.frame.size.width)
+        
+        if self.mainVC != nil {
+            self.mainVC!.onTransitionProgress(percentComplete)
+        }
     }
 }

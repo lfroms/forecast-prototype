@@ -15,20 +15,28 @@ class MainViewController: UIViewController {
     @IBOutlet var stationLabel: UILabel!
     @IBOutlet var lastUpdatedLabel: UILabel!
     
+    @IBOutlet var detailsScrollView: UIScrollView!
     @IBOutlet var detailsTopRow: UIStackView!
     @IBOutlet var detailsBottomRow: UIStackView!
+    
+    @IBOutlet var containerView: UIView!
     
     @IBOutlet var cogIcon: UIButton!
     @IBAction func didPressCog(_ sender: Any) {
         self.fetchNewData()
     }
     
+    @IBOutlet var bottomConstraint: NSLayoutConstraint!
+    
     var useNightMode = false
+    var initialScrollViewPosition: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
+        
+        self.initialScrollViewPosition = self.detailsScrollView.frame.origin
     }
     
     func render() {
@@ -59,6 +67,21 @@ class MainViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.useNightMode ? .lightContent : .default
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PageEmbedSegue" {
+            let embedVC = segue.destination as! WeatherPageController
+            embedVC.mainVC = self
+        }
+    }
+    
+    func onTransitionProgress(_ percent: CGFloat) {
+        let distance = view.frame.height - initialScrollViewPosition.y
+        let change = initialScrollViewPosition.y + (distance * percent)
+        
+        self.detailsScrollView.frame.origin.y = change
+        self.detailsScrollView.alpha = 1 - (1.3 * percent)
     }
     
     func fetchNewData() {
