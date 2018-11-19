@@ -26,7 +26,6 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
-    var useNightMode = false
     var initialScrollViewPosition: CGPoint!
     
     override func viewDidLoad() {
@@ -41,30 +40,18 @@ class MainViewController: UIViewController {
         if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
             let cc = data.currentConditions
             self.addDetailSubviews(cc)
-            let timestamp = cc.dateTime![1].value.timeStamp
             
+            self.stationLabel.text = data.location.name.value
+            
+            let timestamp = cc.dateTime![1].value.timeStamp
             self.lastUpdatedLabel.text = timestamp
                 .toDate("yyyyMMddhhmmss")?
                 .toFormat("MMM d h:mm a")
             
-            self.stationLabel.text = data.location.name.value
-            
-            let codeAsInt = Int(cc.iconCode!) ?? 0
-            
-//            if codeAsInt > 29 && codeAsInt < 40 {
-//                self.useNightMode = true
-//                self.view.backgroundColor = UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1.0)
-//                self.cogIcon.tintColor = UIColor(named: "White")
-//                self.stationLabel.textColor = UIColor(named: "White")
-//                self.setNeedsStatusBarAppearanceUpdate()
-//            }
-            
-            self.initialScrollViewPosition = self.detailsScrollView.frame.origin
+            if self.initialScrollViewPosition != nil {
+                self.initialScrollViewPosition = self.detailsScrollView.frame.origin
+            }
         }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return self.useNightMode ? .lightContent : .default
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

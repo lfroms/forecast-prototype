@@ -28,14 +28,6 @@ class CurrentConditionsViewController: UIViewController {
         EnvCanada.shared.siteData(in: .English).addObserver(self)
     }
     
-    var useNightMode = false {
-        didSet {
-            if self.useNightMode != oldValue {
-                self.render()
-            }
-        }
-    }
-    
     func render() {
         let resource = EnvCanada.shared.siteData(in: .English)
         
@@ -71,30 +63,7 @@ class CurrentConditionsViewController: UIViewController {
             
             if cc.iconCode != nil {
                 self.iconImageView.image = UIImage(named: cc.iconCode!) ?? UIImage(named: "03")
-                
-                let codeAsInt = Int(cc.iconCode!) ?? 0
-                
-                if codeAsInt > 29 && codeAsInt < 40 {
-                    self.useNightMode = true
-                } else {
-                    self.useNightMode = false
-                }
             }
-            
-//            if self.useNightMode {
-//                self.view.backgroundColor = UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1.0)
-//                // self.lastUpdatedLabel.textColor = UIColor(named: "SubduedInverted")
-//                //
-//                self.currentTempLabel.textColor = UIColor(named: "White")
-//                self.currentConditionLabel.textColor = UIColor(named: "White")
-//                self.loadingIndicator.color = UIColor(named: "White")
-//
-//                self.lowTempValue.textColor = UIColor(named: "White")
-//                self.highTempValue.textColor = UIColor(named: "White")
-//
-//                self.tempModifierLabel.textColor = UIColor(named: "LightInverted")
-//                self.tempModifierValue.textColor = UIColor(named: "White")
-//            }
         }
     }
 }
