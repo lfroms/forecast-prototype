@@ -28,13 +28,25 @@ extension MainViewController {
         if currCond.wind != nil {
             let wind = ConditionView().with(
                 value: currCond.wind!.direction.value + " " + currCond.wind!.speed.value,
-                units: currCond.wind?.speed.units,
+                units: currCond.wind!.speed.units,
                 type: "WIND",
                 icon: "wind",
                 color: UIColor(red: 0.86, green: 0.02, blue: 0.38, alpha: 1.0)
             )
             
             detailsTopRow.addArrangedSubview(wind)
+            
+            if currCond.wind!.gust.value != "" {
+                let gust = ConditionView().with(
+                    value: currCond.wind!.gust.value,
+                    units: currCond.wind!.gust.units,
+                    type: "WIND GUST",
+                    icon: "arrow-right",
+                    color: UIColor(red: 0.26, green: 0.79, blue: 0.14, alpha: 1.0)
+                )
+                
+                detailsTopRow.addArrangedSubview(gust)
+            }
         }
         
         if currCond.visibility != nil {
