@@ -246,14 +246,14 @@
                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="R6o-Cr-iCe">
                                                         <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="42"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="arrow-up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkb-Qq-mWG">
-                                                                <rect key="frame" x="0.0" y="16.666666666666686" width="16.666666666666668" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="arrow-up" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkb-Qq-mWG">
+                                                                <rect key="frame" x="0.0" y="16.666666666666686" width="93" height="19"/>
                                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
                                                                 <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="20°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rve-jF-UhU">
-                                                                <rect key="frame" x="26.666666666666693" y="0.0" width="93.666666666666686" height="42"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rve-jF-UhU">
+                                                                <rect key="frame" x="103.00000000000003" y="0.0" width="17.333333333333329" height="42"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <color key="textColor" name="Black"/>
                                                                 <nil key="highlightedColor"/>
@@ -272,14 +272,14 @@
                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8o6-WK-hnm">
                                                         <rect key="frame" x="0.0" y="49" width="120.33333333333333" height="42"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="1°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
-                                                                <rect key="frame" x="26.666666666666693" y="0.0" width="93.666666666666686" height="42"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-L8-Gy7">
+                                                                <rect key="frame" x="103.00000000000003" y="0.0" width="17.333333333333329" height="42"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <color key="textColor" name="Black"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="arrow-down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrY-Qw-VKb">
-                                                                <rect key="frame" x="0.0" y="16.666666666666686" width="16.666666666666668" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="arrow-down" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrY-Qw-VKb">
+                                                                <rect key="frame" x="0.0" y="16.666666666666686" width="93" height="19"/>
                                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
                                                                 <color key="textColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -336,7 +336,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer enabled="NO" cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="bcW-6o-QSu"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="667"/>
+            <point key="canvasLocation" x="-975.20000000000005" y="666.50246305418727"/>
         </scene>
         <!--Forecast View Controller-->
         <scene sceneID="Oms-D1-C7g">

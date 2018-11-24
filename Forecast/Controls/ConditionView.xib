@@ -33,10 +33,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-ju-jcf">
-                            <rect key="frame" x="48" y="12.5" width="112" height="35"/>
+                            <rect key="frame" x="46" y="12.5" width="114" height="35"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-Zp-Fgh">
-                                    <rect key="frame" x="0.0" y="0.0" width="112" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="19.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="67" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXg-ie-TNN">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="19.5"/>
@@ -62,7 +62,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="HUMIDITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-H0-dTN">
-                                    <rect key="frame" x="0.0" y="21.5" width="112" height="13.5"/>
+                                    <rect key="frame" x="0.0" y="21.5" width="114" height="13.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                     <nil key="highlightedColor"/>
                                     <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -70,9 +70,9 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="tint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xla-3x-CAE">
-                            <rect key="frame" x="2" y="21" width="46" height="18"/>
+                            <rect key="frame" x="2" y="21" width="44" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="46" id="5IU-Sc-cdt"/>
+                                <constraint firstAttribute="width" constant="44" id="5IU-Sc-cdt"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="18"/>
                             <nil key="textColor"/>
