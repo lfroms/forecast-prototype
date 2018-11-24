@@ -42,7 +42,8 @@ class CurrentConditionsViewController: UIViewController {
             let fc = data.forecastGroup.forecast
             
             if let tempAsFloat = Float(cc.temperature!.value) {
-                self.currentTempLabel.text = tempAsFloat.asRoundedString() + "°"
+                let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
+                self.currentTempLabel.text = normalized.asRoundedString() + "°"
             }
             
             self.currentConditionLabel.text = cc.condition
