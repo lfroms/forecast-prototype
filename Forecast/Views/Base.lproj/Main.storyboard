@@ -250,7 +250,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search Stations" id="40t-uT-rUg">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="iP3-ZZ-gh9">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="iP3-ZZ-gh9">
                             <connections>
                                 <action selector="exit:" destination="kvh-ne-zEf" id="xrZ-3r-0AY"/>
                             </connections>
