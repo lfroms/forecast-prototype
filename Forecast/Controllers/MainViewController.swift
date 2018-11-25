@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
         let change = initialScrollViewPosition.y + (distance * percent)
         
         self.detailsScrollView.frame.origin.y = change
-        self.detailsScrollView.alpha = 1 - (1.3 * percent)
+        self.detailsScrollView.alpha = 1 - (1.5 * percent)
     }
     
     func fetchNewData() {
