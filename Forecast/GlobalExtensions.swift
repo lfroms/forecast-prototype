@@ -13,3 +13,10 @@ extension Float {
         return String(format: "%.0f", self.rounded())
     }
 }
+
+extension String {
+    func hasWhiteSpace() -> Bool {
+        let charset = CharacterSet(charactersIn: " ")
+        return self.lowercased().rangeOfCharacter(from: charset) != nil
+    }
+}

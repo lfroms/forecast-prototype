@@ -192,9 +192,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="03" translatesAutoresizingMaskIntoConstraints="NO" id="v3A-6H-ygW">
-                                                <rect key="frame" x="0.0" y="11.666666666666657" width="375" height="190"/>
+                                                <rect key="frame" x="0.0" y="6.6666666666666572" width="375" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="190" id="9zw-PM-QR8"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="9zw-PM-QR8"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -346,18 +346,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-0M-cpS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-0M-cpS">
+                                <rect key="frame" x="0.0" y="50" width="375" height="450"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forecast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhh-K6-BtQ">
-                                        <rect key="frame" x="154" y="46" width="67" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="50" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-el-MZZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gjX-el-MZZ" secondAttribute="bottom" id="6IQ-sb-Zje"/>
+                                    <constraint firstItem="gjX-el-MZZ" firstAttribute="leading" secondItem="qfp-0M-cpS" secondAttribute="leading" id="ScM-6z-GUQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gjX-el-MZZ" secondAttribute="trailing" id="eT3-lh-Rf6"/>
+                                    <constraint firstItem="gjX-el-MZZ" firstAttribute="top" secondItem="qfp-0M-cpS" secondAttribute="top" id="fH8-QC-U3L"/>
+                                    <constraint firstItem="gjX-el-MZZ" firstAttribute="width" secondItem="qfp-0M-cpS" secondAttribute="width" id="kyn-49-N39"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(500,0) fade()"/>
                                 </userDefinedRuntimeAttributes>
@@ -373,6 +376,9 @@
                         <viewLayoutGuide key="safeArea" id="yZT-YY-PIw"/>
                     </view>
                     <size key="freeformSize" width="375" height="500"/>
+                    <connections>
+                        <outlet property="forecastStack" destination="gjX-el-MZZ" id="fgS-DW-1ke"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijx-f8-GCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
