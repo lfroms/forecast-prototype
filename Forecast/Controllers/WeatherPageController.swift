@@ -50,6 +50,7 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         self.pageControl.mixedTintColor = MixedColor(normal: .black, night: .white)
         self.pageControl.mixedPageIndicatorTintColor = MixedColor(normal: .lightGray, night: .darkGray)
         self.pageControl.mixedCurrentPageIndicatorTintColor = MixedColor(normal: .black, night: .white)
+        self.pageControl.isUserInteractionEnabled = false
         self.view.addSubview(self.pageControl)
     }
     

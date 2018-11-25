@@ -192,7 +192,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="03" translatesAutoresizingMaskIntoConstraints="NO" id="v3A-6H-ygW">
-                                                <rect key="frame" x="0.0" y="26" width="375" height="161"/>
+                                                <rect key="frame" x="0.0" y="6.6666666666666572" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="9zw-PM-QR8"/>
                                                 </constraints>
@@ -386,7 +386,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="03" width="210" height="161"/>
+        <image name="03" width="840" height="644"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
