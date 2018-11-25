@@ -361,9 +361,6 @@
                                     <constraint firstItem="gjX-el-MZZ" firstAttribute="top" secondItem="qfp-0M-cpS" secondAttribute="top" id="fH8-QC-U3L"/>
                                     <constraint firstItem="gjX-el-MZZ" firstAttribute="width" secondItem="qfp-0M-cpS" secondAttribute="width" id="kyn-49-N39"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(500,0) fade()"/>
-                                </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
