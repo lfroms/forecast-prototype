@@ -28,15 +28,11 @@ class MainViewController: UIViewController {
         self.fetchNewData()
     }
     
-    @IBAction func didPressSearch(_ sender: Any) {
-        NightNight.toggleNightTheme()
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    
     var initialScrollViewPosition: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NightNight.theme = .normal
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
         self.configureThemeColors()
@@ -45,25 +41,28 @@ class MainViewController: UIViewController {
     func render() {
         let resource = EnvCanada.shared.siteData(in: .English)
         
-        if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
+        if let data = resource.latestData?.content as! SiteData? {
             let cc = data.currentConditions
             self.addDetailSubviews(cc)
             
             self.stationLabel.text = data.location.name.value
             
-            let timestamp = cc.dateTime![1].value.timeStamp
-            self.lastUpdatedLabel.text = timestamp
-                .toDate("yyyyMMddhhmmss")?
-                .toFormat("MMM d h:mm a")
+            if cc.dateTime != nil {
+                let timestamp = cc.dateTime![1].value.timeStamp
+                
+                self.lastUpdatedLabel.text = timestamp
+                    .toDate("yyyyMMddhhmmss")?
+                    .toFormat("MMM d h:mm a")
+            }
             
             if self.initialScrollViewPosition == nil {
                 self.initialScrollViewPosition = self.detailsScrollView.frame.origin
             }
             
-            let codeAsInt = Int(cc.iconCode!) ?? 0
+            let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
             
             if codeAsInt > 29 && codeAsInt < 40 {
-                NightNight.theme = .night
+                //NightNight.theme = .night
                 setNeedsStatusBarAppearanceUpdate()
             }
         }
@@ -106,6 +105,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
-        self.render()
+        if case .newData = event {
+            self.render()
+        }
     }
 }

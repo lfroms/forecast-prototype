@@ -41,7 +41,7 @@ class WeatherService: Service {
     }
 
     func siteData(in lang: LanguageCode) -> Resource {
-        let site = Site()
+        let site = loadDefaultSite()
 
         let name = site.code + "_" + lang.rawValue + ".xml"
         return resource("/").child(site.provinceCode).child(name)

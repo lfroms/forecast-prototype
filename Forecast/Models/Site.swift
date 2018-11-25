@@ -13,7 +13,7 @@ struct Site: XMLIndexerDeserializable {
     let nameEn: String
     let nameFr: String
     let provinceCode: String
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> Site {
         return try Site(
             code: node.value(ofAttribute: "code"),
@@ -22,35 +22,27 @@ struct Site: XMLIndexerDeserializable {
             provinceCode: node["provinceCode"].value()
         )
     }
-    
+
     init(code: String, nameEn: String, nameFr: String, provinceCode: String) {
         self.code = code
         self.nameEn = nameEn
         self.nameFr = nameFr
         self.provinceCode = provinceCode
     }
-    
-    // TESTING PURPOSES
-    init() {
-        self.code = "s0000430"
-        self.nameEn = "Ottawa (Kanata - Orléans)"
-        self.nameFr = "Ottawa (Kanata - Orléans)"
-        self.provinceCode = "ON"
-    }
-    
+
     public func saveAsDefault() {
         UserDefaults.standard.set(self.code, forKey: "defaultSiteCode")
         UserDefaults.standard.set(self.nameEn, forKey: "defaultSiteNameEn")
         UserDefaults.standard.set(self.nameFr, forKey: "defaultSiteNameFr")
         UserDefaults.standard.set(self.provinceCode, forKey: "defaultSiteProvinceCode")
     }
-    
-    public func loadDefault() -> Site {
-        return Site(
-            code: UserDefaults.standard.string(forKey: "defaultSiteCode")!,
-            nameEn: UserDefaults.standard.string(forKey: "defaultSiteNameEn")!,
-            nameFr: UserDefaults.standard.string(forKey: "defaultSiteNameFr")!,
-            provinceCode: UserDefaults.standard.string(forKey: "defaultSiteProvinceCode")!
-        )
-    }
+}
+
+func loadDefaultSite() -> Site {
+    return Site(
+        code: UserDefaults.standard.string(forKey: "defaultSiteCode") ?? "s0000430",
+        nameEn: UserDefaults.standard.string(forKey: "defaultSiteNameEn") ?? "Ottawa (Kanata - Orléans)",
+        nameFr: UserDefaults.standard.string(forKey: "defaultSiteNameFr") ?? "Ottawa (Kanata - Orléans)",
+        provinceCode: UserDefaults.standard.string(forKey: "defaultSiteProvinceCode") ?? "ON"
+    )
 }

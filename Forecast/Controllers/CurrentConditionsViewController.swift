@@ -33,7 +33,8 @@ class CurrentConditionsViewController: UIViewController {
     func render() {
         let resource = EnvCanada.shared.siteData(in: .English)
         
-        if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
+        if let data = resource.latestData?.content as! SiteData?,
+            resource.isLoading == false {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.loadingIndicator.stopAnimating()
             }
@@ -41,7 +42,7 @@ class CurrentConditionsViewController: UIViewController {
             let cc = data.currentConditions
             let fc = data.forecastGroup.forecast
             
-            if let tempAsFloat = Float(cc.temperature!.value) {
+            if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value) {
                 let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
                 self.currentTempLabel.text = normalized.asRoundedString() + "°"
             }
