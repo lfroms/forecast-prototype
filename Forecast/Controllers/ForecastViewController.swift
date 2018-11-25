@@ -32,7 +32,8 @@ class ForecastViewController: UIViewController {
                         iconCode: item.abbreviatedForecast.iconCode,
                         condition: description + (description.hasWhiteSpace() ? "." : ""),
                         date: item.period.textForecastName.uppercased(),
-                        temperature: item.temperatures.first!.value + "°"
+                        temperature: item.temperatures.first!.value + "°",
+                        pop: item.abbreviatedForecast.pop.value
                     )
 
                     forecastStack.addArrangedSubview(subview)

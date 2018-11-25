@@ -19,6 +19,7 @@ class ForecastItem: UIView {
     @IBOutlet var conditionLabel: UILabel!
     @IBOutlet var dateTimeLabel: UILabel!
     @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var popLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,7 +41,7 @@ class ForecastItem: UIView {
         return contentView.frame.size
     }
     
-    func with(iconCode: String?, condition: String, date: String, temperature: String) -> ForecastItem {
+    func with(iconCode: String?, condition: String, date: String, temperature: String, pop: String?) -> ForecastItem {
         let scheme = MixedColor(normal: .black, night: .white)
         
         // Icon
@@ -62,6 +63,14 @@ class ForecastItem: UIView {
         // Type of Detail Label
         temperatureLabel.text = temperature
         temperatureLabel.mixedTextColor = scheme
+        
+        // POP Label
+        if pop != nil && pop != "" {
+            popLabel.text = pop! + "%"
+            popLabel.mixedTextColor = scheme
+        } else {
+            popLabel.isHidden = true
+        }
         
         // Backdrop
         backdrop.mixedBackgroundColor =
