@@ -32,8 +32,8 @@ class ForecastItem: UIView {
     
     private func commonInit() {
         Bundle.main.loadNibNamed("ForecastItem", owner: self, options: nil)
-        contentView.frame = self.bounds
-        self.addSubview(contentView)
+        contentView.frame = bounds
+        addSubview(contentView)
     }
     
     override var intrinsicContentSize: CGSize {
@@ -44,9 +44,12 @@ class ForecastItem: UIView {
         let scheme = MixedColor(normal: .black, night: .white)
         
         // Icon
-        if iconCode != nil {
-            iconImageView.image = UIImage(named: iconCode ?? "03")
-        }
+        iconImageView.mixedImage = MixedImage(
+            normal:
+            UIImage(named: iconCode! + "-L") ?? UIImage(named: iconCode!)!,
+            night:
+            UIImage(named: iconCode!)!
+        )
         
         // Condition Label
         conditionLabel.text = condition

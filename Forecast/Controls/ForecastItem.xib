@@ -59,8 +59,8 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="TODAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC6-81-uoE">
-                    <rect key="frame" x="110" y="0.0" width="48.5" height="17"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <rect key="frame" x="128" y="0.0" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -75,9 +75,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="iPb-36-7Sc" secondAttribute="bottom" id="3Ag-oc-IkY"/>
-                <constraint firstItem="iPb-36-7Sc" firstAttribute="top" secondItem="iC6-81-uoE" secondAttribute="bottom" constant="10" id="Cd5-PK-Im8"/>
+                <constraint firstItem="iPb-36-7Sc" firstAttribute="top" secondItem="iC6-81-uoE" secondAttribute="bottom" constant="6" id="Cd5-PK-Im8"/>
                 <constraint firstAttribute="trailing" secondItem="iPb-36-7Sc" secondAttribute="trailing" constant="32" id="JmI-dy-ifY"/>
-                <constraint firstItem="iPb-36-7Sc" firstAttribute="leading" secondItem="iC6-81-uoE" secondAttribute="leading" id="U6d-Dj-nMl"/>
+                <constraint firstItem="iPb-36-7Sc" firstAttribute="leading" secondItem="iC6-81-uoE" secondAttribute="leading" constant="-18" id="U6d-Dj-nMl"/>
                 <constraint firstItem="iC6-81-uoE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mIk-uH-oM3"/>
                 <constraint firstItem="iPb-36-7Sc" firstAttribute="leading" secondItem="sFC-oK-9Iv" secondAttribute="trailing" constant="14" id="moq-it-uNz"/>
                 <constraint firstItem="iPb-36-7Sc" firstAttribute="centerY" secondItem="sFC-oK-9Iv" secondAttribute="centerY" id="smv-2E-THP"/>
