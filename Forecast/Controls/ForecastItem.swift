@@ -32,7 +32,8 @@ class ForecastItem: UIView {
     
     private func commonInit() {
         Bundle.main.loadNibNamed("ForecastItem", owner: self, options: nil)
-        addSubview(contentView)
+        contentView.frame = self.bounds
+        self.addSubview(contentView)
     }
     
     override var intrinsicContentSize: CGSize {
