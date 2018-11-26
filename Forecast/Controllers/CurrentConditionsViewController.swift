@@ -35,7 +35,7 @@ class CurrentConditionsViewController: UIViewController {
         
         if let data = resource.latestData?.content as! SiteData?,
             resource.isLoading == false {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.loadingIndicator.stopAnimating()
             }
             

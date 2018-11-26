@@ -25,7 +25,8 @@ class MainViewController: UIViewController {
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var searchIcon: UIButton!
     @IBAction func didPressCog(_ sender: Any) {
-        self.fetchNewData()
+        NightNight.toggleNightTheme()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     var initialScrollViewPosition: CGPoint!
@@ -62,7 +63,7 @@ class MainViewController: UIViewController {
             let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
             
             if codeAsInt > 29 && codeAsInt < 40 {
-                //NightNight.theme = .night
+                NightNight.theme = .night
                 setNeedsStatusBarAppearanceUpdate()
             }
         }
