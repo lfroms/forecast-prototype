@@ -14,7 +14,7 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
     var pages = [UIViewController]()
     var pageControl = UIPageControl()
     var mainVC: MainViewController?
-    var currentPageIndex: Int = 0 {
+    var currentPageIndex: Int = 1 {
         didSet(oldVal) {
             pageControl.currentPage = currentPageIndex
         }
@@ -25,9 +25,11 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
         delegate = self
         dataSource = self
         
+        let p0: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "AlertsWarnings") as! AlertsViewController
         let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "CurrentConditions") as! CurrentConditionsViewController
         let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "Forecast") as! ForecastViewController
         
+        pages.append(p0)
         pages.append(p1)
         pages.append(p2)
         
@@ -88,7 +90,7 @@ class WeatherPageController: UIPageViewController, UIPageViewControllerDataSourc
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let point = scrollView.contentOffset
         var percentComplete: CGFloat
-        percentComplete = abs(CGFloat(currentPageIndex) + (point.x - view.frame.size.width) / view.frame.size.width)
+        percentComplete = abs(CGFloat(currentPageIndex - 1) + (point.x - view.frame.size.width) / view.frame.size.width)
         
         if self.mainVC != nil {
             self.mainVC!.onTransitionProgress(percentComplete)

@@ -183,6 +183,49 @@
             </objects>
             <point key="canvasLocation" x="-975" y="134"/>
         </scene>
+        <!--Alerts View Controller-->
+        <scene sceneID="Yqs-HB-coU">
+            <objects>
+                <viewController storyboardIdentifier="AlertsWarnings" id="SwC-a7-Czj" customClass="AlertsViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1jv-Jk-b3q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="W6h-HY-tHQ">
+                                <rect key="frame" x="0.0" y="50" width="375" height="550"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="200" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uca-dY-ZKe">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="32" bottom="0.0" right="32"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uca-dY-ZKe" secondAttribute="trailing" id="J7V-p6-Gn3"/>
+                                    <constraint firstItem="uca-dY-ZKe" firstAttribute="width" secondItem="W6h-HY-tHQ" secondAttribute="width" id="T4B-s1-6cs"/>
+                                    <constraint firstItem="uca-dY-ZKe" firstAttribute="leading" secondItem="W6h-HY-tHQ" secondAttribute="leading" id="WKk-3O-BB3"/>
+                                    <constraint firstItem="uca-dY-ZKe" firstAttribute="top" secondItem="W6h-HY-tHQ" secondAttribute="top" id="ZaS-dp-cPm"/>
+                                    <constraint firstAttribute="bottom" secondItem="uca-dY-ZKe" secondAttribute="bottom" id="wkw-lz-xBj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W6h-HY-tHQ" firstAttribute="leading" secondItem="keU-AH-LJL" secondAttribute="leading" id="0zu-HJ-fGU"/>
+                            <constraint firstItem="W6h-HY-tHQ" firstAttribute="top" secondItem="1jv-Jk-b3q" secondAttribute="top" constant="50" id="1js-fP-ha5"/>
+                            <constraint firstItem="keU-AH-LJL" firstAttribute="trailing" secondItem="W6h-HY-tHQ" secondAttribute="trailing" id="X8Z-1K-c4E"/>
+                            <constraint firstAttribute="bottom" secondItem="W6h-HY-tHQ" secondAttribute="bottom" id="ZGy-yX-y72"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="keU-AH-LJL"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="600"/>
+                    <connections>
+                        <outlet property="alertsStack" destination="uca-dY-ZKe" id="jIx-DI-v4e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vC7-HT-QyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="154"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ED6-zX-Uty">
             <objects>
@@ -432,7 +475,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer enabled="NO" cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="bcW-6o-QSu"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="160"/>
+            <point key="canvasLocation" x="390" y="154"/>
         </scene>
         <!--Forecast View Controller-->
         <scene sceneID="Oms-D1-C7g">
@@ -475,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijx-f8-GCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="123"/>
+            <point key="canvasLocation" x="1020" y="117"/>
         </scene>
     </scenes>
     <resources>

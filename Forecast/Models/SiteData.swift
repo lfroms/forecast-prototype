@@ -11,6 +11,7 @@ import SWXMLHash
 struct SiteData: XMLIndexerDeserializable {
     let location: Location
     let currentConditions: CurrentConditions
+    let warnings: Warnings?
     let forecastGroup: ForecastGroup
     let riseSet: RiseSet
 
@@ -18,6 +19,7 @@ struct SiteData: XMLIndexerDeserializable {
         return try SiteData(
             location: node["location"].value(),
             currentConditions: node["currentConditions"].value(),
+            warnings: node["warnings"].value(),
             forecastGroup: node["forecastGroup"].value(),
             riseSet: node["riseSet"].value()
         )

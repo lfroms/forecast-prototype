@@ -18,10 +18,15 @@
 		8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */; };
 		8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8052A6A9217E8B46004FB527 /* ConditionView.xib */; };
 		8053C65F218E81820041F29E /* UIStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053C65E218E81820041F29E /* UIStyledButton.swift */; };
+		80582D3221ACDB79005B7FA9 /* WarningEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80582D3121ACDB79005B7FA9 /* WarningEvent.swift */; };
+		80582D3421ACDC6D005B7FA9 /* Warnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80582D3321ACDC6D005B7FA9 /* Warnings.swift */; };
 		80731E7021A24F7000B40F42 /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80731E6F21A24F7000B40F42 /* GlobalExtensions.swift */; };
 		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
 		807B7295217E7872002EE814 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ConditionView.swift */; };
 		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
+		8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082207F21ACD35900ACBE7E /* AlertsViewController.swift */; };
+		8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8082208121ACD56100ACBE7E /* AlertItem.xib */; };
+		8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* AlertItem.swift */; };
 		80A2FBDF21AA2F020067A425 /* ForecastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBDD21AA2F020067A425 /* ForecastItem.swift */; };
 		80A608242176C180005D2891 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608232176C180005D2891 /* DateTime.swift */; };
 		80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A608292176C1E7005D2891 /* CurrentConditions.swift */; };
@@ -60,10 +65,15 @@
 		8051A6FE21755BE7007290CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8052A6A9217E8B46004FB527 /* ConditionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionView.xib; sourceTree = "<group>"; };
 		8053C65E218E81820041F29E /* UIStyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyledButton.swift; sourceTree = "<group>"; };
+		80582D3121ACDB79005B7FA9 /* WarningEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningEvent.swift; sourceTree = "<group>"; };
+		80582D3321ACDC6D005B7FA9 /* Warnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warnings.swift; sourceTree = "<group>"; };
 		80731E6F21A24F7000B40F42 /* GlobalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
 		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
 		807B7294217E7872002EE814 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		8082207F21ACD35900ACBE7E /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		8082208121ACD56100ACBE7E /* AlertItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertItem.xib; sourceTree = "<group>"; };
+		8082208321ACD57A00ACBE7E /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		80A2FBDD21AA2F020067A425 /* ForecastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastItem.swift; sourceTree = "<group>"; };
 		80A608232176C180005D2891 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		80A608292176C1E7005D2891 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
@@ -106,7 +116,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		802443F4217A79EE0066F905 /* Controls */ = {
+		802443F4217A79EE0066F905 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				807B7294217E7872002EE814 /* ConditionView.swift */,
@@ -115,8 +125,10 @@
 				802F20E721AA36AA00488957 /* ForecastItem.xib */,
 				80B71C8021824E3500DAFA65 /* UIStyledView.swift */,
 				8053C65E218E81820041F29E /* UIStyledButton.swift */,
+				8082208121ACD56100ACBE7E /* AlertItem.xib */,
+				8082208321ACD57A00ACBE7E /* AlertItem.swift */,
 			);
-			path = Controls;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8051A6E621755BE6007290CF = {
@@ -142,7 +154,7 @@
 			children = (
 				8025484A2186774B00118465 /* Theme.xcassets */,
 				807B728F217E4EBF002EE814 /* DataSources */,
-				802443F4217A79EE0066F905 /* Controls */,
+				802443F4217A79EE0066F905 /* Components */,
 				80EEB23D217A74A500AD4448 /* Fonts */,
 				80EEB23A217A745600AD4448 /* Controllers */,
 				80EEB239217A744500AD4448 /* Views */,
@@ -180,6 +192,8 @@
 				8040B5B02178047B0021AF6C /* Site.swift */,
 				80EEB234217A697A00AD4448 /* RegionalNormals.swift */,
 				80EEB236217A69D500AD4448 /* ExactLocation.swift */,
+				80582D3121ACDB79005B7FA9 /* WarningEvent.swift */,
+				80582D3321ACDC6D005B7FA9 /* Warnings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +224,7 @@
 				80B1D3FE2193D41D006DD630 /* WeatherPageController.swift */,
 				80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */,
 				80F175FA21AB37C8001090BD /* SearchTableViewController.swift */,
+				8082207F21ACD35900ACBE7E /* AlertsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +311,7 @@
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
+				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
 				802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */,
 			);
@@ -376,16 +392,20 @@
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
 				80B1D4012193D951006DD630 /* CurrentConditionsViewController.swift in Sources */,
+				8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
+				80582D3421ACDC6D005B7FA9 /* Warnings.swift in Sources */,
 				80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */,
 				80B1D3FF2193D41D006DD630 /* WeatherPageController.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
 				80A2FBDF21AA2F020067A425 /* ForecastItem.swift in Sources */,
+				80582D3221ACDB79005B7FA9 /* WarningEvent.swift in Sources */,
 				80E5D6972180056100121084 /* CurrentConditionDetails.swift in Sources */,
 				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
 				80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */,
+				8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
 				80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */,
