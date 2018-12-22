@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import NightNight
 import UIKit
 
 class AlertItem: UIView {

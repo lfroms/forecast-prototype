@@ -38,11 +38,8 @@
 		80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083A2176CC4F005D2891 /* ForecastGroup.swift */; };
 		80A6083D2176D433005D2891 /* RiseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083C2176D433005D2891 /* RiseSet.swift */; };
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
-		80B1D3FF2193D41D006DD630 /* WeatherPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D3FE2193D41D006DD630 /* WeatherPageController.swift */; };
-		80B1D4012193D951006DD630 /* CurrentConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */; };
+		80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */; };
 		80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B71C8021824E3500DAFA65 /* UIStyledView.swift */; };
-		80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */; };
-		80E5D6972180056100121084 /* CurrentConditionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E5D6962180056100121084 /* CurrentConditionDetails.swift */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
 		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
 		80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F175FA21AB37C8001090BD /* SearchTableViewController.swift */; };
@@ -85,11 +82,8 @@
 		80A6083A2176CC4F005D2891 /* ForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastGroup.swift; sourceTree = "<group>"; };
 		80A6083C2176D433005D2891 /* RiseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseSet.swift; sourceTree = "<group>"; };
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		80B1D3FE2193D41D006DD630 /* WeatherPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageController.swift; sourceTree = "<group>"; };
-		80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsViewController.swift; sourceTree = "<group>"; };
+		80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderCurrentConditions.swift; sourceTree = "<group>"; };
 		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
-		80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
-		80E5D6962180056100121084 /* CurrentConditionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionDetails.swift; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
 		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
 		80F175FA21AB37C8001090BD /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -219,10 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8051A6F421755BE6007290CF /* MainViewController.swift */,
-				80E02CE7217B7F7F00C10E06 /* ForecastViewController.swift */,
-				80E5D6962180056100121084 /* CurrentConditionDetails.swift */,
-				80B1D3FE2193D41D006DD630 /* WeatherPageController.swift */,
-				80B1D4002193D951006DD630 /* CurrentConditionsViewController.swift */,
+				80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */,
 				80F175FA21AB37C8001090BD /* SearchTableViewController.swift */,
 				8082207F21ACD35900ACBE7E /* AlertsViewController.swift */,
 			);
@@ -329,7 +320,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/NightNight/NightNight.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Siesta/Siesta.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -339,7 +329,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NightNight.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siesta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -391,18 +380,15 @@
 				807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
-				80B1D4012193D951006DD630 /* CurrentConditionsViewController.swift in Sources */,
+				80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */,
 				8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
 				80582D3421ACDC6D005B7FA9 /* Warnings.swift in Sources */,
-				80E02CE8217B7F7F00C10E06 /* ForecastViewController.swift in Sources */,
-				80B1D3FF2193D41D006DD630 /* WeatherPageController.swift in Sources */,
 				80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */,
 				80A6083D2176D433005D2891 /* RiseSet.swift in Sources */,
 				80A2FBDF21AA2F020067A425 /* ForecastItem.swift in Sources */,
 				80582D3221ACDB79005B7FA9 /* WarningEvent.swift in Sources */,
-				80E5D6972180056100121084 /* CurrentConditionDetails.swift in Sources */,
 				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
 				80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */,
 				8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */,

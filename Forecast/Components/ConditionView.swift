@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import NightNight
 import UIKit
 
 class ConditionView: UIView {
@@ -40,44 +39,20 @@ class ConditionView: UIView {
         return contentView.frame.size
     }
     
-    func with(value: String?, units: String?, type: String, icon: String, color: UIColor) -> ConditionView {
-        let scheme = MixedColor(normal: .black, night: .white)
-        
+    func with(value: String?, units: String?, type: String, icon: String) -> ConditionView {
         // Icon
         iconLabel.text = icon
-        iconLabel.textColor = color
         
         // Value Label
         valueLabel.text = value ?? ""
-        valueLabel.mixedTextColor = scheme
         
         // Units Label
         unitLabel.text = units ?? ""
-        unitLabel.mixedTextColor = scheme
         
         // Type of Detail Label
         typeLabel.text = type
-        typeLabel.mixedTextColor = scheme
-        
-        // Backdrop
-        backdropView.mixedBackgroundColor =
-            MixedColor(
-                normal: UIColor(
-                    red: 0.00,
-                    green: 0.00,
-                    blue: 0.00,
-                    alpha: 0.03
-                ),
-                night: UIColor(
-                    red: 1.00,
-                    green: 1.00,
-                    blue: 1.00,
-                    alpha: 0.06
-                )
-            )
         
         invalidateIntrinsicContentSize()
-        
         return self
     }
 }

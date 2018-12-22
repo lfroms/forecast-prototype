@@ -1,15 +1,67 @@
 //
-//  MainVCExtension-Details.swift
+//  CurrentConditionsViewController.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2018-10-23.
+//  Created by Lukas Romsicki on 2018-11-07.
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
+import Siesta
+import SnapKit
+import SwiftDate
 import UIKit
 
 extension MainViewController {
-    func addDetailSubviews(_ currCond: CurrentConditions) {
+    func renderCurrentConditions(_ data: SiteData) {
+        let cc = data.currentConditions
+        let fc = data.forecastGroup.forecast
+        
+        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value) {
+            let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
+            self.currentTempLabel.text = normalized.asRoundedString() + "°"
+        }
+        
+        self.currentConditionLabel.text = cc.condition
+        
+        if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
+            let temp = forecast.temperatures.first?.value {
+            self.lowTempView.isHidden = false
+            self.lowTempValue.text = temp + "°"
+        } else {
+            self.lowTempView.isHidden = true
+        }
+        
+        if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
+            let temp = forecast.temperatures.first?.value {
+            self.highTempView.isHidden = false
+            self.highTempValue.text = temp + "°"
+        } else {
+            self.highTempView.isHidden = true
+        }
+    }
+    
+    func renderMetadata(_ data: SiteData) {
+        let cc = data.currentConditions
+        self.stationLabel.text = data.location.name.value
+        
+        if cc.dateTime != nil {
+            let timestamp = cc.dateTime![1].value.timeStamp
+            
+            self.lastUpdatedLabel.text = timestamp
+                .toDate("yyyyMMddhhmmss")?
+                .toFormat("MMM d h:mm a")
+        }
+        
+        if self.initialScrollViewPosition == nil {
+            self.initialScrollViewPosition = self.detailsScrollView.frame.origin
+        }
+        
+//        let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
+    }
+    
+    func renderDetails(_ data: SiteData) {
+        let currCond = data.currentConditions
+        
         detailsTopRow.subviews.forEach({ $0.removeFromSuperview() })
         detailsBottomRow.subviews.forEach({ $0.removeFromSuperview() })
         
@@ -18,8 +70,7 @@ extension MainViewController {
                 value: currCond.relativeHumidity?.value,
                 units: currCond.relativeHumidity?.units,
                 type: "HUMIDITY",
-                icon: "tint",
-                color: UIColor(red: 0.00, green: 0.64, blue: 1.00, alpha: 1.0)
+                icon: "tint"
             )
             
             detailsTopRow.addArrangedSubview(humidity)
@@ -30,8 +81,7 @@ extension MainViewController {
                 value: currCond.wind!.direction.value + " " + currCond.wind!.speed.value,
                 units: currCond.wind!.speed.units,
                 type: "WIND",
-                icon: "wind",
-                color: UIColor(red: 0.86, green: 0.02, blue: 0.38, alpha: 1.0)
+                icon: "wind"
             )
             
             detailsTopRow.addArrangedSubview(wind)
@@ -41,8 +91,7 @@ extension MainViewController {
                     value: currCond.wind!.gust.value,
                     units: currCond.wind!.gust.units,
                     type: "WIND GUST",
-                    icon: "arrow-right",
-                    color: UIColor(red: 0.26, green: 0.79, blue: 0.14, alpha: 1.0)
+                    icon: "arrow-right"
                 )
                 
                 detailsTopRow.addArrangedSubview(gust)
@@ -54,8 +103,7 @@ extension MainViewController {
                 value: currCond.visibility?.value,
                 units: currCond.visibility?.units,
                 type: "VISIBILITY",
-                icon: "ruler",
-                color: UIColor(red: 0.13, green: 0.47, blue: 1.00, alpha: 1.0)
+                icon: "ruler"
             )
             
             detailsTopRow.addArrangedSubview(visibility)
@@ -66,8 +114,7 @@ extension MainViewController {
                 value: currCond.pressure?.value,
                 units: currCond.pressure?.units,
                 type: "PRESSURE",
-                icon: "tachometer-alt",
-                color: UIColor(red: 0.26, green: 0.79, blue: 0.14, alpha: 1.0)
+                icon: "tachometer-alt"
             )
             
             detailsBottomRow.addArrangedSubview(pressure)
@@ -78,8 +125,7 @@ extension MainViewController {
                 value: windChill,
                 units: "°",
                 type: "WIND CHILL",
-                icon: "snowflake",
-                color: UIColor(red: 0.00, green: 0.64, blue: 1.00, alpha: 1.0)
+                icon: "snowflake"
             )
             detailsBottomRow.addArrangedSubview(windChillView)
             
@@ -88,8 +134,7 @@ extension MainViewController {
                 value: humidex,
                 units: "°",
                 type: "HUMIDEX",
-                icon: "sun",
-                color: UIColor(red: 1.00, green: 0.60, blue: 0.00, alpha: 1.0)
+                icon: "sun"
             )
             detailsBottomRow.addArrangedSubview(humidexView)
         }
@@ -99,8 +144,7 @@ extension MainViewController {
                 value: currCond.dewpoint?.value,
                 units: "°" + currCond.dewpoint!.units!,
                 type: "DEWPOINT",
-                icon: "thermometer-half",
-                color: UIColor(red: 0.22, green: 0.02, blue: 0.86, alpha: 1.0)
+                icon: "thermometer-half"
             )
             
             detailsBottomRow.addArrangedSubview(dewpoint)
