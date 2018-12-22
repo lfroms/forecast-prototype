@@ -59,6 +59,7 @@ class MainViewController: UIViewController {
     }
     
     func fetchNewData() {
+        self.loadingIndicator.startAnimating()
         EnvCanada.shared.siteData(in: .English).load()
     }
     
