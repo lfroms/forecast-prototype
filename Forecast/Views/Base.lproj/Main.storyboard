@@ -296,16 +296,6 @@
                                     <constraint firstItem="FV2-lf-M1d" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="xel-BP-dQh"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
-                                <rect key="frame" x="32" y="70" width="32" height="31"/>
-                                <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
-                                <state key="normal" title="cog">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCog:" destination="vfY-E5-8UY" eventType="touchUpInside" id="v5F-XJ-ub8"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-T9-d5M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gQy-Sp-tkR">
@@ -314,6 +304,16 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
+                                <rect key="frame" x="32" y="70" width="30" height="31"/>
+                                <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
+                                <state key="normal" title="cog">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCog:" destination="vfY-E5-8UY" eventType="touchUpInside" id="Snk-SF-SCz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.137581467628479" green="0.58733218908309937" blue="0.95298141241073608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -334,7 +334,6 @@
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
                             <constraint firstAttribute="trailing" secondItem="XBa-7Z-dtM" secondAttribute="trailing" id="jXZ-HV-tlQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0O-7V-xDh" secondAttribute="trailing" constant="20" symbolic="YES" id="lSO-dj-kYP"/>
-                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="leading" secondItem="P0O-7V-xDh" secondAttribute="trailing" id="ntJ-Nq-EAG"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="bottom" secondItem="S9H-YC-Pkj" secondAttribute="bottom" id="pzx-xT-g1J"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>

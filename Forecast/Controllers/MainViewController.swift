@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var weatherGraphic: UIImageView!
     
-    @IBAction func didPressCog(_ sender: Any) {
+    @IBAction func didPressCog(_ sender: UIButton) {
         self.fetchNewData()
     }
     
