@@ -32,39 +32,57 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var highTempValue: UILabel!
     
     @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet var headerBlur: UIVisualEffectView!
     
     @IBOutlet var cogIcon: UIButton!
+    @IBOutlet var weatherGraphic: UIImageView!
     
     @IBAction func didPressCog(_ sender: Any) {
         self.fetchNewData()
     }
     
-    var animator: UIViewPropertyAnimator?
+    var blurAnimator: UIViewPropertyAnimator?
+    var cogAnimator: UIViewPropertyAnimator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.delegate = self
         
-        self.animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+        self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.blurView.effect = nil
+            self.headerBlur.effect = nil
+            
             self.blurView.contentView.backgroundColor = UIColor.clear
         }
         
-        self.animator?.isReversed = true
-        self.animator?.pausesOnCompletion = true
+        self.cogAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.cogIcon.alpha = 0
+        }
+        
+        self.blurAnimator?.isReversed = true
+        self.blurAnimator?.pausesOnCompletion = true
+        self.cogAnimator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let newValue = CGFloat(scrollView.contentOffset.y / (UIScreen.main.bounds.height / 2))
+        let contentOffset = scrollView.contentOffset.y
+        let totalHeight = UIScreen.main.bounds.height
         
-        if newValue > 0.5 {
+        let blurPercentage = contentOffset / (totalHeight / 2)
+        let cogPercentage = contentOffset / (totalHeight / 7)
+        
+        self.cogAnimator?.fractionComplete = cogPercentage
+        
+        self.cogIcon.isEnabled = cogPercentage < 0.5
+        
+        if blurPercentage > 0.5 {
             return
         }
         
-        self.animator?.fractionComplete = newValue
+        self.blurAnimator?.fractionComplete = blurPercentage
     }
     
     override func viewDidLayoutSubviews() {
