@@ -47,10 +47,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.blurView.effect = nil
-            self.blurView.contentView.alpha = 0
+            self.blurView.contentView.backgroundColor = UIColor.clear
         }
         
         self.animator?.isReversed = true
+        self.animator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
