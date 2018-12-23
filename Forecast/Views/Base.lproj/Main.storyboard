@@ -44,6 +44,22 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
+                                <rect key="frame" x="169" y="0.0" width="206" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="5kd-fW-5Qf"/>
+                                    <constraint firstAttribute="width" constant="206" id="B07-Vc-IDq"/>
+                                </constraints>
+                            </imageView>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-nh-fJi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LDa-cj-LBc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-RK-jBL" userLabel="Main Scroll View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
@@ -273,13 +289,6 @@
                                     <constraint firstItem="FV2-lf-M1d" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="xel-BP-dQh"/>
                                 </constraints>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
-                                <rect key="frame" x="137" y="70" width="206" height="206"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="206" id="5kd-fW-5Qf"/>
-                                    <constraint firstAttribute="width" constant="206" id="B07-Vc-IDq"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
                                 <rect key="frame" x="32" y="70" width="30" height="31"/>
                                 <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
@@ -293,26 +302,31 @@
                         </subviews>
                         <color key="backgroundColor" red="0.137581467628479" green="0.58733218908309937" blue="0.95298141241073608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="top" secondItem="gvM-yV-Y8o" secondAttribute="top" constant="26" id="2Xa-DY-dAV"/>
+                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="2Xa-DY-dAV"/>
                             <constraint firstItem="Zhx-Fk-mLP" firstAttribute="width" secondItem="XBa-7Z-dtM" secondAttribute="width" id="DcE-4k-KNF"/>
                             <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" constant="32" id="DoV-XM-T3l"/>
+                            <constraint firstItem="SgN-nh-fJi" firstAttribute="trailing" secondItem="vDN-IN-SOG" secondAttribute="trailing" id="T7L-hR-WOX"/>
                             <constraint firstItem="Zhx-Fk-mLP" firstAttribute="height" secondItem="XBa-7Z-dtM" secondAttribute="height" id="TwX-ca-vTO"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="WQT-cA-098"/>
+                            <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
+                            <constraint firstItem="SgN-nh-fJi" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="X3Q-EV-4t7"/>
                             <constraint firstItem="P0O-7V-xDh" firstAttribute="top" secondItem="gvM-yV-Y8o" secondAttribute="top" constant="26" id="XFV-jU-wx9"/>
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
                             <constraint firstItem="XBa-7Z-dtM" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="hH2-dj-uX5"/>
+                            <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
                             <constraint firstAttribute="trailing" secondItem="XBa-7Z-dtM" secondAttribute="trailing" id="jXZ-HV-tlQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0O-7V-xDh" secondAttribute="trailing" constant="20" symbolic="YES" id="lSO-dj-kYP"/>
                             <constraint firstItem="XBa-7Z-dtM" firstAttribute="top" secondItem="gvM-yV-Y8o" secondAttribute="top" id="vgm-Dc-Ypc"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
-                            <constraint firstItem="gvM-yV-Y8o" firstAttribute="trailing" secondItem="S9H-YC-Pkj" secondAttribute="trailing" constant="32" id="yyV-I3-YVg"/>
+                            <constraint firstAttribute="trailing" secondItem="S9H-YC-Pkj" secondAttribute="trailing" id="yyV-I3-YVg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
                     </view>
                     <navigationItem key="navigationItem" id="D40-VO-9cS"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="blurView" destination="SgN-nh-fJi" id="wUH-0c-VmB"/>
                         <outlet property="ccPageSize" destination="XBa-7Z-dtM" id="yY9-Hx-vcw"/>
                         <outlet property="cogIcon" destination="P0O-7V-xDh" id="Kng-rg-1Nz"/>
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="c7Z-7g-dNC"/>
@@ -414,6 +428,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Test Icon" width="824" height="824"/>
+        <image name="Test Icon" width="311" height="255"/>
     </resources>
 </document>

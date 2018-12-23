@@ -52,10 +52,6 @@ extension MainViewController {
                 .toFormat("MMM d h:mm a")
         }
         
-        if self.initialScrollViewPosition == nil {
-            self.initialScrollViewPosition = self.detailsScrollView.frame.origin
-        }
-        
 //        let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
     }
     

@@ -11,7 +11,7 @@ import SnapKit
 import SwiftDate
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet var stationLabel: UILabel!
@@ -31,18 +31,39 @@ class MainViewController: UIViewController {
     @IBOutlet var highTempView: UIView!
     @IBOutlet var highTempValue: UILabel!
     
+    @IBOutlet var blurView: UIVisualEffectView!
+    
     @IBOutlet var cogIcon: UIButton!
+    
     @IBAction func didPressCog(_ sender: Any) {
         self.fetchNewData()
     }
     
-    var initialScrollViewPosition: CGPoint!
+    var animator: UIViewPropertyAnimator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.delegate = self
+        
+        self.animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.blurView.effect = nil
+            self.blurView.contentView.alpha = 0
+        }
+        
+        self.animator?.isReversed = true
         
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let newValue = CGFloat(scrollView.contentOffset.y / (UIScreen.main.bounds.height / 2))
+        
+        if newValue > 0.5 {
+            return
+        }
+        
+        self.animator?.fractionComplete = newValue
     }
     
     override func viewDidLayoutSubviews() {
