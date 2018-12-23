@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var ccPageSize: UIView!
     
     @IBOutlet var lowTempView: UIView!
     @IBOutlet var lowTempValue: UILabel!
@@ -39,8 +40,18 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         self.fetchNewData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let topInset = self.view.safeAreaInsets.top
+        let bottomInset = self.view.safeAreaInsets.bottom
+        ccPageSize.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(screenSize.height - topInset - bottomInset)
+        }
     }
     
     func render() {
