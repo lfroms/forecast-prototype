@@ -48,18 +48,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         self.scrollView.delegate = self
         
+        self.blurView.effect = nil
+        self.headerBlur.effect = nil
+        
         self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            self.blurView.effect = nil
-            self.headerBlur.effect = nil
+            self.blurView.effect = UIBlurEffect(style: .dark)
+            self.headerBlur.effect = UIBlurEffect(style: .light)
             
-            self.blurView.contentView.backgroundColor = UIColor.clear
+            self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         }
         
         self.cogAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.cogIcon.alpha = 0
+            self.weatherGraphic.alpha = 0.4
         }
         
-        self.blurAnimator?.isReversed = true
         self.blurAnimator?.pausesOnCompletion = true
         self.cogAnimator?.pausesOnCompletion = true
         
@@ -72,7 +75,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let totalHeight = UIScreen.main.bounds.height
         
         let blurPercentage = contentOffset / (totalHeight / 2)
-        let cogPercentage = contentOffset / (totalHeight / 7)
+        let cogPercentage = contentOffset / (totalHeight / 5)
         
         self.cogAnimator?.fractionComplete = cogPercentage
         
