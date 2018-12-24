@@ -43,7 +43,7 @@ class ForecastItem: UIView {
     
     func with(icon: String, day: String, temperature: String?, units: String, description: String?, pop: String?) -> ForecastItem {
         // Icon
-        //iconLabel.text = icon
+        iconLabel.text = icon
         
         // Day Label
         dayLabel.text = day

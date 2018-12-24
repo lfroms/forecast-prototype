@@ -46,7 +46,7 @@ class HourlyItem: UIView {
     
     func with(hour: String, amPm: String, icon: String, temperature: String, temperatureUnits: String, windSpeed: String?, pop: String?) -> HourlyItem {
         // Icon
-        //iconLabel.text = icon
+        iconLabel.text = icon
         
         // Time
         hourLabel.text = hour

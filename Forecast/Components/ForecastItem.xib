@@ -34,8 +34,11 @@
             <rect key="frame" x="0.0" y="0.0" width="417" height="66"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-p1-iRq">
-                    <rect key="frame" x="32" y="18" width="24.5" height="30.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-p1-iRq">
+                    <rect key="frame" x="32" y="18" width="30" height="30.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="q5R-Q2-yhq"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Ionicons" family="Ionicons" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -97,7 +100,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="eQx-9f-zZl">
-                    <rect key="frame" x="76.5" y="14" width="246" height="38"/>
+                    <rect key="frame" x="76" y="14" width="246.5" height="38"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="1000" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dot-AL-Zlh">
                             <rect key="frame" x="0.0" y="0.0" width="66.5" height="19.5"/>
@@ -121,7 +124,7 @@
                 <constraint firstItem="OZL-p1-iRq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="LZv-Ip-qL1"/>
                 <constraint firstAttribute="bottom" secondItem="eQx-9f-zZl" secondAttribute="bottom" constant="14" id="cxR-iE-TZq"/>
                 <constraint firstItem="W5o-Ld-cgC" firstAttribute="leading" secondItem="eQx-9f-zZl" secondAttribute="trailing" constant="16" id="kf4-My-EB5"/>
-                <constraint firstItem="eQx-9f-zZl" firstAttribute="leading" secondItem="OZL-p1-iRq" secondAttribute="trailing" constant="20" id="n6K-zM-2YB"/>
+                <constraint firstItem="eQx-9f-zZl" firstAttribute="leading" secondItem="OZL-p1-iRq" secondAttribute="trailing" constant="14" id="n6K-zM-2YB"/>
                 <constraint firstAttribute="trailing" secondItem="W5o-Ld-cgC" secondAttribute="trailing" constant="32" id="rBF-v2-qdo"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
