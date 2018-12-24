@@ -52,8 +52,12 @@ extension MainViewController {
                 .convertTo(region: .current)
                 .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
         }
-        
-        self.view.backgroundColor = UIColor(named: cc.iconCode ?? "0")
+                
+        UIView.animate(
+            withDuration: 0.5, delay: 0.0, animations: {
+                self.view.backgroundColor = UIColor(named: cc.iconCode ?? "0")
+            }, completion: nil
+        )
     }
     
     func renderDetails(_ data: SiteData) {
