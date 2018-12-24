@@ -53,7 +53,7 @@ extension MainViewController {
                 .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
         }
         
-//        let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
+        self.view.backgroundColor = UIColor(named: cc.iconCode ?? "0")
     }
     
     func renderDetails(_ data: SiteData) {

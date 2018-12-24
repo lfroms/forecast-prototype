@@ -44,6 +44,7 @@
 		80B9195421D06908003D7E84 /* RenderHourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */; };
 		80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D1AE9021D05D6800168BA8 /* HourlyItem.xib */; };
 		80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */; };
+		80B9195C21D08759003D7E84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
 		80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */; };
 		80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9121D05D6800168BA8 /* HourlyItem.swift */; };
 		80D1AE9821D062A600168BA8 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9721D062A600168BA8 /* HourlyForecast.swift */; };
@@ -95,6 +96,7 @@
 		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
 		80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderHourlyForecast.swift; sourceTree = "<group>"; };
 		80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderSunriseSunset.swift; sourceTree = "<group>"; };
+		80B9195B21D08759003D7E84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderForecast.swift; sourceTree = "<group>"; };
 		80D1AE9021D05D6800168BA8 /* HourlyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyItem.xib; sourceTree = "<group>"; };
 		80D1AE9121D05D6800168BA8 /* HourlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItem.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				80B9195821D086DE003D7E84 /* Maps */,
 				8025484A2186774B00118465 /* Theme.xcassets */,
 				807B728F217E4EBF002EE814 /* DataSources */,
 				802443F4217A79EE0066F905 /* Components */,
@@ -176,6 +179,7 @@
 				8051A6F921755BE7007290CF /* Assets.xcassets */,
 				8051A6FE21755BE7007290CF /* Info.plist */,
 				80731E6F21A24F7000B40F42 /* GlobalExtensions.swift */,
+				80B9195B21D08759003D7E84 /* Colors.xcassets */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -210,6 +214,13 @@
 				80D1AE9921D062BC00168BA8 /* HourlyForecastGroup.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		80B9195821D086DE003D7E84 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
 		80EEB238217A742800AD4448 /* Services */ = {
@@ -323,6 +334,7 @@
 			files = (
 				8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */,
 				807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				80B9195C21D08759003D7E84 /* Colors.xcassets in Resources */,
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */,
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
