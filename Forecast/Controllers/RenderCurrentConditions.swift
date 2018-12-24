@@ -45,10 +45,11 @@ extension MainViewController {
         self.stationLabel.text = data.location.name.value
         
         if cc.dateTime != nil {
-            let timestamp = cc.dateTime![1].value.timeStamp
+            let timestamp = cc.dateTime?.first(where: { $0.zone == "UTC" })?.value.timeStamp
             
-            self.lastUpdatedLabel.text = timestamp
-                .toDate("yyyyMMddhhmmss")?
+            self.lastUpdatedLabel.text = timestamp?
+                .toDate("yyyyMMddhhmmss", region: .UTC)?
+                .convertTo(region: .current)
                 .toFormat("MMM d h:mm a")
         }
         

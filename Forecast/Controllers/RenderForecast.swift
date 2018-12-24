@@ -16,7 +16,7 @@ extension MainViewController {
             { item in                
                 let subview = ForecastItem().with(
                     icon: item.abbreviatedForecast.iconCode,
-                    day: item.period.value,
+                    day: item.period.textForecastName,
                     temperature: item.temperatures.first?.value,
                     units: "°" + (item.temperatures.first?.units ?? ""),
                     description: item.abbreviatedForecast.textSummary,
