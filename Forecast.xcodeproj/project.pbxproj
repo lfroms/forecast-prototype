@@ -43,6 +43,7 @@
 		80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B71C8021824E3500DAFA65 /* UIStyledView.swift */; };
 		80B9195421D06908003D7E84 /* RenderHourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */; };
 		80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D1AE9021D05D6800168BA8 /* HourlyItem.xib */; };
+		80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */; };
 		80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */; };
 		80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9121D05D6800168BA8 /* HourlyItem.swift */; };
 		80D1AE9821D062A600168BA8 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9721D062A600168BA8 /* HourlyForecast.swift */; };
@@ -93,6 +94,7 @@
 		80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderCurrentConditions.swift; sourceTree = "<group>"; };
 		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
 		80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderHourlyForecast.swift; sourceTree = "<group>"; };
+		80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderSunriseSunset.swift; sourceTree = "<group>"; };
 		80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderForecast.swift; sourceTree = "<group>"; };
 		80D1AE9021D05D6800168BA8 /* HourlyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyItem.xib; sourceTree = "<group>"; };
 		80D1AE9121D05D6800168BA8 /* HourlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItem.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				8082207F21ACD35900ACBE7E /* AlertsViewController.swift */,
 				80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */,
 				80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */,
+				80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */,
 				8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */,
 				80D1AE9A21D062BC00168BA8 /* HourlyForecastGroup.swift in Sources */,
+				80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,
 				80A6082A2176C1E7005D2891 /* CurrentConditions.swift in Sources */,
 				80A6083B2176CC4F005D2891 /* ForecastGroup.swift in Sources */,

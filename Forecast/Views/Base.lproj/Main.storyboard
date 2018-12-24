@@ -37,19 +37,19 @@
             <objects>
                 <viewController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="vfY-E5-8UY" customClass="MainViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDN-IN-SOG" userLabel="Color View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
-                                <rect key="frame" x="64" y="0.0" width="311" height="1266"/>
+                                <rect key="frame" x="64" y="0.0" width="311" height="1366"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-nh-fJi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                 <view key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LDa-cj-LBc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
@@ -59,7 +59,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-RK-jBL" userLabel="Main Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="734" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-Fk-mLP" userLabel="Current Conditions Container">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
@@ -317,17 +317,48 @@
                                             <constraint firstItem="elt-qh-lTA" firstAttribute="top" secondItem="Laq-RO-0qP" secondAttribute="bottom" constant="8" id="r7z-uC-15c"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py7-1h-cUa" userLabel="Sunrise/Sunset Container">
+                                        <rect key="frame" x="0.0" y="1253.3333333333333" width="375" height="60"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5Ww-dn-Wu7">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="py0-tW-03v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                                        <edgeInsets key="layoutMargins" top="0.0" left="22" bottom="0.0" right="22"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="py0-tW-03v" secondAttribute="bottom" id="3YN-IW-05O"/>
+                                                    <constraint firstItem="py0-tW-03v" firstAttribute="leading" secondItem="5Ww-dn-Wu7" secondAttribute="leading" id="Sue-TF-yRh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="py0-tW-03v" secondAttribute="trailing" id="amk-7O-Q9s"/>
+                                                    <constraint firstItem="py0-tW-03v" firstAttribute="height" secondItem="5Ww-dn-Wu7" secondAttribute="height" id="kRW-Fw-WjT"/>
+                                                    <constraint firstItem="py0-tW-03v" firstAttribute="top" secondItem="5Ww-dn-Wu7" secondAttribute="top" id="t3h-Rz-Lt1"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="NfH-Vv-Rqf"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Ww-dn-Wu7" secondAttribute="bottom" id="SBl-IW-4FD"/>
+                                            <constraint firstItem="5Ww-dn-Wu7" firstAttribute="leading" secondItem="py7-1h-cUa" secondAttribute="leading" id="adH-5l-1BB"/>
+                                            <constraint firstItem="5Ww-dn-Wu7" firstAttribute="top" secondItem="py7-1h-cUa" secondAttribute="top" id="lSF-Qx-SqL"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Ww-dn-Wu7" secondAttribute="trailing" id="qBF-Z7-zTH"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="GGx-qN-CIr" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="1W6-k0-m2E"/>
                                     <constraint firstItem="Cfj-Bv-mzh" firstAttribute="top" secondItem="GGx-qN-CIr" secondAttribute="bottom" constant="32" id="7I1-4H-70s"/>
+                                    <constraint firstItem="py7-1h-cUa" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="7Il-83-XWa"/>
                                     <constraint firstItem="Cfj-Bv-mzh" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="E6g-h6-l3y"/>
-                                    <constraint firstAttribute="bottom" secondItem="Cfj-Bv-mzh" secondAttribute="bottom" id="H2U-Yb-Y6L"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="width" secondItem="Sbw-RK-jBL" secondAttribute="width" id="RyF-VF-ktk"/>
                                     <constraint firstAttribute="trailing" secondItem="GGx-qN-CIr" secondAttribute="trailing" id="a7J-o0-Kui"/>
+                                    <constraint firstItem="py7-1h-cUa" firstAttribute="top" secondItem="Cfj-Bv-mzh" secondAttribute="bottom" constant="32" id="cDf-Vo-4j5"/>
                                     <constraint firstItem="GGx-qN-CIr" firstAttribute="top" secondItem="Zhx-Fk-mLP" secondAttribute="bottom" constant="8" placeholder="YES" id="fSb-o3-vQS"/>
+                                    <constraint firstAttribute="bottom" secondItem="py7-1h-cUa" secondAttribute="bottom" constant="32" id="gYi-hO-oA5"/>
                                     <constraint firstAttribute="trailing" secondItem="Zhx-Fk-mLP" secondAttribute="trailing" id="lxQ-dQ-RUX"/>
+                                    <constraint firstAttribute="trailing" secondItem="py7-1h-cUa" secondAttribute="trailing" id="ntO-ig-09W"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="pXI-NX-Ndp"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="top" secondItem="Sbw-RK-jBL" secondAttribute="top" id="rtH-W5-uuG"/>
                                     <constraint firstAttribute="trailing" secondItem="Cfj-Bv-mzh" secondAttribute="trailing" id="zJb-4H-40h"/>
@@ -376,7 +407,7 @@
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
                     </view>
                     <navigationItem key="navigationItem" id="D40-VO-9cS"/>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="blurView" destination="SgN-nh-fJi" id="wUH-0c-VmB"/>
                         <outlet property="cogIcon" destination="P0O-7V-xDh" id="Kng-rg-1Nz"/>
@@ -398,6 +429,7 @@
                         <outlet property="lowTempView" destination="8o6-WK-hnm" id="6cG-pq-uCq"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
+                        <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>
                         <outlet property="weatherGraphic" destination="S9H-YC-Pkj" id="Rsq-FX-Rgs"/>
                     </connections>
                 </viewController>

@@ -39,7 +39,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var forecastStack: UIStackView!
     @IBOutlet var hourlyForecastStack: UIStackView!
-    @IBOutlet weak var hourlyForecastContainer: UIView!
+    @IBOutlet var hourlyForecastContainer: UIView!
+    @IBOutlet var sunriseSunsetStack: UIStackView!
     
     @IBAction func didPressCog(_ sender: UIButton) {
         self.fetchNewData()
@@ -122,6 +123,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.renderCurrentConditions(data)
             self.renderHourlyForecast(data)
             self.renderForecast(data)
+            self.renderSunriseSunset(data)
         }
     }
     

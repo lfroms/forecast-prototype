@@ -26,17 +26,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="161" height="60"/>
             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-e7-CM9" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="161" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-ju-jcf">
-                            <rect key="frame" x="46" y="12.5" width="114" height="35"/>
+                            <rect key="frame" x="46" y="12.5" width="115" height="35"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-Zp-Fgh">
-                                    <rect key="frame" x="0.0" y="0.0" width="114" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="115" height="19.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="67" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXg-ie-TNN">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="19.5"/>
@@ -62,7 +62,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60999999999999999" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="HUMIDITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-H0-dTN">
-                                    <rect key="frame" x="0.0" y="21.5" width="114" height="13.5"/>
+                                    <rect key="frame" x="0.0" y="21.5" width="115" height="13.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="160" id="1cG-1k-y9F"/>
+                        <constraint firstAttribute="width" constant="161" id="1cG-1k-y9F"/>
                         <constraint firstItem="xla-3x-CAE" firstAttribute="leading" secondItem="ncl-e7-CM9" secondAttribute="leading" constant="2" id="33l-RD-LN6"/>
                         <constraint firstItem="TFk-ju-jcf" firstAttribute="centerY" secondItem="ncl-e7-CM9" secondAttribute="centerY" id="I5U-BA-mmM"/>
                         <constraint firstAttribute="trailing" secondItem="TFk-ju-jcf" secondAttribute="trailing" id="K7R-sc-pZa"/>
@@ -118,7 +118,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="140.80000000000001" y="599.10044977511245"/>
+            <point key="canvasLocation" x="140" y="599.10044977511245"/>
         </view>
     </objects>
 </document>

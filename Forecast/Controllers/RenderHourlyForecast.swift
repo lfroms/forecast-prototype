@@ -16,12 +16,12 @@ extension MainViewController {
         data.hourlyForecastGroup.hourlyForecast.forEach(
             { item in
                 let hour = item.dateTimeUTC
-                    .toDate("yyyyMMddhhmm", region: .UTC)?
+                    .toDate("yyyyMMddHHmm", region: .UTC)?
                     .convertTo(region: .current)
                     .toFormat("h")
                 
                 let amPm = item.dateTimeUTC
-                    .toDate("yyyyMMddhhmm", region: .UTC)?
+                    .toDate("yyyyMMddHHmm", region: .UTC)?
                     .convertTo(region: .current)
                     .toFormat("a")
                 

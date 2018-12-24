@@ -48,9 +48,9 @@ extension MainViewController {
             let timestamp = cc.dateTime?.first(where: { $0.zone == "UTC" })?.value.timeStamp
             
             self.lastUpdatedLabel.text = timestamp?
-                .toDate("yyyyMMddhhmmss", region: .UTC)?
+                .toDate("yyyyMMddHHmmss", region: .UTC)?
                 .convertTo(region: .current)
-                .toFormat("MMM d h:mm a")
+                .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
         }
         
 //        let codeAsInt = Int(cc.iconCode ?? "0") ?? 0
