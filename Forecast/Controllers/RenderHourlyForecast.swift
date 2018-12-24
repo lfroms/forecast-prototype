@@ -29,9 +29,17 @@ extension MainViewController {
                     .compactMap { $0 }
                     .joined()
                 
-                let windSpeed = [item.wind?.speed.value, item.wind?.speed.units]
-                    .compactMap { $0 }
-                    .joined(separator: " ")
+                var windSpeed: String?
+                
+                // Check if this is actually a number. Sometimes, it can be a string,
+                // in which case we don't want to show the units.
+                if let _ = Int(item.wind?.speed.value ?? "") {
+                    windSpeed = [item.wind?.speed.value, item.wind?.speed.units]
+                        .compactMap { $0 }
+                        .joined(separator: " ")
+                } else {
+                    windSpeed = item.wind?.speed.value
+                }
                 
                 let subview = HourlyItem().with(
                     hour: hour ?? "",

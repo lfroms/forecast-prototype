@@ -219,7 +219,7 @@
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
                                                         <rect key="frame" x="0.0" y="234" width="375" height="163"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="infinite" axis="vertical" distribution="equalSpacing" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-fJ-UNd" userLabel="Details Stack">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="infinite" axis="vertical" distribution="equalSpacing" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-fJ-UNd" userLabel="Details Stack" customClass="DoubleStackView" customModule="Forecast" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="163"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="CnB-4p-AxR">
@@ -414,9 +414,8 @@
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="c7Z-7g-dNC"/>
                         <outlet property="currentConditionsContainer" destination="Zhx-Fk-mLP" id="4uP-vN-mHf"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="gkL-jk-5oM"/>
-                        <outlet property="detailsBottomRow" destination="gBJ-yX-H0h" id="0a6-FN-b5z"/>
                         <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="JQ6-Aj-vZq"/>
-                        <outlet property="detailsTopRow" destination="CnB-4p-AxR" id="Q1k-f6-wgY"/>
+                        <outlet property="detailsStack" destination="DE6-fJ-UNd" id="6uJ-ZJ-XlK"/>
                         <outlet property="forecastStack" destination="elt-qh-lTA" id="2cY-S0-uRq"/>
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
                         <outlet property="highTempValue" destination="Rve-jF-UhU" id="WzY-ss-A4O"/>

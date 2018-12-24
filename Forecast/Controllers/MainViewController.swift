@@ -18,8 +18,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var lastUpdatedLabel: UILabel!
     
     @IBOutlet var detailsScrollView: UIScrollView!
-    @IBOutlet var detailsTopRow: UIStackView!
-    @IBOutlet var detailsBottomRow: UIStackView!
+    @IBOutlet var detailsStack: DoubleStackView!
     
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
@@ -119,7 +118,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             }
             
             self.renderMetadata(data)
-            self.renderDetails(data)
+            
+            do {
+                try self.renderDetails(data)
+            } catch {}
+            
             self.renderCurrentConditions(data)
             self.renderHourlyForecast(data)
             self.renderForecast(data)
