@@ -37,19 +37,19 @@
             <objects>
                 <viewController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="vfY-E5-8UY" customClass="MainViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDN-IN-SOG" userLabel="Color View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
-                                <rect key="frame" x="64" y="0.0" width="311" height="1166"/>
+                                <rect key="frame" x="64" y="0.0" width="311" height="1266"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-nh-fJi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <view key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LDa-cj-LBc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
@@ -59,7 +59,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-RK-jBL" userLabel="Main Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="734" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-Fk-mLP" userLabel="Current Conditions Container">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
@@ -256,20 +256,81 @@
                                             <constraint firstItem="c0l-Bf-6uB" firstAttribute="leading" secondItem="Zhx-Fk-mLP" secondAttribute="leading" id="huI-F9-5Bd"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="200" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="elt-qh-lTA">
-                                        <rect key="frame" x="0.0" y="742" width="375" height="200"/>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-qN-CIr">
+                                        <rect key="frame" x="0.0" y="742" width="375" height="223.66666666666663"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="UUh-Gc-XHS" userLabel="Hourly Forecast Scroll View">
+                                                <rect key="frame" x="0.0" y="23.666666666666629" width="375" height="200"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bpp-XU-A39">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                        <edgeInsets key="layoutMargins" top="22" left="16" bottom="22" right="16"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Bpp-XU-A39" firstAttribute="height" secondItem="UUh-Gc-XHS" secondAttribute="height" id="JT9-UO-7Qp"/>
+                                                    <constraint firstItem="Bpp-XU-A39" firstAttribute="top" secondItem="UUh-Gc-XHS" secondAttribute="top" id="hEa-J4-BKd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Bpp-XU-A39" secondAttribute="trailing" id="hhz-Bv-Esv"/>
+                                                    <constraint firstItem="Bpp-XU-A39" firstAttribute="leading" secondItem="UUh-Gc-XHS" secondAttribute="leading" id="sTz-wB-MMO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Bpp-XU-A39" secondAttribute="bottom" id="xZD-df-v3A"/>
+                                                    <constraint firstAttribute="height" constant="200" id="yt3-q4-6as"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HOURLY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fml-Co-3Kj" userLabel="Hourly">
+                                                <rect key="frame" x="31.999999999999996" y="0.0" width="54.666666666666657" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UUh-Gc-XHS" firstAttribute="leading" secondItem="GGx-qN-CIr" secondAttribute="leading" id="2RY-Ik-GZZ"/>
+                                            <constraint firstItem="Fml-Co-3Kj" firstAttribute="top" secondItem="GGx-qN-CIr" secondAttribute="top" id="Laz-X0-7Qd"/>
+                                            <constraint firstItem="Fml-Co-3Kj" firstAttribute="leading" secondItem="GGx-qN-CIr" secondAttribute="leading" constant="32" id="MyR-sX-uJt"/>
+                                            <constraint firstAttribute="trailing" secondItem="UUh-Gc-XHS" secondAttribute="trailing" id="Zhp-C4-aZW"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fml-Co-3Kj" secondAttribute="trailing" constant="20" symbolic="YES" id="eQM-nS-BqQ"/>
+                                            <constraint firstItem="UUh-Gc-XHS" firstAttribute="top" secondItem="Fml-Co-3Kj" secondAttribute="bottom" constant="8" id="fsZ-G8-1xA"/>
+                                            <constraint firstAttribute="bottom" secondItem="UUh-Gc-XHS" secondAttribute="bottom" id="ykf-Sd-Icq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-Bv-mzh" userLabel="Daily Forecast Container">
+                                        <rect key="frame" x="0.0" y="997.66666666666663" width="375" height="223.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="DAILY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-RO-0qP" userLabel="Hourly">
+                                                <rect key="frame" x="32" y="0.0" width="38.333333333333343" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="200" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="elt-qh-lTA">
+                                                <rect key="frame" x="0.0" y="23.666666666666742" width="375" height="200"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="elt-qh-lTA" secondAttribute="bottom" id="5vQ-ec-tnf"/>
+                                            <constraint firstItem="Laq-RO-0qP" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" constant="32" id="DVw-d8-AwN"/>
+                                            <constraint firstItem="elt-qh-lTA" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" id="OOP-KY-JhZ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Laq-RO-0qP" secondAttribute="trailing" constant="20" symbolic="YES" id="jud-PI-rLT"/>
+                                            <constraint firstItem="Laq-RO-0qP" firstAttribute="top" secondItem="Cfj-Bv-mzh" secondAttribute="top" id="l2L-W8-nKp"/>
+                                            <constraint firstAttribute="trailing" secondItem="elt-qh-lTA" secondAttribute="trailing" id="lA2-nd-89F"/>
+                                            <constraint firstItem="elt-qh-lTA" firstAttribute="top" secondItem="Laq-RO-0qP" secondAttribute="bottom" constant="8" id="r7z-uC-15c"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="elt-qh-lTA" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="8MH-LR-VI6"/>
-                                    <constraint firstItem="elt-qh-lTA" firstAttribute="top" secondItem="Zhx-Fk-mLP" secondAttribute="bottom" constant="8" id="B4d-u8-JFI"/>
+                                    <constraint firstItem="GGx-qN-CIr" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="1W6-k0-m2E"/>
+                                    <constraint firstItem="Cfj-Bv-mzh" firstAttribute="top" secondItem="GGx-qN-CIr" secondAttribute="bottom" constant="32" id="7I1-4H-70s"/>
+                                    <constraint firstItem="Cfj-Bv-mzh" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="E6g-h6-l3y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cfj-Bv-mzh" secondAttribute="bottom" id="H2U-Yb-Y6L"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="width" secondItem="Sbw-RK-jBL" secondAttribute="width" id="RyF-VF-ktk"/>
-                                    <constraint firstAttribute="bottom" secondItem="elt-qh-lTA" secondAttribute="bottom" constant="214" id="X3Z-Ck-xCY"/>
+                                    <constraint firstAttribute="trailing" secondItem="GGx-qN-CIr" secondAttribute="trailing" id="a7J-o0-Kui"/>
+                                    <constraint firstItem="GGx-qN-CIr" firstAttribute="top" secondItem="Zhx-Fk-mLP" secondAttribute="bottom" constant="8" placeholder="YES" id="fSb-o3-vQS"/>
                                     <constraint firstAttribute="trailing" secondItem="Zhx-Fk-mLP" secondAttribute="trailing" id="lxQ-dQ-RUX"/>
-                                    <constraint firstAttribute="trailing" secondItem="elt-qh-lTA" secondAttribute="trailing" id="p7Y-jm-vrv"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="leading" secondItem="Sbw-RK-jBL" secondAttribute="leading" id="pXI-NX-Ndp"/>
                                     <constraint firstItem="Zhx-Fk-mLP" firstAttribute="top" secondItem="Sbw-RK-jBL" secondAttribute="top" id="rtH-W5-uuG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cfj-Bv-mzh" secondAttribute="trailing" id="zJb-4H-40h"/>
                                 </constraints>
                             </scrollView>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-T9-d5M">
@@ -315,7 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
                     </view>
                     <navigationItem key="navigationItem" id="D40-VO-9cS"/>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="blurView" destination="SgN-nh-fJi" id="wUH-0c-VmB"/>
                         <outlet property="cogIcon" destination="P0O-7V-xDh" id="Kng-rg-1Nz"/>
@@ -329,6 +390,8 @@
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
                         <outlet property="highTempValue" destination="Rve-jF-UhU" id="WzY-ss-A4O"/>
                         <outlet property="highTempView" destination="R6o-Cr-iCe" id="A3z-1Y-sOe"/>
+                        <outlet property="hourlyForecastContainer" destination="GGx-qN-CIr" id="aVo-5e-8g5"/>
+                        <outlet property="hourlyForecastStack" destination="Bpp-XU-A39" id="lZT-Lh-qAi"/>
                         <outlet property="lastUpdatedLabel" destination="Win-PH-iit" id="Lwu-p9-wvK"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="7AY-6B-bt9"/>
                         <outlet property="lowTempValue" destination="vd1-L8-Gy7" id="2Va-J1-IUm"/>

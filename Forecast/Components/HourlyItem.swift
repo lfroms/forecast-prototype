@@ -11,14 +11,18 @@ import UIKit
 
 class HourlyItem: UIView {
     @IBOutlet var contentView: UIView!
+    
+    @IBOutlet var hourLabel: UILabel!
+    @IBOutlet var amPmLabel: UILabel!
     @IBOutlet var iconLabel: UILabel!
-    @IBOutlet var dayLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var temperatureLabel: UILabel!
-    @IBOutlet var unitsLabel: UILabel!
-    @IBOutlet var popLabel: UILabel!
     
     @IBOutlet var temperatureContainer: UIView!
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var temperatureUnitsLabel: UILabel!
+    
+    @IBOutlet var windSpeedLabel: UILabel!
+    @IBOutlet var popContainer: UIView!
+    @IBOutlet var popLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,7 +35,7 @@ class HourlyItem: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("ForecastItem", owner: self, options: nil)
+        Bundle.main.loadNibNamed("HourlyItem", owner: self, options: nil)
         contentView.frame = bounds
         addSubview(contentView)
     }
@@ -40,34 +44,30 @@ class HourlyItem: UIView {
         return contentView.frame.size
     }
     
-    func with(icon: String, day: String, temperature: String?, units: String, description: String?, pop: String?) -> HourlyItem {
+    func with(hour: String, amPm: String, icon: String, temperature: String, temperatureUnits: String, windSpeed: String?, pop: String?) -> HourlyItem {
         // Icon
         //iconLabel.text = icon
         
-        // Day Label
-        dayLabel.text = day
+        // Time
+        hourLabel.text = hour
+        amPmLabel.text = amPm.lowercased()
         
-        // Temperature Label
-        if temperature != nil, temperature != "" {
-            temperatureLabel.text = temperature
-            unitsLabel.text = units
-            
+        // Temperature
+        temperatureLabel.text = temperature
+        temperatureUnitsLabel.text = temperatureUnits
+        
+        // Wind Speed
+        if windSpeed != nil && windSpeed != "" {
+            windSpeedLabel.text = windSpeed
         } else {
-            temperatureContainer.isHidden = true
+            windSpeedLabel.isHidden = true
         }
-        
-        // Description
-        if description != nil, description != "" {
-            descriptionLabel.text = description
-        } else {
-            descriptionLabel.isHidden = true
-        }
-        
+
         // POP Label
         if pop != nil && pop != "" {
             popLabel.text = pop! + "%"
         } else {
-            popLabel.isHidden = true
+            popContainer.isHidden = true
         }
         
         invalidateIntrinsicContentSize()

@@ -37,7 +37,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var weatherGraphic: UIImageView!
     
-    @IBOutlet weak var forecastStack: UIStackView!
+    @IBOutlet var forecastStack: UIStackView!
+    @IBOutlet var hourlyForecastStack: UIStackView!
+    @IBOutlet weak var hourlyForecastContainer: UIView!
     
     @IBAction func didPressCog(_ sender: UIButton) {
         self.fetchNewData()
@@ -98,6 +100,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         currentConditionsContainer.snp.makeConstraints { (make) -> Void in
             make.height.equalTo(screenSize.height - topInset - bottomInset)
         }
+        
+        hourlyForecastContainer.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(
+                currentConditionsContainer.snp.bottom
+            ).offset(bottomInset)
+        }
     }
     
     func render() {
@@ -112,6 +120,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.renderMetadata(data)
             self.renderDetails(data)
             self.renderCurrentConditions(data)
+            self.renderHourlyForecast(data)
             self.renderForecast(data)
         }
     }

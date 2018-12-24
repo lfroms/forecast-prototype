@@ -13,6 +13,7 @@ struct SiteData: XMLIndexerDeserializable {
     let currentConditions: CurrentConditions
     let warnings: Warnings?
     let forecastGroup: ForecastGroup
+    let hourlyForecastGroup: HourlyForecastGroup
     let riseSet: RiseSet
 
     static func deserialize(_ node: XMLIndexer) throws -> SiteData {
@@ -21,6 +22,7 @@ struct SiteData: XMLIndexerDeserializable {
             currentConditions: node["currentConditions"].value(),
             warnings: node["warnings"].value(),
             forecastGroup: node["forecastGroup"].value(),
+            hourlyForecastGroup: node["hourlyForecastGroup"].value(),
             riseSet: node["riseSet"].value()
         )
     }
