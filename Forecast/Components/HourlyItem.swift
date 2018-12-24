@@ -1,15 +1,15 @@
 //
-//  ForecastItem.swift
+//  HourlyItem.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2018-11-24.
+//  Created by Lukas Romsicki on 2018-12-23.
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ForecastItem: UIView {
+class HourlyItem: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var dayLabel: UILabel!
@@ -17,7 +17,6 @@ class ForecastItem: UIView {
     @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var unitsLabel: UILabel!
     @IBOutlet var popLabel: UILabel!
-    @IBOutlet weak var popContainer: UIView!
     
     @IBOutlet var temperatureContainer: UIView!
     
@@ -41,7 +40,7 @@ class ForecastItem: UIView {
         return contentView.frame.size
     }
     
-    func with(icon: String, day: String, temperature: String?, units: String, description: String?, pop: String?) -> ForecastItem {
+    func with(icon: String, day: String, temperature: String?, units: String, description: String?, pop: String?) -> HourlyItem {
         // Icon
         //iconLabel.text = icon
         
@@ -68,7 +67,7 @@ class ForecastItem: UIView {
         if pop != nil && pop != "" {
             popLabel.text = pop! + "%"
         } else {
-            popContainer.isHidden = true
+            popLabel.isHidden = true
         }
         
         invalidateIntrinsicContentSize()

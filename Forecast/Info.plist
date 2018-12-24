@@ -34,6 +34,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ionicons.ttf</string>
 		<string>Font Awesome 5 Free-Solid-900.otf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>

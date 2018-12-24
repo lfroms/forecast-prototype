@@ -1,5 +1,5 @@
 //
-//  CurrentConditionsViewController.swift
+//  RenderCurrentConditions.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-11-07.

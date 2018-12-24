@@ -37,6 +37,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var weatherGraphic: UIImageView!
     
+    @IBOutlet weak var forecastStack: UIStackView!
+    
     @IBAction func didPressCog(_ sender: UIButton) {
         self.fetchNewData()
     }
@@ -92,6 +94,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let screenSize: CGRect = UIScreen.main.bounds
         let topInset = self.view.safeAreaInsets.top
         let bottomInset = self.view.safeAreaInsets.bottom
+        
         currentConditionsContainer.snp.makeConstraints { (make) -> Void in
             make.height.equalTo(screenSize.height - topInset - bottomInset)
         }
@@ -109,6 +112,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.renderMetadata(data)
             self.renderDetails(data)
             self.renderCurrentConditions(data)
+            self.renderForecast(data)
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801B19E321D0370C0007279D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801B19E221D0370C0007279D /* ionicons.ttf */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802F20E721AA36AA00488957 /* ForecastItem.xib */; };
 		8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040B5AE2177FDDC0021AF6C /* WeatherService.swift */; };
@@ -40,6 +41,8 @@
 		80A6083F2176D4E6005D2891 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6083E2176D4E6005D2891 /* Forecast.swift */; };
 		80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */; };
 		80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B71C8021824E3500DAFA65 /* UIStyledView.swift */; };
+		80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */; };
+		80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9121D05D6800168BA8 /* HourlyItem.swift */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
 		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
 		80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F175FA21AB37C8001090BD /* SearchTableViewController.swift */; };
@@ -49,6 +52,7 @@
 /* Begin PBXFileReference section */
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
+		801B19E221D0370C0007279D /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		802F20E721AA36AA00488957 /* ForecastItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastItem.xib; sourceTree = "<group>"; };
 		8040B5AE2177FDDC0021AF6C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
@@ -84,6 +88,9 @@
 		80A6083E2176D4E6005D2891 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderCurrentConditions.swift; sourceTree = "<group>"; };
 		80B71C8021824E3500DAFA65 /* UIStyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyledView.swift; sourceTree = "<group>"; };
+		80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderForecast.swift; sourceTree = "<group>"; };
+		80D1AE9021D05D6800168BA8 /* HourlyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyItem.xib; sourceTree = "<group>"; };
+		80D1AE9121D05D6800168BA8 /* HourlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItem.swift; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
 		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
 		80F175FA21AB37C8001090BD /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +124,8 @@
 				8052A6A9217E8B46004FB527 /* ConditionView.xib */,
 				80A2FBDD21AA2F020067A425 /* ForecastItem.swift */,
 				802F20E721AA36AA00488957 /* ForecastItem.xib */,
+				80D1AE9121D05D6800168BA8 /* HourlyItem.swift */,
+				80D1AE9021D05D6800168BA8 /* HourlyItem.xib */,
 				80B71C8021824E3500DAFA65 /* UIStyledView.swift */,
 				8053C65E218E81820041F29E /* UIStyledButton.swift */,
 				8082208121ACD56100ACBE7E /* AlertItem.xib */,
@@ -216,6 +225,7 @@
 				80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */,
 				80F175FA21AB37C8001090BD /* SearchTableViewController.swift */,
 				8082207F21ACD35900ACBE7E /* AlertsViewController.swift */,
+				80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 		80EEB23D217A74A500AD4448 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				801B19E221D0370C0007279D /* ionicons.ttf */,
 				807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */,
 			);
 			path = Fonts;
@@ -303,6 +314,7 @@
 				8051A6FA21755BE7007290CF /* Assets.xcassets in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
+				801B19E321D0370C0007279D /* ionicons.ttf in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
 				802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */,
 			);
@@ -380,8 +392,10 @@
 				807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,
 				8040B5AF2177FDDC0021AF6C /* WeatherService.swift in Sources */,
+				80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */,
 				80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */,
 				8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */,
+				80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
 				80582D3421ACDC6D005B7FA9 /* Warnings.swift in Sources */,
