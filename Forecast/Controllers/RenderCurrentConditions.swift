@@ -55,7 +55,7 @@ extension MainViewController {
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
-                self.view.backgroundColor = UIColor(named: cc.iconCode ?? "0")
+                self.view.backgroundColor = UIColor(named: cc.iconCode ?? "00")
             }, completion: nil
         )
     }

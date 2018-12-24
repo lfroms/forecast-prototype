@@ -71,7 +71,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.cogAnimator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData(in: .English).addObserver(self)
+        NotificationCenter.default
+            .addObserver(
+                self,
+                selector: #selector(MainViewController.fetchNewData),
+                name: UIApplication.willEnterForegroundNotification,
+                object: nil
+            )
+        
         self.fetchNewData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -130,7 +143,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func fetchNewData() {
+    @objc func fetchNewData() {
         self.loadingIndicator.startAnimating()
         EnvCanada.shared.siteData(in: .English).load()
     }
