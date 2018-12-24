@@ -16,6 +16,7 @@ class ConditionView: UIView {
     @IBOutlet private var unitLabel: UILabel!
     @IBOutlet private var typeLabel: UILabel!
     @IBOutlet private var iconLabel: UILabel!
+    @IBOutlet var auxLabel: UILabel!
     
     @IBOutlet var backdropView: UIStyledView!
     
@@ -39,9 +40,16 @@ class ConditionView: UIView {
         return contentView.frame.size
     }
     
-    func with(value: String?, units: String?, type: String, icon: String) -> ConditionView {
+    func with(aux: String?, value: String?, units: String?, type: String, icon: String) -> ConditionView {
         // Icon
         iconLabel.text = icon
+        
+        // Aux Label
+        if aux != nil {
+            auxLabel.text = aux
+        } else {
+            auxLabel.isHidden = true
+        }
         
         // Value Label
         valueLabel.text = value ?? ""

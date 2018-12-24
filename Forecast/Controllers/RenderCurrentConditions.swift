@@ -67,6 +67,7 @@ extension MainViewController {
         
         if let humidity = currCond.relativeHumidity {
             let humidityView = ConditionView().with(
+                aux: nil,
                 value: humidity.value,
                 units: humidity.units,
                 type: "HUMIDITY",
@@ -78,6 +79,7 @@ extension MainViewController {
         
         if let pressure = currCond.pressure {
             let pressureView = ConditionView().with(
+                aux: nil,
                 value: pressure.value,
                 units: pressure.units,
                 type: "PRESSURE",
@@ -89,6 +91,7 @@ extension MainViewController {
         
         if let windChill = currCond.windChill {
             let windChillView = ConditionView().with(
+                aux: nil,
                 value: windChill.value,
                 units: "°" + (windChill.units ?? "C"),
                 type: "WIND CHILL",
@@ -99,6 +102,7 @@ extension MainViewController {
             
         } else if let humidex = currCond.humidex {
             let humidexView = ConditionView().with(
+                aux: nil,
                 value: humidex.value,
                 units: "°" + (humidex.units ?? "C"),
                 type: "HUMIDEX",
@@ -110,7 +114,8 @@ extension MainViewController {
         
         if let wind = currCond.wind {
             let windView = ConditionView().with(
-                value: wind.direction.value + " " + wind.speed.value,
+                aux: wind.direction.value,
+                value: wind.speed.value,
                 units: wind.speed.units,
                 type: "WIND",
                 icon: "wind"
@@ -120,6 +125,7 @@ extension MainViewController {
             
             if currCond.wind!.gust.value != "" {
                 let gust = ConditionView().with(
+                    aux: nil,
                     value: currCond.wind!.gust.value,
                     units: currCond.wind!.gust.units,
                     type: "WIND GUST",
@@ -132,6 +138,7 @@ extension MainViewController {
         
         if let visibility = currCond.visibility {
             let visibilityView = ConditionView().with(
+                aux: nil,
                 value: visibility.value,
                 units: visibility.units,
                 type: "VISIBILITY",
@@ -143,6 +150,7 @@ extension MainViewController {
         
         if let dewpoint = currCond.dewpoint {
             let dewpointView = ConditionView().with(
+                aux: nil,
                 value: dewpoint.value,
                 units: "°" + (dewpoint.units ?? "C"),
                 type: "DEWPOINT",

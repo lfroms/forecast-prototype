@@ -21,6 +21,7 @@ extension MainViewController {
                     .toFormat("H:mm z", locale: Locales.current)
                 
                 let subview = ConditionView().with(
+                    aux: nil,
                     value: time,
                     units: nil,
                     type: item.name.uppercased(),
