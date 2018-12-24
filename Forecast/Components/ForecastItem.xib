@@ -35,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-p1-iRq">
-                    <rect key="frame" x="32" y="18" width="30" height="30.5"/>
+                    <rect key="frame" x="32" y="0.0" width="30" height="66"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="q5R-Q2-yhq"/>
                     </constraints>
@@ -118,12 +118,13 @@
                 </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="OZL-p1-iRq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0gX-4L-EFh"/>
                 <constraint firstItem="W5o-Ld-cgC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ARq-UY-Yv1"/>
                 <constraint firstItem="eQx-9f-zZl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="IOo-Bk-YlH"/>
                 <constraint firstItem="OZL-p1-iRq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="LZv-Ip-qL1"/>
+                <constraint firstItem="OZL-p1-iRq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PKu-nH-0Yi"/>
                 <constraint firstAttribute="bottom" secondItem="eQx-9f-zZl" secondAttribute="bottom" constant="14" id="cxR-iE-TZq"/>
                 <constraint firstItem="W5o-Ld-cgC" firstAttribute="leading" secondItem="eQx-9f-zZl" secondAttribute="trailing" constant="16" id="kf4-My-EB5"/>
+                <constraint firstAttribute="bottom" secondItem="OZL-p1-iRq" secondAttribute="bottom" id="lo7-xc-DkR"/>
                 <constraint firstItem="eQx-9f-zZl" firstAttribute="leading" secondItem="OZL-p1-iRq" secondAttribute="trailing" constant="14" id="n6K-zM-2YB"/>
                 <constraint firstAttribute="trailing" secondItem="W5o-Ld-cgC" secondAttribute="trailing" constant="32" id="rBF-v2-qdo"/>
             </constraints>
