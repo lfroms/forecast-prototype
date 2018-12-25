@@ -186,6 +186,9 @@ extension MainViewController {
         
         if cc != nil && detailsStack.hasAnyItems() == true {
             detailsScrollView.isHidden = false
+            return
         }
+        
+        detailsScrollView.isHidden = true
     }
 }
