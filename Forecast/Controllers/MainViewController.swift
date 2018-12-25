@@ -46,7 +46,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     var blurAnimator: UIViewPropertyAnimator?
-    var cogAnimator: UIViewPropertyAnimator?
+    var graphicAnimator: UIViewPropertyAnimator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +62,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         }
         
-        self.cogAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            self.cogIcon.alpha = 0
+        self.graphicAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.weatherGraphic.alpha = 0.4
         }
         
         self.blurAnimator?.pausesOnCompletion = true
-        self.cogAnimator?.pausesOnCompletion = true
+        self.graphicAnimator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData(in: .English).addObserver(self)
         NotificationCenter.default
@@ -92,11 +91,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let totalHeight = UIScreen.main.bounds.height
         
         let blurPercentage = contentOffset / (totalHeight / 2)
-        let cogPercentage = contentOffset / (totalHeight / 5)
+        let graphicPercentage = contentOffset / (totalHeight / 5)
         
-        self.cogAnimator?.fractionComplete = cogPercentage
-        
-        self.cogIcon.isEnabled = cogPercentage < 0.5
+        self.graphicAnimator?.fractionComplete = graphicPercentage
         
         if blurPercentage > 0.5 {
             return
@@ -119,6 +116,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 currentConditionsContainer.snp.bottom
             ).offset(bottomInset)
         }
+        
+        self.scrollView.isExclusiveTouch = false
     }
     
     func render() {

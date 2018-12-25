@@ -377,35 +377,68 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
-                                <rect key="frame" x="32" y="70" width="30" height="31"/>
-                                <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="19"/>
-                                <state key="normal" title="cog">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCog:" destination="vfY-E5-8UY" eventType="touchUpInside" id="Snk-SF-SCz"/>
-                                </connections>
-                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75P-ZA-rbB" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
+                                <rect key="frame" x="32" y="66" width="40" height="40"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-FG-EdK">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <view key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pYT-4y-heg">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-7V-xDh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="17"/>
+                                                    <state key="normal" title="cog">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="1F3-DJ-zam" kind="presentation" id="h9K-SG-IiM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="P0O-7V-xDh" secondAttribute="trailing" id="ChX-nT-yCF"/>
+                                                <constraint firstItem="P0O-7V-xDh" firstAttribute="top" secondItem="pYT-4y-heg" secondAttribute="top" id="IQD-he-K3e"/>
+                                                <constraint firstAttribute="bottom" secondItem="P0O-7V-xDh" secondAttribute="bottom" id="L4K-XM-z9N"/>
+                                                <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="pYT-4y-heg" secondAttribute="leading" id="l1l-a1-Qjo"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PzN-FG-EdK" secondAttribute="bottom" id="24m-kB-efR"/>
+                                    <constraint firstAttribute="width" constant="40" id="2Ia-O9-bvZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="eSm-vI-cgY"/>
+                                    <constraint firstItem="PzN-FG-EdK" firstAttribute="leading" secondItem="75P-ZA-rbB" secondAttribute="leading" id="hFo-wi-B5I"/>
+                                    <constraint firstAttribute="trailing" secondItem="PzN-FG-EdK" secondAttribute="trailing" id="qdD-md-zJ7"/>
+                                    <constraint firstItem="PzN-FG-EdK" firstAttribute="top" secondItem="75P-ZA-rbB" secondAttribute="top" id="vGc-xr-TD9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.137581467628479" green="0.58733218908309937" blue="0.95298141241073608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="1KE-0C-5Ff"/>
                             <constraint firstItem="S9H-YC-Pkj" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="2Xa-DY-dAV"/>
-                            <constraint firstItem="P0O-7V-xDh" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" constant="32" id="DoV-XM-T3l"/>
+                            <constraint firstItem="75P-ZA-rbB" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" constant="32" id="4ln-fu-OQi"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="Jp1-O0-ydS"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="trailing" secondItem="vDN-IN-SOG" secondAttribute="trailing" id="T7L-hR-WOX"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="WQT-cA-098"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="X3Q-EV-4t7"/>
-                            <constraint firstItem="P0O-7V-xDh" firstAttribute="top" secondItem="gvM-yV-Y8o" secondAttribute="top" constant="26" id="XFV-jU-wx9"/>
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0O-7V-xDh" secondAttribute="trailing" constant="20" symbolic="YES" id="lSO-dj-kYP"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="bottom" secondItem="S9H-YC-Pkj" secondAttribute="bottom" id="pzx-xT-g1J"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
+                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" constant="22" id="vlj-d8-C50"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
                             <constraint firstAttribute="trailing" secondItem="S9H-YC-Pkj" secondAttribute="trailing" id="yyV-I3-YVg"/>
                         </constraints>
