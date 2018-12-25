@@ -41,10 +41,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var hourlyForecastContainer: UIView!
     @IBOutlet var sunriseSunsetStack: UIStackView!
     
-    @IBAction func didPressCog(_ sender: UIButton) {
-        self.fetchNewData()
-    }
-    
     var blurAnimator: UIViewPropertyAnimator?
     var graphicAnimator: UIViewPropertyAnimator?
     
@@ -69,7 +65,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.blurAnimator?.pausesOnCompletion = true
         self.graphicAnimator?.pausesOnCompletion = true
         
-        EnvCanada.shared.siteData(in: .English).addObserver(self)
+        EnvCanada.shared.siteData.addObserver(self)
         NotificationCenter.default
             .addObserver(
                 self,
@@ -78,6 +74,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 object: nil
             )
         
+        NotificationCenter.default
+            .addObserver(
+                forName: NSNotification.Name(rawValue: "resetObservers"),
+                object: nil,
+                queue: nil,
+                using: self.resetObserver
+            )
+        
+        self.fetchNewData()
+    }
+    
+    private func resetObserver(_ notification: Notification) {
+        EnvCanada.shared.siteData.removeObservers(ownedBy: self)
+        EnvCanada.shared.siteData.addObserver(self)
         self.fetchNewData()
     }
     
@@ -121,7 +131,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func render() {
-        let resource = EnvCanada.shared.siteData(in: .English)
+        let resource = EnvCanada.shared.siteData
         
         if let data = resource.latestData?.content as! SiteData?,
             resource.isLoading == false {
@@ -144,7 +154,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func fetchNewData() {
         self.loadingIndicator.startAnimating()
-        EnvCanada.shared.siteData(in: .English).load()
+        EnvCanada.shared.siteData.load()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

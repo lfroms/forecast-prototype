@@ -37,8 +37,8 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         let resource = EnvCanada.shared.siteList
         
         if let data = resource.latestData?.content as! [Site]?, resource.isLoading == false {
-            sites = data
-            filteredSites = data
+            sites = data.filter({ $0.provinceCode != "HEF" })
+            filteredSites = sites
             
             tableView.reloadData()
         }
@@ -98,7 +98,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
             searchController.dismiss(animated: false, completion: nil)
             
             filteredSites?[indexPath.row].saveAsDefault()
-            EnvCanada.shared.siteData(in: .English).load()
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resetObservers"), object: nil))
             
             dismiss(animated: true, completion: nil)
         }

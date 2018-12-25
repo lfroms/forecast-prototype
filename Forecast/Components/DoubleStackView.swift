@@ -30,6 +30,16 @@ class DoubleStackView: UIStackView {
         
         lastAddedSubviewIndex = 0
     }
+    
+    public func hasAnyItems() -> Bool {
+        var counter: Int = 0
+        
+        subviews.forEach { view in
+            view.subviews.forEach({ _ in counter += 1 })
+        }
+        
+        return counter > 0
+    }
 }
 
 extension String: Error {}

@@ -10,7 +10,7 @@ import SWXMLHash
 
 struct ForecastGroup: XMLIndexerDeserializable {
     let dateTime: [DateTime]
-    let regionalNormals: RegionalNormals
+    let regionalNormals: RegionalNormals?
     let forecast: [Forecast]
 
     static func deserialize(_ node: XMLIndexer) throws -> ForecastGroup {

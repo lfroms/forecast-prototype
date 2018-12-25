@@ -13,7 +13,7 @@ extension MainViewController {
     func renderSunriseSunset(_ data: SiteData) {
         sunriseSunsetStack.subviews.forEach({ $0.removeFromSuperview() })
         
-        data.riseSet.dateTime?.filter({ $0.zone == "UTC" }).forEach(
+        data.riseSet?.dateTime?.filter({ $0.zone == "UTC" }).forEach(
             { item in
                 let time = item.value.timeStamp
                     .toDate("yyyyMMddHHmmss", region: .UTC)?

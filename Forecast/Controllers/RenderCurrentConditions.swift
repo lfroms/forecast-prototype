@@ -14,25 +14,29 @@ import UIKit
 extension MainViewController {
     func renderCurrentConditions(_ data: SiteData) {
         let cc = data.currentConditions
-        let fc = data.forecastGroup.forecast
+        let fc = data.forecastGroup?.forecast
         
-        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value) {
+        if cc?.temperature != nil, let tempAsFloat = Float(cc!.temperature!.value) {
             let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
             self.currentTempLabel.text = normalized.asRoundedString() + "°"
         }
         
-        self.currentConditionLabel.text = cc.condition
+        if cc?.condition != nil, cc?.condition != "" {
+            self.currentConditionLabel.text = cc?.condition
+        } else {
+            self.currentConditionLabel.text = "Not Observed"
+        }
         
-        if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
-            let temp = forecast.temperatures.first?.value {
+        if let forecast = fc?.first(where: { $0.period.textForecastName == "Tonight" }),
+            let temp = forecast.temperatures?.first?.value {
             self.lowTempView.isHidden = false
             self.lowTempValue.text = temp + "°"
         } else {
             self.lowTempView.isHidden = true
         }
         
-        if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
-            let temp = forecast.temperatures.first?.value {
+        if let forecast = fc?.first(where: { $0.period.textForecastName == "Today" }),
+            let temp = forecast.temperatures?.first?.value {
             self.highTempView.isHidden = false
             self.highTempValue.text = temp + "°"
         } else {
@@ -44,8 +48,8 @@ extension MainViewController {
         let cc = data.currentConditions
         self.stationLabel.text = data.location.name.value
         
-        if cc.dateTime != nil {
-            let timestamp = cc.dateTime?.first(where: { $0.zone == "UTC" })?.value.timeStamp
+        if cc?.dateTime != nil {
+            let timestamp = cc?.dateTime?.first(where: { $0.zone == "UTC" })?.value.timeStamp
             
             self.lastUpdatedLabel.text = timestamp?
                 .toDate("yyyyMMddHHmmss", region: .UTC)?
@@ -55,17 +59,21 @@ extension MainViewController {
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
-                self.view.backgroundColor = UIColor(named: cc.iconCode ?? "00")
+                if cc?.iconCode == "" {
+                    self.view.backgroundColor = UIColor(named: "06")
+                } else {
+                    self.view.backgroundColor = UIColor(named: cc?.iconCode ?? "06")
+                }
             }, completion: nil
         )
     }
     
     func renderDetails(_ data: SiteData) throws {
-        let currCond = data.currentConditions
+        let cc = data.currentConditions
         
         detailsStack.removeAllSubviews()
         
-        if let humidity = currCond.relativeHumidity {
+        if let humidity = cc?.relativeHumidity {
             let humidityView = ConditionView().with(
                 aux: nil,
                 value: humidity.value,
@@ -74,10 +82,12 @@ extension MainViewController {
                 icon: "tint"
             )
             
-            try detailsStack.addOrganizedSubview(humidityView)
+            if humidity.value != "" {
+                try detailsStack.addOrganizedSubview(humidityView)
+            }
         }
         
-        if let pressure = currCond.pressure {
+        if let pressure = cc?.pressure {
             let pressureView = ConditionView().with(
                 aux: nil,
                 value: pressure.value,
@@ -86,10 +96,12 @@ extension MainViewController {
                 icon: "tachometer-alt"
             )
             
-            try detailsStack.addOrganizedSubview(pressureView)
+            if pressure.value != "" {
+                try detailsStack.addOrganizedSubview(pressureView)
+            }
         }
         
-        if let windChill = currCond.windChill {
+        if let windChill = cc?.windChill {
             let windChillView = ConditionView().with(
                 aux: nil,
                 value: windChill.value,
@@ -98,9 +110,11 @@ extension MainViewController {
                 icon: "snowflake"
             )
             
-            try detailsStack.addOrganizedSubview(windChillView)
+            if windChill.value != "" {
+                try detailsStack.addOrganizedSubview(windChillView)
+            }
             
-        } else if let humidex = currCond.humidex {
+        } else if let humidex = cc?.humidex {
             let humidexView = ConditionView().with(
                 aux: nil,
                 value: humidex.value,
@@ -109,10 +123,12 @@ extension MainViewController {
                 icon: "sun"
             )
             
-            try detailsStack.addOrganizedSubview(humidexView)
+            if humidex.value != "" {
+                try detailsStack.addOrganizedSubview(humidexView)
+            }
         }
         
-        if let wind = currCond.wind {
+        if let wind = cc?.wind {
             let windView = ConditionView().with(
                 aux: wind.direction.value,
                 value: wind.speed.value,
@@ -121,22 +137,26 @@ extension MainViewController {
                 icon: "wind"
             )
             
-            try detailsStack.addOrganizedSubview(windView)
+            if wind.speed.value != "" {
+                try detailsStack.addOrganizedSubview(windView)
+            }
             
-            if currCond.wind!.gust.value != "" {
+            if cc?.wind!.gust.value != "" {
                 let gust = ConditionView().with(
                     aux: nil,
-                    value: currCond.wind!.gust.value,
-                    units: currCond.wind!.gust.units,
+                    value: cc?.wind!.gust.value,
+                    units: cc?.wind!.gust.units,
                     type: "WIND GUST",
                     icon: "arrow-right"
                 )
                 
-                try detailsStack.addOrganizedSubview(gust)
+                if wind.gust.value != "" {
+                    try detailsStack.addOrganizedSubview(gust)
+                }
             }
         }
         
-        if let visibility = currCond.visibility {
+        if let visibility = cc?.visibility {
             let visibilityView = ConditionView().with(
                 aux: nil,
                 value: visibility.value,
@@ -145,10 +165,12 @@ extension MainViewController {
                 icon: "ruler"
             )
             
-            try detailsStack.addOrganizedSubview(visibilityView)
+            if visibility.value != "" {
+                try detailsStack.addOrganizedSubview(visibilityView)
+            }
         }
         
-        if let dewpoint = currCond.dewpoint {
+        if let dewpoint = cc?.dewpoint {
             let dewpointView = ConditionView().with(
                 aux: nil,
                 value: dewpoint.value,
@@ -157,7 +179,13 @@ extension MainViewController {
                 icon: "thermometer-half"
             )
             
-            try detailsStack.addOrganizedSubview(dewpointView)
+            if dewpoint.value != "" {
+                try detailsStack.addOrganizedSubview(dewpointView)
+            }
+        }
+        
+        if cc != nil && detailsStack.hasAnyItems() == true {
+            detailsScrollView.isHidden = false
         }
     }
 }

@@ -45,11 +45,12 @@ struct Forecast: XMLIndexerDeserializable {
     
     let period: Period
     let textSummary: String?
-    let cloudPrecip: CloudPrecip
-    let abbreviatedForecast: AbbreviatedForecast
-    let temperatures: [Measurement]
+    let cloudPrecip: CloudPrecip?
+    let abbreviatedForecast: AbbreviatedForecast?
+    let temperatures: [Measurement]?
     let winds: [Wind]?
     let relativeHumidity: Measurement?
+    let iconCode: String?
     
     static func deserialize(_ node: XMLIndexer) throws -> Forecast {
         return try Forecast(
@@ -59,7 +60,8 @@ struct Forecast: XMLIndexerDeserializable {
             abbreviatedForecast: node["abbreviatedForecast"].value(),
             temperatures: node["temperatures"]["temperature"].value(),
             winds: node["winds"]["wind"].value(),
-            relativeHumidity: node["relativeHumidity"].value()
+            relativeHumidity: node["relativeHumidity"].value(),
+            iconCode: node["iconCode"].value()
         )
     }
 }

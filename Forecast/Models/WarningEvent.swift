@@ -12,6 +12,7 @@ enum AlertPriority: String {
     case low
     case medium
     case high
+    case urgent
 }
 
 enum AlertType: String {

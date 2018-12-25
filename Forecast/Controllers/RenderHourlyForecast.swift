@@ -13,7 +13,7 @@ extension MainViewController {
     func renderHourlyForecast(_ data: SiteData) {
         hourlyForecastStack.subviews.forEach({ $0.removeFromSuperview() })
         
-        data.hourlyForecastGroup.hourlyForecast.forEach(
+        data.hourlyForecastGroup?.hourlyForecast.forEach(
             { item in
                 let hour = item.dateTimeUTC
                     .toDate("yyyyMMddHHmm", region: .UTC)?

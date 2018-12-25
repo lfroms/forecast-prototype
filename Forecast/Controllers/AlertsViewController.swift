@@ -13,11 +13,11 @@ class AlertsViewController: UIViewController {
     @IBOutlet var alertsStack: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        EnvCanada.shared.siteData(in: .English).addObserver(self)
+        EnvCanada.shared.siteData.addObserver(self)
     }
 
     func render() {
-        let resource = EnvCanada.shared.siteData(in: .English)
+        let resource = EnvCanada.shared.siteData
 
         if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
             alertsStack.subviews.forEach({ $0.removeFromSuperview() })

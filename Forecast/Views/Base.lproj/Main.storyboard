@@ -250,6 +250,9 @@
                                                             <constraint firstItem="DE6-fJ-UNd" firstAttribute="top" secondItem="KM1-ny-Thi" secondAttribute="top" id="lvS-ib-FPh"/>
                                                             <constraint firstAttribute="height" secondItem="DE6-fJ-UNd" secondAttribute="height" id="zeN-fr-Z88"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </scrollView>
                                                 </subviews>
                                             </stackView>

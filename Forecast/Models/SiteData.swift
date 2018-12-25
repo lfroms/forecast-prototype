@@ -10,11 +10,11 @@ import SWXMLHash
 
 struct SiteData: XMLIndexerDeserializable {
     let location: Location
-    let currentConditions: CurrentConditions
+    let currentConditions: CurrentConditions?
     let warnings: Warnings?
-    let forecastGroup: ForecastGroup
-    let hourlyForecastGroup: HourlyForecastGroup
-    let riseSet: RiseSet
+    let forecastGroup: ForecastGroup?
+    let hourlyForecastGroup: HourlyForecastGroup?
+    let riseSet: RiseSet?
 
     static func deserialize(_ node: XMLIndexer) throws -> SiteData {
         return try SiteData(
