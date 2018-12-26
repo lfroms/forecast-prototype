@@ -66,6 +66,8 @@ extension MainViewController {
                 }
             }, completion: nil
         )
+        
+        weatherGraphic.image = UIImage(named: cc?.iconCode ?? "00")
     }
     
     func renderDetails(_ data: SiteData) throws {

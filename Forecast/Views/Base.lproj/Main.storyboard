@@ -40,8 +40,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
-                                <rect key="frame" x="64" y="0.0" width="311" height="1366"/>
+                            <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1366"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -438,6 +438,7 @@
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
+                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="oA4-J4-4UV"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="bottom" secondItem="S9H-YC-Pkj" secondAttribute="bottom" id="pzx-xT-g1J"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
@@ -505,16 +506,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="Zt0-WZ-Oie">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="address-level2"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="kvh-ne-zEf" id="RES-2X-j42"/>
                             </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="57g-Fg-MuW" detailTextLabel="1Ja-Sn-pHe" style="IBUITableViewCellStyleSubtitle" id="4fz-oy-aPS">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4fz-oy-aPS" id="FOp-2a-sS6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -544,7 +549,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search Stations" id="40t-uT-rUg">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="iP3-ZZ-gh9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iP3-ZZ-gh9">
                             <connections>
                                 <action selector="exit:" destination="kvh-ne-zEf" id="xrZ-3r-0AY"/>
                             </connections>
@@ -557,6 +562,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Test Icon" width="311" height="255"/>
+        <image name="00" width="438" height="406"/>
     </resources>
 </document>
