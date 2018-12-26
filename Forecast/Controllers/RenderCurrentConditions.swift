@@ -59,15 +59,21 @@ extension MainViewController {
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
-                if cc?.iconCode == "" {
-                    self.view.backgroundColor = UIColor(named: "06")
+                if let code = cc?.iconCode, code != ""  {
+                    self.view.backgroundColor = UIColor(named: code)
                 } else {
-                    self.view.backgroundColor = UIColor(named: cc?.iconCode ?? "06")
+                    self.view.backgroundColor = UIColor(named: "06")
                 }
             }, completion: nil
         )
         
-        weatherGraphic.image = UIImage(named: cc?.iconCode ?? "00")
+        if let code = cc?.iconCode, code != ""  {
+            self.weatherGraphic.image = UIImage(named: code)?.aspectFitImage(inRect: self.weatherGraphic.frame)
+        } else {
+            self.weatherGraphic.image = UIImage(named: "03")?.aspectFitImage(inRect: self.weatherGraphic.frame)
+        }
+        
+        self.weatherGraphic.contentMode = .top
     }
     
     func renderDetails(_ data: SiteData) throws {

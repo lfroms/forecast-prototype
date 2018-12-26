@@ -40,11 +40,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-YC-Pkj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1366"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                </accessibility>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="406" translatesAutoresizingMaskIntoConstraints="NO" id="kpL-iM-LAn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                             </imageView>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-nh-fJi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
@@ -428,9 +425,10 @@
                         <color key="backgroundColor" red="0.137581467628479" green="0.58733218908309937" blue="0.95298141241073608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="1KE-0C-5Ff"/>
-                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="2Xa-DY-dAV"/>
                             <constraint firstItem="75P-ZA-rbB" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" constant="32" id="4ln-fu-OQi"/>
+                            <constraint firstItem="kpL-iM-LAn" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="I7e-Wq-PgF"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="Jp1-O0-ydS"/>
+                            <constraint firstItem="kpL-iM-LAn" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="QzY-H9-wWP"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="trailing" secondItem="vDN-IN-SOG" secondAttribute="trailing" id="T7L-hR-WOX"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="WQT-cA-098"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
@@ -438,13 +436,11 @@
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
-                            <constraint firstItem="S9H-YC-Pkj" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="oA4-J4-4UV"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
-                            <constraint firstItem="gvM-yV-Y8o" firstAttribute="bottom" secondItem="S9H-YC-Pkj" secondAttribute="bottom" id="pzx-xT-g1J"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
                             <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" constant="22" id="vlj-d8-C50"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
-                            <constraint firstAttribute="trailing" secondItem="S9H-YC-Pkj" secondAttribute="trailing" id="yyV-I3-YVg"/>
+                            <constraint firstItem="kpL-iM-LAn" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="ziu-u3-z7Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
                     </view>
@@ -471,7 +467,7 @@
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
                         <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>
-                        <outlet property="weatherGraphic" destination="S9H-YC-Pkj" id="Rsq-FX-Rgs"/>
+                        <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiB-Q5-2bH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,7 +557,4 @@
             <point key="canvasLocation" x="42" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="00" width="438" height="406"/>
-    </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Float {
     func asRoundedString() -> String {
@@ -18,5 +19,22 @@ extension String {
     func hasWhiteSpace() -> Bool {
         let charset = CharacterSet(charactersIn: " ")
         return self.lowercased().rangeOfCharacter(from: charset) != nil
+    }
+}
+
+extension UIImage {
+    func aspectFitImage(inRect rect: CGRect) -> UIImage? {
+        let width = self.size.width
+        let height = self.size.height
+        let scaleFactor = width > height ? rect.size.height / height : rect.size.width / width
+
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: width * scaleFactor, height: height * scaleFactor), false, 0.0)
+        self.draw(in: CGRect(x: 0.0, y: 0.0, width: width * scaleFactor, height: height * scaleFactor))
+
+        defer {
+            UIGraphicsEndImageContext()
+        }
+
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
