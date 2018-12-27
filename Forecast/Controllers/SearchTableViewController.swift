@@ -9,23 +9,15 @@
 import Siesta
 import UIKit
 
-class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
+class SearchTableViewController: UITableViewController {
     var sites: [Site]?
     var filteredSites: [Site]?
     var selectedSiteIndex: Int?
-    
-    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         EnvCanada.shared.siteList.addObserver(self)
         EnvCanada.shared.siteList.loadIfNeeded()
-        
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        tableView.tableHeaderView = searchController.searchBar
     }
     
     @IBAction func exit(_ sender: Any) {
@@ -77,11 +69,10 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        searchController.dismiss(animated: false, completion: nil)
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty, sites != nil {
+    func updateSearchResults(_ searchText: String) {
+        if !searchText.isEmpty, sites != nil {
             filteredSites = sites!.filter { site in
                 site.nameEn.lowercased().contains(searchText.lowercased())
             }
@@ -95,7 +86,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath) != nil {
             view.endEditing(true)
-            searchController.dismiss(animated: false, completion: nil)
             
             filteredSites?[indexPath.row].saveAsDefault()
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resetObservers"), object: nil))
@@ -108,5 +98,20 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
 extension SearchTableViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
         setResults()
+    }
+}
+
+class SelfSizedTableView: UITableView {
+    var maxHeight: CGFloat = UIScreen.main.bounds.size.height
+    
+    override func reloadData() {
+        super.reloadData()
+        invalidateIntrinsicContentSize()
+        layoutIfNeeded()
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let height = max(contentSize.height, maxHeight)
+        return CGSize(width: contentSize.width, height: height)
     }
 }
