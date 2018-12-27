@@ -65,6 +65,14 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
         resultsController?.updateSearchResults(searchText)
     }
 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        scrollView.scrollToView(view: searchContainer, animated: true)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
 
@@ -94,5 +102,17 @@ class CitySearchField: UITextField {
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return textRect(forBounds: bounds)
+    }
+}
+
+extension UIScrollView {
+    // Scroll to a specific view so that it's top is at the top our scrollview
+    func scrollToView(view: UIView, animated: Bool) {
+        if let origin = view.superview {
+            // Get the Y position of your child view
+            let childStartPoint = origin.convert(view.frame.origin, to: self)
+            // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
+            scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y, width: 1, height: frame.height), animated: animated)
+        }
     }
 }

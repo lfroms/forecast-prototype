@@ -101,9 +101,7 @@ extension SearchTableViewController: ResourceObserver {
     }
 }
 
-class SelfSizedTableView: UITableView {
-    var maxHeight: CGFloat = UIScreen.main.bounds.size.height
-    
+class SelfSizedTableView: UITableView {    
     override func reloadData() {
         super.reloadData()
         invalidateIntrinsicContentSize()
@@ -111,7 +109,6 @@ class SelfSizedTableView: UITableView {
     }
     
     override var intrinsicContentSize: CGSize {
-        let height = max(contentSize.height, maxHeight)
-        return CGSize(width: contentSize.width, height: height)
+        return contentSize
     }
 }
