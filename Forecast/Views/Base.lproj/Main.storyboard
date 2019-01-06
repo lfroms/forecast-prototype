@@ -628,8 +628,11 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="45" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6b5-Bt-3LO" userLabel="Warnings Stack">
+                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
+                            </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75P-ZA-rbB" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="32" y="66" width="40" height="40"/>
+                                <rect key="frame" x="32" y="111" width="40" height="40"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-FG-EdK">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -677,6 +680,7 @@
                         <constraints>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="1KE-0C-5Ff"/>
                             <constraint firstItem="75P-ZA-rbB" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" constant="32" id="4ln-fu-OQi"/>
+                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="C7u-YI-13E"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="I7e-Wq-PgF"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="Jp1-O0-ydS"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="QzY-H9-wWP"/>
@@ -685,12 +689,14 @@
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="X3Q-EV-4t7"/>
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
+                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="6b5-Bt-3LO" secondAttribute="bottom" constant="22" id="f3l-CG-RWj"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
-                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" constant="22" id="vlj-d8-C50"/>
+                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="wBF-WJ-Q5L"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
+                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="zHg-E1-rYO"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="ziu-u3-z7Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
@@ -721,6 +727,7 @@
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
                         <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>
+                        <outlet property="warningsStack" destination="6b5-Bt-3LO" id="HSH-JL-Blf"/>
                         <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
                     </connections>
                 </viewController>

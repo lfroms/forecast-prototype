@@ -48,7 +48,7 @@ class AlertItem: UIView {
     }
     
     func with(icon: String, title: String, description: String?, priority: WarningPriority?, url: String?) -> AlertItem {
-        backdrop.backgroundColor = getColorForPriority(priority)
+        backdrop.backgroundColor = getColorForAlertPriority(priority)
         iconLabel.text = icon
         titleLabel.text = title
         
@@ -64,17 +64,17 @@ class AlertItem: UIView {
         
         return self
     }
-    
-    private func getColorForPriority(_ priority: WarningPriority?) -> UIColor {
-        switch priority {
-        case .low?:
-            return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
-        case .medium?:
-            return UIColor(red: 1.00, green: 0.92, blue: 0.00, alpha: 1.0)
-        case .high?:
-            return UIColor(red: 0.96, green: 0.26, blue: 0.21, alpha: 1.0)
-        default:
-            return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
-        }
+}
+
+func getColorForAlertPriority(_ priority: WarningPriority?) -> UIColor {
+    switch priority {
+    case .low?:
+        return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
+    case .medium?:
+        return UIColor(red: 1.00, green: 0.92, blue: 0.00, alpha: 1.0)
+    case .high?:
+        return UIColor(red: 0.96, green: 0.26, blue: 0.21, alpha: 1.0)
+    default:
+        return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
     }
 }

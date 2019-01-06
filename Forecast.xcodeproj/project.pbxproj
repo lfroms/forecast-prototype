@@ -25,7 +25,7 @@
 		807B7291217E4F36002EE814 /* EnvCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7290217E4F36002EE814 /* EnvCanada.swift */; };
 		807B7295217E7872002EE814 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ConditionView.swift */; };
 		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
-		8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082207F21ACD35900ACBE7E /* AlertsViewController.swift */; };
+		8082208021ACD35900ACBE7E /* RenderWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082207F21ACD35900ACBE7E /* RenderWarnings.swift */; };
 		8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8082208121ACD56100ACBE7E /* AlertItem.xib */; };
 		8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* AlertItem.swift */; };
 		808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
@@ -81,7 +81,7 @@
 		807B7290217E4F36002EE814 /* EnvCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCanada.swift; sourceTree = "<group>"; };
 		807B7294217E7872002EE814 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		8082207F21ACD35900ACBE7E /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		8082207F21ACD35900ACBE7E /* RenderWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderWarnings.swift; sourceTree = "<group>"; };
 		8082208121ACD56100ACBE7E /* AlertItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertItem.xib; sourceTree = "<group>"; };
 		8082208321ACD57A00ACBE7E /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		8083538021D415E200AE5355 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				8051A6F421755BE6007290CF /* MainViewController.swift */,
 				80B1D4002193D951006DD630 /* RenderCurrentConditions.swift */,
 				80F175FA21AB37C8001090BD /* SearchTableViewController.swift */,
-				8082207F21ACD35900ACBE7E /* AlertsViewController.swift */,
+				8082207F21ACD35900ACBE7E /* RenderWarnings.swift */,
 				80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */,
 				80B9195321D06908003D7E84 /* RenderHourlyForecast.swift */,
 				80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */,
@@ -444,7 +444,7 @@
 				80582D3221ACDB79005B7FA9 /* WarningEvent.swift in Sources */,
 				80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */,
 				80B71C8121824E3500DAFA65 /* UIStyledView.swift in Sources */,
-				8082208021ACD35900ACBE7E /* AlertsViewController.swift in Sources */,
+				8082208021ACD35900ACBE7E /* RenderWarnings.swift in Sources */,
 				80D1AE9A21D062BC00168BA8 /* HourlyForecastGroup.swift in Sources */,
 				80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */,
 				80A608392176C8BC005D2891 /* SiteData.swift in Sources */,

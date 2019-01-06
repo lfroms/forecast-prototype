@@ -46,7 +46,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var noDailyForecastLabel: UILabel!
     @IBOutlet weak var noHourlyForecastLabel: UILabel!
     
+    @IBOutlet weak var warningsStack: UIStackView!
+    
     var blurAnimator: UIViewPropertyAnimator?
+    var headerAnimator: UIViewPropertyAnimator?
     var graphicAnimator: UIViewPropertyAnimator?
     
     override func viewDidLoad() {
@@ -58,9 +61,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.blurView.effect = UIBlurEffect(style: .dark)
-            self.headerBlur.effect = UIBlurEffect(style: .light)
-            
             self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        }
+        
+        self.headerAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.headerBlur.effect = UIBlurEffect(style: .light)
         }
         
         self.graphicAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
@@ -71,6 +76,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.graphicAnimator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData.addObserver(self)
+        
         NotificationCenter.default
             .addObserver(
                 self,
@@ -110,11 +116,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.graphicAnimator?.fractionComplete = graphicPercentage
         
-        if blurPercentage > 0.5 {
-            return
+        let limitedBlur = blurPercentage >= 0.5 ? 0.5 : blurPercentage
+        
+        if self.warningsStack.arrangedSubviews.isEmpty {
+            self.headerAnimator?.fractionComplete = limitedBlur
+        } else {
+            self.headerAnimator?.fractionComplete = 0
         }
         
-        self.blurAnimator?.fractionComplete = blurPercentage
+        self.blurAnimator?.fractionComplete = limitedBlur
     }
     
     override func viewDidLayoutSubviews() {
@@ -145,10 +155,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 try self.renderDetails(data)
             } catch {}
             
+            self.renderWarnings(data)
             self.renderCurrentConditions(data)
             self.renderHourlyForecast(data)
             self.renderForecast(data)
             self.renderSunriseSunset(data)
+            
+            self.scrollViewDidScroll(self.scrollView)
         }
         
         if resource.isLoading == false {
