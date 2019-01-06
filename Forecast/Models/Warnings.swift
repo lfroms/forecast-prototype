@@ -11,7 +11,7 @@ import SWXMLHash
 struct Warnings: XMLIndexerDeserializable {
     let events: [WarningEvent]?
     let url: String?
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> Warnings {
         return try Warnings(
             events: node["event"].value(),

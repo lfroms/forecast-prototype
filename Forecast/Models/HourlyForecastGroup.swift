@@ -11,7 +11,7 @@ import SWXMLHash
 struct HourlyForecastGroup: XMLIndexerDeserializable {
     let dateTime: [DateTime]?
     let hourlyForecast: [HourlyForecast]?
-    
+
     static func deserialize(_ node: XMLIndexer) throws -> HourlyForecastGroup {
         return try HourlyForecastGroup(
             dateTime: node["dateTime"].value(),

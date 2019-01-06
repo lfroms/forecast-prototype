@@ -43,10 +43,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var dailyForecastContainer: UIView!
     @IBOutlet var hourlyForecastContainer: UIView!
     
-    @IBOutlet weak var noDailyForecastLabel: UILabel!
-    @IBOutlet weak var noHourlyForecastLabel: UILabel!
+    @IBOutlet var noDailyForecastLabel: UILabel!
+    @IBOutlet var noHourlyForecastLabel: UILabel!
     
-    @IBOutlet weak var warningsStack: UIStackView!
+    @IBOutlet var warningsStack: UIStackView!
     
     var blurAnimator: UIViewPropertyAnimator?
     var headerAnimator: UIViewPropertyAnimator?
@@ -114,8 +114,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let blurPercentage = contentOffset / (totalHeight / 2)
         let graphicPercentage = contentOffset / (totalHeight / 5)
         
-        self.graphicAnimator?.fractionComplete = graphicPercentage
-        
         let limitedBlur = blurPercentage >= 0.5 ? 0.5 : blurPercentage
         
         if self.warningsStack.arrangedSubviews.isEmpty {
@@ -124,6 +122,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.headerAnimator?.fractionComplete = 0
         }
         
+        self.graphicAnimator?.fractionComplete = graphicPercentage
         self.blurAnimator?.fractionComplete = limitedBlur
     }
     

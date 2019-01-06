@@ -101,7 +101,7 @@ extension SearchTableViewController: ResourceObserver {
     }
 }
 
-class SelfSizedTableView: UITableView {    
+class SelfSizedTableView: UITableView {
     override func reloadData() {
         super.reloadData()
         invalidateIntrinsicContentSize()
