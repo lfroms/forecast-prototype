@@ -22,24 +22,22 @@ class AlertsViewController: UIViewController {
         if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
             alertsStack.subviews.forEach({ $0.removeFromSuperview() })
 
-            if data.warnings.events != nil {
-                data.warnings.events!.forEach(
-                    { event in
-                        let timestamp = event.dateTime[1].value?.timeStamp?.toDate("yyyyMMddhhmmss")?
-                            .toFormat("MMM d h:mm a")
+            data.warnings.events?.forEach(
+                { event in
+                    let timestamp = event.dateTime[1].value?.timeStamp?.toDate("yyyyMMddhhmmss")?
+                        .toFormat("MMM d h:mm a")
 
-                        let subview = AlertItem().with(
-                            icon: iconForAlertPriority(event.priority),
-                            title: event.description,
-                            description: timestamp,
-                            priority: event.priority,
-                            url: data.warnings.url
-                        )
+                    let subview = AlertItem().with(
+                        icon: iconForAlertPriority(event.priority),
+                        title: event.description,
+                        description: timestamp,
+                        priority: event.priority,
+                        url: data.warnings.url
+                    )
 
-                        alertsStack.addArrangedSubview(subview)
-                    }
-                )
-            }
+                    alertsStack.addArrangedSubview(subview)
+                }
+            )
         }
     }
 

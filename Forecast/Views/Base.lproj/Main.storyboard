@@ -501,7 +501,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                         <edgeInsets key="layoutMargins" top="22" left="16" bottom="22" right="16"/>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-Oa-qhm">
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-Oa-qhm">
                                                         <rect key="frame" x="95.000000000000014" y="91.666666666666742" width="185.33333333333337" height="17"/>
                                                         <string key="text">No Hourly Forecast Available</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -553,7 +553,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9lr-cE-sGm"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-FZ-pvg">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-FZ-pvg">
                                                 <rect key="frame" x="100.33333333333333" y="65.333333333333371" width="174.66666666666669" height="17"/>
                                                 <string key="text">No Daily Forecast Available</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
