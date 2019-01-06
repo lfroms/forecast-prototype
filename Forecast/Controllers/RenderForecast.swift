@@ -10,7 +10,13 @@ import Foundation
 
 extension MainViewController {
     func renderForecast(_ data: SiteData) {
+        noDailyForecastLabel.isHidden = true
         forecastStack.subviews.forEach({ $0.removeFromSuperview() })
+        
+        guard data.forecastGroup.forecast != nil else {
+            self.noDailyForecastLabel.isHidden = false
+            return
+        }
 
         data.forecastGroup.forecast?.forEach(
             { item in

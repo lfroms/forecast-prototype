@@ -11,7 +11,13 @@ import SwiftDate
 
 extension MainViewController {
     func renderHourlyForecast(_ data: SiteData) {
+        noHourlyForecastLabel.isHidden = true
         hourlyForecastStack.subviews.forEach({ $0.removeFromSuperview() })
+        
+        guard data.hourlyForecastGroup.hourlyForecast != nil else {
+            self.noHourlyForecastLabel.isHidden = false
+            return
+        }
         
         data.hourlyForecastGroup.hourlyForecast?.forEach(
             { item in

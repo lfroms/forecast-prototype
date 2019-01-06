@@ -501,12 +501,21 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                         <edgeInsets key="layoutMargins" top="22" left="16" bottom="22" right="16"/>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-Oa-qhm">
+                                                        <rect key="frame" x="95.000000000000014" y="91.666666666666742" width="185.33333333333337" height="17"/>
+                                                        <string key="text">No Hourly Forecast Available</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="6KW-Oa-qhm" firstAttribute="centerX" secondItem="UUh-Gc-XHS" secondAttribute="centerX" id="Atp-4i-8bR"/>
                                                     <constraint firstItem="Bpp-XU-A39" firstAttribute="height" secondItem="UUh-Gc-XHS" secondAttribute="height" id="JT9-UO-7Qp"/>
                                                     <constraint firstItem="Bpp-XU-A39" firstAttribute="top" secondItem="UUh-Gc-XHS" secondAttribute="top" id="hEa-J4-BKd"/>
                                                     <constraint firstAttribute="trailing" secondItem="Bpp-XU-A39" secondAttribute="trailing" id="hhz-Bv-Esv"/>
+                                                    <constraint firstItem="6KW-Oa-qhm" firstAttribute="centerY" secondItem="UUh-Gc-XHS" secondAttribute="centerY" id="ktg-ea-moc"/>
                                                     <constraint firstItem="Bpp-XU-A39" firstAttribute="leading" secondItem="UUh-Gc-XHS" secondAttribute="leading" id="sTz-wB-MMO"/>
                                                     <constraint firstAttribute="bottom" secondItem="Bpp-XU-A39" secondAttribute="bottom" id="xZD-df-v3A"/>
                                                     <constraint firstAttribute="height" constant="200" id="yt3-q4-6as"/>
@@ -530,7 +539,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-Bv-mzh" userLabel="Daily Forecast Container">
-                                        <rect key="frame" x="0.0" y="997.66666666666663" width="375" height="223.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="997.66666666666663" width="375" height="123.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="DAILY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-RO-0qP" userLabel="Hourly">
                                                 <rect key="frame" x="32" y="0.0" width="38.333333333333343" height="15.666666666666666"/>
@@ -538,14 +547,26 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="200" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="elt-qh-lTA">
-                                                <rect key="frame" x="0.0" y="23.666666666666742" width="375" height="200"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="elt-qh-lTA">
+                                                <rect key="frame" x="0.0" y="23.666666666666742" width="375" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9lr-cE-sGm"/>
+                                                </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-FZ-pvg">
+                                                <rect key="frame" x="100.33333333333333" y="65.333333333333371" width="174.66666666666669" height="17"/>
+                                                <string key="text">No Daily Forecast Available</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="vmx-FZ-pvg" firstAttribute="centerX" secondItem="Cfj-Bv-mzh" secondAttribute="centerX" id="35w-zu-Wqw"/>
                                             <constraint firstAttribute="bottom" secondItem="elt-qh-lTA" secondAttribute="bottom" id="5vQ-ec-tnf"/>
                                             <constraint firstItem="Laq-RO-0qP" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" constant="32" id="DVw-d8-AwN"/>
                                             <constraint firstItem="elt-qh-lTA" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" id="OOP-KY-JhZ"/>
+                                            <constraint firstItem="vmx-FZ-pvg" firstAttribute="centerY" secondItem="elt-qh-lTA" secondAttribute="centerY" id="ieJ-bV-T2F"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Laq-RO-0qP" secondAttribute="trailing" constant="20" symbolic="YES" id="jud-PI-rLT"/>
                                             <constraint firstItem="Laq-RO-0qP" firstAttribute="top" secondItem="Cfj-Bv-mzh" secondAttribute="top" id="l2L-W8-nKp"/>
                                             <constraint firstAttribute="trailing" secondItem="elt-qh-lTA" secondAttribute="trailing" id="lA2-nd-89F"/>
@@ -553,7 +574,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py7-1h-cUa" userLabel="Sunrise/Sunset Container">
-                                        <rect key="frame" x="0.0" y="1253.3333333333333" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1153.3333333333333" width="375" height="60"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5Ww-dn-Wu7">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -682,18 +703,21 @@
                         <outlet property="currentConditionLabel" destination="PiP-LG-bw4" id="c7Z-7g-dNC"/>
                         <outlet property="currentConditionsContainer" destination="Zhx-Fk-mLP" id="4uP-vN-mHf"/>
                         <outlet property="currentTempLabel" destination="B6P-aB-nKr" id="gkL-jk-5oM"/>
+                        <outlet property="dailyForecastContainer" destination="Cfj-Bv-mzh" id="qSW-ZZ-azw"/>
                         <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="JQ6-Aj-vZq"/>
                         <outlet property="detailsStack" destination="DE6-fJ-UNd" id="6uJ-ZJ-XlK"/>
                         <outlet property="forecastStack" destination="elt-qh-lTA" id="2cY-S0-uRq"/>
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
                         <outlet property="highTempValue" destination="Rve-jF-UhU" id="WzY-ss-A4O"/>
                         <outlet property="highTempView" destination="R6o-Cr-iCe" id="A3z-1Y-sOe"/>
-                        <outlet property="hourlyForecastContainer" destination="GGx-qN-CIr" id="aVo-5e-8g5"/>
+                        <outlet property="hourlyForecastContainer" destination="GGx-qN-CIr" id="jH9-Ed-fSp"/>
                         <outlet property="hourlyForecastStack" destination="Bpp-XU-A39" id="lZT-Lh-qAi"/>
                         <outlet property="lastUpdatedLabel" destination="Win-PH-iit" id="Lwu-p9-wvK"/>
                         <outlet property="loadingIndicator" destination="EeW-wM-FbI" id="7AY-6B-bt9"/>
                         <outlet property="lowTempValue" destination="vd1-L8-Gy7" id="2Va-J1-IUm"/>
                         <outlet property="lowTempView" destination="8o6-WK-hnm" id="6cG-pq-uCq"/>
+                        <outlet property="noDailyForecastLabel" destination="vmx-FZ-pvg" id="Blk-kx-Iel"/>
+                        <outlet property="noHourlyForecastLabel" destination="6KW-Oa-qhm" id="vke-Ii-XZp"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
                         <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>

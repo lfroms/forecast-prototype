@@ -23,7 +23,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var currentConditionLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet var currentConditionsContainer: UIView!
     
     @IBOutlet var lowTempView: UIView!
     @IBOutlet var lowTempValue: UILabel!
@@ -38,8 +37,14 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var forecastStack: UIStackView!
     @IBOutlet var hourlyForecastStack: UIStackView!
-    @IBOutlet var hourlyForecastContainer: UIView!
     @IBOutlet var sunriseSunsetStack: UIStackView!
+    
+    @IBOutlet var currentConditionsContainer: UIView!
+    @IBOutlet var dailyForecastContainer: UIView!
+    @IBOutlet var hourlyForecastContainer: UIView!
+    
+    @IBOutlet weak var noDailyForecastLabel: UILabel!
+    @IBOutlet weak var noHourlyForecastLabel: UILabel!
     
     var blurAnimator: UIViewPropertyAnimator?
     var graphicAnimator: UIViewPropertyAnimator?
