@@ -34,11 +34,11 @@ struct DateTime: XMLIndexerDeserializable {
             }
         }
         
-        let year: String
-        let month: Month
-        let day: Day
-        let timeStamp: String
-        let textSummary: String
+        let year: String?
+        let month: Month?
+        let day: Day?
+        let timeStamp: String?
+        let textSummary: String?
         
         static func deserialize(_ node: XMLIndexer) throws -> DateTimeValue {
             return try DateTimeValue(
@@ -54,7 +54,7 @@ struct DateTime: XMLIndexerDeserializable {
     let name: String
     let zone: String
     let UTCOffset: String
-    let value: DateTimeValue
+    let value: DateTimeValue?
     
     static func deserialize(_ node: XMLIndexer) throws -> DateTime {
         return try DateTime(

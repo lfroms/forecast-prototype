@@ -47,7 +47,7 @@ class AlertItem: UIView {
         return contentView.frame.size
     }
     
-    func with(icon: String, title: String, description: String?, priority: AlertPriority?, url: String?) -> AlertItem {
+    func with(icon: String, title: String, description: String?, priority: WarningPriority?, url: String?) -> AlertItem {
         backdrop.backgroundColor = getColorForPriority(priority)
         iconLabel.text = icon
         titleLabel.text = title
@@ -65,7 +65,7 @@ class AlertItem: UIView {
         return self
     }
     
-    private func getColorForPriority(_ priority: AlertPriority?) -> UIColor {
+    private func getColorForPriority(_ priority: WarningPriority?) -> UIColor {
         switch priority {
         case .low?:
             return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)

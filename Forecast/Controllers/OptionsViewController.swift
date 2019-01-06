@@ -34,14 +34,14 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
 
         if let data = resource.latestData?.content as! SiteData?,
             resource.isLoading == false {
-            if let location = data.currentConditions?.station?.value, location != "" {
-                locationLabel.text = data.currentConditions?.station?.value
+            if let location = data.currentConditions.station?.value, location != "" {
+                locationLabel.text = data.currentConditions.station?.value
             } else {
                 locationView.isHidden = true
             }
 
-            if let timestamp = data.forecastGroup?.dateTime
-                .first(where: { $0.zone == "UTC" })?.value.timeStamp, timestamp != "" {
+            if let timestamp = data.forecastGroup.dateTime
+                .first(where: { $0.zone == "UTC" })?.value?.timeStamp, timestamp != "" {
                 forecastDateLabel.text = timestamp
                     .toDate("yyyyMMddHHmmss", region: .UTC)?
                     .convertTo(region: .current)

@@ -11,8 +11,8 @@ import SWXMLHash
 struct Pressure: XMLIndexerDeserializable {
     let unitType: String
     let units: String
-    let change: String
-    let tendency: String
+    let change: String?
+    let tendency: String?
     let value: String
 
     static func deserialize(_ node: XMLIndexer) throws -> Pressure {

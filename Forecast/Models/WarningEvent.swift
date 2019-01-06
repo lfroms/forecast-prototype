@@ -8,29 +8,31 @@
 
 import SWXMLHash
 
-enum AlertPriority: String {
+enum WarningPriority: String {
     case low
     case medium
     case high
     case urgent
 }
 
-enum AlertType: String {
+enum WarningType: String {
     case statement
     case watch
     case warning
+    case ended
+    case advistory
 }
 
 struct WarningEvent: XMLIndexerDeserializable {
-    let type: AlertType?
-    let priority: AlertPriority?
-    let description: String?
-    let dateTime: [DateTime]?
+    let type: WarningType
+    let priority: WarningPriority
+    let description: String
+    let dateTime: [DateTime]
 
     static func deserialize(_ node: XMLIndexer) throws -> WarningEvent {
         return try WarningEvent(
-            type: AlertType(rawValue: node.value(ofAttribute: "type")),
-            priority: AlertPriority(rawValue: node.value(ofAttribute: "priority")),
+            type: WarningType(rawValue: node.value(ofAttribute: "type")) ?? .statement,
+            priority: WarningPriority(rawValue: node.value(ofAttribute: "priority")) ?? .low,
             description: node.value(ofAttribute: "description"),
             dateTime: node["dateTime"].value()
         )

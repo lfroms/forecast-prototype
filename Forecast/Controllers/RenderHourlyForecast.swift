@@ -13,7 +13,7 @@ extension MainViewController {
     func renderHourlyForecast(_ data: SiteData) {
         hourlyForecastStack.subviews.forEach({ $0.removeFromSuperview() })
         
-        data.hourlyForecastGroup?.hourlyForecast.forEach(
+        data.hourlyForecastGroup.hourlyForecast?.forEach(
             { item in
                 let hour = item.dateTimeUTC
                     .toDate("yyyyMMddHHmm", region: .UTC)?
@@ -33,12 +33,12 @@ extension MainViewController {
                 
                 // Check if this is actually a number. Sometimes, it can be a string,
                 // in which case we don't want to show the units.
-                if let _ = Int(item.wind?.speed.value ?? "") {
-                    windSpeed = [item.wind?.speed.value, item.wind?.speed.units]
+                if let _ = Int(item.wind.speed.value) {
+                    windSpeed = [item.wind.speed.value, item.wind.speed.units]
                         .compactMap { $0 }
                         .joined(separator: " ")
                 } else {
-                    windSpeed = item.wind?.speed.value
+                    windSpeed = item.wind.speed.value
                 }
                 
                 let subview = HourlyItem().with(

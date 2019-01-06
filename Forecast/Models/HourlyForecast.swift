@@ -26,9 +26,9 @@ struct HourlyForecast: XMLIndexerDeserializable {
     let iconCode: String
     let temperature: Measurement
     let pop: Measurement
-    let windChill: Measurement?
-    let humidex: Measurement?
-    let wind: HourlyWind?
+    let windChill: Measurement
+    let humidex: Measurement
+    let wind: HourlyWind
 
     static func deserialize(_ node: XMLIndexer) throws -> HourlyForecast {
         return try HourlyForecast(

@@ -22,18 +22,18 @@ class AlertsViewController: UIViewController {
         if let data = resource.latestData?.content as! SiteData?, resource.isLoading == false {
             alertsStack.subviews.forEach({ $0.removeFromSuperview() })
 
-            if data.warnings?.events != nil {
-                data.warnings?.events!.forEach(
+            if data.warnings.events != nil {
+                data.warnings.events!.forEach(
                     { event in
-                        let timestamp = event.dateTime![1].value.timeStamp.toDate("yyyyMMddhhmmss")?
+                        let timestamp = event.dateTime[1].value?.timeStamp?.toDate("yyyyMMddhhmmss")?
                             .toFormat("MMM d h:mm a")
 
                         let subview = AlertItem().with(
                             icon: iconForAlertPriority(event.priority),
-                            title: event.description!,
+                            title: event.description,
                             description: timestamp,
                             priority: event.priority,
-                            url: data.warnings!.url
+                            url: data.warnings.url
                         )
 
                         alertsStack.addArrangedSubview(subview)
@@ -43,7 +43,7 @@ class AlertsViewController: UIViewController {
         }
     }
 
-    private func iconForAlertPriority(_ priority: AlertPriority?) -> String {
+    private func iconForAlertPriority(_ priority: WarningPriority?) -> String {
         switch priority {
         case .low?:
             return "info-circle"

@@ -133,12 +133,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func render() {
         let resource = EnvCanada.shared.siteData
         
-        if let data = resource.latestData?.content as! SiteData?,
-            resource.isLoading == false {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.loadingIndicator.stopAnimating()
-            }
-            
+        if let data = resource.latestData?.content as! SiteData? {
             self.renderMetadata(data)
             
             do {
@@ -149,6 +144,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.renderHourlyForecast(data)
             self.renderForecast(data)
             self.renderSunriseSunset(data)
+        }
+        
+        if resource.isLoading == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.loadingIndicator.stopAnimating()
+            }
         }
     }
     

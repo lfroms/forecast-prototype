@@ -14,21 +14,21 @@ import UIKit
 extension MainViewController {
     func renderCurrentConditions(_ data: SiteData) {
         let cc = data.currentConditions
-        let fc = data.forecastGroup?.forecast
+        let fc = data.forecastGroup.forecast
         
-        if cc?.temperature != nil, let tempAsFloat = Float(cc!.temperature!.value) {
+        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value) {
             let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
             self.currentTempLabel.text = normalized.asRoundedString() + "°"
         }
         
-        if cc?.condition != nil, cc?.condition != "" {
-            self.currentConditionLabel.text = cc?.condition
+        if cc.condition != nil, cc.condition != "" {
+            self.currentConditionLabel.text = cc.condition
         } else {
             self.currentConditionLabel.text = "Not Observed"
         }
         
         if let forecast = fc?.first(where: { $0.period.textForecastName == "Tonight" }),
-            let temp = forecast.temperatures?.first?.value {
+            let temp = forecast.temperatures.first?.value {
             self.lowTempView.isHidden = false
             self.lowTempValue.text = temp + "°"
         } else {
@@ -36,7 +36,7 @@ extension MainViewController {
         }
         
         if let forecast = fc?.first(where: { $0.period.textForecastName == "Today" }),
-            let temp = forecast.temperatures?.first?.value {
+            let temp = forecast.temperatures.first?.value {
             self.highTempView.isHidden = false
             self.highTempValue.text = temp + "°"
         } else {
@@ -48,8 +48,8 @@ extension MainViewController {
         let cc = data.currentConditions
         self.stationLabel.text = data.location.name.value
         
-        if cc?.dateTime != nil {
-            let timestamp = cc?.dateTime?.first(where: { $0.zone == "UTC" })?.value.timeStamp
+        if cc.dateTime != nil {
+            let timestamp = cc.dateTime?.first(where: { $0.zone == "UTC" })?.value?.timeStamp
             
             self.lastUpdatedLabel.text = timestamp?
                 .toDate("yyyyMMddHHmmss", region: .UTC)?
@@ -59,7 +59,7 @@ extension MainViewController {
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
-                if let code = cc?.iconCode, code != ""  {
+                if let code = cc.iconCode, code != ""  {
                     self.view.backgroundColor = UIColor(named: code)
                 } else {
                     self.view.backgroundColor = UIColor(named: "06")
@@ -67,7 +67,7 @@ extension MainViewController {
             }, completion: nil
         )
         
-        if let code = cc?.iconCode, code != ""  {
+        if let code = cc.iconCode, code != ""  {
             self.weatherGraphic.image = UIImage(named: code)?.aspectFitImage(inRect: self.weatherGraphic.frame)
         } else {
             self.weatherGraphic.image = UIImage(named: "03")?.aspectFitImage(inRect: self.weatherGraphic.frame)
@@ -81,7 +81,7 @@ extension MainViewController {
         
         detailsStack.removeAllSubviews()
         
-        if let humidity = cc?.relativeHumidity {
+        if let humidity = cc.relativeHumidity {
             let humidityView = ConditionView().with(
                 aux: nil,
                 value: humidity.value,
@@ -95,7 +95,7 @@ extension MainViewController {
             }
         }
         
-        if let pressure = cc?.pressure {
+        if let pressure = cc.pressure {
             let pressureView = ConditionView().with(
                 aux: nil,
                 value: pressure.value,
@@ -109,7 +109,7 @@ extension MainViewController {
             }
         }
         
-        if let windChill = cc?.windChill {
+        if let windChill = cc.windChill {
             let windChillView = ConditionView().with(
                 aux: nil,
                 value: windChill.value,
@@ -122,7 +122,7 @@ extension MainViewController {
                 try detailsStack.addOrganizedSubview(windChillView)
             }
             
-        } else if let humidex = cc?.humidex {
+        } else if let humidex = cc.humidex {
             let humidexView = ConditionView().with(
                 aux: nil,
                 value: humidex.value,
@@ -136,7 +136,7 @@ extension MainViewController {
             }
         }
         
-        if let wind = cc?.wind {
+        if let wind = cc.wind {
             let windView = ConditionView().with(
                 aux: wind.direction.value,
                 value: wind.speed.value,
@@ -149,11 +149,11 @@ extension MainViewController {
                 try detailsStack.addOrganizedSubview(windView)
             }
             
-            if cc?.wind!.gust.value != "" {
+            if cc.wind!.gust.value != "" {
                 let gust = ConditionView().with(
                     aux: nil,
-                    value: cc?.wind!.gust.value,
-                    units: cc?.wind!.gust.units,
+                    value: cc.wind!.gust.value,
+                    units: cc.wind!.gust.units,
                     type: "WIND GUST",
                     icon: "arrow-right"
                 )
@@ -164,7 +164,7 @@ extension MainViewController {
             }
         }
         
-        if let visibility = cc?.visibility {
+        if let visibility = cc.visibility {
             let visibilityView = ConditionView().with(
                 aux: nil,
                 value: visibility.value,
@@ -178,7 +178,7 @@ extension MainViewController {
             }
         }
         
-        if let dewpoint = cc?.dewpoint {
+        if let dewpoint = cc.dewpoint {
             let dewpointView = ConditionView().with(
                 aux: nil,
                 value: dewpoint.value,
@@ -192,7 +192,7 @@ extension MainViewController {
             }
         }
         
-        if cc != nil && detailsStack.hasAnyItems() == true {
+        if detailsStack.hasAnyItems() == true {
             detailsScrollView.isHidden = false
             return
         }
