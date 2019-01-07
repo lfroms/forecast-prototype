@@ -30,6 +30,7 @@
 		8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* AlertItem.swift */; };
 		808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
 		8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083538021D415E200AE5355 /* OptionsViewController.swift */; };
+		8084524B21E2DD080099E660 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8084524921E2DBB90099E660 /* Images.xcassets */; };
 		8096725A21D12FEF000F1318 /* DoubleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096725921D12FEF000F1318 /* DoubleStackView.swift */; };
 		8096725C21D16D77000F1318 /* ForecastIconMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096725B21D16D77000F1318 /* ForecastIconMap.swift */; };
 		80A2FBDF21AA2F020067A425 /* ForecastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBDD21AA2F020067A425 /* ForecastItem.swift */; };
@@ -85,6 +86,7 @@
 		8082208121ACD56100ACBE7E /* AlertItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertItem.xib; sourceTree = "<group>"; };
 		8082208321ACD57A00ACBE7E /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		8083538021D415E200AE5355 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		8084524921E2DBB90099E660 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8096725921D12FEF000F1318 /* DoubleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleStackView.swift; sourceTree = "<group>"; };
 		8096725B21D16D77000F1318 /* ForecastIconMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastIconMap.swift; sourceTree = "<group>"; };
 		80A2FBDD21AA2F020067A425 /* ForecastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastItem.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				8051A6FE21755BE7007290CF /* Info.plist */,
 				80731E6F21A24F7000B40F42 /* GlobalExtensions.swift */,
 				80B9195B21D08759003D7E84 /* Colors.xcassets */,
+				8084524921E2DBB90099E660 /* Images.xcassets */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
 				801B19E321D0370C0007279D /* ionicons.ttf in Resources */,
 				808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */,
+				8084524B21E2DD080099E660 /* Images.xcassets in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
 				802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */,
 			);

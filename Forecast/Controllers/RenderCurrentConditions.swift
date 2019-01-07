@@ -68,9 +68,9 @@ extension MainViewController {
         )
         
         if let code = cc.iconCode, code != "" {
-            self.weatherGraphic.image = UIImage(named: code)?.aspectFitImage(inRect: self.weatherGraphic.frame)
+            self.weatherGraphic.image = UIImage(named: code + "-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
         } else {
-            self.weatherGraphic.image = UIImage(named: "03")?.aspectFitImage(inRect: self.weatherGraphic.frame)
+            self.weatherGraphic.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
         }
         
         self.weatherGraphic.contentMode = .top
