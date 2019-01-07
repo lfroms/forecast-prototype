@@ -25,23 +25,26 @@ class AlertItem: UIView {
     @IBAction func didPerformTapGesture(_ sender: UILongPressGestureRecognizer) {
         let touchLocation = sender.location(in: contentView)
         
-        if !contentView.bounds.contains(touchLocation) {
-            UIView.animate(withDuration: 0.1) {
-                self.iconLabel.alpha = 1
-                self.stack.alpha = 1
-            }
-            
-            return
-        }
-        
         switch sender.state {
+        case .began:
+            UIView.animate(withDuration: 0.06) {
+                self.iconLabel.alpha = 0.4
+                self.stack.alpha = 0.4
+            }
         case .changed:
-            UIView.animate(withDuration: 0.1) {
-                self.iconLabel.alpha = 0.7
-                self.stack.alpha = 0.7
+            if !contentView.bounds.contains(touchLocation) {
+                UIView.animate(withDuration: 0.3) {
+                    self.iconLabel.alpha = 1
+                    self.stack.alpha = 1
+                }
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.iconLabel.alpha = 0.4
+                    self.stack.alpha = 0.4
+                }
             }
         case .ended:
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.3) {
                 self.iconLabel.alpha = 1
                 self.stack.alpha = 1
             }
