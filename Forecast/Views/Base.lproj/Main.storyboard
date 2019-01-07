@@ -503,7 +503,9 @@
                                                     </stackView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-Oa-qhm">
                                                         <rect key="frame" x="95.000000000000014" y="91.666666666666742" width="185.33333333333337" height="17"/>
-                                                        <string key="text">No Hourly Forecast Available</string>
+                                                        <string key="text">No Hourly Forecast Available
+
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -555,7 +557,9 @@
                                             </stackView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-FZ-pvg">
                                                 <rect key="frame" x="100.33333333333333" y="65.333333333333371" width="174.66666666666669" height="17"/>
-                                                <string key="text">No Daily Forecast Available</string>
+                                                <string key="text">No Daily Forecast Available
+
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -620,6 +624,35 @@
                                     <constraint firstAttribute="trailing" secondItem="Cfj-Bv-mzh" secondAttribute="trailing" id="zJb-4H-40h"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-rT-Ihg" userLabel="Warnings Container" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="45" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6b5-Bt-3LO" userLabel="Warnings Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6b5-Bt-3LO" firstAttribute="top" secondItem="kTa-rT-Ihg" secondAttribute="top" id="Hxb-Az-L1M"/>
+                                    <constraint firstAttribute="trailing" secondItem="6b5-Bt-3LO" secondAttribute="trailing" id="gPv-Cn-vbq"/>
+                                    <constraint firstAttribute="bottom" secondItem="6b5-Bt-3LO" secondAttribute="bottom" id="vMB-iG-vw6"/>
+                                    <constraint firstItem="6b5-Bt-3LO" firstAttribute="leading" secondItem="kTa-rT-Ihg" secondAttribute="leading" id="vfQ-79-Gyi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="-3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-T9-d5M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gQy-Sp-tkR">
@@ -628,9 +661,6 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="45" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6b5-Bt-3LO" userLabel="Warnings Stack">
-                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
-                            </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75P-ZA-rbB" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
                                 <rect key="frame" x="32" y="111" width="40" height="40"/>
                                 <subviews>
@@ -680,7 +710,6 @@
                         <constraints>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="1KE-0C-5Ff"/>
                             <constraint firstItem="75P-ZA-rbB" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" constant="32" id="4ln-fu-OQi"/>
-                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="C7u-YI-13E"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="I7e-Wq-PgF"/>
                             <constraint firstItem="gvM-yV-Y8o" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="Jp1-O0-ydS"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="QzY-H9-wWP"/>
@@ -689,14 +718,15 @@
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="X3Q-EV-4t7"/>
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
-                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="6b5-Bt-3LO" secondAttribute="bottom" constant="22" id="f3l-CG-RWj"/>
+                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="imt-zq-YgG"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
+                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oMY-Bb-Byj"/>
+                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="kTa-rT-Ihg" secondAttribute="bottom" constant="22" id="u4A-SI-eH9"/>
                             <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
-                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="wBF-WJ-Q5L"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
-                            <constraint firstItem="6b5-Bt-3LO" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="zHg-E1-rYO"/>
+                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="yP6-x5-Xuc"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="ziu-u3-z7Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
