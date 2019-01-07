@@ -73,6 +73,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
         
         self.blurAnimator?.pausesOnCompletion = true
+        self.headerAnimator?.pausesOnCompletion = true
         self.graphicAnimator?.pausesOnCompletion = true
         
         EnvCanada.shared.siteData.addObserver(self)
@@ -160,6 +161,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.renderForecast(data)
             self.renderSunriseSunset(data)
             
+            // Update scroll animations in case some properties change
             self.scrollViewDidScroll(self.scrollView)
         }
         

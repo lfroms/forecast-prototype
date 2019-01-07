@@ -16,14 +16,42 @@ class AlertItem: UIView {
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var stack: UIStackView!
     
-    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet var tapGestureRecognizer: UILongPressGestureRecognizer!
     
     var url: URL?
     
-    @IBAction func didPerformTapGesture(_ sender: UITapGestureRecognizer) {
-        if url != nil {
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    @IBAction func didPerformTapGesture(_ sender: UILongPressGestureRecognizer) {
+        let touchLocation = sender.location(in: contentView)
+        
+        if !contentView.bounds.contains(touchLocation) {
+            UIView.animate(withDuration: 0.1) {
+                self.iconLabel.alpha = 1
+                self.stack.alpha = 1
+            }
+            
+            return
+        }
+        
+        switch sender.state {
+        case .changed:
+            UIView.animate(withDuration: 0.1) {
+                self.iconLabel.alpha = 0.7
+                self.stack.alpha = 0.7
+            }
+        case .ended:
+            UIView.animate(withDuration: 0.1) {
+                self.iconLabel.alpha = 1
+                self.stack.alpha = 1
+            }
+            
+            if contentView.bounds.contains(touchLocation), url != nil {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            }
+            
+        default:
+            break
         }
     }
     
@@ -50,11 +78,11 @@ class AlertItem: UIView {
     func with(icon: String, title: String, description: String?, priority: WarningPriority?, url: String?) -> AlertItem {
         backdrop.backgroundColor = getColorForAlertPriority(priority)
         iconLabel.text = icon
-        titleLabel.text = title
+        titleLabel.text = title.uppercased()
         
         self.url = URL(string: url ?? "")
         
-        if description != nil && description != "" {
+        if description != nil, description != "" {
             descriptionLabel.text = description
         } else {
             descriptionLabel.isHidden = true

@@ -97,7 +97,12 @@ class CitySearchField: UITextField {
     @IBInspectable var paddingRight: CGFloat = 0
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.origin.x + paddingLeft, y: bounds.origin.y, width: bounds.size.width - paddingLeft - paddingRight, height: bounds.size.height)
+        return CGRect(
+            x: bounds.origin.x + paddingLeft,
+            y: bounds.origin.y,
+            width: bounds.size.width - paddingLeft - paddingRight,
+            height: bounds.size.height
+        )
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -112,7 +117,15 @@ extension UIScrollView {
             // Get the Y position of your child view
             let childStartPoint = origin.convert(view.frame.origin, to: self)
             // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
-            scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y, width: 1, height: frame.height), animated: animated)
+            scrollRectToVisible(
+                CGRect(
+                    x: 0,
+                    y: childStartPoint.y,
+                    width: 1,
+                    height: frame.height
+                ),
+                animated: animated
+            )
         }
     }
 }
