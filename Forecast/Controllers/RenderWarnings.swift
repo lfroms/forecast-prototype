@@ -29,7 +29,7 @@ extension MainViewController {
                 warningsStack.addArrangedSubview(subview)
             }
         )
-
+        
         if !warningsStack.arrangedSubviews.isEmpty {
             headerBlur.backgroundColor = getColorForAlertPriority(data.warnings.events?.first?.priority)
             return

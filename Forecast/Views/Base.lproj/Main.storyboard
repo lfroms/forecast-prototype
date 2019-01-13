@@ -757,8 +757,10 @@
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="stationLabel" destination="Veh-tr-4P7" id="Vxx-HF-sWj"/>
                         <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>
+                        <outlet property="warningsContainer" destination="kTa-rT-Ihg" id="9JL-3d-IZl"/>
                         <outlet property="warningsStack" destination="6b5-Bt-3LO" id="HSH-JL-Blf"/>
                         <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
+                        <outlet property="weatherGraphicOffset" destination="QzY-H9-wWP" id="bv8-mw-Imh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiB-Q5-2bH" userLabel="First Responder" sceneMemberID="firstResponder"/>

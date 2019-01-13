@@ -47,6 +47,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var noHourlyForecastLabel: UILabel!
     
     @IBOutlet var warningsStack: UIStackView!
+    @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
+    @IBOutlet var warningsContainer: UIStyledView!
     
     var blurAnimator: UIViewPropertyAnimator?
     var headerAnimator: UIViewPropertyAnimator?
@@ -141,6 +143,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 currentConditionsContainer.snp.bottom
             ).offset(bottomInset)
         }
+        
+        weatherGraphicOffset.constant = warningsContainer.frame.height
         
         self.scrollView.isExclusiveTouch = false
     }
