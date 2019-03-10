@@ -15,9 +15,11 @@ extension MainViewController {
         let cc = data.currentConditions
         let fc = data.forecastGroup.forecast
         
-        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value!) {
+        if cc.temperature?.value != nil, let tempAsFloat = Float(cc.temperature!.value!) {
             let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
             self.currentTempLabel.text = normalized.asRoundedString() + "°"
+        } else {
+            self.currentTempLabel.text = "--°"
         }
         
         if cc.condition != nil, cc.condition != "" {
@@ -115,7 +117,7 @@ extension MainViewController {
                 icon: "snowflake"
             )
             
-            if windChill.value != "" {
+            if windChill.value != nil {
                 try detailsStack.addOrganizedSubview(windChillView)
             }
             
@@ -128,7 +130,7 @@ extension MainViewController {
                 icon: "sun"
             )
             
-            if humidex.value != "" {
+            if humidex.value != nil {
                 try detailsStack.addOrganizedSubview(humidexView)
             }
         }
@@ -142,7 +144,7 @@ extension MainViewController {
                 icon: "wind"
             )
             
-            if wind.speed.value != "" {
+            if wind.speed.value != nil {
                 try detailsStack.addOrganizedSubview(windView)
             }
             
@@ -182,7 +184,7 @@ extension MainViewController {
                 icon: "thermometer-half"
             )
             
-            if dewpoint.value != "" {
+            if dewpoint.value != nil {
                 try detailsStack.addOrganizedSubview(dewpointView)
             }
         }
