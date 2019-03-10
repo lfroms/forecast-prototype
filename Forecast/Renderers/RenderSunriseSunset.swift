@@ -25,7 +25,7 @@ extension MainViewController {
                     value: time,
                     units: nil,
                     type: item.name.uppercased(),
-                    icon: "sun"
+                    icon: item.name == "sunrise" ? "sun" : "moon"
                 )
                 
                 sunriseSunsetStack.addArrangedSubview(subview)
