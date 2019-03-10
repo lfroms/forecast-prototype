@@ -1,0 +1,6 @@
+
+query Weather($region: Region!, $code: Int!) {
+    weather(region: $region, code: $code) {
+        license
+    }
+}

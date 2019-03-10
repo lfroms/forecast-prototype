@@ -31,6 +31,7 @@
 		808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
 		8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083538021D415E200AE5355 /* OptionsViewController.swift */; };
 		8084524B21E2DD080099E660 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8084524921E2DBB90099E660 /* Images.xcassets */; };
+		8091CC6A2234A17800BA8034 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091CC692234A17800BA8034 /* API.swift */; };
 		8096725A21D12FEF000F1318 /* DoubleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096725921D12FEF000F1318 /* DoubleStackView.swift */; };
 		8096725C21D16D77000F1318 /* ForecastIconMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096725B21D16D77000F1318 /* ForecastIconMap.swift */; };
 		80A2FBDF21AA2F020067A425 /* ForecastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBDD21AA2F020067A425 /* ForecastItem.swift */; };
@@ -53,6 +54,8 @@
 		80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9121D05D6800168BA8 /* HourlyItem.swift */; };
 		80D1AE9821D062A600168BA8 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9721D062A600168BA8 /* HourlyForecast.swift */; };
 		80D1AE9A21D062BC00168BA8 /* HourlyForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9921D062BC00168BA8 /* HourlyForecastGroup.swift */; };
+		80E6324E22349F5A0096FD6D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E6324D22349F5A0096FD6D /* schema.json */; };
+		80E6325022349F710096FD6D /* WeatherQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 80E6324F22349F710096FD6D /* WeatherQuery.graphql */; };
 		80EEB235217A697A00AD4448 /* RegionalNormals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB234217A697A00AD4448 /* RegionalNormals.swift */; };
 		80EEB237217A69D500AD4448 /* ExactLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EEB236217A69D500AD4448 /* ExactLocation.swift */; };
 		80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F175FA21AB37C8001090BD /* SearchTableViewController.swift */; };
@@ -87,6 +90,7 @@
 		8082208321ACD57A00ACBE7E /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		8083538021D415E200AE5355 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		8084524921E2DBB90099E660 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8091CC692234A17800BA8034 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Forecast/API.swift; sourceTree = SOURCE_ROOT; };
 		8096725921D12FEF000F1318 /* DoubleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleStackView.swift; sourceTree = "<group>"; };
 		8096725B21D16D77000F1318 /* ForecastIconMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastIconMap.swift; sourceTree = "<group>"; };
 		80A2FBDD21AA2F020067A425 /* ForecastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastItem.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		80D1AE9121D05D6800168BA8 /* HourlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItem.swift; sourceTree = "<group>"; };
 		80D1AE9721D062A600168BA8 /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		80D1AE9921D062BC00168BA8 /* HourlyForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastGroup.swift; sourceTree = "<group>"; };
+		80E6324D22349F5A0096FD6D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		80E6324F22349F710096FD6D /* WeatherQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherQuery.graphql; sourceTree = "<group>"; };
 		80EEB234217A697A00AD4448 /* RegionalNormals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormals.swift; sourceTree = "<group>"; };
 		80EEB236217A69D500AD4448 /* ExactLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactLocation.swift; sourceTree = "<group>"; };
 		80F175FA21AB37C8001090BD /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				80E6324C22349F4C0096FD6D /* GraphQL */,
 				80B9195821D086DE003D7E84 /* Maps */,
 				807B728F217E4EBF002EE814 /* DataSources */,
 				802443F4217A79EE0066F905 /* Components */,
@@ -232,6 +239,16 @@
 				8096725B21D16D77000F1318 /* ForecastIconMap.swift */,
 			);
 			path = Maps;
+			sourceTree = "<group>";
+		};
+		80E6324C22349F4C0096FD6D /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				8091CC692234A17800BA8034 /* API.swift */,
+				80E6324D22349F5A0096FD6D /* schema.json */,
+				80E6324F22349F710096FD6D /* WeatherQuery.graphql */,
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		80EEB238217A742800AD4448 /* Services */ = {
@@ -292,6 +309,7 @@
 			buildConfigurationList = 8051A70121755BE7007290CF /* Build configuration list for PBXNativeTarget "Forecast" */;
 			buildPhases = (
 				80A3E7DBDD755F8130B83037 /* [CP] Check Pods Manifest.lock */,
+				80E6324922349D740096FD6D /* Generate Apollo GraphQL API */,
 				8051A6EB21755BE6007290CF /* Sources */,
 				8051A6EC21755BE6007290CF /* Frameworks */,
 				8051A6ED21755BE6007290CF /* Resources */,
@@ -349,7 +367,9 @@
 				8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */,
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */,
+				80E6325022349F710096FD6D /* WeatherQuery.graphql in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
+				80E6324E22349F5A0096FD6D /* schema.json in Resources */,
 				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
 				801B19E321D0370C0007279D /* ionicons.ttf in Resources */,
 				808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */,
@@ -371,6 +391,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Siesta/Siesta.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -380,6 +401,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siesta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -412,6 +434,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		80E6324922349D740096FD6D /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=GraphQL/schema.json API.swift\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -439,6 +479,7 @@
 				80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */,
 				8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */,
 				80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */,
+				8091CC6A2234A17800BA8034 /* API.swift in Sources */,
 				80A608242176C180005D2891 /* DateTime.swift in Sources */,
 				807B7295217E7872002EE814 /* ConditionView.swift in Sources */,
 				80582D3421ACDC6D005B7FA9 /* Warnings.swift in Sources */,

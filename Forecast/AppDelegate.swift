@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Apollo
+
+let graphQLEndpoint = "https://forecast-data.herokuapp.com/graphql"
+let apollo = ApolloClient(url: URL(string: graphQLEndpoint)!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
