@@ -82,10 +82,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         NotificationCenter.default
             .addObserver(
-                self,
-                selector: #selector(MainViewController.fetchNewData),
-                name: UIApplication.willEnterForegroundNotification,
-                object: nil
+                forName: UIApplication.willEnterForegroundNotification,
+                object: nil,
+                queue: nil,
+                using: self.fetch
             )
         
         NotificationCenter.default
@@ -93,7 +93,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 forName: NSNotification.Name(rawValue: "resetObservers"),
                 object: nil,
                 queue: nil,
-                using: self.fetchViaNotification
+                using: self.resetObserverAndFetch
             )
         
         self.setObserverForDefaultSite()
@@ -194,7 +194,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @objc func fetchNewData() {
+    private func fetchNewData() {
         let site = defaultSite()
         guard site != nil else {
             return
@@ -206,8 +206,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData)
     }
     
-    private func fetchViaNotification(_ notification: Notification) {
+    private func resetObserverAndFetch(_ notification: Notification) {
         self.setObserverForDefaultSite()
+        self.fetchNewData()
+    }
+    
+    private func fetch(_ notification: Notification) {
         self.fetchNewData()
     }
     
