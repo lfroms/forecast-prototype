@@ -44,7 +44,7 @@ class HourlyItem: UIView {
         return contentView.frame.size
     }
     
-    func with(hour: String, amPm: String, icon: String, temperature: String, temperatureUnits: String, windSpeed: String?, pop: String?) -> HourlyItem {
+    func with(hour: String, amPm: String, icon: String, temperature: String?, temperatureUnits: String, windSpeed: String?, pop: String?) -> HourlyItem {
         // Icon
         iconLabel.text = icon
         

@@ -6,17 +6,16 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import Siesta
 import SnapKit
 import SwiftDate
 import UIKit
 
 extension MainViewController {
-    func renderCurrentConditions(_ data: SiteData) {
+    func renderCurrentConditions(_ data: WeatherQuery.Data.Weather) {
         let cc = data.currentConditions
         let fc = data.forecastGroup.forecast
         
-        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value) {
+        if cc.temperature != nil, let tempAsFloat = Float(cc.temperature!.value!) {
             let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
             self.currentTempLabel.text = normalized.asRoundedString() + "°"
         }
@@ -27,16 +26,16 @@ extension MainViewController {
             self.currentConditionLabel.text = "Not Observed"
         }
         
-        if let forecast = fc?.first(where: { $0.period.textForecastName == "Tonight" }),
-            let temp = forecast.temperatures.first?.value {
+        if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
+            let temp = forecast.temperatures.temperature.first?.value {
             self.lowTempView.isHidden = false
             self.lowTempValue.text = temp + "°"
         } else {
             self.lowTempView.isHidden = true
         }
         
-        if let forecast = fc?.first(where: { $0.period.textForecastName == "Today" }),
-            let temp = forecast.temperatures.first?.value {
+        if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
+            let temp = forecast.temperatures.temperature.first?.value {
             self.highTempView.isHidden = false
             self.highTempValue.text = temp + "°"
         } else {
@@ -44,14 +43,12 @@ extension MainViewController {
         }
     }
     
-    func renderMetadata(_ data: SiteData) {
+    func renderMetadata(_ data: WeatherQuery.Data.Weather) {
         let cc = data.currentConditions
         self.stationLabel.text = data.location.name.value
         
         if cc.dateTime != nil {
-            let timestamp = cc.dateTime?.first(where: { $0.zone == "UTC" })?.value?.timeStamp
-            
-            self.lastUpdatedLabel.text = timestamp?
+            self.lastUpdatedLabel.text = cc.dateTime?.timeStamp?
                 .toDate("yyyyMMddHHmmss", region: .UTC)?
                 .convertTo(region: .current)
                 .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
@@ -59,7 +56,7 @@ extension MainViewController {
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
-                if let code = cc.iconCode, code != "" {
+                if let code = cc.iconCode?.value, code != "" {
                     self.view.backgroundColor = UIColor(named: code)
                 } else {
                     self.view.backgroundColor = UIColor(named: "06")
@@ -67,7 +64,7 @@ extension MainViewController {
             }, completion: nil
         )
         
-        if let code = cc.iconCode, code != "" {
+        if let code = cc.iconCode?.value, code != "" {
             self.weatherGraphic.image = UIImage(named: code + "-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
         } else {
             self.weatherGraphic.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
@@ -76,7 +73,7 @@ extension MainViewController {
         self.weatherGraphic.contentMode = .top
     }
     
-    func renderDetails(_ data: SiteData) throws {
+    func renderDetails(_ data: WeatherQuery.Data.Weather) throws {
         let cc = data.currentConditions
         
         detailsStack.removeAllSubviews()
@@ -90,7 +87,7 @@ extension MainViewController {
                 icon: "tint"
             )
             
-            if humidity.value != "" {
+            if humidity.value != nil {
                 try detailsStack.addOrganizedSubview(humidityView)
             }
         }
@@ -104,7 +101,7 @@ extension MainViewController {
                 icon: "tachometer-alt"
             )
             
-            if pressure.value != "" {
+            if pressure.value != nil {
                 try detailsStack.addOrganizedSubview(pressureView)
             }
         }
@@ -113,7 +110,7 @@ extension MainViewController {
             let windChillView = ConditionView().with(
                 aux: nil,
                 value: windChill.value,
-                units: "°" + (windChill.units ?? "C"),
+                units: "°C",
                 type: "WIND CHILL",
                 icon: "snowflake"
             )
@@ -126,7 +123,7 @@ extension MainViewController {
             let humidexView = ConditionView().with(
                 aux: nil,
                 value: humidex.value,
-                units: "°" + (humidex.units ?? "C"),
+                units: "°C",
                 type: "HUMIDEX",
                 icon: "sun"
             )
@@ -138,7 +135,7 @@ extension MainViewController {
         
         if let wind = cc.wind {
             let windView = ConditionView().with(
-                aux: wind.direction.value,
+                aux: wind.direction,
                 value: wind.speed.value,
                 units: wind.speed.units,
                 type: "WIND",
@@ -149,7 +146,7 @@ extension MainViewController {
                 try detailsStack.addOrganizedSubview(windView)
             }
             
-            if cc.wind!.gust.value != "" {
+            if wind.gust.value != nil {
                 let gust = ConditionView().with(
                     aux: nil,
                     value: cc.wind!.gust.value,
@@ -158,9 +155,7 @@ extension MainViewController {
                     icon: "arrow-right"
                 )
                 
-                if wind.gust.value != "" {
-                    try detailsStack.addOrganizedSubview(gust)
-                }
+                try detailsStack.addOrganizedSubview(gust)
             }
         }
         
@@ -173,7 +168,7 @@ extension MainViewController {
                 icon: "ruler"
             )
             
-            if visibility.value != "" {
+            if visibility.value != nil {
                 try detailsStack.addOrganizedSubview(visibilityView)
             }
         }
@@ -182,7 +177,7 @@ extension MainViewController {
             let dewpointView = ConditionView().with(
                 aux: nil,
                 value: dewpoint.value,
-                units: "°" + (dewpoint.units ?? "C"),
+                units: "°" + (dewpoint.units),
                 type: "DEWPOINT",
                 icon: "thermometer-half"
             )

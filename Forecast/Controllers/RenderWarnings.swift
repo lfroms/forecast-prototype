@@ -6,16 +6,20 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import Siesta
 import UIKit
 
 extension MainViewController {
-    func renderWarnings(_ data: SiteData) {
+    func renderWarnings(_ data: WeatherQuery.Data.Weather) {
         warningsStack.subviews.forEach({ $0.removeFromSuperview() })
 
-        data.warnings.events?.forEach(
+        guard let events = data.warnings.events else {
+            headerBlur.backgroundColor = .clear
+            return
+        }
+
+        events.forEach(
             { event in
-                let timestamp = event.dateTime[1].value?.timeStamp?.toDate("yyyyMMddhhmmss")?
+                let timestamp = event.dateTime?.timeStamp?.toDate("yyyyMMddhhmmss")?
                     .toFormat("MMM d h:mm a")
 
                 let subview = AlertItem().with(
@@ -29,13 +33,12 @@ extension MainViewController {
                 warningsStack.addArrangedSubview(subview)
             }
         )
-        
-        if !warningsStack.arrangedSubviews.isEmpty {
-            headerBlur.backgroundColor = getColorForAlertPriority(data.warnings.events?.first?.priority)
-            return
-        }
 
-        headerBlur.backgroundColor = .clear
+        if !warningsStack.arrangedSubviews.isEmpty {
+            if let priorityAsType = events.first?.priority {
+                headerBlur.backgroundColor = getColorForAlertPriority(priorityAsType)
+            }
+        }
     }
 
     private func iconForAlertPriority(_ priority: WarningPriority?) -> String {

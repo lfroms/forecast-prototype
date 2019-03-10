@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import Siesta
+import Apollo
 import SnapKit
 import SwiftDate
 import UIKit
@@ -78,8 +78,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.headerAnimator?.pausesOnCompletion = true
         self.graphicAnimator?.pausesOnCompletion = true
         
-        EnvCanada.shared.siteData.addObserver(self)
-        
         NotificationCenter.default
             .addObserver(
                 self,
@@ -93,15 +91,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 forName: NSNotification.Name(rawValue: "resetObservers"),
                 object: nil,
                 queue: nil,
-                using: self.resetObserver
+                using: self.fetchViaNotification
             )
         
-        self.fetchNewData()
-    }
-    
-    private func resetObserver(_ notification: Notification) {
-        EnvCanada.shared.siteData.removeObservers(ownedBy: self)
-        EnvCanada.shared.siteData.addObserver(self)
         self.fetchNewData()
     }
     
@@ -149,47 +141,52 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.isExclusiveTouch = false
     }
     
-    func render() {
-        let resource = EnvCanada.shared.siteData
-        
-        if let data = resource.latestData?.content as! SiteData? {
-            self.renderMetadata(data)
-            
-            do {
-                try self.renderDetails(data)
-            } catch {}
-            
-            self.renderWarnings(data)
-            self.renderCurrentConditions(data)
-            self.renderHourlyForecast(data)
-            self.renderForecast(data)
-            self.renderSunriseSunset(data)
-            
-            // Update scroll animations in case some properties change
-            self.scrollViewDidScroll(self.scrollView)
+    func render(_ result: GraphQLResult<WeatherQuery.Data>?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.loadingIndicator.stopAnimating()
         }
         
-        if resource.isLoading == false {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.loadingIndicator.stopAnimating()
-            }
+        guard let data = result?.data?.weather else {
+            return
         }
+        
+        self.renderMetadata(data)
+        
+        do {
+            try self.renderDetails(data)
+        } catch {}
+        
+        self.renderWarnings(data)
+        self.renderCurrentConditions(data)
+        self.renderHourlyForecast(data)
+        self.renderForecast(data)
+        self.renderSunriseSunset(data)
+        
+        // Update scroll animations in case some properties change
+        self.scrollViewDidScroll(self.scrollView)
     }
     
     @objc func fetchNewData() {
         self.loadingIndicator.startAnimating()
-        EnvCanada.shared.siteData.load()
+        
+        let site = defaultSite()
+        let region = Region(rawValue: site.provinceCode) ?? .on
+        
+        apollo.fetch(query: WeatherQuery(region: region, code: site.code), cachePolicy: .fetchIgnoringCacheData)
+    }
+    
+    private func fetchViaNotification(_ notification: Notification) {
+        let site = defaultSite()
+        let region = Region(rawValue: site.provinceCode) ?? .on
+        
+        _ = apollo.watch(query: WeatherQuery(region: region, code: site.code)) { result, _ in
+            self.render(result)
+        }
+        
+        self.fetchNewData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
-    }
-}
-
-extension MainViewController: ResourceObserver {
-    func resourceChanged(_ resource: Resource, event: ResourceEvent) {
-        if case .newData = event {
-            self.render()
-        }
     }
 }

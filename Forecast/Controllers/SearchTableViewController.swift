@@ -6,18 +6,16 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import Siesta
 import UIKit
 
 class SearchTableViewController: UITableViewController {
-    var sites: [Site]?
-    var filteredSites: [Site]?
+    var sites: [SiteListQuery.Data.AllSite]?
+    var filteredSites: [SiteListQuery.Data.AllSite]?
     var selectedSiteIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        EnvCanada.shared.siteList.addObserver(self)
-        EnvCanada.shared.siteList.loadIfNeeded()
+        setResults()
     }
     
     @IBAction func exit(_ sender: Any) {
@@ -26,13 +24,12 @@ class SearchTableViewController: UITableViewController {
     }
     
     func setResults() {
-        let resource = EnvCanada.shared.siteList
-        
-        if let data = resource.latestData?.content as! [Site]?, resource.isLoading == false {
-            sites = data.filter({ $0.provinceCode != "HEF" })
-            filteredSites = sites
+        apollo.fetch(query: SiteListQuery(), cachePolicy: .returnCacheDataElseFetch) { result, _ in
+            let sites = result?.data?.allSites
+            self.sites = sites
+            self.filteredSites = sites
             
-            tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -73,7 +70,7 @@ class SearchTableViewController: UITableViewController {
     
     func updateSearchResults(_ searchText: String) {
         if !searchText.isEmpty, sites != nil {
-            filteredSites = sites!.filter { site in
+            filteredSites = sites?.filter { site in
                 site.nameEn.lowercased().contains(searchText.lowercased())
             }
         } else {
@@ -87,17 +84,11 @@ class SearchTableViewController: UITableViewController {
         if tableView.cellForRow(at: indexPath) != nil {
             view.endEditing(true)
             
-            filteredSites?[indexPath.row].saveAsDefault()
+            saveAsDefault(filteredSites?[indexPath.row])
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resetObservers"), object: nil))
             
             dismiss(animated: true, completion: nil)
         }
-    }
-}
-
-extension SearchTableViewController: ResourceObserver {
-    func resourceChanged(_ resource: Resource, event: ResourceEvent) {
-        setResults()
     }
 }
 

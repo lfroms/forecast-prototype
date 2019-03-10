@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Siesta
 import SwiftDate
 import UIKit
 
@@ -30,27 +29,25 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
     }
 
     override func viewDidLayoutSubviews() {
-        let resource = EnvCanada.shared.siteData
+        apollo.fetch(query: WeatherQuery(region: .on, code: 430), cachePolicy: .returnCacheDataElseFetch) { result, _ in
+            let data = result?.data?.weather
 
-        if let data = resource.latestData?.content as! SiteData?,
-            resource.isLoading == false {
-            if let location = data.currentConditions.station?.value, location != "" {
-                locationLabel.text = data.currentConditions.station?.value
+            if let location = data?.currentConditions.station?.value, location != "" {
+                self.locationLabel.text = data?.currentConditions.station?.value
             } else {
-                locationView.isHidden = true
+                self.locationView.isHidden = true
             }
 
-            if let timestamp = data.forecastGroup.dateTime
-                .first(where: { $0.zone == "UTC" })?.value?.timeStamp, timestamp != "" {
-                forecastDateLabel.text = timestamp
+            if let timestamp = data?.forecastGroup.dateTime?.timeStamp, timestamp != "" {
+                self.forecastDateLabel.text = timestamp
                     .toDate("yyyyMMddHHmmss", region: .UTC)?
                     .convertTo(region: .current)
                     .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
             } else {
-                forecastIssueView.isHidden = true
+                self.forecastIssueView.isHidden = true
             }
 
-            initialSearchContainerY = searchContainer.frame.minY
+            self.initialSearchContainerY = self.searchContainer.frame.minY
         }
 
         let textFieldInsideSearchBar = searchField.value(forKey: "searchField") as? UITextField
