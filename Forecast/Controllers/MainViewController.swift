@@ -145,10 +145,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func render(_ result: GraphQLResult<WeatherQuery.Data>?) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.loadingIndicator.stopAnimating()
-        }
-        
         guard let data = result?.data?.weather else {
             return
         }
@@ -179,7 +175,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         let query = WeatherQuery(region: site!.region, code: site!.code)
         
-        self.apolloWatcher = apollo.watch(query: query) { result, _ in
+        self.apolloWatcher = apollo.watch(query: query) { result, error in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.loadingIndicator.stopAnimating()
+            }
+            
+            guard error == nil else {
+                showAlert(
+                    self,
+                    title: "Error",
+                    message: "Could not fetch weather data."
+                )
+                
+                return
+            }
+            
             self.render(result)
         }
     }

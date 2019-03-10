@@ -11,6 +11,7 @@
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		802596BC2235953000769D09 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802596BB2235953000769D09 /* ionicons.ttf */; };
 		802596C022359A3100769D09 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802596BF22359A3100769D09 /* API.swift */; };
+		802596C222359B7700769D09 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802596C122359B7700769D09 /* ShowAlert.swift */; };
 		802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802F20E721AA36AA00488957 /* ForecastItem.xib */; };
 		8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F221755BE6007290CF /* AppDelegate.swift */; };
 		8051A6F521755BE6007290CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F421755BE6007290CF /* MainViewController.swift */; };
@@ -51,6 +52,7 @@
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		802596BB2235953000769D09 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		802596BF22359A3100769D09 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		802596C122359B7700769D09 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		802F20E721AA36AA00488957 /* ForecastItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastItem.xib; sourceTree = "<group>"; };
 		8051A6EF21755BE6007290CF /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8051A6F221755BE6007290CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8091CC6D2234BDB300BA8034 /* UserPreferences.swift */,
+				802596C122359B7700769D09 /* ShowAlert.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				8096725C21D16D77000F1318 /* ForecastIconMap.swift in Sources */,
 				80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */,
 				8096725A21D12FEF000F1318 /* DoubleStackView.swift in Sources */,
+				802596C222359B7700769D09 /* ShowAlert.swift in Sources */,
 				80B9195421D06908003D7E84 /* RenderHourlyForecast.swift in Sources */,
 				8053C65F218E81820041F29E /* UIStyledButton.swift in Sources */,
 				8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */,

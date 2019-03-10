@@ -39,7 +39,7 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
 
         let query = WeatherQuery(region: site!.region, code: site!.code)
 
-        apollo.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result, _ in
+        apollo.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result, error in
             let data = result?.data?.weather
 
             if let location = data?.currentConditions.station?.value, location != "" {
