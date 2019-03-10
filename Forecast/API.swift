@@ -721,7 +721,7 @@ public final class WeatherQuery: GraphQLQuery {
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("value", type: .nonNull(.scalar(String.self))),
+            GraphQLField("value", type: .scalar(String.self)),
           ]
 
           public private(set) var resultMap: ResultMap
@@ -730,7 +730,7 @@ public final class WeatherQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(value: String) {
+          public init(value: String? = nil) {
             self.init(unsafeResultMap: ["__typename": "CalculatedHumidex", "value": value])
           }
 
@@ -743,9 +743,9 @@ public final class WeatherQuery: GraphQLQuery {
             }
           }
 
-          public var value: String {
+          public var value: String? {
             get {
-              return resultMap["value"]! as! String
+              return resultMap["value"] as? String
             }
             set {
               resultMap.updateValue(newValue, forKey: "value")
@@ -1978,7 +1978,7 @@ public final class WeatherQuery: GraphQLQuery {
 
 public final class SiteListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query SiteList {\n  allSites {\n    __typename\n    nameEn\n    nameFr\n    code\n    provinceCode\n  }\n}"
+    "query SiteList {\n  sites {\n    __typename\n    nameEn\n    nameFr\n    code\n    provinceCode\n  }\n}"
 
   public init() {
   }
@@ -1987,7 +1987,7 @@ public final class SiteListQuery: GraphQLQuery {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("allSites", type: .list(.nonNull(.object(AllSite.selections)))),
+      GraphQLField("sites", type: .list(.nonNull(.object(Site.selections)))),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -1996,21 +1996,21 @@ public final class SiteListQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(allSites: [AllSite]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "allSites": allSites.flatMap { (value: [AllSite]) -> [ResultMap] in value.map { (value: AllSite) -> ResultMap in value.resultMap } }])
+    public init(sites: [Site]? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "sites": sites.flatMap { (value: [Site]) -> [ResultMap] in value.map { (value: Site) -> ResultMap in value.resultMap } }])
     }
 
     /// Retrieve the entire site list.
-    public var allSites: [AllSite]? {
+    public var sites: [Site]? {
       get {
-        return (resultMap["allSites"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [AllSite] in value.map { (value: ResultMap) -> AllSite in AllSite(unsafeResultMap: value) } }
+        return (resultMap["sites"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Site] in value.map { (value: ResultMap) -> Site in Site(unsafeResultMap: value) } }
       }
       set {
-        resultMap.updateValue(newValue.flatMap { (value: [AllSite]) -> [ResultMap] in value.map { (value: AllSite) -> ResultMap in value.resultMap } }, forKey: "allSites")
+        resultMap.updateValue(newValue.flatMap { (value: [Site]) -> [ResultMap] in value.map { (value: Site) -> ResultMap in value.resultMap } }, forKey: "sites")
       }
     }
 
-    public struct AllSite: GraphQLSelectionSet {
+    public struct Site: GraphQLSelectionSet {
       public static let possibleTypes = ["Site"]
 
       public static let selections: [GraphQLSelection] = [

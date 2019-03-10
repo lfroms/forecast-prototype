@@ -4,27 +4,23 @@ PODS:
   - Apollo/Core (0.9.4)
   - SnapKit (4.2.0)
   - SwiftDate (5.0.13)
-  - SWXMLHash (4.7.6)
 
 DEPENDENCIES:
   - Apollo
   - SnapKit (~> 4.2.0)
   - SwiftDate (~> 5.0)
-  - SWXMLHash (~> 4.7.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Apollo
     - SnapKit
     - SwiftDate
-    - SWXMLHash
 
 SPEC CHECKSUMS:
   Apollo: 450856adbdebcdf28c3c671f81732ac3f9944065
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftDate: f4aea5fa9dee812485f34041121a4cbde01b0dee
-  SWXMLHash: f6e0933ce74f2626669dc544851bc9fc1941670d
 
-PODFILE CHECKSUM: 07b45adce05d89282775f6dda3902b6f14443828
+PODFILE CHECKSUM: acd851ed45545fa6bdf6a7402f4de6705f97aed7
 
 COCOAPODS: 1.5.3

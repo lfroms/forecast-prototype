@@ -9,8 +9,8 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController {
-    var sites: [SiteListQuery.Data.AllSite]?
-    var filteredSites: [SiteListQuery.Data.AllSite]?
+    var sites: [SiteListQuery.Data.Site]?
+    var filteredSites: [SiteListQuery.Data.Site]?
     var selectedSiteIndex: Int?
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class SearchTableViewController: UITableViewController {
     
     func setResults() {
         apollo.fetch(query: SiteListQuery(), cachePolicy: .returnCacheDataElseFetch) { result, _ in
-            let sites = result?.data?.allSites
+            let sites = result?.data?.sites
             self.sites = sites
             self.filteredSites = sites
             

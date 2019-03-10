@@ -1,6 +1,6 @@
 
 query SiteList {
-    allSites {
+    sites {
         nameEn
         nameFr
         code

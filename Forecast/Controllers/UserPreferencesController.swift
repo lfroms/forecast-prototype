@@ -8,7 +8,7 @@
 
 import Foundation
 
-func saveAsDefault(_ site: SiteListQuery.Data.AllSite?) {
+func saveAsDefault(_ site: SiteListQuery.Data.Site?) {
     if site == nil {
         return
     }
@@ -19,8 +19,8 @@ func saveAsDefault(_ site: SiteListQuery.Data.AllSite?) {
     UserDefaults.standard.set(site?.provinceCode, forKey: "defaultSiteProvinceCode")
 }
 
-func defaultSite() -> SiteListQuery.Data.AllSite {
-    return SiteListQuery.Data.AllSite(
+func defaultSite() -> SiteListQuery.Data.Site {
+    return SiteListQuery.Data.Site(
         nameEn: UserDefaults.standard.string(forKey: "defaultSiteNameEn") ?? "Ottawa (Kanata - Orléans)",
         nameFr: UserDefaults.standard.string(forKey: "defaultSiteNameFr") ?? "Ottawa (Kanata - Orléans)",
         code: UserDefaults.standard.integer(forKey: "defaultSiteCode"),
