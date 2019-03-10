@@ -14,7 +14,7 @@ extension MainViewController {
         noHourlyForecastLabel.isHidden = true
         hourlyForecastStack.subviews.forEach({ $0.removeFromSuperview() })
         
-        guard data.hourlyForecastGroup?.hourlyForecast != nil else {
+        guard data.forecastGroup.forecast.count > 0 else {
             self.noHourlyForecastLabel.isHidden = false
             return
         }
