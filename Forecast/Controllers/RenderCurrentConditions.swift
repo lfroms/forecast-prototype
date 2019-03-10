@@ -177,7 +177,7 @@ extension MainViewController {
             let dewpointView = ConditionView().with(
                 aux: nil,
                 value: dewpoint.value,
-                units: "°" + (dewpoint.units),
+                units: "°" + dewpoint.units,
                 type: "DEWPOINT",
                 icon: "thermometer-half"
             )

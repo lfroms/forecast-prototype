@@ -29,7 +29,17 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
     }
 
     override func viewDidLayoutSubviews() {
-        apollo.fetch(query: WeatherQuery(region: .on, code: 430), cachePolicy: .returnCacheDataElseFetch) { result, _ in
+        let textFieldInsideSearchBar = searchField.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .white
+
+        let site = defaultSite()
+        guard site != nil else {
+            return
+        }
+
+        let query = WeatherQuery(region: site!.region, code: site!.code)
+
+        apollo.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result, _ in
             let data = result?.data?.weather
 
             if let location = data?.currentConditions.station?.value, location != "" {
@@ -49,9 +59,6 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
 
             self.initialSearchContainerY = self.searchContainer.frame.minY
         }
-
-        let textFieldInsideSearchBar = searchField.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .white
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
