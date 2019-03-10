@@ -96,7 +96,7 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" text="tint" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xla-3x-CAE">
-                            <rect key="frame" x="2" y="0.0" width="44" height="60"/>
+                            <rect key="frame" x="2" y="2" width="44" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="5IU-Sc-cdt"/>
                             </constraints>
@@ -114,7 +114,7 @@
                         <constraint firstAttribute="trailing" secondItem="TFk-ju-jcf" secondAttribute="trailing" id="K7R-sc-pZa"/>
                         <constraint firstItem="TFk-ju-jcf" firstAttribute="leading" secondItem="xla-3x-CAE" secondAttribute="trailing" id="M3Q-Wh-oZM"/>
                         <constraint firstAttribute="height" constant="60" id="d7Y-kF-I2A"/>
-                        <constraint firstItem="xla-3x-CAE" firstAttribute="top" secondItem="ncl-e7-CM9" secondAttribute="top" id="hmP-Uj-sIb"/>
+                        <constraint firstItem="xla-3x-CAE" firstAttribute="top" secondItem="ncl-e7-CM9" secondAttribute="top" constant="2" id="hmP-Uj-sIb"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
