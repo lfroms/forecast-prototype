@@ -68,6 +68,12 @@ query Weather($region: Region!, $code: Int!) {
             dateTime(zone: "UTC") {
                 timeStamp
             }
+            regionalNormals {
+                temperature {
+                    value
+                    class
+                }
+            }
             forecast {
                 abbreviatedForecast {
                     textSummary

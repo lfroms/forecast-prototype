@@ -55,6 +55,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var yesterdayLowLabel: UILabel!
     @IBOutlet var yesterdayPrecipLabel: UILabel!
     
+    @IBOutlet var regionalNormalsContainer: UIView!
+    @IBOutlet var normalHighLabel: UILabel!
+    @IBOutlet var normalLowLabel: UILabel!
+    
     var blurAnimator: UIViewPropertyAnimator?
     var headerAnimator: UIViewPropertyAnimator?
     var graphicAnimator: UIViewPropertyAnimator?
@@ -166,6 +170,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.renderForecast(data)
         self.renderSunriseSunset(data)
         self.renderYesterdayConditions(data)
+        self.renderRegionalNormals(data)
         
         // Update scroll animations in case some properties change
         self.scrollViewDidScroll(self.scrollView)
