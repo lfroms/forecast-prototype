@@ -9,7 +9,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Font Awesome 5 Free-Solid-900.otf">
-            <string>FontAwesome5FreeSolid</string>
+            <string>FontAwesome5Free-Solid</string>
         </array>
         <array key="ionicons.ttf">
             <string>Ionicons</string>
@@ -83,7 +83,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="tint" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unS-WN-DTR">
                                     <rect key="frame" x="0.0" y="2.5" width="15" height="10"/>
-                                    <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="10"/>
+                                    <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="10"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>

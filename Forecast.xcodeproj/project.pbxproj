@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
-		801B19E321D0370C0007279D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801B19E221D0370C0007279D /* ionicons.ttf */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
+		802596BC2235953000769D09 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802596BB2235953000769D09 /* ionicons.ttf */; };
 		802F20E821AA36AA00488957 /* ForecastItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802F20E721AA36AA00488957 /* ForecastItem.xib */; };
 		8051A6F321755BE6007290CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F221755BE6007290CF /* AppDelegate.swift */; };
 		8051A6F521755BE6007290CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051A6F421755BE6007290CF /* MainViewController.swift */; };
@@ -48,8 +48,8 @@
 /* Begin PBXFileReference section */
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
-		801B19E221D0370C0007279D /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		802596BB2235953000769D09 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		802F20E721AA36AA00488957 /* ForecastItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastItem.xib; sourceTree = "<group>"; };
 		8051A6EF21755BE6007290CF /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8051A6F221755BE6007290CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		80EEB23D217A74A500AD4448 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				801B19E221D0370C0007279D /* ionicons.ttf */,
+				802596BB2235953000769D09 /* ionicons.ttf */,
 				807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */,
 			);
 			path = Fonts;
@@ -293,11 +293,11 @@
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */,
 				8091CC6C2234B05000BA8034 /* SiteListQuery.graphql in Resources */,
+				802596BC2235953000769D09 /* ionicons.ttf in Resources */,
 				80E6325022349F710096FD6D /* WeatherQuery.graphql in Resources */,
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				80E6324E22349F5A0096FD6D /* schema.json in Resources */,
 				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
-				801B19E321D0370C0007279D /* ionicons.ttf in Resources */,
 				808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */,
 				8084524B21E2DD080099E660 /* Images.xcassets in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,

@@ -11,13 +11,10 @@ import UIKit
 extension MainViewController {
     func renderWarnings(_ data: WeatherQuery.Data.Weather) {
         warningsStack.subviews.forEach({ $0.removeFromSuperview() })
+        
+        let events = data.warnings.events
 
-        guard let events = data.warnings.events else {
-            headerBlur.backgroundColor = .clear
-            return
-        }
-
-        events.forEach(
+        events?.forEach(
             { event in
                 let timestamp = event.dateTime?.timeStamp?.toDate("yyyyMMddhhmmss")?
                     .toFormat("MMM d h:mm a")
@@ -35,10 +32,13 @@ extension MainViewController {
         )
 
         if !warningsStack.arrangedSubviews.isEmpty {
-            if let priorityAsType = events.first?.priority {
+            if let priorityAsType = events?.first?.priority {
                 headerBlur.backgroundColor = getColorForAlertPriority(priorityAsType)
+                return
             }
         }
+        
+        headerBlur.backgroundColor = .clear
     }
 
     private func iconForAlertPriority(_ priority: WarningPriority?) -> String {

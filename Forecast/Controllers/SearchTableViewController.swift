@@ -84,7 +84,7 @@ class SearchTableViewController: UITableViewController {
         if tableView.cellForRow(at: indexPath) != nil {
             view.endEditing(true)
             
-            saveAsDefault(filteredSites?[indexPath.row])
+            filteredSites?[indexPath.row].saveAsDefault()
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resetObservers"), object: nil))
             
             dismiss(animated: true, completion: nil)

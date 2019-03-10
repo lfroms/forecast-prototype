@@ -8,22 +8,41 @@
 
 import Foundation
 
-func saveAsDefault(_ site: SiteListQuery.Data.Site?) {
-    if site == nil {
-        return
-    }
-
-    UserDefaults.standard.set(site?.code, forKey: "defaultSiteCode")
-    UserDefaults.standard.set(site?.nameEn, forKey: "defaultSiteNameEn")
-    UserDefaults.standard.set(site?.nameFr, forKey: "defaultSiteNameFr")
-    UserDefaults.standard.set(site?.provinceCode, forKey: "defaultSiteProvinceCode")
+enum UserDefaultKeys: String {
+    case siteCode = "defaultSiteCode"
+    case provinceCode = "defaultProvinceCode"
 }
 
-func defaultSite() -> SiteListQuery.Data.Site {
-    return SiteListQuery.Data.Site(
-        nameEn: UserDefaults.standard.string(forKey: "defaultSiteNameEn") ?? "Ottawa (Kanata - Orléans)",
-        nameFr: UserDefaults.standard.string(forKey: "defaultSiteNameFr") ?? "Ottawa (Kanata - Orléans)",
-        code: UserDefaults.standard.integer(forKey: "defaultSiteCode"),
-        provinceCode: UserDefaults.standard.string(forKey: "defaultSiteProvinceCode") ?? "ON"
-    )
+struct SavedSite {
+    var code: Int
+    var region: Region
+}
+
+extension SiteListQuery.Data.Site {
+    func saveAsDefault() {
+        UserDefaults.standard.set(self.code, forKey: UserDefaultKeys.siteCode.rawValue)
+        UserDefaults.standard.set(self.provinceCode, forKey: UserDefaultKeys.provinceCode.rawValue)
+    }
+}
+
+func defaultSite() -> SavedSite? {
+    guard savedSiteExists() else {
+        return nil
+    }
+
+    let siteCode = UserDefaults.standard.integer(forKey: UserDefaultKeys.siteCode.rawValue)
+    let provinceCode = UserDefaults.standard.string(forKey: UserDefaultKeys.provinceCode.rawValue)
+    let region = Region(rawValue: provinceCode!)
+
+    guard region != nil else {
+        return nil
+    }
+
+    return SavedSite(code: siteCode, region: region!)
+}
+
+func savedSiteExists() -> Bool {
+    return
+        UserDefaults.standard.integer(forKey: UserDefaultKeys.siteCode.rawValue) != 0 &&
+        UserDefaults.standard.string(forKey: UserDefaultKeys.provinceCode.rawValue) != nil
 }

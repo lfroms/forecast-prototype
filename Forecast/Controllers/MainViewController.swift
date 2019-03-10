@@ -54,6 +54,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     var headerAnimator: UIViewPropertyAnimator?
     var graphicAnimator: UIViewPropertyAnimator?
     
+    var apolloWatcher: GraphQLQueryWatcher<WeatherQuery>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.delegate = self
@@ -94,6 +96,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 using: self.fetchViaNotification
             )
         
+        self.setObserverForDefaultSite()
         self.fetchNewData()
     }
     
@@ -166,23 +169,35 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.scrollViewDidScroll(self.scrollView)
     }
     
-    @objc func fetchNewData() {
-        self.loadingIndicator.startAnimating()
+    private func setObserverForDefaultSite() {
+        self.apolloWatcher?.cancel()
         
         let site = defaultSite()
-        let region = Region(rawValue: site.provinceCode) ?? .on
+        guard site != nil else {
+            return
+        }
         
-        apollo.fetch(query: WeatherQuery(region: region, code: site.code), cachePolicy: .fetchIgnoringCacheData)
+        let query = WeatherQuery(region: site!.region, code: site!.code)
+        
+        self.apolloWatcher = apollo.watch(query: query) { result, _ in
+            self.render(result)
+        }
+    }
+    
+    @objc func fetchNewData() {
+        let site = defaultSite()
+        guard site != nil else {
+            return
+        }
+        
+        let query = WeatherQuery(region: site!.region, code: site!.code)
+        self.loadingIndicator.startAnimating()
+        
+        apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData)
     }
     
     private func fetchViaNotification(_ notification: Notification) {
-        let site = defaultSite()
-        let region = Region(rawValue: site.provinceCode) ?? .on
-        
-        _ = apollo.watch(query: WeatherQuery(region: region, code: site.code)) { result, _ in
-            self.render(result)
-        }
-        
+        self.setObserverForDefaultSite()
         self.fetchNewData()
     }
     
