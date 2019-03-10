@@ -1,5 +1,5 @@
 //
-//  UserPreferencesController.swift
+//  UserPreferences.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2019-03-09.
