@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-10-15.
@@ -49,6 +49,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var warningsStack: UIStackView!
     @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
     @IBOutlet var warningsContainer: UIStyledView!
+    
+    @IBOutlet var yesterdayConditionsContainer: UIView!
+    @IBOutlet var yesterdayHighLabel: UILabel!
+    @IBOutlet var yesterdayLowLabel: UILabel!
+    @IBOutlet var yesterdayPrecipLabel: UILabel!
     
     var blurAnimator: UIViewPropertyAnimator?
     var headerAnimator: UIViewPropertyAnimator?
@@ -160,6 +165,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.renderHourlyForecast(data)
         self.renderForecast(data)
         self.renderSunriseSunset(data)
+        self.renderYesterdayConditions(data)
         
         // Update scroll animations in case some properties change
         self.scrollViewDidScroll(self.scrollView)

@@ -116,5 +116,16 @@ query Weather($region: Region!, $code: Int!) {
                 name
             }
         }
+        yesterdayConditions {
+            temperature {
+                value
+                units
+                class
+            }
+            precip {
+                value
+                units
+            }
+        }
     }
 }

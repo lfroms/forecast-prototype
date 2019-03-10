@@ -127,7 +127,7 @@ public enum WarningPriority: RawRepresentable, Equatable, Hashable, Apollo.JSOND
 
 public final class WeatherQuery: GraphQLQuery {
   public let operationDefinition =
-    "query Weather($region: Region!, $code: Int!) {\n  weather(region: $region, code: $code) {\n    __typename\n    location {\n      __typename\n      name {\n        __typename\n        value\n      }\n    }\n    currentConditions {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      station {\n        __typename\n        value\n      }\n      temperature {\n        __typename\n        value\n      }\n      relativeHumidity {\n        __typename\n        value\n        units\n      }\n      pressure {\n        __typename\n        value\n        units\n      }\n      windChill {\n        __typename\n        value\n      }\n      humidex {\n        __typename\n        value\n      }\n      wind {\n        __typename\n        direction\n        speed {\n          __typename\n          value\n          units\n        }\n        gust {\n          __typename\n          value\n          units\n        }\n      }\n      visibility {\n        __typename\n        value\n        units\n      }\n      dewpoint {\n        __typename\n        value\n        units\n      }\n      iconCode {\n        __typename\n        value\n      }\n      condition\n    }\n    warnings {\n      __typename\n      url\n      events {\n        __typename\n        dateTime(zone: \"UTC\") {\n          __typename\n          timeStamp\n        }\n        priority\n        description\n      }\n    }\n    forecastGroup {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      forecast {\n        __typename\n        abbreviatedForecast {\n          __typename\n          textSummary\n          iconCode {\n            __typename\n            value\n          }\n          pop {\n            __typename\n            value\n          }\n        }\n        period {\n          __typename\n          textForecastName\n        }\n        temperatures {\n          __typename\n          temperature {\n            __typename\n            value\n            units\n          }\n        }\n      }\n    }\n    hourlyForecastGroup {\n      __typename\n      hourlyForecast {\n        __typename\n        dateTimeUTC\n        temperature {\n          __typename\n          value\n          units\n        }\n        wind {\n          __typename\n          speed {\n            __typename\n            value\n            units\n          }\n        }\n        iconCode {\n          __typename\n          value\n        }\n        lop {\n          __typename\n          value\n        }\n      }\n    }\n    riseSet {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n        name\n      }\n    }\n  }\n}"
+    "query Weather($region: Region!, $code: Int!) {\n  weather(region: $region, code: $code) {\n    __typename\n    location {\n      __typename\n      name {\n        __typename\n        value\n      }\n    }\n    currentConditions {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      station {\n        __typename\n        value\n      }\n      temperature {\n        __typename\n        value\n      }\n      relativeHumidity {\n        __typename\n        value\n        units\n      }\n      pressure {\n        __typename\n        value\n        units\n      }\n      windChill {\n        __typename\n        value\n      }\n      humidex {\n        __typename\n        value\n      }\n      wind {\n        __typename\n        direction\n        speed {\n          __typename\n          value\n          units\n        }\n        gust {\n          __typename\n          value\n          units\n        }\n      }\n      visibility {\n        __typename\n        value\n        units\n      }\n      dewpoint {\n        __typename\n        value\n        units\n      }\n      iconCode {\n        __typename\n        value\n      }\n      condition\n    }\n    warnings {\n      __typename\n      url\n      events {\n        __typename\n        dateTime(zone: \"UTC\") {\n          __typename\n          timeStamp\n        }\n        priority\n        description\n      }\n    }\n    forecastGroup {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      forecast {\n        __typename\n        abbreviatedForecast {\n          __typename\n          textSummary\n          iconCode {\n            __typename\n            value\n          }\n          pop {\n            __typename\n            value\n          }\n        }\n        period {\n          __typename\n          textForecastName\n        }\n        temperatures {\n          __typename\n          temperature {\n            __typename\n            value\n            units\n          }\n        }\n      }\n    }\n    hourlyForecastGroup {\n      __typename\n      hourlyForecast {\n        __typename\n        dateTimeUTC\n        temperature {\n          __typename\n          value\n          units\n        }\n        wind {\n          __typename\n          speed {\n            __typename\n            value\n            units\n          }\n        }\n        iconCode {\n          __typename\n          value\n        }\n        lop {\n          __typename\n          value\n        }\n      }\n    }\n    riseSet {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n        name\n      }\n    }\n    yesterdayConditions {\n      __typename\n      temperature {\n        __typename\n        value\n        units\n        class\n      }\n      precip {\n        __typename\n        value\n        units\n      }\n    }\n  }\n}"
 
   public var region: Region
   public var code: Int
@@ -179,6 +179,7 @@ public final class WeatherQuery: GraphQLQuery {
         GraphQLField("forecastGroup", type: .nonNull(.object(ForecastGroup.selections))),
         GraphQLField("hourlyForecastGroup", type: .object(HourlyForecastGroup.selections)),
         GraphQLField("riseSet", type: .nonNull(.object(RiseSet.selections))),
+        GraphQLField("yesterdayConditions", type: .nonNull(.object(YesterdayCondition.selections))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -187,8 +188,8 @@ public final class WeatherQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(location: Location, currentConditions: CurrentCondition, warnings: Warning, forecastGroup: ForecastGroup, hourlyForecastGroup: HourlyForecastGroup? = nil, riseSet: RiseSet) {
-        self.init(unsafeResultMap: ["__typename": "SiteData", "location": location.resultMap, "currentConditions": currentConditions.resultMap, "warnings": warnings.resultMap, "forecastGroup": forecastGroup.resultMap, "hourlyForecastGroup": hourlyForecastGroup.flatMap { (value: HourlyForecastGroup) -> ResultMap in value.resultMap }, "riseSet": riseSet.resultMap])
+      public init(location: Location, currentConditions: CurrentCondition, warnings: Warning, forecastGroup: ForecastGroup, hourlyForecastGroup: HourlyForecastGroup? = nil, riseSet: RiseSet, yesterdayConditions: YesterdayCondition) {
+        self.init(unsafeResultMap: ["__typename": "SiteData", "location": location.resultMap, "currentConditions": currentConditions.resultMap, "warnings": warnings.resultMap, "forecastGroup": forecastGroup.resultMap, "hourlyForecastGroup": hourlyForecastGroup.flatMap { (value: HourlyForecastGroup) -> ResultMap in value.resultMap }, "riseSet": riseSet.resultMap, "yesterdayConditions": yesterdayConditions.resultMap])
       }
 
       public var __typename: String {
@@ -251,6 +252,15 @@ public final class WeatherQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.resultMap, forKey: "riseSet")
+        }
+      }
+
+      public var yesterdayConditions: YesterdayCondition {
+        get {
+          return YesterdayCondition(unsafeResultMap: resultMap["yesterdayConditions"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "yesterdayConditions")
         }
       }
 
@@ -1968,6 +1978,157 @@ public final class WeatherQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+        }
+      }
+
+      public struct YesterdayCondition: GraphQLSelectionSet {
+        public static let possibleTypes = ["YesterdayConditions"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("temperature", type: .nonNull(.list(.nonNull(.object(Temperature.selections))))),
+          GraphQLField("precip", type: .nonNull(.list(.nonNull(.object(Precip.selections))))),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(temperature: [Temperature], precip: [Precip]) {
+          self.init(unsafeResultMap: ["__typename": "YesterdayConditions", "temperature": temperature.map { (value: Temperature) -> ResultMap in value.resultMap }, "precip": precip.map { (value: Precip) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var temperature: [Temperature] {
+          get {
+            return (resultMap["temperature"] as! [ResultMap]).map { (value: ResultMap) -> Temperature in Temperature(unsafeResultMap: value) }
+          }
+          set {
+            resultMap.updateValue(newValue.map { (value: Temperature) -> ResultMap in value.resultMap }, forKey: "temperature")
+          }
+        }
+
+        public var precip: [Precip] {
+          get {
+            return (resultMap["precip"] as! [ResultMap]).map { (value: ResultMap) -> Precip in Precip(unsafeResultMap: value) }
+          }
+          set {
+            resultMap.updateValue(newValue.map { (value: Precip) -> ResultMap in value.resultMap }, forKey: "precip")
+          }
+        }
+
+        public struct Temperature: GraphQLSelectionSet {
+          public static let possibleTypes = ["Temperature"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("value", type: .scalar(String.self)),
+            GraphQLField("units", type: .nonNull(.scalar(String.self))),
+            GraphQLField("class", type: .scalar(String.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(value: String? = nil, units: String, `class`: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Temperature", "value": value, "units": units, "class": `class`])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var value: String? {
+            get {
+              return resultMap["value"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "value")
+            }
+          }
+
+          public var units: String {
+            get {
+              return resultMap["units"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "units")
+            }
+          }
+
+          public var `class`: String? {
+            get {
+              return resultMap["class"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "class")
+            }
+          }
+        }
+
+        public struct Precip: GraphQLSelectionSet {
+          public static let possibleTypes = ["HistoricPrecipitation"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("value", type: .scalar(String.self)),
+            GraphQLField("units", type: .nonNull(.scalar(String.self))),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(value: String? = nil, units: String) {
+            self.init(unsafeResultMap: ["__typename": "HistoricPrecipitation", "value": value, "units": units])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var value: String? {
+            get {
+              return resultMap["value"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "value")
+            }
+          }
+
+          public var units: String {
+            get {
+              return resultMap["units"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "units")
             }
           }
         }
