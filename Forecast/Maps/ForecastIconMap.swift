@@ -8,94 +8,105 @@
 
 import Foundation
 
+private enum ForecastIcon: Int {
+    case sunny = 0xf4b7
+    case partlySunny = 0xf1df
+    case rainy = 0xf495
+    case thunderstorm = 0xf4bd
+    case cloudy = 0xf410
+    case snow = 0xf218
+    case moon = 0xf468
+    case cloudyNight = 0xf40e
+}
+
 func textForIconCode(_ code: String) -> String {
-    guard let icon = Int(code) else {
+    guard let codeInt = Int(code) else {
         return ""
     }
-    
-    var outChar: Int
-    
-    switch icon {
-    case 0:
-        outChar = 0xf4b7
-    case 1:
-        outChar = 0xf4b7
-    case 2:
-        outChar = 0xf1df
-    case 3:
-        outChar = 0xf1df
-    case 4:
-        outChar = 0xf1df
-    case 5:
-        outChar = 0xf4b7
-    case 6:
-        outChar = 0xf495
-    case 7:
-        outChar = 0xf495
-    case 8:
-        outChar = 0xf495
-    case 9:
-        outChar = 0xf4bd
-    case 10:
-        outChar = 0xf410
-    case 12:
-        outChar = 0xf495
-    case 13:
-        outChar = 0xf495
-    case 14:
-        outChar = 0xf495
-    case 15:
-        outChar = 0xf495
-    case 16:
-        outChar = 0xf218
-    case 17:
-        outChar = 0xf218
-    case 18:
-        outChar = 0xf218
-    case 19:
-        outChar = 0xf218
-    case 22:
-        outChar = 0xf1df
-    case 23:
-        outChar = 0xf410
-    case 24:
-        outChar = 0xf410
-    case 27:
-        outChar = 0xf495
-    case 28:
-        outChar = 0xf495
-    case 29:
-        outChar = 0xf4b7
-    case 30:
-        outChar = 0xf468
-    case 31:
-        outChar = 0xf40e
-    case 32:
-        outChar = 0xf40e
-    case 33:
-        outChar = 0xf410
-    case 34:
-        outChar = 0xf410
-    case 35:
-        outChar = 0xf468
-    case 36:
-        outChar = 0xf495
-    case 37:
-        outChar = 0xf495
-    case 38:
-        outChar = 0xf218
-    case 39:
-        outChar = 0xf4bd
-    case 40:
-        outChar = 0xf218
-    case 43:
-        outChar = 0xf410
-    case 44:
-        outChar = 0xf24f
-    default:
-        outChar = 0xf4b7
-    }
-    
-    let scalar = UnicodeScalar(outChar)!
+
+    let scalar = UnicodeScalar(iconFor(codeInt).rawValue)!
     return "\(scalar)"
+}
+
+private func iconFor(_ value: Int) -> ForecastIcon {
+    switch value {
+    case 0:
+        return .sunny
+    case 1:
+        return .sunny
+    case 2:
+        return .partlySunny
+    case 3:
+        return .partlySunny
+    case 4:
+        return .partlySunny
+    case 5:
+        return .sunny
+    case 6:
+        return .rainy
+    case 7:
+        return .rainy
+    case 8:
+        return .rainy
+    case 9:
+        return .thunderstorm
+    case 10:
+        return .cloudy
+    case 12:
+        return .rainy
+    case 13:
+        return .rainy
+    case 14:
+        return .rainy
+    case 15:
+        return .rainy
+    case 16:
+        return .snow
+    case 17:
+        return .snow
+    case 18:
+        return .snow
+    case 19:
+        return .snow
+    case 22:
+        return .partlySunny
+    case 23:
+        return .cloudy
+    case 24:
+        return .cloudy
+    case 27:
+        return .rainy
+    case 28:
+        return .rainy
+    case 29:
+        return .sunny
+    case 30:
+        return .moon
+    case 31:
+        return .cloudyNight
+    case 32:
+        return .cloudyNight
+    case 33:
+        return .cloudy
+    case 34:
+        return .cloudy
+    case 35:
+        return .moon
+    case 36:
+        return .rainy
+    case 37:
+        return .rainy
+    case 38:
+        return .snow
+    case 39:
+        return .thunderstorm
+    case 40:
+        return .snow
+    case 43:
+        return .cloudy
+    case 44:
+        return .cloudy
+    default:
+        return .sunny
+    }
 }
