@@ -40,8 +40,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var sunriseSunsetStack: UIStackView!
     
     @IBOutlet var currentConditionsContainer: UIView!
-    @IBOutlet var dailyForecastContainer: UIView!
-    @IBOutlet var hourlyForecastContainer: UIView!
+    @IBOutlet var forecastsStack: UIStackView!
     
     @IBOutlet var noDailyForecastLabel: UILabel!
     @IBOutlet var noHourlyForecastLabel: UILabel!
@@ -142,10 +141,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             make.height.equalTo(screenSize.height - topInset - bottomInset)
         }
         
-        hourlyForecastContainer.snp.makeConstraints { (make) -> Void in
+        forecastsStack.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(
                 currentConditionsContainer.snp.bottom
-            ).offset(bottomInset)
+            ).offset(bottomInset > 0 ? bottomInset : 10)
         }
         
         weatherGraphicOffset.constant = warningsContainer.frame.height
