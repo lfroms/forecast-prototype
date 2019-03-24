@@ -178,7 +178,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     private func setObserverForDefaultSite() {
         self.apolloWatcher?.cancel()
         
-        let site = defaultSite()
+        let site = UserPreferences.defaultSite()
         guard site != nil else {
             return
         }
@@ -191,7 +191,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             }
             
             guard error == nil else {
-                AlertHelper.showAlert(
+                Alert.show(
                     self,
                     title: "Error",
                     message: "Could not fetch weather data."
@@ -205,7 +205,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func fetchNewData() {
-        let site = defaultSite()
+        let site = UserPreferences.defaultSite()
         guard site != nil else {
             return
         }

@@ -32,14 +32,14 @@ class OptionsViewController: UIViewController, UIScrollViewDelegate, UISearchBar
         let textFieldInsideSearchBar = searchField.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = .white
 
-        let site = defaultSite()
+        let site = UserPreferences.defaultSite()
         guard site != nil else {
             return
         }
 
         let query = WeatherQuery(region: site!.region, code: site!.code)
 
-        apollo.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result, error in
+        apollo.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result, _ in
             let data = result?.data?.weather
 
             if let location = data?.currentConditions.station?.value, location != "" {

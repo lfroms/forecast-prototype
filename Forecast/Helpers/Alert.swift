@@ -1,5 +1,5 @@
 //
-//  AlertHelper.swift
+//  Alert.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2019-03-10.
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class AlertHelper {
-    static func showAlert(_ context: UIViewController, title: String, message: String) {
+class Alert {
+    static func show(_ context: UIViewController, title: String, message: String) {
         let alertController = UIAlertController(
             title: title,
             message: message,
