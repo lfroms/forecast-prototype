@@ -20,11 +20,13 @@ extension MainViewController {
 
         data.forecastGroup.forecast.forEach(
             { item in
+                let temperature = item.temperatures.temperature.first?.value ?? ""
+
                 let subview = ForecastItem().with(
                     icon: ForecastIcon.forCode(item.abbreviatedForecast.iconCode?.value ?? "00"),
                     day: item.period.textForecastName,
-                    temperature: item.temperatures.temperature.first?.value,
-                    units: "°" + (item.temperatures.temperature.first?.units ?? ""),
+                    temperature: Temperature.toPreferredUnit(temperature, round: true),
+                    units: Temperature.currentUnit(symbol: true),
                     description: item.abbreviatedForecast.textSummary,
                     pop: item.abbreviatedForecast.pop?.value
                 )

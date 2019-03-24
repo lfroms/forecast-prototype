@@ -58,11 +58,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var normalHighLabel: UILabel!
     @IBOutlet var normalLowLabel: UILabel!
     
-    var blurAnimator: UIViewPropertyAnimator?
-    var headerAnimator: UIViewPropertyAnimator?
-    var graphicAnimator: UIViewPropertyAnimator?
+    private var blurAnimator: UIViewPropertyAnimator?
+    private var headerAnimator: UIViewPropertyAnimator?
+    private var graphicAnimator: UIViewPropertyAnimator?
     
-    var apolloWatcher: GraphQLQueryWatcher<WeatherQuery>?
+    private var apolloWatcher: GraphQLQueryWatcher<WeatherQuery>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -193,8 +193,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             guard error == nil else {
                 Alert.show(
                     self,
-                    title: "Error",
-                    message: "Could not fetch weather data."
+                    title: "Oops!",
+                    message: "Something isn't working correctly. Try again later."
                 )
                 
                 return

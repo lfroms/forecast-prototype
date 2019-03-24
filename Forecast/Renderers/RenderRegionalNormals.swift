@@ -26,7 +26,7 @@ extension MainViewController {
             return
         }
         
-        self.normalHighLabel.text = high!.value! + "°"
-        self.normalLowLabel.text = low!.value! + "°"
+        self.normalHighLabel.text = Temperature.toPreferredUnit(high!.value!) + "°"
+        self.normalLowLabel.text = Temperature.toPreferredUnit(low!.value!) + "°"
     }
 }

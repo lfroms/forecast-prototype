@@ -42,6 +42,7 @@
 		80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9195621D07F12003D7E84 /* RenderSunriseSunset.swift */; };
 		80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */; };
 		80D1AE9221D05D6900168BA8 /* HourlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE9121D05D6800168BA8 /* HourlyItem.swift */; };
+		80DAF517224808BA007AA0FC /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAF516224808BA007AA0FC /* Temperature.swift */; };
 		80E6324E22349F5A0096FD6D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E6324D22349F5A0096FD6D /* schema.json */; };
 		80E6325022349F710096FD6D /* WeatherQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 80E6324F22349F710096FD6D /* WeatherQuery.graphql */; };
 		80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F175FA21AB37C8001090BD /* SearchTableViewController.swift */; };
@@ -88,6 +89,7 @@
 		80D1AE8E21D03FA700168BA8 /* RenderForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderForecast.swift; sourceTree = "<group>"; };
 		80D1AE9021D05D6800168BA8 /* HourlyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyItem.xib; sourceTree = "<group>"; };
 		80D1AE9121D05D6800168BA8 /* HourlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItem.swift; sourceTree = "<group>"; };
+		80DAF516224808BA007AA0FC /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		80E6324D22349F5A0096FD6D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		80E6324F22349F710096FD6D /* WeatherQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherQuery.graphql; sourceTree = "<group>"; };
 		80F175FA21AB37C8001090BD /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				8091CC6D2234BDB300BA8034 /* UserPreferences.swift */,
 				802596C122359B7700769D09 /* Alert.swift */,
 				8096725B21D16D77000F1318 /* ForecastIcon.swift */,
+				80DAF516224808BA007AA0FC /* Temperature.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			files = (
 				806F7CE12235AA9F00F7D392 /* RenderYesterdayConditions.swift in Sources */,
 				8051A6F521755BE6007290CF /* MainViewController.swift in Sources */,
+				80DAF517224808BA007AA0FC /* Temperature.swift in Sources */,
 				8096725C21D16D77000F1318 /* ForecastIcon.swift in Sources */,
 				80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */,
 				8096725A21D12FEF000F1318 /* DoubleStackView.swift in Sources */,

@@ -47,7 +47,6 @@ query Weather($region: Region!, $code: Int!) {
             }
             dewpoint {
                 value
-                units
             }
             iconCode {
                 value
@@ -90,7 +89,6 @@ query Weather($region: Region!, $code: Int!) {
                 temperatures {
                     temperature {
                         value
-                        units
                     }
                 }
             }
@@ -125,7 +123,6 @@ query Weather($region: Region!, $code: Int!) {
         yesterdayConditions {
             temperature {
                 value
-                units
                 class
             }
             precip {

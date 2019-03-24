@@ -11,7 +11,7 @@ import UIKit
 extension MainViewController {
     func renderWarnings(_ data: WeatherQuery.Data.Weather) {
         warningsStack.subviews.forEach({ $0.removeFromSuperview() })
-        
+
         let events = data.warnings.events
 
         events?.forEach(
@@ -37,7 +37,7 @@ extension MainViewController {
                 return
             }
         }
-        
+
         headerBlur.backgroundColor = .clear
     }
 

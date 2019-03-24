@@ -31,10 +31,6 @@ extension MainViewController {
                     .convertTo(region: .current)
                     .toFormat("a")
                 
-                let temperatureUnits = ["°", item.temperature.units]
-                    .compactMap { $0 }
-                    .joined()
-                
                 var windSpeed: String?
                 
                 // Check if this is actually a number. Sometimes, it can be a string,
@@ -51,8 +47,8 @@ extension MainViewController {
                     hour: hour ?? "",
                     amPm: amPm ?? "",
                     icon: ForecastIcon.forCode(item.iconCode.value ?? "00"),
-                    temperature: item.temperature.value,
-                    temperatureUnits: temperatureUnits,
+                    temperature: Temperature.toPreferredUnit(item.temperature.value ?? "", round: true),
+                    temperatureUnits: Temperature.currentUnit(symbol: true),
                     windSpeed: windSpeed,
                     pop: item.lop.value
                 )

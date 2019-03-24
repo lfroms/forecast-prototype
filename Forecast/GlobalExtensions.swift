@@ -13,6 +13,10 @@ extension Float {
     func asRoundedString() -> String {
         return String(format: "%.0f", self.rounded())
     }
+
+    func toString() -> String {
+        return String(self)
+    }
 }
 
 extension String {

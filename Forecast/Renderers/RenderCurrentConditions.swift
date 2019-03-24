@@ -15,9 +15,8 @@ extension MainViewController {
         let cc = data.currentConditions
         let fc = data.forecastGroup.forecast
         
-        if cc.temperature?.value != nil, let tempAsFloat = Float(cc.temperature!.value!) {
-            let normalized = tempAsFloat > -1 && tempAsFloat <= 0 ? abs(tempAsFloat) : tempAsFloat
-            self.currentTempLabel.text = normalized.asRoundedString() + "°"
+        if let temperature = cc.temperature?.value {
+            self.currentTempLabel.text = Temperature.toPreferredUnit(temperature, round: true) + "°"
         } else {
             self.currentTempLabel.text = "--°"
         }
@@ -31,7 +30,7 @@ extension MainViewController {
         if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
             let temp = forecast.temperatures.temperature.first?.value {
             self.lowTempView.isHidden = false
-            self.lowTempValue.text = temp + "°"
+            self.lowTempValue.text = Temperature.toPreferredUnit(temp, round: true) + "°"
         } else {
             self.lowTempView.isHidden = true
         }
@@ -39,7 +38,7 @@ extension MainViewController {
         if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
             let temp = forecast.temperatures.temperature.first?.value {
             self.highTempView.isHidden = false
-            self.highTempValue.text = temp + "°"
+            self.highTempValue.text = Temperature.toPreferredUnit(temp, round: true) + "°"
         } else {
             self.highTempView.isHidden = true
         }
@@ -108,31 +107,28 @@ extension MainViewController {
             }
         }
         
-        if let windChill = cc.windChill {
+        if let windChill = cc.windChill?.value {
             let windChillView = ConditionView().with(
                 aux: nil,
-                value: windChill.value,
-                units: "°C",
+                value: Temperature.toPreferredUnit(windChill) + "°",
+                units: Temperature.currentUnit(symbol: true),
                 type: "WIND CHILL",
                 icon: "snowflake"
             )
             
-            if windChill.value != nil {
-                try detailsStack.addOrganizedSubview(windChillView)
-            }
-            
-        } else if let humidex = cc.humidex {
+            try detailsStack.addOrganizedSubview(windChillView)
+        }
+        
+        if let humidex = cc.humidex?.value {
             let humidexView = ConditionView().with(
                 aux: nil,
-                value: humidex.value,
-                units: "°C",
+                value: Temperature.toPreferredUnit(humidex) + "°",
+                units: Temperature.currentUnit(symbol: true),
                 type: "HUMIDEX",
                 icon: "sun"
             )
             
-            if humidex.value != nil {
-                try detailsStack.addOrganizedSubview(humidexView)
-            }
+            try detailsStack.addOrganizedSubview(humidexView)
         }
         
         if let wind = cc.wind {
@@ -175,18 +171,16 @@ extension MainViewController {
             }
         }
         
-        if let dewpoint = cc.dewpoint {
+        if let dewpoint = cc.dewpoint?.value {
             let dewpointView = ConditionView().with(
                 aux: nil,
-                value: dewpoint.value,
-                units: "°" + dewpoint.units,
+                value: Temperature.toPreferredUnit(dewpoint) + "°",
+                units: Temperature.currentUnit(symbol: true),
                 type: "DEWPOINT",
                 icon: "thermometer-half"
             )
             
-            if dewpoint.value != nil {
-                try detailsStack.addOrganizedSubview(dewpointView)
-            }
+            try detailsStack.addOrganizedSubview(dewpointView)
         }
         
         if detailsStack.hasAnyItems() == true {

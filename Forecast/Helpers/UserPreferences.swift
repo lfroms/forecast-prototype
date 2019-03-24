@@ -12,6 +12,12 @@ class UserPreferences {
     enum DefaultKeys: String {
         case siteCode = "defaultSiteCode"
         case provinceCode = "defaultProvinceCode"
+        case tempUnits
+    }
+
+    enum TemperatureUnit: String {
+        case c = "C"
+        case f = "F"
     }
 
     struct SavedSite {
@@ -35,10 +41,24 @@ class UserPreferences {
         return SavedSite(code: siteCode, region: region!)
     }
 
-    static func defaultSiteExists() -> Bool {
+    private static func defaultSiteExists() -> Bool {
         return
             UserDefaults.standard.integer(forKey: DefaultKeys.siteCode.rawValue) != 0 &&
             UserDefaults.standard.string(forKey: DefaultKeys.provinceCode.rawValue) != nil
+    }
+
+    static func preferredTemperature() -> TemperatureUnit {
+        guard self.defaultTemperatureExists() else {
+            return .c
+        }
+
+        let storedValue = UserDefaults.standard.string(forKey: DefaultKeys.tempUnits.rawValue)
+
+        return TemperatureUnit(rawValue: storedValue!) ?? .c
+    }
+
+    private static func defaultTemperatureExists() -> Bool {
+        return UserDefaults.standard.string(forKey: DefaultKeys.tempUnits.rawValue) != nil
     }
 }
 
