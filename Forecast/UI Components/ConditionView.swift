@@ -40,7 +40,7 @@ class ConditionView: UIView {
         return contentView.frame.size
     }
     
-    func with(aux: String?, value: String?, units: String?, type: String, icon: String) -> ConditionView {
+    func with(aux: String? = nil, value: String?, units: String?, type: String, icon: String) -> ConditionView {
         // Icon
         iconLabel.text = icon
         

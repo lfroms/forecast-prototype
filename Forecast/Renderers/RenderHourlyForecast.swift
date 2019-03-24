@@ -47,7 +47,7 @@ extension MainViewController {
                     hour: hour ?? "",
                     amPm: amPm ?? "",
                     icon: ForecastIcon.forCode(item.iconCode.value ?? "00"),
-                    temperature: Temperature.toPreferredUnit(item.temperature.value ?? "", round: true),
+                    temperature: Temperature.toPreferredUnit(item.temperature.value, round: true),
                     temperatureUnits: Temperature.currentUnit(symbol: true),
                     windSpeed: windSpeed,
                     pop: item.lop.value

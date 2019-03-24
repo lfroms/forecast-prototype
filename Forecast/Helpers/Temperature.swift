@@ -18,13 +18,17 @@ class Temperature {
         return value
     }
     
-    static func toPreferredUnit(_ value: String, round: Bool = false) -> String {
-        if let asFloat = Float(value) {
+    static func toPreferredUnit(_ value: String?, round: Bool = false) -> String {
+        guard value != nil else {
+            return ""
+        }
+        
+        if let asFloat = Float(value!) {
             let asPreferredUnit = toPrefferedUnit(asFloat)
             return round ? asPreferredUnit.asRoundedString() : asPreferredUnit.toString()
         }
         
-        return value
+        return value!
     }
 
     static func currentUnit(symbol: Bool = false) -> String {

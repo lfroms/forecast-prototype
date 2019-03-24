@@ -31,8 +31,13 @@ extension MainViewController {
             return
         }
 
-        self.yesterdayHighLabel.text = Temperature.toPreferredUnit(high!.value!) + "°"
-        self.yesterdayLowLabel.text = Temperature.toPreferredUnit(low!.value!) + "°"
-        self.yesterdayPrecipLabel.text = precip!.value! + precip!.units
+        self.yesterdayHighLabel.text = Temperature.toPreferredUnit(high?.value) + "°"
+        self.yesterdayLowLabel.text = Temperature.toPreferredUnit(low?.value) + "°"
+
+        if let _ = Float(precip!.value!) {
+            self.yesterdayPrecipLabel.text = precip!.value! + precip!.units
+        } else {
+            self.yesterdayPrecipLabel.text = precip?.value
+        }
     }
 }

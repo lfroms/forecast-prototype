@@ -81,7 +81,6 @@ extension MainViewController {
         
         if let humidity = cc.relativeHumidity {
             let humidityView = ConditionView().with(
-                aux: nil,
                 value: humidity.value,
                 units: humidity.units,
                 type: "HUMIDITY",
@@ -95,7 +94,6 @@ extension MainViewController {
         
         if let pressure = cc.pressure {
             let pressureView = ConditionView().with(
-                aux: nil,
                 value: pressure.value,
                 units: pressure.units,
                 type: "PRESSURE",
@@ -109,8 +107,7 @@ extension MainViewController {
         
         if let windChill = cc.windChill?.value {
             let windChillView = ConditionView().with(
-                aux: nil,
-                value: Temperature.toPreferredUnit(windChill) + "°",
+                value: Temperature.toPreferredUnit(windChill),
                 units: Temperature.currentUnit(symbol: true),
                 type: "WIND CHILL",
                 icon: "snowflake"
@@ -121,8 +118,7 @@ extension MainViewController {
         
         if let humidex = cc.humidex?.value {
             let humidexView = ConditionView().with(
-                aux: nil,
-                value: Temperature.toPreferredUnit(humidex) + "°",
+                value: Temperature.toPreferredUnit(humidex),
                 units: Temperature.currentUnit(symbol: true),
                 type: "HUMIDEX",
                 icon: "sun"
@@ -146,7 +142,6 @@ extension MainViewController {
             
             if wind.gust.value != nil {
                 let gust = ConditionView().with(
-                    aux: nil,
                     value: cc.wind!.gust.value,
                     units: cc.wind!.gust.units,
                     type: "WIND GUST",
@@ -159,7 +154,6 @@ extension MainViewController {
         
         if let visibility = cc.visibility {
             let visibilityView = ConditionView().with(
-                aux: nil,
                 value: visibility.value,
                 units: visibility.units,
                 type: "VISIBILITY",
@@ -173,8 +167,7 @@ extension MainViewController {
         
         if let dewpoint = cc.dewpoint?.value {
             let dewpointView = ConditionView().with(
-                aux: nil,
-                value: Temperature.toPreferredUnit(dewpoint) + "°",
+                value: Temperature.toPreferredUnit(dewpoint),
                 units: Temperature.currentUnit(symbol: true),
                 type: "DEWPOINT",
                 icon: "thermometer-half"
