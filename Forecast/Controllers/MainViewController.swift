@@ -191,7 +191,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             }
             
             guard error == nil else {
-                showAlert(
+                AlertHelper.showAlert(
                     self,
                     title: "Error",
                     message: "Could not fetch weather data."

@@ -26,7 +26,7 @@ class SearchTableViewController: UITableViewController {
     func setResults() {
         apollo.fetch(query: SiteListQuery(), cachePolicy: .returnCacheDataElseFetch) { result, error in
             guard error == nil else {
-                showAlert(
+                AlertHelper.showAlert(
                     self,
                     title: "Error",
                     message: "Could not fetch weather station list."

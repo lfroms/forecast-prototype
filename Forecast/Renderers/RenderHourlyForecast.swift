@@ -50,7 +50,7 @@ extension MainViewController {
                 let subview = HourlyItem().with(
                     hour: hour ?? "",
                     amPm: amPm ?? "",
-                    icon: textForIconCode(item.iconCode.value ?? "00"),
+                    icon: ForecastIcon.forCode(item.iconCode.value ?? "00"),
                     temperature: item.temperature.value,
                     temperatureUnits: temperatureUnits,
                     windSpeed: windSpeed,

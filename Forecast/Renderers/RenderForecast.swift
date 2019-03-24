@@ -21,7 +21,7 @@ extension MainViewController {
         data.forecastGroup.forecast.forEach(
             { item in
                 let subview = ForecastItem().with(
-                    icon: textForIconCode(item.abbreviatedForecast.iconCode?.value ?? "00"),
+                    icon: ForecastIcon.forCode(item.abbreviatedForecast.iconCode?.value ?? "00"),
                     day: item.period.textForecastName,
                     temperature: item.temperatures.temperature.first?.value,
                     units: "°" + (item.temperatures.temperature.first?.units ?? ""),
