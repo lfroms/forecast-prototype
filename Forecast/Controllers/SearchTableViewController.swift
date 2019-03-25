@@ -60,8 +60,8 @@ class SearchTableViewController: UITableViewController {
         
         if let siteList = filteredSites {
             let site = siteList[indexPath.row]
-            cell.textLabel!.text = site.nameEn
-            cell.detailTextLabel!.text = site.provinceCode
+            cell.textLabel!.text = site.name
+            cell.detailTextLabel!.text = site.province.rawValue
         }
         
         cell.accessoryType = .none
@@ -81,7 +81,7 @@ class SearchTableViewController: UITableViewController {
     func updateSearchResults(_ searchText: String) {
         if !searchText.isEmpty, sites != nil {
             filteredSites = sites?.filter { site in
-                site.nameEn.lowercased().contains(searchText.lowercased())
+                site.name.lowercased().contains(searchText.lowercased())
             }
         } else {
             filteredSites = sites

@@ -2203,7 +2203,7 @@ public final class WeatherQuery: GraphQLQuery {
 
 public final class SiteListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query SiteList {\n  sites {\n    __typename\n    nameEn\n    nameFr\n    code\n    provinceCode\n  }\n}"
+    "query SiteList {\n  sites {\n    __typename\n    code\n    name\n    province\n  }\n}"
 
   public init() {
   }
@@ -2225,7 +2225,7 @@ public final class SiteListQuery: GraphQLQuery {
       self.init(unsafeResultMap: ["__typename": "Query", "sites": sites.flatMap { (value: [Site]) -> [ResultMap] in value.map { (value: Site) -> ResultMap in value.resultMap } }])
     }
 
-    /// Retrieve the entire site list.
+    /// Retrieve the entire site list or search by coordinates.
     public var sites: [Site]? {
       get {
         return (resultMap["sites"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Site] in value.map { (value: ResultMap) -> Site in Site(unsafeResultMap: value) } }
@@ -2240,10 +2240,9 @@ public final class SiteListQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("nameEn", type: .nonNull(.scalar(String.self))),
-        GraphQLField("nameFr", type: .nonNull(.scalar(String.self))),
         GraphQLField("code", type: .nonNull(.scalar(Int.self))),
-        GraphQLField("provinceCode", type: .nonNull(.scalar(String.self))),
+        GraphQLField("name", type: .nonNull(.scalar(String.self))),
+        GraphQLField("province", type: .nonNull(.scalar(Region.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2252,8 +2251,8 @@ public final class SiteListQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(nameEn: String, nameFr: String, code: Int, provinceCode: String) {
-        self.init(unsafeResultMap: ["__typename": "Site", "nameEn": nameEn, "nameFr": nameFr, "code": code, "provinceCode": provinceCode])
+      public init(code: Int, name: String, province: Region) {
+        self.init(unsafeResultMap: ["__typename": "Site", "code": code, "name": name, "province": province])
       }
 
       public var __typename: String {
@@ -2262,24 +2261,6 @@ public final class SiteListQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
-        }
-      }
-
-      public var nameEn: String {
-        get {
-          return resultMap["nameEn"]! as! String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "nameEn")
-        }
-      }
-
-      public var nameFr: String {
-        get {
-          return resultMap["nameFr"]! as! String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "nameFr")
         }
       }
 
@@ -2292,12 +2273,21 @@ public final class SiteListQuery: GraphQLQuery {
         }
       }
 
-      public var provinceCode: String {
+      public var name: String {
         get {
-          return resultMap["provinceCode"]! as! String
+          return resultMap["name"]! as! String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "provinceCode")
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var province: Region {
+        get {
+          return resultMap["province"]! as! Region
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "province")
         }
       }
     }

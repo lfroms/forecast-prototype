@@ -65,6 +65,6 @@ class UserPreferences {
 extension SiteListQuery.Data.Site {
     func saveAsDefault() {
         UserDefaults.standard.set(self.code, forKey: UserPreferences.DefaultKeys.siteCode.rawValue)
-        UserDefaults.standard.set(self.provinceCode, forKey: UserPreferences.DefaultKeys.provinceCode.rawValue)
+        UserDefaults.standard.set(self.province.rawValue, forKey: UserPreferences.DefaultKeys.provinceCode.rawValue)
     }
 }

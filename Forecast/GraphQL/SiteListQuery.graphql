@@ -1,9 +1,8 @@
 
 query SiteList {
     sites {
-        nameEn
-        nameFr
         code
-        provinceCode
+        name
+        province
     }
 }
