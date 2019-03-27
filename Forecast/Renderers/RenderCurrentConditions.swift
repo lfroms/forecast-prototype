@@ -6,7 +6,6 @@
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import SnapKit
 import SwiftDate
 import UIKit
 
