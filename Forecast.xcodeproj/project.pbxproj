@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8000335F224BEB43005DE9B0 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000335E224BEB43005DE9B0 /* Options.storyboard */; };
 		8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		802596BC2235953000769D09 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802596BB2235953000769D09 /* ionicons.ttf */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
+		8000335E224BEB43005DE9B0 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		802596BB2235953000769D09 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		802596BF22359A3100769D09 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -186,7 +188,7 @@
 				80EEB23D217A74A500AD4448 /* Fonts */,
 				80EEB23A217A745600AD4448 /* Controllers */,
 				802596BE223599AE00769D09 /* Renderers */,
-				80EEB239217A744500AD4448 /* Views */,
+				80EEB239217A744500AD4448 /* Storyboards */,
 				8051A6F221755BE6007290CF /* AppDelegate.swift */,
 				8051A6FE21755BE7007290CF /* Info.plist */,
 				80731E6F21A24F7000B40F42 /* GlobalExtensions.swift */,
@@ -209,13 +211,14 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
-		80EEB239217A744500AD4448 /* Views */ = {
+		80EEB239217A744500AD4448 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				8051A6F621755BE6007290CF /* Main.storyboard */,
 				8051A6FB21755BE7007290CF /* LaunchScreen.storyboard */,
+				8000335E224BEB43005DE9B0 /* Options.storyboard */,
 			);
-			path = Views;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		80EEB23A217A745600AD4448 /* Controllers */ = {
@@ -312,6 +315,7 @@
 				8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */,
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				80B9195521D06A50003D7E84 /* HourlyItem.xib in Resources */,
+				8000335F224BEB43005DE9B0 /* Options.storyboard in Resources */,
 				8091CC6C2234B05000BA8034 /* SiteListQuery.graphql in Resources */,
 				802596BC2235953000769D09 /* ionicons.ttf in Resources */,
 				80E6325022349F710096FD6D /* WeatherQuery.graphql in Resources */,
