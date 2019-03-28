@@ -15,9 +15,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet var overviewView: OverviewView!
-    
-    @IBOutlet var detailsScrollView: UIScrollView!
-    @IBOutlet var detailsStack: DoubleStackView!
+    @IBOutlet var observationsView: ObservationsView!
     
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var headerBlur: UIVisualEffectView!
@@ -149,12 +147,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.renderMetadata(data)
         
-        do {
-            try self.renderDetails(data)
-        } catch {}
-        
         self.renderWarnings(data)
         self.renderOverview(data)
+        self.renderObservations(data)
         self.renderHourlyForecast(data)
         self.renderForecast(data)
         self.renderSunriseSunset(data)

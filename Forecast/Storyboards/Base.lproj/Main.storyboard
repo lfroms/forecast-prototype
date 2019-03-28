@@ -64,45 +64,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="c0l-Bf-6uB" userLabel="Current Conditions Stack">
-                                                <rect key="frame" x="0.0" y="253" width="375" height="459"/>
+                                                <rect key="frame" x="0.0" y="388" width="375" height="324"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="260" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-bB-Mxh" customClass="OverviewView" customModule="Forecast" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="160" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-bB-Mxh" customClass="OverviewView" customModule="Forecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="32" bottom="0.0" trailing="32"/>
                                                     </view>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM1-ny-Thi">
-                                                        <rect key="frame" x="0.0" y="296" width="375" height="163"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="infinite" axis="vertical" distribution="equalSpacing" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-fJ-UNd" userLabel="Details Stack" customClass="DoubleStackView" customModule="Forecast" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="163"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="CnB-4p-AxR">
-                                                                        <rect key="frame" x="22" y="0.0" width="50" height="60"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="60" id="fYZ-UD-kTQ"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="gBJ-yX-H0h">
-                                                                        <rect key="frame" x="22" y="103" width="50" height="60"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="60" id="LgW-G7-Mwt"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <edgeInsets key="layoutMargins" top="0.0" left="22" bottom="0.0" right="22"/>
-                                                            </stackView>
-                                                        </subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="508-Wu-4bC" customClass="ObservationsView" customModule="Forecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="196" width="375" height="128"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="DE6-fJ-UNd" secondAttribute="bottom" id="HrE-M2-SpP"/>
-                                                            <constraint firstAttribute="trailing" secondItem="DE6-fJ-UNd" secondAttribute="trailing" id="aTY-1h-eJ4"/>
-                                                            <constraint firstItem="DE6-fJ-UNd" firstAttribute="leading" secondItem="KM1-ny-Thi" secondAttribute="leading" id="bf3-IN-vX3"/>
-                                                            <constraint firstItem="DE6-fJ-UNd" firstAttribute="top" secondItem="KM1-ny-Thi" secondAttribute="top" id="lvS-ib-FPh"/>
-                                                            <constraint firstAttribute="height" secondItem="DE6-fJ-UNd" secondAttribute="height" id="zeN-fr-Z88"/>
+                                                            <constraint firstAttribute="height" constant="128" id="KR7-Rs-PXl"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
-                                                    </scrollView>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -549,8 +525,6 @@
                         <outlet property="blurView" destination="SgN-nh-fJi" id="wUH-0c-VmB"/>
                         <outlet property="cogIcon" destination="P0O-7V-xDh" id="Kng-rg-1Nz"/>
                         <outlet property="currentConditionsContainer" destination="Zhx-Fk-mLP" id="4uP-vN-mHf"/>
-                        <outlet property="detailsScrollView" destination="KM1-ny-Thi" id="JQ6-Aj-vZq"/>
-                        <outlet property="detailsStack" destination="DE6-fJ-UNd" id="6uJ-ZJ-XlK"/>
                         <outlet property="forecastStack" destination="elt-qh-lTA" id="2cY-S0-uRq"/>
                         <outlet property="forecastsStack" destination="V8i-VA-bve" id="kdv-2f-dY6"/>
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
@@ -559,6 +533,7 @@
                         <outlet property="noHourlyForecastLabel" destination="6KW-Oa-qhm" id="vke-Ii-XZp"/>
                         <outlet property="normalHighLabel" destination="KVn-8R-3Ne" id="ZQJ-LN-w0V"/>
                         <outlet property="normalLowLabel" destination="Am9-uG-Oxg" id="bc8-i7-d1p"/>
+                        <outlet property="observationsView" destination="508-Wu-4bC" id="5ev-HB-GxC"/>
                         <outlet property="overviewView" destination="nZD-bB-Mxh" id="NFq-Ta-aKl"/>
                         <outlet property="regionalNormalsContainer" destination="Xc6-eM-lda" id="UWp-cn-doI"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>

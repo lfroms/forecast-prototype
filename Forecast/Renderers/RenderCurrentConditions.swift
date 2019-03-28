@@ -14,16 +14,16 @@ extension MainViewController {
         let cc = data.currentConditions
         let fc = data.forecastGroup.forecast
         
-        // Current Temperature 🌡
+        // MARK: - Current Temperature 🌡
         
         let mainTemperature = Temperature.toPreferredUnit(cc.temperature?.value, round: true)
         overviewView.setTemperature(mainTemperature)
         
-        // Current Condition ⛅️
+        // MARK: - Current Condition ⛅️
         
         overviewView.setCurrentCondition(cc.condition)
         
-        // Forecast High ⇡
+        // MARK: - Forecast High ⇡
         
         let forecastHigh =
             fc.first(where: { $0.period.textForecastName == "Today" })?
@@ -31,7 +31,7 @@ extension MainViewController {
         
         overviewView.setHighTemp(forecastHigh)
         
-        // Forecast Low ⇣
+        // MARK: - Forecast Low ⇣
         
         let forecastLow =
             fc.first(where: { $0.period.textForecastName == "Tonight" })?
@@ -39,11 +39,11 @@ extension MainViewController {
         
         overviewView.setLowTemp(forecastLow)
         
-        // Date and Time 📆
+        // MARK: - Date and Time 📆
         
         overviewView.setDateStamp(cc.dateTime?.timeStamp)
         
-        // Station Name 📡
+        // MARK: - Station Name 📡
         
         overviewView.stationName.text = data.location.name.value
     }
@@ -70,113 +70,136 @@ extension MainViewController {
         self.weatherGraphic.contentMode = .top
     }
     
-    func renderDetails(_ data: WeatherQuery.Data.Weather) throws {
+    func renderObservations(_ data: WeatherQuery.Data.Weather) {
         let cc = data.currentConditions
         
-        detailsStack.removeAllSubviews()
+        var observations: [ObservationItem] = []
         
-        if let humidity = cc.relativeHumidity {
-            let humidityView = ConditionView().with(
-                value: humidity.value,
-                units: humidity.units,
-                type: "HUMIDITY",
-                icon: "tint"
+        // MARK: - Humidity 💧
+        
+        if let humidity = cc.relativeHumidity,
+            let value = humidity.value,
+            let units = humidity.units {
+            let item = ObservationItem(
+                icon: "tint",
+                value: value,
+                units: units,
+                description: "Humidity",
+                prefix: nil
             )
             
-            if humidity.value != nil {
-                try detailsStack.addOrganizedSubview(humidityView)
-            }
+            observations.append(item)
         }
         
-        if let pressure = cc.pressure {
-            let pressureView = ConditionView().with(
-                value: pressure.value,
+        // MARK: - Atmospheric Pressure 📈
+        
+        if let pressure = cc.pressure,
+            let value = pressure.value {
+            let item = ObservationItem(
+                icon: "tachometer-alt",
+                value: value,
                 units: pressure.units,
-                type: "PRESSURE",
-                icon: "tachometer-alt"
+                description: "Pressure",
+                prefix: nil
             )
             
-            if pressure.value != nil {
-                try detailsStack.addOrganizedSubview(pressureView)
-            }
+            observations.append(item)
         }
         
-        if let windChill = cc.windChill?.value {
-            let windChillView = ConditionView().with(
-                value: Temperature.toPreferredUnit(windChill),
+        // MARK: - Wind Chill ❄️
+        
+        if let windChill = cc.windChill,
+            let value = windChill.value {
+            let item = ObservationItem(
+                icon: "snowflake",
+                value: Temperature.toPreferredUnit(value),
                 units: Temperature.currentUnit(symbol: true),
-                type: "WIND CHILL",
-                icon: "snowflake"
+                description: "Wind Chill",
+                prefix: nil
             )
             
-            try detailsStack.addOrganizedSubview(windChillView)
+            observations.append(item)
         }
         
-        if let humidex = cc.humidex?.value {
-            let humidexView = ConditionView().with(
-                value: Temperature.toPreferredUnit(humidex),
+        // MARK: - Humidex ☀️
+        
+        if let humidex = cc.humidex,
+            let value = humidex.value {
+            let item = ObservationItem(
+                icon: "sun",
+                value: Temperature.toPreferredUnit(value),
                 units: Temperature.currentUnit(symbol: true),
-                type: "HUMIDEX",
-                icon: "sun"
+                description: "Humidex",
+                prefix: nil
             )
             
-            try detailsStack.addOrganizedSubview(humidexView)
+            observations.append(item)
         }
+        
+        // MARK: - Wind 💨
         
         if let wind = cc.wind {
-            let windView = ConditionView().with(
-                aux: wind.direction,
-                value: wind.speed.value,
-                units: wind.speed.units,
-                type: "WIND",
-                icon: "wind"
-            )
-            
-            if wind.speed.value != nil {
-                try detailsStack.addOrganizedSubview(windView)
-            }
-            
-            if wind.gust.value != nil {
-                let gust = ConditionView().with(
-                    value: cc.wind!.gust.value,
-                    units: cc.wind!.gust.units,
-                    type: "WIND GUST",
-                    icon: "arrow-right"
+            if let speed = wind.speed.value {
+                let item = ObservationItem(
+                    icon: "wind",
+                    value: speed,
+                    units: wind.speed.units,
+                    description: "Wind",
+                    prefix: wind.direction
                 )
                 
-                try detailsStack.addOrganizedSubview(gust)
+                observations.append(item)
+            }
+            
+            if let gust = wind.gust.value {
+                let item = ObservationItem(
+                    icon: "arrow-right",
+                    value: gust,
+                    units: wind.gust.units,
+                    description: "Wind Gust",
+                    prefix: nil
+                )
+                
+                observations.append(item)
             }
         }
         
-        if let visibility = cc.visibility {
-            let visibilityView = ConditionView().with(
-                value: visibility.value,
+        // MARK: - Visibility 📏
+        
+        if let visibility = cc.visibility,
+            let value = visibility.value {
+            let item = ObservationItem(
+                icon: "ruler",
+                value: value,
                 units: visibility.units,
-                type: "VISIBILITY",
-                icon: "ruler"
+                description: "Visibility",
+                prefix: nil
             )
             
-            if visibility.value != nil {
-                try detailsStack.addOrganizedSubview(visibilityView)
-            }
+            observations.append(item)
         }
         
-        if let dewpoint = cc.dewpoint?.value {
-            let dewpointView = ConditionView().with(
-                value: Temperature.toPreferredUnit(dewpoint),
+        // MARK: - Dewpoint 🌡
+        
+        if let dewpoint = cc.dewpoint,
+            let value = dewpoint.value {
+            let item = ObservationItem(
+                icon: "thermometer-half",
+                value: Temperature.toPreferredUnit(value),
                 units: Temperature.currentUnit(symbol: true),
-                type: "DEWPOINT",
-                icon: "thermometer-half"
+                description: "Dewpoint",
+                prefix: nil
             )
             
-            try detailsStack.addOrganizedSubview(dewpointView)
+            observations.append(item)
         }
         
-        if detailsStack.hasAnyItems() == true {
-            detailsScrollView.isHidden = false
+        guard observations.count > 0 else {
+            observationsView.isHidden = true
             return
         }
         
-        detailsScrollView.isHidden = true
+        observationsView.isHidden = false
+        observationsView.dataSourceItems = observations
     }
 }
