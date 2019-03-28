@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8000335F224BEB43005DE9B0 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000335E224BEB43005DE9B0 /* Options.storyboard */; };
+		80003373224C3724005DE9B0 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80003372224C3724005DE9B0 /* OverviewView.swift */; };
+		80003375224C3733005DE9B0 /* OverviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80003374224C3733005DE9B0 /* OverviewView.xib */; };
+		8000337C224C3BA7005DE9B0 /* UIView+FixInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000337B224C3BA7005DE9B0 /* UIView+FixInView.swift */; };
 		8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		802596BC2235953000769D09 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802596BB2235953000769D09 /* ionicons.ttf */; };
@@ -54,6 +57,9 @@
 		3EEA1402F1D104527639E4F8 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		7B555CDA40B43CFBBCBEB44B /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
 		8000335E224BEB43005DE9B0 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		80003372224C3724005DE9B0 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		80003374224C3733005DE9B0 /* OverviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewView.xib; sourceTree = "<group>"; };
+		8000337B224C3BA7005DE9B0 /* UIView+FixInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FixInView.swift"; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		802596BB2235953000769D09 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		802596BF22359A3100769D09 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -116,6 +122,31 @@
 				A0669C3F85188D60A0AD81C6 /* Pods_Forecast.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8000336C224C3686005DE9B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8000336D224C368C005DE9B0 /* Overview */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8000336D224C368C005DE9B0 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				80003372224C3724005DE9B0 /* OverviewView.swift */,
+				80003374224C3733005DE9B0 /* OverviewView.xib */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		8000337A224C3B96005DE9B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8000337B224C3BA7005DE9B0 /* UIView+FixInView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		802443F4217A79EE0066F905 /* UI Components */ = {
@@ -182,6 +213,8 @@
 		8051A6F121755BE6007290CF /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				8000337A224C3B96005DE9B0 /* Extensions */,
+				8000336C224C3686005DE9B0 /* Views */,
 				802596BD2235998200769D09 /* Helpers */,
 				80E6324C22349F4C0096FD6D /* GraphQL */,
 				802443F4217A79EE0066F905 /* UI Components */,
@@ -310,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80003375224C3733005DE9B0 /* OverviewView.xib in Resources */,
 				8052A6AA217E8B46004FB527 /* ConditionView.xib in Resources */,
 				807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */,
@@ -408,8 +442,10 @@
 				806F7CE12235AA9F00F7D392 /* RenderYesterdayConditions.swift in Sources */,
 				8051A6F521755BE6007290CF /* MainViewController.swift in Sources */,
 				80DAF517224808BA007AA0FC /* Temperature.swift in Sources */,
+				80003373224C3724005DE9B0 /* OverviewView.swift in Sources */,
 				8096725C21D16D77000F1318 /* ForecastIcon.swift in Sources */,
 				80F175FB21AB37C8001090BD /* SearchTableViewController.swift in Sources */,
+				8000337C224C3BA7005DE9B0 /* UIView+FixInView.swift in Sources */,
 				8096725A21D12FEF000F1318 /* DoubleStackView.swift in Sources */,
 				802596C222359B7700769D09 /* Alert.swift in Sources */,
 				80B9195421D06908003D7E84 /* RenderHourlyForecast.swift in Sources */,

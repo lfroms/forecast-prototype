@@ -14,20 +14,10 @@ import UIKit
 class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     
-    @IBOutlet var stationLabel: UILabel!
-    @IBOutlet var lastUpdatedLabel: UILabel!
+    @IBOutlet var overviewView: OverviewView!
     
     @IBOutlet var detailsScrollView: UIScrollView!
     @IBOutlet var detailsStack: DoubleStackView!
-    
-    @IBOutlet var currentTempLabel: UILabel!
-    @IBOutlet var currentConditionLabel: UILabel!
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet var lowTempView: UIView!
-    @IBOutlet var lowTempValue: UILabel!
-    @IBOutlet var highTempView: UIView!
-    @IBOutlet var highTempValue: UILabel!
     
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var headerBlur: UIVisualEffectView!
@@ -164,7 +154,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         } catch {}
         
         self.renderWarnings(data)
-        self.renderCurrentConditions(data)
+        self.renderOverview(data)
         self.renderHourlyForecast(data)
         self.renderForecast(data)
         self.renderSunriseSunset(data)
@@ -179,15 +169,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.apolloWatcher?.cancel()
         
         let site = UserPreferences.defaultSite()
-        guard site != nil else {
+        guard let defaultSite = site else {
             return
         }
         
-        let query = WeatherQuery(region: site!.region, code: site!.code)
+        let query = WeatherQuery(region: defaultSite.region, code: defaultSite.code)
         
         self.apolloWatcher = apollo.watch(query: query) { result, error in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.loadingIndicator.stopAnimating()
+                self.overviewView.setLoading(false)
             }
             
             guard error == nil else {
@@ -211,7 +201,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let query = WeatherQuery(region: site!.region, code: site!.code)
-        self.loadingIndicator.startAnimating()
+        self.overviewView.setLoading(true)
         
         apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData)
     }

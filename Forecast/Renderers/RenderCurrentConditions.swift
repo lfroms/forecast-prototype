@@ -10,49 +10,46 @@ import SwiftDate
 import UIKit
 
 extension MainViewController {
-    func renderCurrentConditions(_ data: WeatherQuery.Data.Weather) {
+    func renderOverview(_ data: WeatherQuery.Data.Weather) {
         let cc = data.currentConditions
         let fc = data.forecastGroup.forecast
         
-        if let temperature = cc.temperature?.value {
-            self.currentTempLabel.text = Temperature.toPreferredUnit(temperature, round: true) + "°"
-        } else {
-            self.currentTempLabel.text = "--°"
-        }
+        // Current Temperature 🌡
         
-        if cc.condition != nil, cc.condition != "" {
-            self.currentConditionLabel.text = cc.condition
-        } else {
-            self.currentConditionLabel.text = "Not Observed"
-        }
+        let mainTemperature = Temperature.toPreferredUnit(cc.temperature?.value, round: true)
+        overviewView.setTemperature(mainTemperature)
         
-        if let forecast = fc.first(where: { $0.period.textForecastName == "Tonight" }),
-            let temp = forecast.temperatures.temperature.first?.value {
-            self.lowTempView.isHidden = false
-            self.lowTempValue.text = Temperature.toPreferredUnit(temp, round: true) + "°"
-        } else {
-            self.lowTempView.isHidden = true
-        }
+        // Current Condition ⛅️
         
-        if let forecast = fc.first(where: { $0.period.textForecastName == "Today" }),
-            let temp = forecast.temperatures.temperature.first?.value {
-            self.highTempView.isHidden = false
-            self.highTempValue.text = Temperature.toPreferredUnit(temp, round: true) + "°"
-        } else {
-            self.highTempView.isHidden = true
-        }
+        overviewView.setCurrentCondition(cc.condition)
+        
+        // Forecast High ⇡
+        
+        let forecastHigh =
+            fc.first(where: { $0.period.textForecastName == "Today" })?
+            .temperatures.temperature.first?.value
+        
+        overviewView.setHighTemp(forecastHigh)
+        
+        // Forecast Low ⇣
+        
+        let forecastLow =
+            fc.first(where: { $0.period.textForecastName == "Tonight" })?
+            .temperatures.temperature.first?.value
+        
+        overviewView.setLowTemp(forecastLow)
+        
+        // Date and Time 📆
+        
+        overviewView.setDateStamp(cc.dateTime?.timeStamp)
+        
+        // Station Name 📡
+        
+        overviewView.stationName.text = data.location.name.value
     }
     
     func renderMetadata(_ data: WeatherQuery.Data.Weather) {
         let cc = data.currentConditions
-        self.stationLabel.text = data.location.name.value
-        
-        if cc.dateTime != nil {
-            self.lastUpdatedLabel.text = cc.dateTime?.timeStamp?
-                .toDate("yyyyMMddHHmmss", region: .UTC)?
-                .convertTo(region: .current)
-                .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
-        }
         
         UIView.animate(
             withDuration: 0.5, delay: 0.0, animations: {
