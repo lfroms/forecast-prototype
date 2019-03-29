@@ -3,12 +3,12 @@ PODS:
     - Apollo/Core (= 0.9.5)
   - Apollo/Core (0.9.5)
   - SnapKit (4.2.0)
-  - SwiftDate (5.1.0)
+  - SwiftDate (6.0.1)
 
 DEPENDENCIES:
   - Apollo (from `https://github.com/apollographql/apollo-ios.git`)
   - SnapKit (~> 4.2.0)
-  - SwiftDate (~> 5.1.0)
+  - SwiftDate (~> 6.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,14 +21,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Apollo:
-    :commit: 322a259bac398a7c53ddb4bf933f8f79c3034760
+    :commit: 5a647ba023276ec3cddeb0ab04dc7c981f105aaa
     :git: https://github.com/apollographql/apollo-ios.git
 
 SPEC CHECKSUMS:
   Apollo: 19caf3246d292bbb69ecad1bd098661f78222aba
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
+  SwiftDate: 2b3ef6b8fc30c22391033d1acad5622a51660016
 
-PODFILE CHECKSUM: c08e423239f0b60bcf701caaa0b2d95637d310e0
+PODFILE CHECKSUM: c16949d08051b84c1faac47ae23aed478a4566a3
 
 COCOAPODS: 1.6.1
