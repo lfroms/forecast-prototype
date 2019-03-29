@@ -17,11 +17,11 @@ extension MainViewController {
         // MARK: - Current Temperature 🌡
         
         let mainTemperature = Temperature.toPreferredUnit(cc.temperature?.value, round: true)
-        overviewView.setTemperature(mainTemperature)
+        overviewView.temperature = mainTemperature
         
         // MARK: - Current Condition ⛅️
         
-        overviewView.setCurrentCondition(cc.condition)
+        overviewView.currentCondition = cc.condition
         
         // MARK: - Forecast High ⇡
         
@@ -29,7 +29,7 @@ extension MainViewController {
             fc.first(where: { $0.period.textForecastName == "Today" })?
             .temperatures.temperature.first?.value
         
-        overviewView.setHighTemp(forecastHigh)
+        overviewView.highTemp = forecastHigh
         
         // MARK: - Forecast Low ⇣
         
@@ -37,15 +37,15 @@ extension MainViewController {
             fc.first(where: { $0.period.textForecastName == "Tonight" })?
             .temperatures.temperature.first?.value
         
-        overviewView.setLowTemp(forecastLow)
+        overviewView.lowTemp = forecastLow
         
         // MARK: - Date and Time 📆
         
-        overviewView.setDateStamp(cc.dateTime?.timeStamp)
+        overviewView.dateStamp = cc.dateTime?.timeStamp
         
         // MARK: - Station Name 📡
         
-        overviewView.stationName.text = data.location.name.value
+        overviewView.stationName = data.location.name.value
     }
     
     func renderMetadata(_ data: WeatherQuery.Data.Weather) {

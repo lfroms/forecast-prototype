@@ -12,12 +12,12 @@ import UIKit
 class OverviewView: UIView {
     @IBOutlet var contentView: UIView!
 
-    @IBOutlet var stationName: UILabel!
+    @IBOutlet private var stationNameLabel: UILabel!
     @IBOutlet private var currentConditionsTimestamp: UILabel!
 
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet private var currentTemperature: UILabel!
-    @IBOutlet private var currentCondition: UILabel!
+    @IBOutlet private var temperatureLabel: UILabel!
+    @IBOutlet private var currentConditionLabel: UILabel!
 
     @IBOutlet private var forecastHighContainer: UIView!
     @IBOutlet private var forecastHighTemp: UILabel!
@@ -40,61 +40,85 @@ class OverviewView: UIView {
         contentView.fixInView(self, followsLayoutMargins: true)
     }
 
-    // MARK: - Public Functions
+    // MARK: - Public Variables
 
-    func setLoading(_ loading: Bool) {
-        if loading {
-            loadingIndicator.startAnimating()
-            return
+    var stationName: String? {
+        get { return stationNameLabel.text }
+
+        set {
+            stationNameLabel.text = newValue
         }
-
-        loadingIndicator.stopAnimating()
     }
 
-    func setTemperature(_ temperature: String?) {
-        guard let temperature = temperature else {
-            currentTemperature.text = "--°"
-            return
-        }
+    var loading: Bool {
+        get { return loadingIndicator.isAnimating }
 
-        currentTemperature.text = "\(temperature)°"
+        set {
+            newValue
+                ? loadingIndicator.startAnimating()
+                : loadingIndicator.stopAnimating()
+        }
     }
 
-    func setHighTemp(_ temperature: String?) {
-        guard let temperature = temperature else {
-            setShowForecastHigh(false)
-            return
-        }
+    var temperature: String? {
+        get { return temperatureLabel.text }
 
-        setShowForecastHigh(true)
-        forecastHighTemp.text = "\(temperature)°"
+        set {
+            temperatureLabel.text = (newValue ?? "--") + "°"
+        }
     }
 
-    func setLowTemp(_ temperature: String?) {
-        guard let temperature = temperature else {
-            setShowForecastLow(false)
-            return
-        }
+    var highTemp: String? {
+        get { return forecastHighTemp.text }
 
-        setShowForecastLow(true)
-        forecastLowTemp.text = "\(temperature)°"
+        set {
+            guard let temperature = newValue else {
+                setShowForecastHigh(false)
+                return
+            }
+
+            setShowForecastHigh(true)
+            forecastHighTemp.text = "\(temperature)°"
+        }
     }
 
-    func setCurrentCondition(_ condition: String?) {
-        guard let condition = condition, !condition.isEmpty else {
-            currentCondition.text = "Not Observed"
-            return
-        }
+    var lowTemp: String? {
+        get { return forecastLowTemp.text }
 
-        currentCondition.text = condition
+        set {
+            guard let temperature = newValue else {
+                setShowForecastLow(false)
+                return
+            }
+
+            setShowForecastLow(true)
+            forecastLowTemp.text = "\(temperature)°"
+        }
     }
 
-    func setDateStamp(_ dateStamp: String?) {
-        currentConditionsTimestamp.text =
-            dateStamp?
-            .toDate("yyyyMMddHHmmss", region: .UTC)?
-            .convertTo(region: .current)
-            .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
+    var currentCondition: String? {
+        get { return currentConditionLabel.text }
+
+        set {
+            guard let condition = newValue, !condition.isEmpty else {
+                currentConditionLabel.text = "Not Observed"
+                return
+            }
+
+            currentConditionLabel.text = condition
+        }
+    }
+
+    var dateStamp: String? {
+        get { return currentConditionsTimestamp.text }
+
+        set {
+            currentConditionsTimestamp.text =
+                newValue?
+                .toDate("yyyyMMddHHmmss", region: .UTC)?
+                .convertTo(region: .current)
+                .toFormat("MMM d 'at' h:mm a", locale: Locales.current)
+        }
     }
 
     // MARK: - Private Functions

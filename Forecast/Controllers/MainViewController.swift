@@ -172,7 +172,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.apolloWatcher = apollo.watch(query: query) { result, error in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.overviewView.setLoading(false)
+                self.overviewView.loading = false
             }
             
             guard error == nil else {
@@ -196,7 +196,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let query = WeatherQuery(region: site!.region, code: site!.code)
-        self.overviewView.setLoading(true)
+        self.overviewView.loading = true
         
         apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData)
     }
