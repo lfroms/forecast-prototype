@@ -35,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-p1-iRq">
-                    <rect key="frame" x="32" y="0.0" width="30" height="66"/>
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="66"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="q5R-Q2-yhq"/>
                     </constraints>
@@ -44,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="W5o-Ld-cgC">
-                    <rect key="frame" x="338.5" y="12" width="46.5" height="42"/>
+                    <rect key="frame" x="370.5" y="12" width="46.5" height="42"/>
                     <subviews>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-8q-cza">
                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="21.5"/>
@@ -100,7 +100,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="eQx-9f-zZl">
-                    <rect key="frame" x="76" y="14" width="246.5" height="38"/>
+                    <rect key="frame" x="44" y="14" width="310.5" height="38"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="1000" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dot-AL-Zlh">
                             <rect key="frame" x="0.0" y="0.0" width="66.5" height="19.5"/>
@@ -120,13 +120,13 @@
             <constraints>
                 <constraint firstItem="W5o-Ld-cgC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ARq-UY-Yv1"/>
                 <constraint firstItem="eQx-9f-zZl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="IOo-Bk-YlH"/>
-                <constraint firstItem="OZL-p1-iRq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="LZv-Ip-qL1"/>
+                <constraint firstItem="OZL-p1-iRq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LZv-Ip-qL1"/>
                 <constraint firstItem="OZL-p1-iRq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PKu-nH-0Yi"/>
                 <constraint firstAttribute="bottom" secondItem="eQx-9f-zZl" secondAttribute="bottom" constant="14" id="cxR-iE-TZq"/>
                 <constraint firstItem="W5o-Ld-cgC" firstAttribute="leading" secondItem="eQx-9f-zZl" secondAttribute="trailing" constant="16" id="kf4-My-EB5"/>
                 <constraint firstAttribute="bottom" secondItem="OZL-p1-iRq" secondAttribute="bottom" id="lo7-xc-DkR"/>
                 <constraint firstItem="eQx-9f-zZl" firstAttribute="leading" secondItem="OZL-p1-iRq" secondAttribute="trailing" constant="14" id="n6K-zM-2YB"/>
-                <constraint firstAttribute="trailing" secondItem="W5o-Ld-cgC" secondAttribute="trailing" constant="32" id="rBF-v2-qdo"/>
+                <constraint firstAttribute="trailing" secondItem="W5o-Ld-cgC" secondAttribute="trailing" id="rBF-v2-qdo"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

@@ -22,6 +22,7 @@
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hNC-Dc-cAd">
                     <rect key="frame" x="0.0" y="0.0" width="514" height="266"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="32" bottom="0.0" trailing="32"/>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Forecast Unavailable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smk-dH-QI5">
                     <rect key="frame" x="172" y="124.5" width="170" height="17"/>
