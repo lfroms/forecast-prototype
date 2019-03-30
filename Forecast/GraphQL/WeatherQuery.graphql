@@ -61,6 +61,7 @@ query Weather($region: Region!, $code: Int!) {
                 }
                 priority
                 description
+                type
             }
         }
         forecastGroup {

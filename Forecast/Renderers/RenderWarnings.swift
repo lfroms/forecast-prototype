@@ -33,6 +33,7 @@ extension MainViewController {
                     title: event.description,
                     description: timestamp,
                     priority: event.priority,
+                    type: event.type,
                     url: url
                 )
                 
@@ -41,18 +42,5 @@ extension MainViewController {
         )
         
         headerView.warnings = warningItems
-    }
-    
-    private func iconForAlertPriority(_ priority: WarningPriority?) -> String {
-        switch priority {
-        case .low?:
-            return "info-circle"
-        case .medium?:
-            return "exclamation-circle"
-        case .high?:
-            return "exclamation-triangle"
-        default:
-            return "info-circle"
-        }
     }
 }

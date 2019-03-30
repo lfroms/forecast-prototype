@@ -13,7 +13,8 @@ import UIKit
 struct WarningItem {
     let title: String
     let description: String?
-    let priority: WarningPriority?
+    let priority: WarningPriority
+    let type: WarningType
     let url: URL?
 }
 
@@ -83,7 +84,11 @@ class WarningView: UIView, SFSafariViewControllerDelegate {
     // MARK: - Configuration
     
     func configure(with item: WarningItem) {
-        contentView.backgroundColor = getColorForAlertPriority(item.priority)
+        contentView.backgroundColor =
+            item.type == .ended
+            ? getColorForAlertPriority(.low)
+            : getColorForAlertPriority(item.priority)
+        
         iconLabel.text = iconForAlertPriority(item.priority)
         titleLabel.text = item.title.uppercased()
         

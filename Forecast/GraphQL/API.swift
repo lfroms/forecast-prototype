@@ -125,9 +125,54 @@ public enum WarningPriority: RawRepresentable, Equatable, Hashable, Apollo.JSOND
   }
 }
 
+public enum WarningType: RawRepresentable, Equatable, Hashable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case advisory
+  case warning
+  case watch
+  case ended
+  case statement
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "advisory": self = .advisory
+      case "warning": self = .warning
+      case "watch": self = .watch
+      case "ended": self = .ended
+      case "statement": self = .statement
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .advisory: return "advisory"
+      case .warning: return "warning"
+      case .watch: return "watch"
+      case .ended: return "ended"
+      case .statement: return "statement"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: WarningType, rhs: WarningType) -> Bool {
+    switch (lhs, rhs) {
+      case (.advisory, .advisory): return true
+      case (.warning, .warning): return true
+      case (.watch, .watch): return true
+      case (.ended, .ended): return true
+      case (.statement, .statement): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+}
+
 public final class WeatherQuery: GraphQLQuery {
   public let operationDefinition =
-    "query Weather($region: Region!, $code: Int!) {\n  weather(region: $region, code: $code) {\n    __typename\n    location {\n      __typename\n      name {\n        __typename\n        value\n      }\n    }\n    currentConditions {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      station {\n        __typename\n        value\n      }\n      temperature {\n        __typename\n        value\n      }\n      relativeHumidity {\n        __typename\n        value\n        units\n      }\n      pressure {\n        __typename\n        value\n        units\n      }\n      windChill {\n        __typename\n        value\n      }\n      humidex {\n        __typename\n        value\n      }\n      wind {\n        __typename\n        direction\n        speed {\n          __typename\n          value\n          units\n        }\n        gust {\n          __typename\n          value\n          units\n        }\n      }\n      visibility {\n        __typename\n        value\n        units\n      }\n      dewpoint {\n        __typename\n        value\n      }\n      iconCode {\n        __typename\n        value\n      }\n      condition\n    }\n    warnings {\n      __typename\n      url\n      events {\n        __typename\n        dateTime(zone: \"UTC\") {\n          __typename\n          timeStamp\n        }\n        priority\n        description\n      }\n    }\n    forecastGroup {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      regionalNormals {\n        __typename\n        temperature {\n          __typename\n          value\n          class\n        }\n      }\n      forecast {\n        __typename\n        abbreviatedForecast {\n          __typename\n          textSummary\n          iconCode {\n            __typename\n            value\n          }\n          pop {\n            __typename\n            value\n          }\n        }\n        period {\n          __typename\n          textForecastName\n        }\n        temperatures {\n          __typename\n          temperature {\n            __typename\n            value\n          }\n        }\n      }\n    }\n    hourlyForecastGroup {\n      __typename\n      hourlyForecast {\n        __typename\n        dateTimeUTC\n        temperature {\n          __typename\n          value\n          units\n        }\n        wind {\n          __typename\n          speed {\n            __typename\n            value\n            units\n          }\n        }\n        iconCode {\n          __typename\n          value\n        }\n        lop {\n          __typename\n          value\n        }\n      }\n    }\n    riseSet {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n        name\n      }\n    }\n    yesterdayConditions {\n      __typename\n      temperature {\n        __typename\n        value\n        class\n      }\n      precip {\n        __typename\n        value\n        units\n      }\n    }\n  }\n}"
+    "query Weather($region: Region!, $code: Int!) {\n  weather(region: $region, code: $code) {\n    __typename\n    location {\n      __typename\n      name {\n        __typename\n        value\n      }\n    }\n    currentConditions {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      station {\n        __typename\n        value\n      }\n      temperature {\n        __typename\n        value\n      }\n      relativeHumidity {\n        __typename\n        value\n        units\n      }\n      pressure {\n        __typename\n        value\n        units\n      }\n      windChill {\n        __typename\n        value\n      }\n      humidex {\n        __typename\n        value\n      }\n      wind {\n        __typename\n        direction\n        speed {\n          __typename\n          value\n          units\n        }\n        gust {\n          __typename\n          value\n          units\n        }\n      }\n      visibility {\n        __typename\n        value\n        units\n      }\n      dewpoint {\n        __typename\n        value\n      }\n      iconCode {\n        __typename\n        value\n      }\n      condition\n    }\n    warnings {\n      __typename\n      url\n      events {\n        __typename\n        dateTime(zone: \"UTC\") {\n          __typename\n          timeStamp\n        }\n        priority\n        description\n        type\n      }\n    }\n    forecastGroup {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n      }\n      regionalNormals {\n        __typename\n        temperature {\n          __typename\n          value\n          class\n        }\n      }\n      forecast {\n        __typename\n        abbreviatedForecast {\n          __typename\n          textSummary\n          iconCode {\n            __typename\n            value\n          }\n          pop {\n            __typename\n            value\n          }\n        }\n        period {\n          __typename\n          textForecastName\n        }\n        temperatures {\n          __typename\n          temperature {\n            __typename\n            value\n          }\n        }\n      }\n    }\n    hourlyForecastGroup {\n      __typename\n      hourlyForecast {\n        __typename\n        dateTimeUTC\n        temperature {\n          __typename\n          value\n          units\n        }\n        wind {\n          __typename\n          speed {\n            __typename\n            value\n            units\n          }\n        }\n        iconCode {\n          __typename\n          value\n        }\n        lop {\n          __typename\n          value\n        }\n      }\n    }\n    riseSet {\n      __typename\n      dateTime(zone: \"UTC\") {\n        __typename\n        timeStamp\n        name\n      }\n    }\n    yesterdayConditions {\n      __typename\n      temperature {\n        __typename\n        value\n        class\n      }\n      precip {\n        __typename\n        value\n        units\n      }\n    }\n  }\n}"
 
   public var region: Region
   public var code: Int
@@ -1090,6 +1135,7 @@ public final class WeatherQuery: GraphQLQuery {
             GraphQLField("dateTime", arguments: ["zone": "UTC"], type: .object(DateTime.selections)),
             GraphQLField("priority", type: .nonNull(.scalar(WarningPriority.self))),
             GraphQLField("description", type: .nonNull(.scalar(String.self))),
+            GraphQLField("type", type: .nonNull(.scalar(WarningType.self))),
           ]
 
           public private(set) var resultMap: ResultMap
@@ -1098,8 +1144,8 @@ public final class WeatherQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(dateTime: DateTime? = nil, priority: WarningPriority, description: String) {
-            self.init(unsafeResultMap: ["__typename": "WarningEvent", "dateTime": dateTime.flatMap { (value: DateTime) -> ResultMap in value.resultMap }, "priority": priority, "description": description])
+          public init(dateTime: DateTime? = nil, priority: WarningPriority, description: String, type: WarningType) {
+            self.init(unsafeResultMap: ["__typename": "WarningEvent", "dateTime": dateTime.flatMap { (value: DateTime) -> ResultMap in value.resultMap }, "priority": priority, "description": description, "type": type])
           }
 
           public var __typename: String {
@@ -1135,6 +1181,15 @@ public final class WeatherQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "description")
+            }
+          }
+
+          public var type: WarningType {
+            get {
+              return resultMap["type"]! as! WarningType
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "type")
             }
           }
 
