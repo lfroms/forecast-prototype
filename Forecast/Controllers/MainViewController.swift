@@ -101,13 +101,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let blurPercentage = contentOffset / (totalHeight / 2)
         let graphicPercentage = contentOffset / (totalHeight / 5)
         
-        let limitedBlur = blurPercentage >= 0.5 ? 0.5 : blurPercentage
+        let limitedBlur = min(blurPercentage, 0.5)
         
-        if self.warningsStack.arrangedSubviews.isEmpty {
-            self.headerAnimator?.fractionComplete = limitedBlur
-        } else {
-            self.headerAnimator?.fractionComplete = 0
-        }
+        headerAnimator?.fractionComplete =
+            warningsStack.arrangedSubviews.isEmpty ? limitedBlur : 0
         
         self.graphicAnimator?.fractionComplete = graphicPercentage
         self.blurAnimator?.fractionComplete = limitedBlur

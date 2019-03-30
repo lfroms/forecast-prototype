@@ -194,12 +194,7 @@ extension MainViewController {
             observations.append(item)
         }
         
-        guard observations.count > 0 else {
-            observationsView.isHidden = true
-            return
-        }
-        
-        observationsView.isHidden = false
+        observationsView.isHidden = observations.isEmpty
         observationsView.dataSourceItems = observations
     }
 }

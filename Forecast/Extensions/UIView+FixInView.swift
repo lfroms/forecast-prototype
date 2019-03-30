@@ -20,9 +20,9 @@ extension UIView {
         let leftMargin = followsLayoutMargins ? container.layoutMargins.left : 0
         let rightMargin = followsLayoutMargins ? -container.layoutMargins.right : 0
 
-        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: container, attribute: .leading, multiplier: 1.0, constant: leftMargin).isActive = true
-        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: rightMargin).isActive = true
-        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: topMargin).isActive = true
-        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: bottomMargin).isActive = true
+        leftAnchor.constraint(equalTo: container.leftAnchor, constant: leftMargin).isActive = true
+        rightAnchor.constraint(equalTo: container.rightAnchor, constant: rightMargin).isActive = true
+        topAnchor.constraint(equalTo: container.topAnchor, constant: topMargin).isActive = true
+        bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: bottomMargin).isActive = true
     }
 }
