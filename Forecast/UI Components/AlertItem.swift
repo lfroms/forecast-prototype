@@ -12,7 +12,7 @@ import UIKit
 class AlertItem: UIView {
     @IBOutlet var contentView: AlertItem!
     
-    @IBOutlet var backdrop: UIStyledView!
+    @IBOutlet var backdrop: StyledView!
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!

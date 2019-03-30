@@ -15,14 +15,14 @@ extension MainViewController {
         var regionalNormalsItems: [IconDetailItem] = []
         
         if let high = rn.temperature.first(where: { $0.class == "high" }) {
-            let temperature = Temperature.toPreferredUnit(high.value)
+            let temperature = Temperature.toPreferredUnit(high.value, round: true)
             let item = IconDetailItem(icon: "arrow-up", detail: temperature + "°")
             
             regionalNormalsItems.append(item)
         }
         
         if let low = rn.temperature.first(where: { $0.class == "low" }) {
-            let temperature = Temperature.toPreferredUnit(low.value)
+            let temperature = Temperature.toPreferredUnit(low.value, round: true)
             let item = IconDetailItem(icon: "arrow-down", detail: temperature + "°")
             
             regionalNormalsItems.append(item)

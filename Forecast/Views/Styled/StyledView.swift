@@ -1,17 +1,15 @@
 //
-//  UIStyledButton.swift
+//  StyledView.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2018-10-25.
-//  Copyright © 2018 Lukas Romsicki. All rights reserved.
+//  Created by Lukas Romsicki on 2019-03-29.
+//  Copyright © 2019 Lukas Romsicki. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class UIStyledButton: UIButton {}
-
-extension UIStyledButton {
+class StyledView: UIView {
     @IBInspectable
     var cornerRadius: CGFloat {
         get {

@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var warningsStack: UIStackView!
     @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
-    @IBOutlet var warningsContainer: UIStyledView!
+    @IBOutlet var warningsContainer: StyledView!
     
     private var blurAnimator: UIViewPropertyAnimator?
     private var headerAnimator: UIViewPropertyAnimator?

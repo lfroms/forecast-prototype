@@ -54,18 +54,12 @@ class HourlyForecastView: UICollectionViewCell {
     // MARK: - Configuration
 
     func configure(with item: HourlyForecastItem) {
-        let hour = item.timeStamp
+        let date = item.timeStamp
             .toDate("yyyyMMddHHmm", region: .UTC)?
             .convertTo(region: .current)
-            .toFormat("h")
 
-        let amPm = item.timeStamp
-            .toDate("yyyyMMddHHmm", region: .UTC)?
-            .convertTo(region: .current)
-            .toFormat("a")
-
-        hourLabel.text = hour
-        amPmLabel.text = amPm
+        hourLabel.text = date?.toFormat("h")
+        amPmLabel.text = date?.toFormat("a").lowercased()
 
         iconLabel.text = item.icon
         temperatureLabel.text = item.temperature

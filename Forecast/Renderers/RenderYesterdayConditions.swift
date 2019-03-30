@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import SnapKit
-import UIKit
 
 extension MainViewController {
     func renderYesterdayConditions(_ data: WeatherQuery.Data.Weather) {
