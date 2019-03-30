@@ -11,7 +11,8 @@ import UIKit
 
 extension Float {
     func asRoundedString() -> String {
-        return String(format: "%.0f", self.rounded())
+        // Add 0.0 to address -0 issue.
+        return String(format: "%.0f", self.rounded() + 0.0)
     }
 
     func toString() -> String {
