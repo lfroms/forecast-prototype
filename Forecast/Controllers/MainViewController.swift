@@ -7,7 +7,6 @@
 //
 
 import Apollo
-import SnapKit
 import SwiftDate
 import UIKit
 
@@ -115,19 +114,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let topInset = self.view.safeAreaInsets.top
         let bottomInset = self.view.safeAreaInsets.bottom
         
-        currentConditionsContainer.snp.makeConstraints { (make) -> Void in
-            make.height.equalTo(screenSize.height - topInset - bottomInset)
-        }
+        currentConditionsContainer
+            .heightAnchor
+            .constraint(
+                equalToConstant: screenSize.height - topInset - bottomInset
+            ).isActive = true
         
-        forecastsStack.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(
-                currentConditionsContainer.snp.bottom
-            ).offset(bottomInset > 0 ? bottomInset : 10)
-        }
+        forecastsStack
+            .topAnchor
+            .constraint(
+                equalTo: currentConditionsContainer.bottomAnchor,
+                constant: bottomInset > 0 ? bottomInset : 10
+            ).isActive = true
         
         weatherGraphicOffset.constant = warningsContainer.frame.height
-        
-        self.scrollView.isExclusiveTouch = false
     }
     
     func render(_ result: GraphQLResult<WeatherQuery.Data>?) {

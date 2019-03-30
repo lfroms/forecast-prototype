@@ -49,19 +49,13 @@
                                     <color key="textColor" name="White"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 18 8:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-zV-W1Q">
-                                    <rect key="frame" x="0.0" y="17" width="81" height="12"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 18 8:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-zV-W1Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="81" height="0.0"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                     <color key="textColor" name="White"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <variation key="default">
-                                <mask key="subviews">
-                                    <exclude reference="XwK-zV-W1Q"/>
-                                </mask>
-                            </variation>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
