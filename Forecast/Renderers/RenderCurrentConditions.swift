@@ -112,7 +112,7 @@ extension MainViewController {
             let value = windChill.value {
             let item = ObservationItem(
                 icon: "snowflake",
-                value: Temperature.toPreferredUnit(value),
+                value: Temperature.toPreferredUnit(value, round: true),
                 units: Temperature.currentUnit(symbol: true),
                 description: "Wind Chill",
                 prefix: nil
