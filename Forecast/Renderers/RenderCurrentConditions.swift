@@ -62,12 +62,12 @@ extension MainViewController {
         )
         
         if let code = cc.iconCode?.value, code != "" {
-            self.weatherGraphic.image = UIImage(named: code + "-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
+            self.illustration.image = UIImage(named: code + "-image")?.aspectFitImage(inRect: self.illustration.frame)
         } else {
-            self.weatherGraphic.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.weatherGraphic.frame)
+            self.illustration.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.illustration.frame)
         }
         
-        self.weatherGraphic.contentMode = .top
+        self.illustration.contentMode = .top
     }
     
     func renderObservations(_ data: WeatherQuery.Data.Weather) {

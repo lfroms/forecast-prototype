@@ -13,55 +13,49 @@ import UIKit
 class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet var headerView: HeaderView!
+    @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet var illustration: UIImageView!
+    @IBOutlet var illustrationOffset: NSLayoutConstraint!
+    @IBOutlet var cogIcon: UIButton!
+    
+    @IBOutlet var currentConditionsContainer: UIView!
+    
     @IBOutlet var overviewView: OverviewView!
     @IBOutlet var observationsView: ObservationsView!
+    
+    @IBOutlet var forecastsStack: UIStackView!
+    
     @IBOutlet var hourlyForecastsView: HourlyForecastsView!
     @IBOutlet var dailyForecastsView: DailyForecastsView!
     @IBOutlet var sunriseSunsetView: ObservationsView!
-    
     @IBOutlet var yesterdayContainerView: UIStackView!
     @IBOutlet var yesterdayIconDetailView: IconDetailsView!
-    
     @IBOutlet var regionalNormalsContainerView: UIStackView!
     @IBOutlet var regionalNormalsIconDetailView: IconDetailsView!
     
-    @IBOutlet var headerView: HeaderView!
-    
-    @IBOutlet var blurView: UIVisualEffectView!
-    
-    @IBOutlet var cogIcon: UIButton!
-    @IBOutlet var weatherGraphic: UIImageView!
-    
-    @IBOutlet var currentConditionsContainer: UIView!
-    @IBOutlet var forecastsStack: UIStackView!
-    
-    @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
-    
     private var blurAnimator: UIViewPropertyAnimator?
-    private var headerAnimator: UIViewPropertyAnimator?
-    private var graphicAnimator: UIViewPropertyAnimator?
+    private var illustrationAnimator: UIViewPropertyAnimator?
     
     private var apolloWatcher: GraphQLQueryWatcher<WeatherQuery>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.scrollView.delegate = self
         
         self.blurView.effect = nil
-//        self.headerBlur.effect = nil
-//
-//        self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-//            self.blurView.effect = UIBlurEffect(style: .dark)
-//            self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-//        }
+        self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.blurView.effect = UIBlurEffect(style: .dark)
+            self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        }
         
-        self.graphicAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            self.weatherGraphic.alpha = 0.4
+        self.illustrationAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.illustration.alpha = 0.4
         }
         
         self.blurAnimator?.pausesOnCompletion = true
-        self.headerAnimator?.pausesOnCompletion = true
-        self.graphicAnimator?.pausesOnCompletion = true
+        self.illustrationAnimator?.pausesOnCompletion = true
         
         NotificationCenter.default
             .addObserver(
@@ -93,20 +87,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let totalHeight = UIScreen.main.bounds.height
         
         let blurPercentage = contentOffset / (totalHeight / 2)
-        let graphicPercentage = contentOffset / (totalHeight / 5)
+        let illustrationPercentage = contentOffset / (totalHeight / 5)
         
         let limitedBlur = min(blurPercentage, 0.5)
         
         headerView.animationProgress = limitedBlur
-        
-        self.graphicAnimator?.fractionComplete = graphicPercentage
-        self.blurAnimator?.fractionComplete = limitedBlur
+        illustrationAnimator?.fractionComplete = illustrationPercentage
+        blurAnimator?.fractionComplete = limitedBlur
     }
     
     override func viewDidLayoutSubviews() {
         let screenSize: CGRect = UIScreen.main.bounds
-        let topInset = self.view.safeAreaInsets.top
-        let bottomInset = self.view.safeAreaInsets.bottom
+        let topInset = view.safeAreaInsets.top
+        let bottomInset = view.safeAreaInsets.bottom
+        
+        illustrationOffset.constant = headerView.warningsHeight
         
         currentConditionsContainer
             .heightAnchor
@@ -120,8 +115,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 equalTo: currentConditionsContainer.bottomAnchor,
                 constant: bottomInset > 0 ? bottomInset : 10
             ).isActive = true
-        
-        weatherGraphicOffset.constant = headerView.warningsHeight
     }
     
     func render(_ result: GraphQLResult<WeatherQuery.Data>?) {

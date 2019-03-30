@@ -311,14 +311,14 @@
                         <outlet property="forecastsStack" destination="V8i-VA-bve" id="kdv-2f-dY6"/>
                         <outlet property="headerView" destination="NMB-ev-SN3" id="c9r-IQ-SCZ"/>
                         <outlet property="hourlyForecastsView" destination="v78-mt-JLq" id="U0q-g1-7N8"/>
+                        <outlet property="illustration" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
+                        <outlet property="illustrationOffset" destination="QzY-H9-wWP" id="bv8-mw-Imh"/>
                         <outlet property="observationsView" destination="508-Wu-4bC" id="5ev-HB-GxC"/>
                         <outlet property="overviewView" destination="nZD-bB-Mxh" id="NFq-Ta-aKl"/>
                         <outlet property="regionalNormalsContainerView" destination="A6U-v2-vFW" id="iRy-NR-jA2"/>
                         <outlet property="regionalNormalsIconDetailView" destination="ev2-tD-KLl" id="yDP-eS-q9V"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="sunriseSunsetView" destination="2Jq-ZT-dU8" id="ouP-sf-nGR"/>
-                        <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
-                        <outlet property="weatherGraphicOffset" destination="QzY-H9-wWP" id="bv8-mw-Imh"/>
                         <outlet property="yesterdayContainerView" destination="prY-zo-a0W" id="68o-vc-4El"/>
                         <outlet property="yesterdayIconDetailView" destination="E9M-Gs-pcD" id="aQg-0r-asS"/>
                     </connections>
