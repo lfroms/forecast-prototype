@@ -18,14 +18,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var observationsView: ObservationsView!
     @IBOutlet var hourlyForecastsView: HourlyForecastsView!
     @IBOutlet var dailyForecastsView: DailyForecastsView!
+    @IBOutlet var sunriseSunsetView: ObservationsView!
     
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var headerBlur: UIVisualEffectView!
     
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var weatherGraphic: UIImageView!
-    
-    @IBOutlet var sunriseSunsetStack: UIStackView!
     
     @IBOutlet var currentConditionsContainer: UIView!
     @IBOutlet var forecastsStack: UIStackView!

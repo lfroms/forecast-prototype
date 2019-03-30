@@ -12,7 +12,7 @@ import UIKit
 struct ObservationItem {
     let icon: String
     let value: String
-    let units: String
+    let units: String?
     let description: String
     let prefix: String?
 }

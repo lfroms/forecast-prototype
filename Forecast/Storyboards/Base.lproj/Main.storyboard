@@ -92,7 +92,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-VA-bve">
                                         <rect key="frame" x="0.0" y="742" width="375" height="703.33333333333348"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y0f-Dd-ERH" userLabel="Hourly Forecast Container">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y0f-Dd-ERH" userLabel="Hourly Forecast">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="223.66666666666666"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bcF-P9-pSk">
@@ -120,7 +120,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rse-Wk-Nqh" userLabel="Daily Forecast Container">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rse-Wk-Nqh" userLabel="Daily Forecast">
                                                 <rect key="frame" x="0.0" y="255.66666666666663" width="375" height="183.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-tg-SQR">
@@ -148,32 +148,10 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py7-1h-cUa" userLabel="Sunrise/Sunset Container">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jq-ZT-dU8" userLabel="Sunrise/Sunset" customClass="ObservationsView" customModule="Forecast" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="471.33333333333326" width="375" height="60"/>
-                                                <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5Ww-dn-Wu7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="py0-tW-03v">
-                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                                                <edgeInsets key="layoutMargins" top="0.0" left="22" bottom="0.0" right="22"/>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="py0-tW-03v" secondAttribute="bottom" id="3YN-IW-05O"/>
-                                                            <constraint firstItem="py0-tW-03v" firstAttribute="leading" secondItem="5Ww-dn-Wu7" secondAttribute="leading" id="Sue-TF-yRh"/>
-                                                            <constraint firstAttribute="trailing" secondItem="py0-tW-03v" secondAttribute="trailing" id="amk-7O-Q9s"/>
-                                                            <constraint firstItem="py0-tW-03v" firstAttribute="height" secondItem="5Ww-dn-Wu7" secondAttribute="height" id="kRW-Fw-WjT"/>
-                                                            <constraint firstItem="py0-tW-03v" firstAttribute="top" secondItem="5Ww-dn-Wu7" secondAttribute="top" id="t3h-Rz-Lt1"/>
-                                                        </constraints>
-                                                    </scrollView>
-                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="NfH-Vv-Rqf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="5Ww-dn-Wu7" secondAttribute="bottom" id="SBl-IW-4FD"/>
-                                                    <constraint firstItem="5Ww-dn-Wu7" firstAttribute="leading" secondItem="py7-1h-cUa" secondAttribute="leading" id="adH-5l-1BB"/>
-                                                    <constraint firstItem="5Ww-dn-Wu7" firstAttribute="top" secondItem="py7-1h-cUa" secondAttribute="top" id="lSF-Qx-SqL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5Ww-dn-Wu7" secondAttribute="trailing" id="qBF-Z7-zTH"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Sfz-Ii-PeX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-FB-fDO" userLabel="Yesterday Conditions Container">
@@ -505,7 +483,7 @@
                         <outlet property="overviewView" destination="nZD-bB-Mxh" id="NFq-Ta-aKl"/>
                         <outlet property="regionalNormalsContainer" destination="Xc6-eM-lda" id="UWp-cn-doI"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
-                        <outlet property="sunriseSunsetStack" destination="py0-tW-03v" id="mtk-Gc-Pna"/>
+                        <outlet property="sunriseSunsetView" destination="2Jq-ZT-dU8" id="ouP-sf-nGR"/>
                         <outlet property="warningsContainer" destination="kTa-rT-Ihg" id="9JL-3d-IZl"/>
                         <outlet property="warningsStack" destination="6b5-Bt-3LO" id="HSH-JL-Blf"/>
                         <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
