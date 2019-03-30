@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,10 +14,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertItem" customModule="Forecast" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WarningView" customModule="Forecast" customModuleProvider="target">
             <connections>
-                <outlet property="backdrop" destination="vGi-od-cUB" id="jQK-rc-4Ki"/>
-                <outlet property="contentView" destination="iN0-l3-epB" id="JW7-6d-vsy"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="sCa-VJ-Xzq"/>
                 <outlet property="descriptionLabel" destination="XwK-zV-W1Q" id="gA7-Y8-kfg"/>
                 <outlet property="iconLabel" destination="GhG-3M-V9B" id="HKX-fs-6Kg"/>
                 <outlet property="stack" destination="MY4-OX-B99" id="3Hz-bE-KVf"/>
@@ -27,11 +25,11 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGi-od-cUB" customClass="StyledView" customModule="Forecast" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-RT-xvx" userLabel="View With Margin">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exclamation-triangle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhG-3M-V9B">
@@ -41,7 +39,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MY4-OX-B99">
-                            <rect key="frame" x="67.5" y="12" width="275.5" height="16"/>
+                            <rect key="frame" x="67.5" y="6" width="275.5" height="28"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIAL WEATHER STATEMENT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-tp-QbU">
                                     <rect key="frame" x="0.0" y="0.0" width="213" height="16"/>
@@ -49,8 +47,8 @@
                                     <color key="textColor" name="White"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 18 8:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-zV-W1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="81" height="0.0"/>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 18 8:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-zV-W1Q">
+                                    <rect key="frame" x="0.0" y="16" width="81" height="12"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                     <color key="textColor" name="White"/>
                                     <nil key="highlightedColor"/>
@@ -58,40 +56,24 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <gestureRecognizers/>
                     <constraints>
-                        <constraint firstItem="GhG-3M-V9B" firstAttribute="centerY" secondItem="vGi-od-cUB" secondAttribute="centerY" id="0wo-cb-BFE"/>
-                        <constraint firstItem="GhG-3M-V9B" firstAttribute="leading" secondItem="vGi-od-cUB" secondAttribute="leading" constant="32" id="FhS-lu-ltL"/>
-                        <constraint firstItem="MY4-OX-B99" firstAttribute="centerY" secondItem="vGi-od-cUB" secondAttribute="centerY" id="c8Z-zX-EpO"/>
-                        <constraint firstItem="MY4-OX-B99" firstAttribute="leading" secondItem="GhG-3M-V9B" secondAttribute="trailing" constant="14" id="peL-eS-rJK"/>
-                        <constraint firstAttribute="trailing" secondItem="MY4-OX-B99" secondAttribute="trailing" constant="32" id="s9J-Mm-erP"/>
-                        <constraint firstAttribute="height" constant="40" id="xBM-t7-NQN"/>
+                        <constraint firstItem="MY4-OX-B99" firstAttribute="centerY" secondItem="0Qh-RT-xvx" secondAttribute="centerY" id="22Z-nZ-815"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="MY4-OX-B99" secondAttribute="trailing" id="2Wg-gQ-O8e"/>
+                        <constraint firstItem="GhG-3M-V9B" firstAttribute="leading" secondItem="0Qh-RT-xvx" secondAttribute="leadingMargin" id="X04-xY-dFF"/>
+                        <constraint firstItem="GhG-3M-V9B" firstAttribute="centerY" secondItem="0Qh-RT-xvx" secondAttribute="centerY" id="csE-4A-KFE"/>
+                        <constraint firstItem="MY4-OX-B99" firstAttribute="leading" secondItem="GhG-3M-V9B" secondAttribute="trailing" constant="14" id="hTc-Tn-uH9"/>
+                        <constraint firstAttribute="height" constant="40" id="qNd-RF-nNq"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                            <size key="value" width="0.0" height="0.0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                            <real key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.29999999999999999"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="32" bottom="0.0" trailing="32"/>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="vGi-od-cUB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BA5-aJ-MHr"/>
-                <constraint firstItem="vGi-od-cUB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZwW-Zd-kP8"/>
-                <constraint firstItem="vGi-od-cUB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="c36-vN-43q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vGi-od-cUB" secondAttribute="bottom" id="xPP-G6-kit"/>
+                <constraint firstItem="0Qh-RT-xvx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WJo-ua-DDQ"/>
+                <constraint firstAttribute="bottom" secondItem="0Qh-RT-xvx" secondAttribute="bottom" id="a8f-BZ-ZTh"/>
+                <constraint firstItem="0Qh-RT-xvx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="n0E-mf-vCA"/>
+                <constraint firstAttribute="trailing" secondItem="0Qh-RT-xvx" secondAttribute="trailing" id="uZb-c4-G6e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="b1c-Wc-Ysm" appends="YES" id="41f-da-Gue"/>
             </connections>

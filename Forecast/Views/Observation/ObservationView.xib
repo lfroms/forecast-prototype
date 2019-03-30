@@ -24,7 +24,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StyledView" customModule="Forecast" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
             <subviews>

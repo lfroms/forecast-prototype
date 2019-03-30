@@ -17,7 +17,6 @@
         <!--Options View Controller-->
         <scene sceneID="f3X-hJ-JRQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lcz-tc-cAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="overFullScreen" id="yTG-tI-60y" customClass="OptionsViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dmN-rS-u7j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -29,7 +28,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouG-GH-2ER" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
+                                        <view opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouG-GH-2ER" customClass="StyledView" customModule="Forecast" customModuleProvider="target">
                                             <rect key="frame" x="32" y="66" width="40" height="40"/>
                                             <subviews>
                                                 <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIq-Vr-Znq">
@@ -236,6 +235,7 @@
                         <outlet property="searchField" destination="q86-xG-52F" id="rHZ-aa-okt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcz-tc-cAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-863.20000000000005" y="133.74384236453201"/>
         </scene>

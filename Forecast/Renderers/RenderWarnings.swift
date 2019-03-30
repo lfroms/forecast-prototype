@@ -10,37 +10,39 @@ import UIKit
 
 extension MainViewController {
     func renderWarnings(_ data: WeatherQuery.Data.Weather) {
-        warningsStack.subviews.forEach({ $0.removeFromSuperview() })
-
         let events = data.warnings.events
-
+        
+        var warningItems: [WarningItem] = []
+        
         events?.forEach(
             { event in
-                let timestamp = event.dateTime?.timeStamp?.toDate("yyyyMMddhhmmss")?
+                let timestamp = event.dateTime?.timeStamp?
+                    .toDate("yyyyMMddhhmmss", region: .UTC)?
+                    .convertTo(region: .current)
                     .toFormat("MMM d h:mm a")
-
-                let subview = AlertItem().with(
-                    icon: iconForAlertPriority(event.priority),
+                
+                let url: URL? = {
+                    guard let url = data.warnings.url else {
+                        return nil
+                    }
+                    
+                    return URL(string: url)
+                }()
+                
+                let item = WarningItem(
                     title: event.description,
                     description: timestamp,
                     priority: event.priority,
-                    url: data.warnings.url
+                    url: url
                 )
-
-                warningsStack.addArrangedSubview(subview)
+                
+                warningItems.append(item)
             }
         )
-
-        if !warningsStack.arrangedSubviews.isEmpty {
-            if let priorityAsType = events?.first?.priority {
-                headerBlur.backgroundColor = getColorForAlertPriority(priorityAsType)
-                return
-            }
-        }
-
-        headerBlur.backgroundColor = .clear
+        
+        headerView.warnings = warningItems
     }
-
+    
     private func iconForAlertPriority(_ priority: WarningPriority?) -> String {
         switch priority {
         case .low?:

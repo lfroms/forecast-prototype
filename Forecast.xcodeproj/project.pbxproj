@@ -14,6 +14,8 @@
 		8006D122224C4F20001D1705 /* ObservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8006D121224C4F20001D1705 /* ObservationsView.swift */; };
 		8006D124224C550D001D1705 /* ObservationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8006D123224C550D001D1705 /* ObservationsView.xib */; };
 		8011D35121D3E8AD0007BB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051A6F921755BE7007290CF /* Assets.xcassets */; };
+		801952E6224FDE560035C314 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801952E5224FDE560035C314 /* HeaderView.swift */; };
+		801952E8224FDF0F0035C314 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801952E7224FDF0F0035C314 /* HeaderView.xib */; };
 		8025484B2186774B00118465 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025484A2186774B00118465 /* Theme.xcassets */; };
 		802596BC2235953000769D09 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802596BB2235953000769D09 /* ionicons.ttf */; };
 		802596C022359A3100769D09 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802596BF22359A3100769D09 /* API.swift */; };
@@ -31,8 +33,8 @@
 		807B7295217E7872002EE814 /* ObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ObservationView.swift */; };
 		807B7297217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */; };
 		8082208021ACD35900ACBE7E /* RenderWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082207F21ACD35900ACBE7E /* RenderWarnings.swift */; };
-		8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8082208121ACD56100ACBE7E /* AlertItem.xib */; };
-		8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* AlertItem.swift */; };
+		8082208221ACD56100ACBE7E /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8082208121ACD56100ACBE7E /* WarningView.xib */; };
+		8082208421ACD57A00ACBE7E /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* WarningView.swift */; };
 		808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
 		8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083538021D415E200AE5355 /* OptionsViewController.swift */; };
 		8084524B21E2DD080099E660 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8084524921E2DBB90099E660 /* Images.xcassets */; };
@@ -70,6 +72,8 @@
 		8000337B224C3BA7005DE9B0 /* UIView+FixInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FixInView.swift"; sourceTree = "<group>"; };
 		8006D121224C4F20001D1705 /* ObservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationsView.swift; sourceTree = "<group>"; };
 		8006D123224C550D001D1705 /* ObservationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObservationsView.xib; sourceTree = "<group>"; };
+		801952E5224FDE560035C314 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		801952E7224FDF0F0035C314 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		8025484A2186774B00118465 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		802596BB2235953000769D09 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		802596BF22359A3100769D09 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -90,8 +94,8 @@
 		807B7294217E7872002EE814 /* ObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		8082207F21ACD35900ACBE7E /* RenderWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderWarnings.swift; sourceTree = "<group>"; };
-		8082208121ACD56100ACBE7E /* AlertItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertItem.xib; sourceTree = "<group>"; };
-		8082208321ACD57A00ACBE7E /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		8082208121ACD56100ACBE7E /* WarningView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
+		8082208321ACD57A00ACBE7E /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		8083538021D415E200AE5355 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		8084524921E2DBB90099E660 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8091CC6B2234B05000BA8034 /* SiteListQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SiteListQuery.graphql; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				80A53909224EF23400ABB2B1 /* DailyForecasts */,
 				80A5390E224F081300ABB2B1 /* IconDetail */,
 				80A53913224F0A4600ABB2B1 /* IconDetails */,
+				801952E4224FDE3A0035C314 /* Header */,
+				801952E9224FE1E40035C314 /* WarningView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,13 +189,22 @@
 			path = Observations;
 			sourceTree = "<group>";
 		};
-		802443F4217A79EE0066F905 /* UI Components */ = {
+		801952E4224FDE3A0035C314 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				8082208121ACD56100ACBE7E /* AlertItem.xib */,
-				8082208321ACD57A00ACBE7E /* AlertItem.swift */,
+				801952E5224FDE560035C314 /* HeaderView.swift */,
+				801952E7224FDF0F0035C314 /* HeaderView.xib */,
 			);
-			path = "UI Components";
+			path = Header;
+			sourceTree = "<group>";
+		};
+		801952E9224FE1E40035C314 /* WarningView */ = {
+			isa = PBXGroup;
+			children = (
+				8082208321ACD57A00ACBE7E /* WarningView.swift */,
+				8082208121ACD56100ACBE7E /* WarningView.xib */,
+			);
+			path = WarningView;
 			sourceTree = "<group>";
 		};
 		802596BD2235998200769D09 /* Helpers */ = {
@@ -242,7 +257,6 @@
 				8000336C224C3686005DE9B0 /* Views */,
 				802596BD2235998200769D09 /* Helpers */,
 				80E6324C22349F4C0096FD6D /* GraphQL */,
-				802443F4217A79EE0066F905 /* UI Components */,
 				80EEB23D217A74A500AD4448 /* Fonts */,
 				80EEB23A217A745600AD4448 /* Controllers */,
 				802596BE223599AE00769D09 /* Renderers */,
@@ -449,6 +463,7 @@
 				8051A6FD21755BE7007290CF /* LaunchScreen.storyboard in Resources */,
 				80B9195521D06A50003D7E84 /* HourlyForecastView.xib in Resources */,
 				80A5390D224EF28B00ABB2B1 /* DailyForecastsView.xib in Resources */,
+				801952E8224FDF0F0035C314 /* HeaderView.xib in Resources */,
 				8000335F224BEB43005DE9B0 /* Options.storyboard in Resources */,
 				80A53907224EE4B100ABB2B1 /* HourlyForecastsView.xib in Resources */,
 				8091CC6C2234B05000BA8034 /* SiteListQuery.graphql in Resources */,
@@ -457,7 +472,7 @@
 				8051A6F821755BE6007290CF /* Main.storyboard in Resources */,
 				80E6324E22349F5A0096FD6D /* schema.json in Resources */,
 				80A53917224F0A9B00ABB2B1 /* IconDetailsView.xib in Resources */,
-				8082208221ACD56100ACBE7E /* AlertItem.xib in Resources */,
+				8082208221ACD56100ACBE7E /* WarningView.xib in Resources */,
 				808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */,
 				8084524B21E2DD080099E660 /* Images.xcassets in Resources */,
 				8025484B2186774B00118465 /* Theme.xcassets in Resources */,
@@ -557,13 +572,14 @@
 				8091CC6E2234BDB300BA8034 /* UserPreferences.swift in Sources */,
 				80D1AE8F21D03FA700168BA8 /* RenderForecast.swift in Sources */,
 				80B1D4012193D951006DD630 /* RenderCurrentConditions.swift in Sources */,
-				8082208421ACD57A00ACBE7E /* AlertItem.swift in Sources */,
+				8082208421ACD57A00ACBE7E /* WarningView.swift in Sources */,
 				807B7295217E7872002EE814 /* ObservationView.swift in Sources */,
 				80A2FBDF21AA2F020067A425 /* DailyForecastView.swift in Sources */,
 				80A53905224EE31600ABB2B1 /* HourlyForecastsView.swift in Sources */,
 				80631541224F1E3E00F63D4A /* StyledView.swift in Sources */,
 				802596C022359A3100769D09 /* API.swift in Sources */,
 				8082208021ACD35900ACBE7E /* RenderWarnings.swift in Sources */,
+				801952E6224FDE560035C314 /* HeaderView.swift in Sources */,
 				80B9195721D07F12003D7E84 /* RenderSunriseSunset.swift in Sources */,
 				8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */,
 				80731E7021A24F7000B40F42 /* GlobalExtensions.swift in Sources */,

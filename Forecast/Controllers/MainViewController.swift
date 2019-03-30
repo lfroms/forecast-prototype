@@ -25,8 +25,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var regionalNormalsContainerView: UIStackView!
     @IBOutlet var regionalNormalsIconDetailView: IconDetailsView!
     
+    @IBOutlet var headerView: HeaderView!
+    
     @IBOutlet var blurView: UIVisualEffectView!
-    @IBOutlet var headerBlur: UIVisualEffectView!
     
     @IBOutlet var cogIcon: UIButton!
     @IBOutlet var weatherGraphic: UIImageView!
@@ -34,9 +35,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var currentConditionsContainer: UIView!
     @IBOutlet var forecastsStack: UIStackView!
     
-    @IBOutlet var warningsStack: UIStackView!
     @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
-    @IBOutlet var warningsContainer: StyledView!
     
     private var blurAnimator: UIViewPropertyAnimator?
     private var headerAnimator: UIViewPropertyAnimator?
@@ -49,16 +48,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.delegate = self
         
         self.blurView.effect = nil
-        self.headerBlur.effect = nil
-        
-        self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            self.blurView.effect = UIBlurEffect(style: .dark)
-            self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        }
-        
-        self.headerAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            self.headerBlur.effect = UIBlurEffect(style: .light)
-        }
+//        self.headerBlur.effect = nil
+//
+//        self.blurAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+//            self.blurView.effect = UIBlurEffect(style: .dark)
+//            self.blurView.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+//        }
         
         self.graphicAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.weatherGraphic.alpha = 0.4
@@ -102,8 +97,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         let limitedBlur = min(blurPercentage, 0.5)
         
-        headerAnimator?.fractionComplete =
-            warningsStack.arrangedSubviews.isEmpty ? limitedBlur : 0
+        headerView.animationProgress = limitedBlur
         
         self.graphicAnimator?.fractionComplete = graphicPercentage
         self.blurAnimator?.fractionComplete = limitedBlur
@@ -127,7 +121,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 constant: bottomInset > 0 ? bottomInset : 10
             ).isActive = true
         
-        weatherGraphicOffset.constant = warningsContainer.frame.height
+        weatherGraphicOffset.constant = headerView.warningsHeight
     }
     
     func render(_ result: GraphQLResult<WeatherQuery.Data>?) {

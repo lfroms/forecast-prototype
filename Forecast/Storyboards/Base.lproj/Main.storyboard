@@ -232,45 +232,11 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="tZR-sK-ZWT"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-rT-Ihg" userLabel="Warnings Container" customClass="UIStyledView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="45" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6b5-Bt-3LO" userLabel="Warnings Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="6b5-Bt-3LO" firstAttribute="top" secondItem="kTa-rT-Ihg" secondAttribute="top" id="Hxb-Az-L1M"/>
-                                    <constraint firstAttribute="trailing" secondItem="6b5-Bt-3LO" secondAttribute="trailing" id="gPv-Cn-vbq"/>
-                                    <constraint firstAttribute="bottom" secondItem="6b5-Bt-3LO" secondAttribute="bottom" id="vMB-iG-vw6"/>
-                                    <constraint firstItem="6b5-Bt-3LO" firstAttribute="leading" secondItem="kTa-rT-Ihg" secondAttribute="leading" id="vfQ-79-Gyi"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.40000000000000002"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="-3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="84" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-ev-SN3" customClass="HeaderView" customModule="Forecast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                             </view>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-T9-d5M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gQy-Sp-tkR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75P-ZA-rbB" customClass="StyledView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="32" y="111" width="40" height="40"/>
+                                <rect key="frame" x="32" y="106" width="40" height="40"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-FG-EdK">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -316,25 +282,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.137581467628479" green="0.58733218908309937" blue="0.95298141241073608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="cj5-T9-d5M" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="1KE-0C-5Ff"/>
+                            <constraint firstItem="NMB-ev-SN3" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="3mu-Px-JgJ"/>
                             <constraint firstItem="75P-ZA-rbB" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" constant="32" id="4ln-fu-OQi"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="I7e-Wq-PgF"/>
-                            <constraint firstItem="gvM-yV-Y8o" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="Jp1-O0-ydS"/>
+                            <constraint firstAttribute="trailing" secondItem="NMB-ev-SN3" secondAttribute="trailing" id="ONl-R7-PC0"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="QzY-H9-wWP"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="trailing" secondItem="vDN-IN-SOG" secondAttribute="trailing" id="T7L-hR-WOX"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="WQT-cA-098"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="WrH-aM-m9m"/>
                             <constraint firstItem="SgN-nh-fJi" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="X3Q-EV-4t7"/>
                             <constraint firstAttribute="bottom" secondItem="Sbw-RK-jBL" secondAttribute="bottom" id="aCM-37-ZWn"/>
-                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="imt-zq-YgG"/>
                             <constraint firstAttribute="bottom" secondItem="SgN-nh-fJi" secondAttribute="bottom" id="inf-JB-yxV"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="top" secondItem="vDN-IN-SOG" secondAttribute="top" id="jCR-Iy-1e7"/>
-                            <constraint firstItem="cj5-T9-d5M" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oLb-yc-Sdg"/>
-                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="oMY-Bb-Byj"/>
-                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="kTa-rT-Ihg" secondAttribute="bottom" constant="22" id="u4A-SI-eH9"/>
-                            <constraint firstItem="cj5-T9-d5M" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="ufJ-K4-lh1"/>
+                            <constraint firstItem="NMB-ev-SN3" firstAttribute="leading" secondItem="vDN-IN-SOG" secondAttribute="leading" id="rk7-vv-jks"/>
+                            <constraint firstItem="75P-ZA-rbB" firstAttribute="top" secondItem="NMB-ev-SN3" secondAttribute="bottom" constant="22" id="uy2-oo-AwB"/>
                             <constraint firstItem="Sbw-RK-jBL" firstAttribute="leading" secondItem="gvM-yV-Y8o" secondAttribute="leading" id="yMc-Ri-1rz"/>
-                            <constraint firstItem="kTa-rT-Ihg" firstAttribute="top" secondItem="cj5-T9-d5M" secondAttribute="bottom" id="yP6-x5-Xuc"/>
                             <constraint firstItem="kpL-iM-LAn" firstAttribute="trailing" secondItem="gvM-yV-Y8o" secondAttribute="trailing" id="ziu-u3-z7Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvM-yV-Y8o"/>
@@ -347,7 +309,7 @@
                         <outlet property="currentConditionsContainer" destination="Zhx-Fk-mLP" id="4uP-vN-mHf"/>
                         <outlet property="dailyForecastsView" destination="npK-gD-Ofe" id="Tg6-sL-Mjr"/>
                         <outlet property="forecastsStack" destination="V8i-VA-bve" id="kdv-2f-dY6"/>
-                        <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
+                        <outlet property="headerView" destination="NMB-ev-SN3" id="c9r-IQ-SCZ"/>
                         <outlet property="hourlyForecastsView" destination="v78-mt-JLq" id="U0q-g1-7N8"/>
                         <outlet property="observationsView" destination="508-Wu-4bC" id="5ev-HB-GxC"/>
                         <outlet property="overviewView" destination="nZD-bB-Mxh" id="NFq-Ta-aKl"/>
@@ -355,8 +317,6 @@
                         <outlet property="regionalNormalsIconDetailView" destination="ev2-tD-KLl" id="yDP-eS-q9V"/>
                         <outlet property="scrollView" destination="Sbw-RK-jBL" id="tHR-jo-JPI"/>
                         <outlet property="sunriseSunsetView" destination="2Jq-ZT-dU8" id="ouP-sf-nGR"/>
-                        <outlet property="warningsContainer" destination="kTa-rT-Ihg" id="9JL-3d-IZl"/>
-                        <outlet property="warningsStack" destination="6b5-Bt-3LO" id="HSH-JL-Blf"/>
                         <outlet property="weatherGraphic" destination="kpL-iM-LAn" id="8dt-XZ-Y3a"/>
                         <outlet property="weatherGraphicOffset" destination="QzY-H9-wWP" id="bv8-mw-Imh"/>
                         <outlet property="yesterdayContainerView" destination="prY-zo-a0W" id="68o-vc-4El"/>
