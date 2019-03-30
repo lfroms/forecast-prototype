@@ -16,6 +16,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var overviewView: OverviewView!
     @IBOutlet var observationsView: ObservationsView!
+    @IBOutlet var hourlyForecastsView: HourlyForecastsView!
     
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var headerBlur: UIVisualEffectView!
@@ -24,14 +25,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var weatherGraphic: UIImageView!
     
     @IBOutlet var forecastStack: UIStackView!
-    @IBOutlet var hourlyForecastStack: UIStackView!
     @IBOutlet var sunriseSunsetStack: UIStackView!
     
     @IBOutlet var currentConditionsContainer: UIView!
     @IBOutlet var forecastsStack: UIStackView!
     
     @IBOutlet var noDailyForecastLabel: UILabel!
-    @IBOutlet var noHourlyForecastLabel: UILabel!
     
     @IBOutlet var warningsStack: UIStackView!
     @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!

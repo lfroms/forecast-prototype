@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourlyForecastsView" customModule="Forecast" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="6u7-Gc-k4r" id="Lxw-OJ-sYk"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="BnU-pS-VLT"/>
+                <outlet property="unavailableLabel" destination="4nU-5k-zh1" id="l4F-3t-lRZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="540" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6u7-Gc-k4r">
+                    <rect key="frame" x="0.0" y="0.0" width="540" height="200"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="LKg-o9-Rbb">
+                        <size key="itemSize" width="84" height="148"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hourly Forecast Unavailable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nU-5k-zh1">
+                    <rect key="frame" x="180" y="91.5" width="180.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6u7-Gc-k4r" secondAttribute="bottom" id="8kp-lr-foR"/>
+                <constraint firstItem="4nU-5k-zh1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UFm-Ez-V2A"/>
+                <constraint firstItem="6u7-Gc-k4r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cKY-lh-nCG"/>
+                <constraint firstAttribute="trailing" secondItem="6u7-Gc-k4r" secondAttribute="trailing" id="gQ6-i2-Vw5"/>
+                <constraint firstItem="6u7-Gc-k4r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hfP-7e-wky"/>
+                <constraint firstItem="4nU-5k-zh1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ugd-9G-2vg"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139.13043478260872" y="-197.54464285714286"/>
+        </view>
+    </objects>
+</document>

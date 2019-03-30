@@ -36,12 +36,12 @@ class ObservationView: UICollectionViewCell {
         commonInit()
     }
 
-    func commonInit() {
+    private func commonInit() {
         let className = String(describing: type(of: self))
         Bundle.main.loadNibNamed(className, owner: self, options: nil)
         view.fixInView(self, followsLayoutMargins: false)
     }
-    
+
     // MARK: - Configuration
 
     func configure(with item: ObservationItem) {
@@ -57,7 +57,7 @@ class ObservationView: UICollectionViewCell {
             prefixLabel.isHidden = true
         }
     }
-    
+
     // MARK: - Static Functions
 
     static func getClassName() -> String {

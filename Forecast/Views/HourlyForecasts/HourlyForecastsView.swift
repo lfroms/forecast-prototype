@@ -1,20 +1,23 @@
 //
-//  ObservationsView.swift
+//  HourlyForecasts.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2019-03-27.
+//  Created by Lukas Romsicki on 2019-03-29.
 //  Copyright © 2019 Lukas Romsicki. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ObservationsView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    @IBOutlet var contentView: UIView!
+class HourlyForecastsView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet private var contentView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private var unavailableLabel: UILabel!
     
-    var dataSourceItems: [ObservationItem] = [] {
+    var dataSourceItems: [HourlyForecastItem] = [] {
         didSet {
             collectionView.reloadData()
+            unavailableLabel.isHidden = dataSourceItems.count > 0
         }
     }
     
@@ -37,8 +40,8 @@ class ObservationsView: UIView, UICollectionViewDataSource, UICollectionViewDele
         collectionView.dataSource = self
         
         collectionView.register(
-            ObservationView.self,
-            forCellWithReuseIdentifier: ObservationView.getClassName()
+            HourlyForecastView.self,
+            forCellWithReuseIdentifier: HourlyForecastView.getClassName()
         )
     }
     
@@ -50,9 +53,9 @@ class ObservationsView: UIView, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ObservationView.getClassName(),
+            withReuseIdentifier: HourlyForecastView.getClassName(),
             for: indexPath
-        ) as! ObservationView
+        ) as! HourlyForecastView
         
         cell.configure(with: dataSourceItems[indexPath.row])
         return cell

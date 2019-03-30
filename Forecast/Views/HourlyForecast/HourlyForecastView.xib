@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,18 +16,18 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourlyItem" customModule="Forecast" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourlyForecastView" customModule="Forecast" customModuleProvider="target">
             <connections>
-                <outlet property="amPmLabel" destination="lqL-ua-BU8" id="PDA-vF-h36"/>
-                <outlet property="contentView" destination="iN0-l3-epB" id="QJk-yr-J29"/>
-                <outlet property="hourLabel" destination="fqh-SJ-bPr" id="wW0-KM-cJn"/>
-                <outlet property="iconLabel" destination="e7N-GJ-SAE" id="QoY-bw-h2e"/>
-                <outlet property="popContainer" destination="K6f-4m-NlI" id="VmO-zz-XCO"/>
-                <outlet property="popLabel" destination="GJP-98-I1r" id="eUx-rf-A0e"/>
-                <outlet property="temperatureContainer" destination="Lzv-lb-ri7" id="YzI-xJ-CQR"/>
-                <outlet property="temperatureLabel" destination="1T1-Xx-TUp" id="5Uc-6y-Wa2"/>
-                <outlet property="temperatureUnitsLabel" destination="QOD-dp-UL3" id="iC5-Ov-5bF"/>
-                <outlet property="windSpeedLabel" destination="4gR-l3-hXA" id="bTu-1e-1tT"/>
+                <outlet property="amPmLabel" destination="lqL-ua-BU8" id="k4y-3b-A0d"/>
+                <outlet property="hourLabel" destination="fqh-SJ-bPr" id="45x-bG-ed5"/>
+                <outlet property="iconLabel" destination="e7N-GJ-SAE" id="jeQ-Qi-L2z"/>
+                <outlet property="popContainer" destination="K6f-4m-NlI" id="lVr-MD-qZP"/>
+                <outlet property="popLabel" destination="GJP-98-I1r" id="HNx-qU-iKo"/>
+                <outlet property="temperatureContainer" destination="Lzv-lb-ri7" id="pXb-Ta-wKM"/>
+                <outlet property="temperatureLabel" destination="1T1-Xx-TUp" id="HwH-80-xcE"/>
+                <outlet property="temperatureUnitsLabel" destination="QOD-dp-UL3" id="Hc4-hA-2O0"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ra5-3r-DpS"/>
+                <outlet property="windSpeedLabel" destination="4gR-l3-hXA" id="IXR-Fr-CxP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

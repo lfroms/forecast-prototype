@@ -92,55 +92,34 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-VA-bve">
                                         <rect key="frame" x="0.0" y="742" width="375" height="643.33333333333348"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-qN-CIr" userLabel="Hourly Forecast Container">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y0f-Dd-ERH" userLabel="Hourly Forecast Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="223.66666666666666"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HOURLY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fml-Co-3Kj" userLabel="Hourly">
-                                                        <rect key="frame" x="31.999999999999996" y="0.0" width="54.666666666666657" height="15.666666666666666"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="UUh-Gc-XHS" userLabel="Hourly Forecast Scroll View">
-                                                        <rect key="frame" x="0.0" y="23.666666666666629" width="375" height="200"/>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bcF-P9-pSk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="15.666666666666666"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bpp-XU-A39">
-                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                                <edgeInsets key="layoutMargins" top="22" left="16" bottom="22" right="16"/>
-                                                            </stackView>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-Oa-qhm">
-                                                                <rect key="frame" x="95.000000000000014" y="91.666666666666742" width="185.33333333333337" height="17"/>
-                                                                <string key="text">No Hourly Forecast Available
-
-</string>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" text="HOURLY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fml-Co-3Kj" userLabel="Hourly">
+                                                                <rect key="frame" x="31.999999999999996" y="0.0" width="54.666666666666657" height="15.666666666666666"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="6KW-Oa-qhm" firstAttribute="centerX" secondItem="UUh-Gc-XHS" secondAttribute="centerX" id="Atp-4i-8bR"/>
-                                                            <constraint firstItem="Bpp-XU-A39" firstAttribute="height" secondItem="UUh-Gc-XHS" secondAttribute="height" id="JT9-UO-7Qp"/>
-                                                            <constraint firstItem="Bpp-XU-A39" firstAttribute="top" secondItem="UUh-Gc-XHS" secondAttribute="top" id="hEa-J4-BKd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Bpp-XU-A39" secondAttribute="trailing" id="hhz-Bv-Esv"/>
-                                                            <constraint firstItem="6KW-Oa-qhm" firstAttribute="centerY" secondItem="UUh-Gc-XHS" secondAttribute="centerY" id="ktg-ea-moc"/>
-                                                            <constraint firstItem="Bpp-XU-A39" firstAttribute="leading" secondItem="UUh-Gc-XHS" secondAttribute="leading" id="sTz-wB-MMO"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Bpp-XU-A39" secondAttribute="bottom" id="xZD-df-v3A"/>
-                                                            <constraint firstAttribute="height" constant="200" id="yt3-q4-6as"/>
+                                                            <constraint firstItem="Fml-Co-3Kj" firstAttribute="top" secondItem="bcF-P9-pSk" secondAttribute="top" id="WVJ-xX-fmc"/>
+                                                            <constraint firstItem="Fml-Co-3Kj" firstAttribute="leading" secondItem="bcF-P9-pSk" secondAttribute="leading" constant="32" id="ds5-6E-qbg"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fml-Co-3Kj" secondAttribute="trailing" constant="32" id="hcV-kn-n4J"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Fml-Co-3Kj" secondAttribute="bottom" id="o0I-hm-faL"/>
                                                         </constraints>
-                                                    </scrollView>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v78-mt-JLq" customClass="HourlyForecastsView" customModule="Forecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="23.666666666666629" width="375" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="Iw1-9S-GDV"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="UUh-Gc-XHS" firstAttribute="leading" secondItem="GGx-qN-CIr" secondAttribute="leading" id="2RY-Ik-GZZ"/>
-                                                    <constraint firstItem="Fml-Co-3Kj" firstAttribute="top" secondItem="GGx-qN-CIr" secondAttribute="top" id="Laz-X0-7Qd"/>
-                                                    <constraint firstItem="Fml-Co-3Kj" firstAttribute="leading" secondItem="GGx-qN-CIr" secondAttribute="leading" constant="32" id="MyR-sX-uJt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="UUh-Gc-XHS" secondAttribute="trailing" id="Zhp-C4-aZW"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fml-Co-3Kj" secondAttribute="trailing" constant="20" symbolic="YES" id="eQM-nS-BqQ"/>
-                                                    <constraint firstItem="UUh-Gc-XHS" firstAttribute="top" secondItem="Fml-Co-3Kj" secondAttribute="bottom" constant="8" id="fsZ-G8-1xA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="UUh-Gc-XHS" secondAttribute="bottom" id="ykf-Sd-Icq"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-Bv-mzh" userLabel="Daily Forecast Container">
                                                 <rect key="frame" x="0.0" y="255.6666666666666" width="375" height="123.66666666666666"/>
                                                 <subviews>
@@ -528,9 +507,8 @@
                         <outlet property="forecastStack" destination="elt-qh-lTA" id="2cY-S0-uRq"/>
                         <outlet property="forecastsStack" destination="V8i-VA-bve" id="kdv-2f-dY6"/>
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
-                        <outlet property="hourlyForecastStack" destination="Bpp-XU-A39" id="lZT-Lh-qAi"/>
+                        <outlet property="hourlyForecastsView" destination="v78-mt-JLq" id="U0q-g1-7N8"/>
                         <outlet property="noDailyForecastLabel" destination="vmx-FZ-pvg" id="Blk-kx-Iel"/>
-                        <outlet property="noHourlyForecastLabel" destination="6KW-Oa-qhm" id="vke-Ii-XZp"/>
                         <outlet property="normalHighLabel" destination="KVn-8R-3Ne" id="ZQJ-LN-w0V"/>
                         <outlet property="normalLowLabel" destination="Am9-uG-Oxg" id="bc8-i7-d1p"/>
                         <outlet property="observationsView" destination="508-Wu-4bC" id="5ev-HB-GxC"/>
