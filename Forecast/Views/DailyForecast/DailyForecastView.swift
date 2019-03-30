@@ -46,6 +46,8 @@ class DailyForecastView: UIView {
         contentView.fixInView(self, followsLayoutMargins: false)
     }
     
+    // MARK: - Configuration
+    
     func configure(with item: DailyForecastItem) {
         iconLabel.text = item.icon
         dayLabel.text = item.day

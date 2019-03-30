@@ -15,7 +15,7 @@ extension UIView {
         self.frame = container.frame
         container.addSubview(self)
 
-        let topMargin = followsLayoutMargins ? container.layoutMargins.left : 0
+        let topMargin = followsLayoutMargins ? container.layoutMargins.top : 0
         let bottomMargin = followsLayoutMargins ? -container.layoutMargins.bottom : 0
         let leftMargin = followsLayoutMargins ? container.layoutMargins.left : 0
         let rightMargin = followsLayoutMargins ? -container.layoutMargins.right : 0

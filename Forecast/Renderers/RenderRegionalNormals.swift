@@ -10,23 +10,25 @@ import Foundation
 
 extension MainViewController {
     func renderRegionalNormals(_ data: WeatherQuery.Data.Weather) {
-        self.regionalNormalsContainer.isHidden = false
         let rn = data.forecastGroup.regionalNormals
         
-        let high = rn.temperature.first(where: { $0.class == "high" })
-        let low = rn.temperature.first(where: { $0.class == "low" })
+        var regionalNormalsItems: [IconDetailItem] = []
         
-        guard
-            high != nil,
-            low != nil,
-            high?.value != nil,
-            low?.value != nil
-        else {
-            self.regionalNormalsContainer.isHidden = true
-            return
+        if let high = rn.temperature.first(where: { $0.class == "high" }) {
+            let temperature = Temperature.toPreferredUnit(high.value)
+            let item = IconDetailItem(icon: "arrow-up", detail: temperature + "°")
+            
+            regionalNormalsItems.append(item)
         }
         
-        self.normalHighLabel.text = Temperature.toPreferredUnit(high?.value, round: true) + "°"
-        self.normalLowLabel.text = Temperature.toPreferredUnit(low?.value, round: true) + "°"
+        if let low = rn.temperature.first(where: { $0.class == "low" }) {
+            let temperature = Temperature.toPreferredUnit(low.value)
+            let item = IconDetailItem(icon: "arrow-down", detail: temperature + "°")
+            
+            regionalNormalsItems.append(item)
+        }
+        
+        regionalNormalsIconDetailView.dataSourceItems = regionalNormalsItems
+        regionalNormalsContainerView.isHidden = regionalNormalsItems.isEmpty
     }
 }

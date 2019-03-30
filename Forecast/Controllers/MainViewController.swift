@@ -20,6 +20,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var dailyForecastsView: DailyForecastsView!
     @IBOutlet var sunriseSunsetView: ObservationsView!
     
+    @IBOutlet var yesterdayContainerView: UIStackView!
+    @IBOutlet var yesterdayIconDetailView: IconDetailsView!
+    
+    @IBOutlet var regionalNormalsContainerView: UIStackView!
+    @IBOutlet var regionalNormalsIconDetailView: IconDetailsView!
+    
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var headerBlur: UIVisualEffectView!
     
@@ -32,15 +38,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var warningsStack: UIStackView!
     @IBOutlet var weatherGraphicOffset: NSLayoutConstraint!
     @IBOutlet var warningsContainer: UIStyledView!
-    
-    @IBOutlet var yesterdayConditionsContainer: UIView!
-    @IBOutlet var yesterdayHighLabel: UILabel!
-    @IBOutlet var yesterdayLowLabel: UILabel!
-    @IBOutlet var yesterdayPrecipLabel: UILabel!
-    
-    @IBOutlet var regionalNormalsContainer: UIView!
-    @IBOutlet var normalHighLabel: UILabel!
-    @IBOutlet var normalLowLabel: UILabel!
     
     private var blurAnimator: UIViewPropertyAnimator?
     private var headerAnimator: UIViewPropertyAnimator?

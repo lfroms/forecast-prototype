@@ -12,32 +12,32 @@ import UIKit
 
 extension MainViewController {
     func renderYesterdayConditions(_ data: WeatherQuery.Data.Weather) {
-        self.yesterdayConditionsContainer.isHidden = false
         let yc = data.yesterdayConditions
 
-        let high = yc.temperature.first(where: { $0.class == "high" })
-        let low = yc.temperature.first(where: { $0.class == "low" })
-        let precip = yc.precip.first
+        var yesterdayConditionItems: [IconDetailItem] = []
 
-        guard
-            high != nil,
-            low != nil,
-            precip != nil,
-            precip?.value != nil,
-            high?.value != nil,
-            low?.value != nil
-        else {
-            self.yesterdayConditionsContainer.isHidden = true
-            return
+        if let high = yc.temperature.first(where: { $0.class == "high" }) {
+            let temperature = Temperature.toPreferredUnit(high.value)
+            let item = IconDetailItem(icon: "arrow-up", detail: temperature + "°")
+
+            yesterdayConditionItems.append(item)
         }
 
-        self.yesterdayHighLabel.text = Temperature.toPreferredUnit(high?.value) + "°"
-        self.yesterdayLowLabel.text = Temperature.toPreferredUnit(low?.value) + "°"
+        if let low = yc.temperature.first(where: { $0.class == "low" }) {
+            let temperature = Temperature.toPreferredUnit(low.value)
+            let item = IconDetailItem(icon: "arrow-down", detail: temperature + "°")
 
-        if let _ = Float(precip!.value!) {
-            self.yesterdayPrecipLabel.text = precip!.value! + precip!.units
-        } else {
-            self.yesterdayPrecipLabel.text = precip?.value
+            yesterdayConditionItems.append(item)
         }
+
+        if let precip = yc.precip.first, let value = precip.value {
+            let precipFormatted = Float(value) != nil ? value + precip.units : value
+            let item = IconDetailItem(icon: "tint", detail: precipFormatted)
+
+            yesterdayConditionItems.append(item)
+        }
+
+        yesterdayIconDetailView.dataSourceItems = yesterdayConditionItems
+        yesterdayContainerView.isHidden = yesterdayConditionItems.isEmpty
     }
 }
