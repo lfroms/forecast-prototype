@@ -90,7 +90,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-VA-bve">
-                                        <rect key="frame" x="0.0" y="742" width="375" height="643.33333333333348"/>
+                                        <rect key="frame" x="0.0" y="742" width="375" height="703.33333333333348"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y0f-Dd-ERH" userLabel="Hourly Forecast Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="223.66666666666666"/>
@@ -120,45 +120,36 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-Bv-mzh" userLabel="Daily Forecast Container">
-                                                <rect key="frame" x="0.0" y="255.6666666666666" width="375" height="123.66666666666666"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rse-Wk-Nqh" userLabel="Daily Forecast Container">
+                                                <rect key="frame" x="0.0" y="255.66666666666663" width="375" height="183.66666666666663"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="DAILY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-RO-0qP" userLabel="Daily">
-                                                        <rect key="frame" x="32" y="0.0" width="38.333333333333343" height="15.666666666666666"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="elt-qh-lTA">
-                                                        <rect key="frame" x="0.0" y="23.666666666666742" width="375" height="100"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-tg-SQR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="15.666666666666666"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="DAILY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-RO-0qP" userLabel="Daily">
+                                                                <rect key="frame" x="32" y="0.0" width="38.333333333333343" height="15.666666666666666"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="9lr-cE-sGm"/>
+                                                            <constraint firstItem="Laq-RO-0qP" firstAttribute="leading" secondItem="tXi-tg-SQR" secondAttribute="leading" constant="32" id="VhE-Qy-UOA"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Laq-RO-0qP" secondAttribute="bottom" id="nRV-x4-BPn"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Laq-RO-0qP" secondAttribute="trailing" constant="32" id="r7C-UT-Q9q"/>
+                                                            <constraint firstItem="Laq-RO-0qP" firstAttribute="top" secondItem="tXi-tg-SQR" secondAttribute="top" id="wkw-kL-56B"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-FZ-pvg">
-                                                        <rect key="frame" x="100.33333333333333" y="65.333333333333371" width="174.66666666666669" height="17"/>
-                                                        <string key="text">No Daily Forecast Available
-
-</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npK-gD-Ofe" customClass="DailyForecastsView" customModule="Forecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="23.666666666666742" width="375" height="160"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="I8M-xd-amU"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="vmx-FZ-pvg" firstAttribute="centerX" secondItem="Cfj-Bv-mzh" secondAttribute="centerX" id="35w-zu-Wqw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="elt-qh-lTA" secondAttribute="bottom" id="5vQ-ec-tnf"/>
-                                                    <constraint firstItem="Laq-RO-0qP" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" constant="32" id="DVw-d8-AwN"/>
-                                                    <constraint firstItem="elt-qh-lTA" firstAttribute="leading" secondItem="Cfj-Bv-mzh" secondAttribute="leading" id="OOP-KY-JhZ"/>
-                                                    <constraint firstItem="vmx-FZ-pvg" firstAttribute="centerY" secondItem="elt-qh-lTA" secondAttribute="centerY" id="ieJ-bV-T2F"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Laq-RO-0qP" secondAttribute="trailing" constant="20" symbolic="YES" id="jud-PI-rLT"/>
-                                                    <constraint firstItem="Laq-RO-0qP" firstAttribute="top" secondItem="Cfj-Bv-mzh" secondAttribute="top" id="l2L-W8-nKp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="elt-qh-lTA" secondAttribute="trailing" id="lA2-nd-89F"/>
-                                                    <constraint firstItem="elt-qh-lTA" firstAttribute="top" secondItem="Laq-RO-0qP" secondAttribute="bottom" constant="8" id="r7z-uC-15c"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py7-1h-cUa" userLabel="Sunrise/Sunset Container">
-                                                <rect key="frame" x="0.0" y="411.33333333333326" width="375" height="60"/>
+                                                <rect key="frame" x="0.0" y="471.33333333333326" width="375" height="60"/>
                                                 <subviews>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5Ww-dn-Wu7">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -186,7 +177,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-FB-fDO" userLabel="Yesterday Conditions Container">
-                                                <rect key="frame" x="0.0" y="503.33333333333331" width="375" height="54.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="563.33333333333326" width="375" height="54.666666666666629"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="YESTERDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZo-9c-lml" userLabel="Yesterday">
                                                         <rect key="frame" x="31.999999999999993" y="0.0" width="78.333333333333314" height="15.666666666666666"/>
@@ -295,7 +286,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xc6-eM-lda" userLabel="Regional Normals Container">
-                                                <rect key="frame" x="0.0" y="590" width="375" height="53.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="650" width="375" height="53.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="REGIONAL NORMALS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlk-61-X22" userLabel="Regional Normals">
                                                         <rect key="frame" x="32" y="0.0" width="138" height="15.666666666666666"/>
@@ -504,11 +495,10 @@
                         <outlet property="blurView" destination="SgN-nh-fJi" id="wUH-0c-VmB"/>
                         <outlet property="cogIcon" destination="P0O-7V-xDh" id="Kng-rg-1Nz"/>
                         <outlet property="currentConditionsContainer" destination="Zhx-Fk-mLP" id="4uP-vN-mHf"/>
-                        <outlet property="forecastStack" destination="elt-qh-lTA" id="2cY-S0-uRq"/>
+                        <outlet property="dailyForecastsView" destination="npK-gD-Ofe" id="Tg6-sL-Mjr"/>
                         <outlet property="forecastsStack" destination="V8i-VA-bve" id="kdv-2f-dY6"/>
                         <outlet property="headerBlur" destination="cj5-T9-d5M" id="LK2-po-UHb"/>
                         <outlet property="hourlyForecastsView" destination="v78-mt-JLq" id="U0q-g1-7N8"/>
-                        <outlet property="noDailyForecastLabel" destination="vmx-FZ-pvg" id="Blk-kx-Iel"/>
                         <outlet property="normalHighLabel" destination="KVn-8R-3Ne" id="ZQJ-LN-w0V"/>
                         <outlet property="normalLowLabel" destination="Am9-uG-Oxg" id="bc8-i7-d1p"/>
                         <outlet property="observationsView" destination="508-Wu-4bC" id="5ev-HB-GxC"/>

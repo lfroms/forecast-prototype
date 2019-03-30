@@ -11,7 +11,7 @@ import Foundation
 extension MainViewController {
     func renderHourlyForecast(_ data: WeatherQuery.Data.Weather) {
         var hourlyForecastItems: [HourlyForecastItem] = []
-        
+
         data.hourlyForecastGroup?.hourlyForecast.forEach(
             { item in
                 let forecastItem = HourlyForecastItem(
@@ -23,11 +23,11 @@ extension MainViewController {
                     windSpeedUnits: item.wind.speed.units,
                     pop: item.lop.value
                 )
-                
+
                 hourlyForecastItems.append(forecastItem)
             }
         )
-        
+
         hourlyForecastsView.dataSourceItems = hourlyForecastItems
     }
 }

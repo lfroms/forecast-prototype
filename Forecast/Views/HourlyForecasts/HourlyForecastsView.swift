@@ -1,5 +1,5 @@
 //
-//  HourlyForecasts.swift
+//  HourlyForecastsView.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2019-03-29.
@@ -17,7 +17,7 @@ class HourlyForecastsView: UIView, UICollectionViewDataSource, UICollectionViewD
     var dataSourceItems: [HourlyForecastItem] = [] {
         didSet {
             collectionView.reloadData()
-            unavailableLabel.isHidden = dataSourceItems.count > 0
+            unavailableLabel.isHidden = !dataSourceItems.isEmpty
         }
     }
     

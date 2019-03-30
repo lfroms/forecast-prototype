@@ -10,29 +10,25 @@ import Foundation
 
 extension MainViewController {
     func renderForecast(_ data: WeatherQuery.Data.Weather) {
-        noDailyForecastLabel.isHidden = true
-        forecastStack.subviews.forEach({ $0.removeFromSuperview() })
-
-        guard data.forecastGroup.forecast.count > 0 else {
-            self.noDailyForecastLabel.isHidden = false
-            return
-        }
+        var dailyForecastItems: [DailyForecastItem] = []
 
         data.forecastGroup.forecast.forEach(
             { item in
                 let temperature = item.temperatures.temperature.first?.value ?? ""
 
-                let subview = ForecastItem().with(
+                let forecastItem = DailyForecastItem(
                     icon: ForecastIcon.forCode(item.abbreviatedForecast.iconCode?.value ?? "00"),
                     day: item.period.textForecastName,
                     temperature: Temperature.toPreferredUnit(temperature, round: true),
-                    units: Temperature.currentUnit(symbol: true),
+                    temperatureUnits: Temperature.currentUnit(symbol: true),
                     description: item.abbreviatedForecast.textSummary,
                     pop: item.abbreviatedForecast.pop?.value
                 )
 
-                forecastStack.addArrangedSubview(subview)
+                dailyForecastItems.append(forecastItem)
             }
         )
+
+        dailyForecastsView.dataSourceItems = dailyForecastItems
     }
 }

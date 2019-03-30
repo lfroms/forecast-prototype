@@ -78,7 +78,7 @@ class HourlyForecastView: UICollectionViewCell {
             windSpeedLabel.text = "\(windSpeed) \(units)"
         }
 
-        if let pop = item.pop {
+        if let pop = item.pop, !pop.isEmpty {
             popLabel.text = pop + "%"
             popContainer.isHidden = false
         } else {

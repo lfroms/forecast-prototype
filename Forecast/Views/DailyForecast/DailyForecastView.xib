@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,14 +16,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastItem" customModule="Forecast" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyForecastView" customModule="Forecast" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="QJk-yr-J29"/>
                 <outlet property="dayLabel" destination="dot-AL-Zlh" id="ZJp-hj-0Ku"/>
                 <outlet property="descriptionLabel" destination="K6i-Od-9Kd" id="dDI-iW-ve9"/>
                 <outlet property="iconLabel" destination="OZL-p1-iRq" id="HZQ-LP-UWo"/>
                 <outlet property="popContainer" destination="huh-YW-oOM" id="zbT-F0-Ztb"/>
-                <outlet property="popLabel" destination="oIp-ff-WQp" id="JXb-aO-lWd"/>
+                <outlet property="popLabel" destination="oIp-ff-WQp" id="ked-PM-l5S"/>
                 <outlet property="temperatureContainer" destination="Efi-8q-cza" id="9gc-mm-uhr"/>
                 <outlet property="temperatureLabel" destination="Pbb-Mk-n17" id="pXY-gw-NIE"/>
                 <outlet property="unitsLabel" destination="rqq-DE-5Ll" id="U8u-f6-hAA"/>
