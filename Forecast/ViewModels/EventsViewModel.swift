@@ -1,17 +1,23 @@
 //
-//  RenderWarnings.swift
+//  EventsViewModel.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-11-26.
 //  Copyright © 2018 Lukas Romsicki. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-extension MainViewController {
-    func renderWarnings(_ data: WeatherQuery.Data.Weather) {
-        let events = data.warnings.events
-        
+struct EventsViewModel {
+    private let events: [WeatherQuery.Data.Weather.Warning.Event]?
+    private let url: String?
+    
+    init(_ events: [WeatherQuery.Data.Weather.Warning.Event]?, url: String?) {
+        self.events = events
+        self.url = url
+    }
+    
+    var items: [WarningItem] {
         var warningItems: [WarningItem] = []
         
         events?.forEach(
@@ -21,8 +27,8 @@ extension MainViewController {
                     .convertTo(region: .current)
                     .toFormat("MMM d h:mm a")
                 
-                let url: URL? = {
-                    guard let url = data.warnings.url else {
+                let warningURL: URL? = {
+                    guard let url = self.url else {
                         return nil
                     }
                     
@@ -34,13 +40,13 @@ extension MainViewController {
                     description: timestamp,
                     priority: event.priority,
                     type: event.type,
-                    url: url
+                    url: warningURL
                 )
                 
                 warningItems.append(item)
             }
         )
         
-        headerView.warnings = warningItems
+        return warningItems
     }
 }

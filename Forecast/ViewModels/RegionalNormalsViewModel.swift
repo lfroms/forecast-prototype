@@ -1,5 +1,5 @@
 //
-//  RenderRegionalNormals.swift
+//  RegionalNormalsViewModel.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2019-03-10.
@@ -8,27 +8,30 @@
 
 import Foundation
 
-extension MainViewController {
-    func renderRegionalNormals(_ data: WeatherQuery.Data.Weather) {
-        let rn = data.forecastGroup.regionalNormals
-        
+struct RegionalNormalsViewModel {
+    private let regionalNormals: WeatherQuery.Data.Weather.ForecastGroup.RegionalNormal
+    
+    init(_ regionalNormals: WeatherQuery.Data.Weather.ForecastGroup.RegionalNormal) {
+        self.regionalNormals = regionalNormals
+    }
+    
+    var items: [IconDetailItem] {
         var regionalNormalsItems: [IconDetailItem] = []
         
-        if let high = rn.temperature.first(where: { $0.class == "high" }) {
+        if let high = regionalNormals.temperature.first(where: { $0.class == "high" }) {
             let temperature = Temperature.toPreferredUnit(high.value, round: true)
             let item = IconDetailItem(icon: "arrow-up", detail: temperature + "°")
             
             regionalNormalsItems.append(item)
         }
         
-        if let low = rn.temperature.first(where: { $0.class == "low" }) {
+        if let low = regionalNormals.temperature.first(where: { $0.class == "low" }) {
             let temperature = Temperature.toPreferredUnit(low.value, round: true)
             let item = IconDetailItem(icon: "arrow-down", detail: temperature + "°")
             
             regionalNormalsItems.append(item)
         }
         
-        regionalNormalsIconDetailView.dataSourceItems = regionalNormalsItems
-        regionalNormalsContainerView.isHidden = regionalNormalsItems.isEmpty
+        return regionalNormalsItems
     }
 }

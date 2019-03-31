@@ -1,77 +1,22 @@
 //
-//  RenderCurrentConditions.swift
+//  ObservationsViewModel.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2018-11-07.
-//  Copyright © 2018 Lukas Romsicki. All rights reserved.
+//  Created by Lukas Romsicki on 2019-03-30.
+//  Copyright © 2019 Lukas Romsicki. All rights reserved.
 //
 
-import SwiftDate
-import UIKit
+import Foundation
 
-extension MainViewController {
-    func renderOverview(_ data: WeatherQuery.Data.Weather) {
-        let cc = data.currentConditions
-        let fc = data.forecastGroup.forecast
-        
-        // MARK: - Current Temperature 🌡
-        
-        let mainTemperature = Temperature.toPreferredUnit(cc.temperature?.value, round: true)
-        overviewView.temperature = mainTemperature
-        
-        // MARK: - Current Condition ⛅️
-        
-        overviewView.currentCondition = cc.condition
-        
-        // MARK: - Forecast High ⇡
-        
-        let forecastHigh =
-            fc.first(where: { $0.period.textForecastName == "Today" })?
-            .temperatures.temperature.first?.value
-        
-        overviewView.highTemp = forecastHigh
-        
-        // MARK: - Forecast Low ⇣
-        
-        let forecastLow =
-            fc.first(where: { $0.period.textForecastName == "Tonight" })?
-            .temperatures.temperature.first?.value
-        
-        overviewView.lowTemp = forecastLow
-        
-        // MARK: - Date and Time 📆
-        
-        overviewView.dateStamp = cc.dateTime?.timeStamp
-        
-        // MARK: - Station Name 📡
-        
-        overviewView.stationName = data.location.name.value
+struct ObservationsViewModel {
+    let currentConditions: WeatherQuery.Data.Weather.CurrentCondition
+    
+    init(_ currentConditions: WeatherQuery.Data.Weather.CurrentCondition) {
+        self.currentConditions = currentConditions
     }
     
-    func renderMetadata(_ data: WeatherQuery.Data.Weather) {
-        let cc = data.currentConditions
-        
-        UIView.animate(
-            withDuration: 0.5, delay: 0.0, animations: {
-                if let code = cc.iconCode?.value, code != "" {
-                    self.view.backgroundColor = UIColor(named: code)
-                } else {
-                    self.view.backgroundColor = UIColor(named: "06")
-                }
-            }, completion: nil
-        )
-        
-        if let code = cc.iconCode?.value, code != "" {
-            self.illustration.image = UIImage(named: code + "-image")?.aspectFitImage(inRect: self.illustration.frame)
-        } else {
-            self.illustration.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.illustration.frame)
-        }
-        
-        self.illustration.contentMode = .top
-    }
-    
-    func renderObservations(_ data: WeatherQuery.Data.Weather) {
-        let cc = data.currentConditions
+    var items: [ObservationItem] {
+        let cc = currentConditions
         
         var observations: [ObservationItem] = []
         
@@ -194,7 +139,6 @@ extension MainViewController {
             observations.append(item)
         }
         
-        observationsView.isHidden = observations.isEmpty
-        observationsView.dataSourceItems = observations
+        return observations
     }
 }

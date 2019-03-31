@@ -1,31 +1,13 @@
 //
-//  GlobalExtensions.swift
+//  UIImage+AspectFitImage.swift
 //  Forecast
 //
-//  Created by Lukas Romsicki on 2018-11-18.
-//  Copyright © 2018 Lukas Romsicki. All rights reserved.
+//  Created by Lukas Romsicki on 2019-03-30.
+//  Copyright © 2019 Lukas Romsicki. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-extension Float {
-    func asRoundedString() -> String {
-        // Add 0.0 to address -0 issue.
-        return String(format: "%.0f", self.rounded() + 0.0)
-    }
-
-    func toString() -> String {
-        return String(self)
-    }
-}
-
-extension String {
-    func hasWhiteSpace() -> Bool {
-        let charset = CharacterSet(charactersIn: " ")
-        return self.lowercased().rangeOfCharacter(from: charset) != nil
-    }
-}
 
 extension UIImage {
     func aspectFitImage(inRect rect: CGRect) -> UIImage? {

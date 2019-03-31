@@ -1,5 +1,5 @@
 //
-//  RenderHourlyForecast.swift
+//  HourlyForecastsViewModel.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-12-23.
@@ -8,11 +8,17 @@
 
 import Foundation
 
-extension MainViewController {
-    func renderHourlyForecast(_ data: WeatherQuery.Data.Weather) {
+struct HourlyForecastsViewModel {
+    private let hourlyForecastEntries: [WeatherQuery.Data.Weather.HourlyForecastGroup.HourlyForecast]?
+
+    init(_ hourlyForecastEntries: [WeatherQuery.Data.Weather.HourlyForecastGroup.HourlyForecast]?) {
+        self.hourlyForecastEntries = hourlyForecastEntries
+    }
+
+    var items: [HourlyForecastItem] {
         var hourlyForecastItems: [HourlyForecastItem] = []
 
-        data.hourlyForecastGroup?.hourlyForecast.forEach(
+        hourlyForecastEntries?.forEach(
             { item in
                 let forecastItem = HourlyForecastItem(
                     timeStamp: item.dateTimeUtc,
@@ -28,6 +34,6 @@ extension MainViewController {
             }
         )
 
-        hourlyForecastsView.dataSourceItems = hourlyForecastItems
+        return hourlyForecastItems
     }
 }

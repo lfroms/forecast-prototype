@@ -11,33 +11,35 @@ import SwiftDate
 import UIKit
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: UIScrollView!
     
-    @IBOutlet var headerView: HeaderView!
-    @IBOutlet var blurView: UIVisualEffectView!
-    @IBOutlet var illustration: UIImageView!
-    @IBOutlet var illustrationOffset: NSLayoutConstraint!
-    @IBOutlet var cogIcon: UIButton!
+    @IBOutlet private var headerView: HeaderView!
+    @IBOutlet private var blurView: UIVisualEffectView!
+    @IBOutlet private var illustration: UIImageView!
+    @IBOutlet private var illustrationOffset: NSLayoutConstraint!
+    @IBOutlet private var cogIcon: UIButton!
     
-    @IBOutlet var currentConditionsContainer: UIView!
+    @IBOutlet private var currentConditionsContainer: UIView!
     
-    @IBOutlet var overviewView: OverviewView!
-    @IBOutlet var observationsView: ObservationsView!
+    @IBOutlet private var overviewView: OverviewView!
+    @IBOutlet private var observationsView: ObservationsView!
     
-    @IBOutlet var forecastsStack: UIStackView!
+    @IBOutlet private var forecastsStack: UIStackView!
     
-    @IBOutlet var hourlyForecastsView: HourlyForecastsView!
-    @IBOutlet var dailyForecastsView: DailyForecastsView!
-    @IBOutlet var sunriseSunsetView: ObservationsView!
-    @IBOutlet var yesterdayContainerView: UIStackView!
-    @IBOutlet var yesterdayIconDetailView: IconDetailsView!
-    @IBOutlet var regionalNormalsContainerView: UIStackView!
-    @IBOutlet var regionalNormalsIconDetailView: IconDetailsView!
+    @IBOutlet private var hourlyForecastsView: HourlyForecastsView!
+    @IBOutlet private var dailyForecastsView: DailyForecastsView!
+    @IBOutlet private var sunriseSunsetView: ObservationsView!
+    @IBOutlet private var yesterdayContainerView: UIStackView!
+    @IBOutlet private var yesterdayIconDetailView: IconDetailsView!
+    @IBOutlet private var regionalNormalsContainerView: UIStackView!
+    @IBOutlet private var regionalNormalsIconDetailView: IconDetailsView!
     
     private var blurAnimator: UIViewPropertyAnimator?
     private var illustrationAnimator: UIViewPropertyAnimator?
     
     private var apolloWatcher: GraphQLQueryWatcher<WeatherQuery>?
+    
+    // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,25 +119,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             ).isActive = true
     }
     
-    func render(_ result: GraphQLResult<WeatherQuery.Data>?) {
-        guard let data = result?.data?.weather else {
-            return
-        }
-        
-        self.renderMetadata(data)
-        
-        self.renderWarnings(data)
-        self.renderOverview(data)
-        self.renderObservations(data)
-        self.renderHourlyForecast(data)
-        self.renderForecast(data)
-        self.renderSunriseSunset(data)
-        self.renderYesterdayConditions(data)
-        self.renderRegionalNormals(data)
-        
-        // Update scroll animations in case some properties change
-        self.scrollViewDidScroll(self.scrollView)
-    }
+    // MARK: - Data Retrieval
     
     private func setObserverForDefaultSite() {
         self.apolloWatcher?.cancel()
@@ -186,6 +170,91 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     private func fetch(_ notification: Notification) {
         self.fetchNewData()
     }
+    
+    // MARK: - Renderers
+    
+    /**
+     Takes a GraphQL result and sends the data to various view-models
+     that create the necessary data structures for the subviews.
+     
+     - Parameters:
+       - result: Object containing the weather data returned from GraphQL.
+     */
+    
+    func render(_ result: GraphQLResult<WeatherQuery.Data>?) {
+        guard let data = result?.data?.weather else {
+            return
+        }
+        
+        // Metadata 📑 (Illustration, Background Color)
+        self.renderVisuals(data)
+        
+        // Warnings ⚠️
+        let warningItems = EventsViewModel(
+            data.warnings.events,
+            url: data.warnings.url
+        ).items
+        self.headerView.warnings = warningItems
+        
+        // Overview 🌤 (Station Name, Temperature, ...)
+        let overviewData = OverviewViewModel(data).data
+        overviewView.configure(with: overviewData)
+        
+        // Observations 📊
+        let observationItems = ObservationsViewModel(data.currentConditions).items
+        observationsView.dataSourceItems = observationItems
+        observationsView.isHidden = observationItems.isEmpty
+        
+        // Forecasts 📆
+        let hourlyForecastItems = HourlyForecastsViewModel(
+            data.hourlyForecastGroup?.hourlyForecast
+        ).items
+        hourlyForecastsView.dataSourceItems = hourlyForecastItems
+        
+        let dailyForecastItems = DailyForecastsViewModel(
+            data.forecastGroup.forecast
+        ).items
+        dailyForecastsView.dataSourceItems = dailyForecastItems
+        
+        // Sunrise/Sunset ☀️
+        sunriseSunsetView.dataSourceItems = RiseSetViewModel(data.riseSet).items
+        
+        // Yesterday Conditions ↺
+        let ycItems = YesterdayConditionViewModel(data.yesterdayConditions).items
+        yesterdayIconDetailView.dataSourceItems = ycItems
+        yesterdayContainerView.isHidden = ycItems.isEmpty
+        
+        // Regional Normals 📈
+        let rnItems = RegionalNormalsViewModel(data.forecastGroup.regionalNormals).items
+        regionalNormalsIconDetailView.dataSourceItems = rnItems
+        regionalNormalsContainerView.isHidden = rnItems.isEmpty
+        
+        // Update scroll animations in case some properties change
+        self.scrollViewDidScroll(self.scrollView)
+    }
+    
+    private func renderVisuals(_ data: WeatherQuery.Data.Weather) {
+        self.illustration.contentMode = .top
+        
+        guard let code = data.currentConditions.iconCode?.value, !code.isEmpty else {
+            view.backgroundColor = UIColor(named: "06")
+            self.illustration.image = UIImage(named: "03-image")?.aspectFitImage(inRect: self.illustration.frame)
+            
+            return
+        }
+        
+        UIView.animate(
+            withDuration: 0.5, delay: 0.0, animations: {
+                let color = UIColor(named: code) ?? UIColor(named: "06")
+                self.view.backgroundColor = color
+            }, completion: nil
+        )
+        
+        let image = UIImage(named: "\(code)-image") ?? UIImage(named: "03-image")
+        illustration.image = image?.aspectFitImage(inRect: illustration.frame)
+    }
+    
+    // MARK: - System Overrides
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent

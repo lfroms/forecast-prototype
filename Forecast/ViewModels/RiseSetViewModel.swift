@@ -1,5 +1,5 @@
 //
-//  RenderSunriseSunset.swift
+//  RiseSetViewModel.swift
 //  Forecast
 //
 //  Created by Lukas Romsicki on 2018-12-23.
@@ -9,11 +9,17 @@
 import Foundation
 import SwiftDate
 
-extension MainViewController {
-    func renderSunriseSunset(_ data: WeatherQuery.Data.Weather) {
+struct RiseSetViewModel {
+    private let riseSet: WeatherQuery.Data.Weather.RiseSet
+    
+    init(_ riseSet: WeatherQuery.Data.Weather.RiseSet) {
+        self.riseSet = riseSet
+    }
+    
+    var items: [ObservationItem] {
         var sunriseSunsetItems: [ObservationItem] = []
         
-        data.riseSet.dateTime?.forEach(
+        riseSet.dateTime?.forEach(
             { item in
                 let time = item.timeStamp?
                     .toDate("yyyyMMddHHmmss", region: .UTC)?
@@ -32,6 +38,6 @@ extension MainViewController {
             }
         )
         
-        sunriseSunsetView.dataSourceItems = sunriseSunsetItems
+        return sunriseSunsetItems
     }
 }
