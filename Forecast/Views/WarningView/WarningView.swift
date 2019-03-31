@@ -86,10 +86,10 @@ class WarningView: UIView, SFSafariViewControllerDelegate {
     func configure(with item: WarningItem) {
         contentView.backgroundColor =
             item.type == .ended
-            ? getColorForAlertPriority(.low)
-            : getColorForAlertPriority(item.priority)
+            ? WarningPriority.low.color
+            : item.priority.color
         
-        iconLabel.text = iconForAlertPriority(item.priority)
+        iconLabel.text = item.priority.iconName
         titleLabel.text = item.title.uppercased()
         
         url = item.url
@@ -111,31 +111,5 @@ class WarningView: UIView, SFSafariViewControllerDelegate {
         UIApplication.shared.keyWindow?
             .rootViewController?
             .present(svc, animated: true, completion: nil)
-    }
-}
-
-func getColorForAlertPriority(_ priority: WarningPriority?) -> UIColor {
-    switch priority {
-    case .low?:
-        return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
-    case .medium?:
-        return UIColor(red: 1.00, green: 0.92, blue: 0.00, alpha: 1.0)
-    case .high?:
-        return UIColor(red: 0.96, green: 0.26, blue: 0.21, alpha: 1.0)
-    default:
-        return UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
-    }
-}
-
-fileprivate func iconForAlertPriority(_ priority: WarningPriority?) -> String {
-    switch priority {
-    case .low?:
-        return "info-circle"
-    case .medium?:
-        return "exclamation-circle"
-    case .high?:
-        return "exclamation-triangle"
-    default:
-        return "info-circle"
     }
 }

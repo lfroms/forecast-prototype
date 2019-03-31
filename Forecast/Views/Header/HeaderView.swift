@@ -29,11 +29,9 @@ class HeaderView: UIView {
         get { return headerAnimator?.fractionComplete }
         set {
             guard let fraction = newValue, warnings.isEmpty else {
-                statusBarBackdrop.effect = nil
                 return
             }
 
-            statusBarBackdrop.backgroundColor = .clear
             headerAnimator?.fractionComplete = fraction
         }
     }
@@ -63,6 +61,8 @@ class HeaderView: UIView {
         headerAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             self.statusBarBackdrop.effect = UIBlurEffect(style: .light)
         }
+
+        headerAnimator?.pausesOnCompletion = true
     }
 
     private func renderWarnings() {
@@ -74,6 +74,6 @@ class HeaderView: UIView {
             warningsStack.layoutIfNeeded()
         }
 
-        statusBarBackdrop.backgroundColor = getColorForAlertPriority(warnings.first?.priority)
+        statusBarBackdrop.backgroundColor = warnings.first?.priority.color
     }
 }
