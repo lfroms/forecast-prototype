@@ -11,9 +11,24 @@ import UIKit
 
 class OptionsViewController: UIViewController {
     @IBOutlet private var dataInfoView: DataInfoView!
+    @IBOutlet private var savedLocationsView: SavedLocationsView!
+    
+    @IBAction private func returnToMain(_ button: UIButton) {
+        dismiss(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        savedLocationsView.dataSourceItems = [
+            SavedLocationItem(name: "Ottawa", condition: "Partly Cloudy", temperature: "5º", isCurrentLocation: true),
+            SavedLocationItem(name: "Ottawa", condition: "Partly Cloudy", temperature: "5º", isCurrentLocation: false),
+            SavedLocationItem(name: "Ottawa", condition: "Partly Cloudy", temperature: "5º", isCurrentLocation: false)
+        ]
+        
+        savedLocationsView.didTapItem = { index in
+            self.savedLocationsView.highlightedItem = index
+        }
         
         guard let site = UserPreferences.defaultSite() else {
             return

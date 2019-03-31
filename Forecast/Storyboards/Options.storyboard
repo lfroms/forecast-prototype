@@ -69,14 +69,14 @@
                                             <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ecr-qk-5aL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="236.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="350.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="184" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-zb-kUE" customClass="DataInfoView" customModule="Forecast" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-HG-ERj">
-                                                            <rect key="frame" x="0.0" y="216" width="414" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="216" width="414" height="134.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-mx-gxH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -87,8 +87,9 @@
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQA-N5-fR3">
-                                                                            <rect key="frame" x="360" y="-0.5" width="22" height="22"/>
+                                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQA-N5-fR3">
+                                                                            <rect key="frame" x="344" y="-16.5" width="54" height="54"/>
+                                                                            <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                                                                             <state key="normal" image="Add - Dark"/>
                                                                         </button>
                                                                     </subviews>
@@ -98,7 +99,13 @@
                                                                         <constraint firstAttribute="bottom" secondItem="TPc-J0-lc5" secondAttribute="bottom" id="cMD-tO-WJP"/>
                                                                         <constraint firstItem="dQA-N5-fR3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TPc-J0-lc5" secondAttribute="trailing" constant="16" id="fGJ-Ht-bZ0"/>
                                                                         <constraint firstItem="TPc-J0-lc5" firstAttribute="top" secondItem="ETW-mx-gxH" secondAttribute="top" id="gKe-1V-Azi"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="dQA-N5-fR3" secondAttribute="trailing" constant="32" id="tKE-xV-dqu"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="dQA-N5-fR3" secondAttribute="trailing" constant="16" id="tKE-xV-dqu"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alx-2z-1TY" customClass="SavedLocationsView" customModule="Forecast" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="38.5" width="414" height="96"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="qJH-7c-Fcx"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -145,6 +152,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="dataInfoView" destination="9fs-zb-kUE" id="ZZJ-fo-tGQ"/>
+                        <outlet property="savedLocationsView" destination="Alx-2z-1TY" id="QkC-IM-Cef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcz-tc-cAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
