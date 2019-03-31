@@ -29,13 +29,13 @@
 		80631541224F1E3E00F63D4A /* StyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80631540224F1E3E00F63D4A /* StyledView.swift */; };
 		806F7CE12235AA9F00F7D392 /* YesterdayConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806F7CE02235AA9F00F7D392 /* YesterdayConditionViewModel.swift */; };
 		806F7CE32235B34500F7D392 /* RegionalNormalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806F7CE22235B34500F7D392 /* RegionalNormalsViewModel.swift */; };
+		8077D4B5225104C800D92987 /* DataInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077D4B4225104C800D92987 /* DataInfoViewModel.swift */; };
 		807B7295217E7872002EE814 /* ObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B7294217E7872002EE814 /* ObservationView.swift */; };
 		807B7297217E78ED002EE814 /* fontawesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 807B7296217E78ED002EE814 /* fontawesome.otf */; };
 		8082208021ACD35900ACBE7E /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082207F21ACD35900ACBE7E /* EventsViewModel.swift */; };
 		8082208221ACD56100ACBE7E /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8082208121ACD56100ACBE7E /* WarningView.xib */; };
 		8082208421ACD57A00ACBE7E /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082208321ACD57A00ACBE7E /* WarningView.swift */; };
 		808352D321D3FCEA00AE5355 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B9195B21D08759003D7E84 /* Colors.xcassets */; };
-		8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083538021D415E200AE5355 /* OptionsViewController.swift */; };
 		8084524B21E2DD080099E660 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8084524921E2DBB90099E660 /* Images.xcassets */; };
 		8091CC6C2234B05000BA8034 /* SiteListQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8091CC6B2234B05000BA8034 /* SiteListQuery.graphql */; };
 		8091CC6E2234BDB300BA8034 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091CC6D2234BDB300BA8034 /* UserPreferences.swift */; };
@@ -59,6 +59,9 @@
 		80C982F322504FA100E54D42 /* ObservationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C982F222504FA100E54D42 /* ObservationsViewModel.swift */; };
 		80C982F5225055C900E54D42 /* Float+RoundedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C982F4225055C900E54D42 /* Float+RoundedString.swift */; };
 		80C982F72250560A00E54D42 /* UIImage+AspectFitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C982F62250560A00E54D42 /* UIImage+AspectFitImage.swift */; };
+		80C982FA22505B6700E54D42 /* DataInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C982F922505B6700E54D42 /* DataInfoView.swift */; };
+		80C982FC22505B8A00E54D42 /* DataInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C982FB22505B8A00E54D42 /* DataInfoView.xib */; };
+		80C982FE22505E6700E54D42 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C982FD22505E6700E54D42 /* OptionsViewController.swift */; };
 		80D1AE8F21D03FA700168BA8 /* DailyForecastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1AE8E21D03FA700168BA8 /* DailyForecastsViewModel.swift */; };
 		80DAF517224808BA007AA0FC /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAF516224808BA007AA0FC /* Temperature.swift */; };
 		80E6324E22349F5A0096FD6D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E6324D22349F5A0096FD6D /* schema.json */; };
@@ -94,12 +97,12 @@
 		80631540224F1E3E00F63D4A /* StyledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledView.swift; sourceTree = "<group>"; };
 		806F7CE02235AA9F00F7D392 /* YesterdayConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesterdayConditionViewModel.swift; sourceTree = "<group>"; };
 		806F7CE22235B34500F7D392 /* RegionalNormalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalNormalsViewModel.swift; sourceTree = "<group>"; };
+		8077D4B4225104C800D92987 /* DataInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInfoViewModel.swift; sourceTree = "<group>"; };
 		807B7294217E7872002EE814 /* ObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationView.swift; sourceTree = "<group>"; };
 		807B7296217E78ED002EE814 /* fontawesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.otf; sourceTree = "<group>"; };
 		8082207F21ACD35900ACBE7E /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		8082208121ACD56100ACBE7E /* WarningView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
 		8082208321ACD57A00ACBE7E /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
-		8083538021D415E200AE5355 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		8084524921E2DBB90099E660 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8091CC6B2234B05000BA8034 /* SiteListQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SiteListQuery.graphql; sourceTree = "<group>"; };
 		8091CC6D2234BDB300BA8034 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
@@ -123,6 +126,9 @@
 		80C982F222504FA100E54D42 /* ObservationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationsViewModel.swift; sourceTree = "<group>"; };
 		80C982F4225055C900E54D42 /* Float+RoundedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+RoundedString.swift"; sourceTree = "<group>"; };
 		80C982F62250560A00E54D42 /* UIImage+AspectFitImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AspectFitImage.swift"; sourceTree = "<group>"; };
+		80C982F922505B6700E54D42 /* DataInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInfoView.swift; sourceTree = "<group>"; };
+		80C982FB22505B8A00E54D42 /* DataInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataInfoView.xib; sourceTree = "<group>"; };
+		80C982FD22505E6700E54D42 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		80D1AE8E21D03FA700168BA8 /* DailyForecastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastsViewModel.swift; sourceTree = "<group>"; };
 		80D1AE9021D05D6800168BA8 /* HourlyForecastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyForecastView.xib; sourceTree = "<group>"; };
 		80DAF516224808BA007AA0FC /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 				80A53913224F0A4600ABB2B1 /* IconDetails */,
 				801952E4224FDE3A0035C314 /* Header */,
 				801952E9224FE1E40035C314 /* WarningView */,
+				80C982F822505B4100E54D42 /* DataInfo */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,8 +358,18 @@
 				806F7CE22235B34500F7D392 /* RegionalNormalsViewModel.swift */,
 				80C982F022504E8800E54D42 /* OverviewViewModel.swift */,
 				80C982F222504FA100E54D42 /* ObservationsViewModel.swift */,
+				8077D4B4225104C800D92987 /* DataInfoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		80C982F822505B4100E54D42 /* DataInfo */ = {
+			isa = PBXGroup;
+			children = (
+				80C982F922505B6700E54D42 /* DataInfoView.swift */,
+				80C982FB22505B8A00E54D42 /* DataInfoView.xib */,
+			);
+			path = DataInfo;
 			sourceTree = "<group>";
 		};
 		80E6324C22349F4C0096FD6D /* GraphQL */ = {
@@ -381,7 +398,7 @@
 			children = (
 				8051A6F421755BE6007290CF /* MainViewController.swift */,
 				80F175FA21AB37C8001090BD /* SearchTableViewController.swift */,
-				8083538021D415E200AE5355 /* OptionsViewController.swift */,
+				80C982FD22505E6700E54D42 /* OptionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -468,6 +485,7 @@
 			files = (
 				80A53912224F087A00ABB2B1 /* IconDetailView.xib in Resources */,
 				80003375224C3733005DE9B0 /* OverviewView.xib in Resources */,
+				80C982FC22505B8A00E54D42 /* DataInfoView.xib in Resources */,
 				8052A6AA217E8B46004FB527 /* ObservationView.xib in Resources */,
 				807B7297217E78ED002EE814 /* fontawesome.otf in Resources */,
 				8006D124224C550D001D1705 /* ObservationsView.xib in Resources */,
@@ -590,15 +608,17 @@
 				80C982F122504E8800E54D42 /* OverviewViewModel.swift in Sources */,
 				807B7295217E7872002EE814 /* ObservationView.swift in Sources */,
 				80A2FBDF21AA2F020067A425 /* DailyForecastView.swift in Sources */,
+				80C982FE22505E6700E54D42 /* OptionsViewController.swift in Sources */,
+				80C982FA22505B6700E54D42 /* DataInfoView.swift in Sources */,
 				80A53905224EE31600ABB2B1 /* HourlyForecastsView.swift in Sources */,
 				80631541224F1E3E00F63D4A /* StyledView.swift in Sources */,
 				80C982F5225055C900E54D42 /* Float+RoundedString.swift in Sources */,
 				802596C022359A3100769D09 /* API.swift in Sources */,
 				8082208021ACD35900ACBE7E /* EventsViewModel.swift in Sources */,
 				80C982EC225038C100E54D42 /* WarningPriority+Color.swift in Sources */,
+				8077D4B5225104C800D92987 /* DataInfoViewModel.swift in Sources */,
 				801952E6224FDE560035C314 /* HeaderView.swift in Sources */,
 				80B9195721D07F12003D7E84 /* RiseSetViewModel.swift in Sources */,
-				8083538121D415E200AE5355 /* OptionsViewController.swift in Sources */,
 				806F7CE32235B34500F7D392 /* RegionalNormalsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
