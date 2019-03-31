@@ -9,19 +9,15 @@
 import Foundation
 
 extension WarningPriority {
-    private var defaultIconName: String {
-        return "info-circle"
-    }
+    private static let defaultIconName = "info-circle"
 
-    private var iconNames: [WarningPriority: String] {
-        return [
-            .low: defaultIconName,
-            .medium: "exclamation-circle",
-            .high: "exclamation-triangle"
-        ]
-    }
+    private static let iconNames: [WarningPriority: String] = [
+        .low: defaultIconName,
+        .medium: "exclamation-circle",
+        .high: "exclamation-triangle"
+    ]
 
     var iconName: String {
-        return iconNames[self, default: defaultIconName]
+        return WarningPriority.iconNames[self, default: WarningPriority.defaultIconName]
     }
 }

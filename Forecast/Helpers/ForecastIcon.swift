@@ -9,7 +9,7 @@
 import Foundation
 
 class ForecastIcon {
-    private enum AvailableIcons: Int {
+    private enum AvailableIcon: Int {
         case sunny = 0xf4b7
         case partlySunny = 0xf1df
         case rainy = 0xf495
@@ -21,94 +21,50 @@ class ForecastIcon {
     }
 
     static func forCode(_ code: String) -> String {
-        guard let codeInt = Int(code) else {
+        guard let codeInt = Int(code), let iconString = icon[codeInt]?.rawValue else {
             return ""
         }
 
-        let scalar = UnicodeScalar(forCode(codeInt).rawValue)!
+        let scalar = UnicodeScalar(iconString)!
         return "\(scalar)"
     }
 
-    private static func forCode(_ value: Int) -> AvailableIcons {
-        switch value {
-        case 0:
-            return .sunny
-        case 1:
-            return .sunny
-        case 2:
-            return .partlySunny
-        case 3:
-            return .partlySunny
-        case 4:
-            return .partlySunny
-        case 5:
-            return .sunny
-        case 6:
-            return .rainy
-        case 7:
-            return .rainy
-        case 8:
-            return .rainy
-        case 9:
-            return .thunderstorm
-        case 10:
-            return .cloudy
-        case 12:
-            return .rainy
-        case 13:
-            return .rainy
-        case 14:
-            return .rainy
-        case 15:
-            return .rainy
-        case 16:
-            return .snow
-        case 17:
-            return .snow
-        case 18:
-            return .snow
-        case 19:
-            return .snow
-        case 22:
-            return .partlySunny
-        case 23:
-            return .cloudy
-        case 24:
-            return .cloudy
-        case 27:
-            return .rainy
-        case 28:
-            return .rainy
-        case 29:
-            return .sunny
-        case 30:
-            return .moon
-        case 31:
-            return .cloudyNight
-        case 32:
-            return .cloudyNight
-        case 33:
-            return .cloudy
-        case 34:
-            return .cloudy
-        case 35:
-            return .moon
-        case 36:
-            return .rainy
-        case 37:
-            return .rainy
-        case 38:
-            return .snow
-        case 39:
-            return .thunderstorm
-        case 40:
-            return .snow
-        case 43:
-            return .cloudy
-        case 44:
-            return .cloudy
-        default:
-            return .sunny
-        }
-    }
+    private static let icon: [Int: AvailableIcon] = [
+        0: .sunny,
+        1: .sunny,
+        2: .partlySunny,
+        3: .partlySunny,
+        4: .partlySunny,
+        5: .sunny,
+        6: .rainy,
+        7: .rainy,
+        8: .rainy,
+        9: .thunderstorm,
+        10: .cloudy,
+        12: .rainy,
+        13: .rainy,
+        14: .rainy,
+        15: .rainy,
+        16: .snow,
+        17: .snow,
+        18: .snow,
+        19: .snow,
+        22: .partlySunny,
+        23: .cloudy,
+        24: .cloudy,
+        27: .rainy,
+        28: .rainy,
+        29: .sunny,
+        30: .moon,
+        31: .cloudyNight,
+        32: .cloudyNight,
+        33: .cloudy,
+        34: .cloudy,
+        35: .moon,
+        36: .rainy,
+        37: .rainy,
+        38: .snow,
+        43: .cloudy,
+        44: .cloudy
+    ]
 }
