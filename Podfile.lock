@@ -1,30 +1,22 @@
 PODS:
-  - Apollo (0.9.5):
-    - Apollo/Core (= 0.9.5)
-  - Apollo/Core (0.9.5)
-  - SwiftDate (6.0.1)
+  - Apollo (0.10.1):
+    - Apollo/Core (= 0.10.1)
+  - Apollo/Core (0.10.1)
+  - SwiftDate (6.0.2)
 
 DEPENDENCIES:
-  - Apollo (from `https://github.com/apollographql/apollo-ios.git`)
-  - SwiftDate (~> 6.0.1)
+  - Apollo (~> 0.10.1)
+  - SwiftDate (~> 6.0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Apollo
     - SwiftDate
 
-EXTERNAL SOURCES:
-  Apollo:
-    :git: https://github.com/apollographql/apollo-ios.git
-
-CHECKOUT OPTIONS:
-  Apollo:
-    :commit: 5a647ba023276ec3cddeb0ab04dc7c981f105aaa
-    :git: https://github.com/apollographql/apollo-ios.git
-
 SPEC CHECKSUMS:
-  Apollo: 19caf3246d292bbb69ecad1bd098661f78222aba
-  SwiftDate: 2b3ef6b8fc30c22391033d1acad5622a51660016
+  Apollo: 4d690a9b2e48e8820182df4b988d7a253e1ee589
+  SwiftDate: bbed9b23bfec599bd62b9a305afc554f7bd0eb6f
 
-PODFILE CHECKSUM: a243a8639c990a6bc9cf32eb3588e53b901f2a1c
+PODFILE CHECKSUM: 8712908a38e70cb8cca9050bd55a3153cdc66e55
 
 COCOAPODS: 1.6.1
