@@ -48,7 +48,7 @@ class ForecastIcon {
         16: .snow,
         17: .snow,
         18: .snow,
-        19: .snow,
+        19: .thunderstorm,
         22: .partlySunny,
         23: .cloudy,
         24: .cloudy,
@@ -64,6 +64,8 @@ class ForecastIcon {
         36: .rainy,
         37: .rainy,
         38: .snow,
+        39: .thunderstorm,
+        40: .snow,
         43: .cloudy,
         44: .cloudy
     ]
