@@ -74,6 +74,11 @@ class HeaderView: UIView {
             warningsStack.layoutIfNeeded()
         }
 
-        statusBarBackdrop.backgroundColor = warnings.first?.priority.color
+        let firstWarning = warnings.first
+
+        statusBarBackdrop.backgroundColor =
+            firstWarning?.type == WarningType.ended
+            ? WarningPriority.low.color
+            : firstWarning?.priority.color
     }
 }
